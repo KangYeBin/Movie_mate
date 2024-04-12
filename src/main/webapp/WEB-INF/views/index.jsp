@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
+    <%@ include file="include/header-static.jsp"%>
 </head>
 <body>
+<%@ include file="include/header.jsp"%>
 
 
 
-<h1>안녕하세요!</h1>
 
+<%@ include file="include/footer.jsp"%>
 </body>
 </html>
 
