@@ -19,6 +19,10 @@
     <!-- SQL을 적어놓은 XML 파일의 위치를 설정 -->
     <mappers>
         <mapper resource="mapper/MovieMapper.xml"/>
+        <mapper resource="mapper/KeywordMapper.xml"/>
+        <mapper resource="mapper/ActorMapper.xml"/>
+        <mapper resource="mapper/GenreMapper.xml"/>
+
     </mappers>
 
 

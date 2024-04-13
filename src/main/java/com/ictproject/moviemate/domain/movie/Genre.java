@@ -1,4 +1,4 @@
-package com.ictproject.moviemate.domain.movie.service;
+package com.ictproject.moviemate.domain.movie;
 
 /*
 	CREATE TABLE genre (

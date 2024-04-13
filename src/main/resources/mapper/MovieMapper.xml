@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ictproject.moviemate.domain.movie.mapper.MovieMapper">
+        <insert id="insertMovie">
+            insert into movie
+            (movie_cd,movie_name,nation,open_date,rating,director,image_url,plot,audi_acc,vod_url,runtime)
+            values(#{movieCd},#{movieName},#{nation},#{openDate},#{rating},#{director},#{imageUrl},#{plot},#{audiAcc},#{vodUrl},#{runtime})
+        </insert>
+
+        <select id="isExist" resultType="boolean">
+            select count(*) from movie where movie_cd = ${movieCd}
+        </select>
+</mapper>
