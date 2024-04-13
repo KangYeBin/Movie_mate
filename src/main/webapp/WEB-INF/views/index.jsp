@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
     <%@ include file="include/header-static.jsp"%>
+
 </head>
 <body>
 <%@ include file="include/header.jsp"%>
 
-
+<h1>폰트 적용</h1>
 
 
 <%@ include file="include/footer.jsp"%>
