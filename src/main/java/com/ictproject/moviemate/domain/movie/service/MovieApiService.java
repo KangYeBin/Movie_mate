@@ -37,7 +37,7 @@ public class MovieApiService {
         URI uri = UriComponentsBuilder
                 .fromUriString(requestUri)
                 .queryParam("key", key)
-                .queryParam("targetDt","20240401") //박스오피스 조회 날짜 변경
+                .queryParam("targetDt","20240301") //박스오피스 조회 날짜 변경
                 .encode()
                 .build()
                 .toUri();
@@ -122,7 +122,7 @@ public class MovieApiService {
                 map.put("director","");
             }else{
                 JSONObject director = (JSONObject) directors.get(0);
-                map.put("director",director.get("peopleNmEn").toString().split(" ")[0]);
+                map.put("director",director.get("peopleNm").toString());
             }
             return map;
 
