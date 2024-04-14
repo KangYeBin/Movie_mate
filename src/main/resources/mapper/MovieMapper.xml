@@ -10,6 +10,6 @@
         </insert>
 
         <select id="isExist" resultType="boolean">
-            select count(*) from movie where movie_cd = ${movieCd}
+            select count(*) from movie where movie_cd = '${movieCd}'
         </select>
 </mapper>

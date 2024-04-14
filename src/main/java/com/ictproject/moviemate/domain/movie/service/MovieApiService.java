@@ -2,9 +2,6 @@ package com.ictproject.moviemate.domain.movie.service;
 
 
 import com.ictproject.moviemate.domain.movie.Movie;
-import com.ictproject.moviemate.domain.movie.mapper.ActorMapper;
-import com.ictproject.moviemate.domain.movie.mapper.GenreMapper;
-import com.ictproject.moviemate.domain.movie.mapper.KeywordMapper;
 import com.ictproject.moviemate.domain.movie.mapper.MovieMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,14 +27,14 @@ public class MovieApiService {
     private final ActorService actorService;
     private final GenreService genreService;
     private final KeywordService keywordService;
-    public void getKoficData() {
+    public void getKoficData(String date) {
         String requestUri = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
         //자신 키로 바꾸기
         String key = "1be896b2d0185ed05b72d42954db4ea5";
         URI uri = UriComponentsBuilder
                 .fromUriString(requestUri)
                 .queryParam("key", key)
-                .queryParam("targetDt","20240301") //박스오피스 조회 날짜 변경
+                .queryParam("targetDt", date) //박스오피스 조회 날짜 변경
                 .encode()
                 .build()
                 .toUri();
