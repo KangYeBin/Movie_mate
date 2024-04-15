@@ -14,16 +14,17 @@ import java.time.format.DateTimeFormatter;
 @RequiredArgsConstructor
 public class IndexController {
     private final MovieApiService movieService;
-    @GetMapping("/")
+    @GetMapping("/getMovieData")
     public String index() {
-        String start = "2023910";
+        String start = "20231213";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         try {
             LocalDate startDate = LocalDate.parse(start, formatter);
-            for (int i = 0; i <= 50; i++) {
+            for (int i = 0; i <= 100; i++) {
                 String date = startDate.minusDays(i).format(formatter);
+                System.out.println(date);
                 movieService.getKoficData(date);
-                if(i==50){
+                if(i==100){
                     System.out.println("끝 : = " + date);
                 }
             }
