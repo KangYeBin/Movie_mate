@@ -33,7 +33,7 @@ public class Movie {
 	private String movieCd;			// 영화 코드
 	private String movieName;		// 영화명
 	private String nation;			// 국가
-	private LocalDateTime openDate;	// 개봉일자
+	private String openDate;	// 개봉일자
 	private String rating;			// 관람 등급
 	private String director;		// 감독
 	private String imageUrl;		// 이미지 링크
