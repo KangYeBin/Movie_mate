@@ -22,7 +22,7 @@
         <mapper resource="mapper/KeywordMapper.xml"/>
         <mapper resource="mapper/ActorMapper.xml"/>
         <mapper resource="mapper/GenreMapper.xml"/>
-
+        <mapper resource="mapper/UserMapper.xml"/>
     </mappers>
 
 
