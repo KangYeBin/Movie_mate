@@ -34,6 +34,34 @@
         .section1 #btn .swiper-button-next{
             right: 20%;
         }
+
+        .section1 #btn .banner-prev,
+        .section1 #btn .banner-next {
+            top: 50%;
+            bottom: auto;
+        }
+        .section1 #btn .banner-prev{
+            left: 20%;
+        }
+        .section1 #btn .banner-next{
+            right: 20%;
+        }
+
+        #test {
+            position: relative;
+            
+        }
+        #main-banner-slider {
+            width: 60%;
+            margin: 0 auto;
+        }
+        .banner-title li{
+            text-align: center;
+            width: 20%;
+        }
+        .banner-title li img{
+            width: 200px;
+        }
     </style>
 
 </head>
@@ -43,7 +71,7 @@
 
         <h1 class="recommend-movie">Movie Mate 추천</h1>
         <!-- 상단 메인 빅 배너 슬라이더 섹션 -->
-        <div id="main-banner-slider" class="swiper-container">
+        <div id="main-banner-slider" class="swiper-container main-banner">
             <ul class="banner-title swiper-wrapper">
                 <li class="swiper-slide"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832" alt="영화 큰 배너"></li>
                 <li class="swiper-slide"><img src="https://www.ctimes.co.kr/news/photo/201907/1155_1101_2146.jpg" alt="영화 큰 배너"></li>
@@ -53,13 +81,35 @@
 
             <!-- 슬라이더 좌우 버튼 -->
             <div id="btn">
-                <button class="banner-prev swiper-button-prev" role="button">
+                <button class="swiper-button-prev main-btn" role="button">
                     <!-- <span class="lnr lnr-chevron-left"></span> -->
                 </button>
 
-                <button class="banner-next swiper-button-next" role="button">
+                <button class="swiper-button-next main-btn" role="button">
                     <!-- <span class="lnr lnr-chevron-right"></span> -->
                 </button>
+            </div>
+        </div>
+
+        <div id="test">
+            <h1 class="recommend-movie">Movie Mate 추천</h1>
+            <!-- 상단 메인 빅 배너 슬라이더 섹션 -->
+            <div id="main-banner-slider" class="swiper-container list">
+                <ul class="banner-title swiper-wrapper">
+                    <li class="swiper-slide"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832" alt="영화 큰 배너"></li>
+                    <li class="swiper-slide"><img src="https://www.ctimes.co.kr/news/photo/201907/1155_1101_2146.jpg" alt="영화 큰 배너"></li>
+                    <li class="swiper-slide"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832" alt="영화 큰 배너"></li>
+                    <li class="swiper-slide"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832" alt="영화 큰 배너"></li>
+                </ul>
+                <!-- 슬라이더 좌우 버튼 -->
+                <div id="btn">
+                    <button class="swiper-button-prev banner-prev" role="button">
+                        <!-- <span class="lnr lnr-chevron-left"></span> -->
+                    </button>
+                    <button class="swiper-button-next banner-next" role="button">
+                        <!-- <span class="lnr lnr-chevron-right"></span> -->
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -67,7 +117,7 @@
 
 
     <script>
-        const mySwiper = new Swiper('.swiper-container', {
+        const mySwiper = new Swiper('.main-banner', {
             loop: true,
             autoplay: {
             delay: 10000
@@ -83,7 +133,21 @@
             pagination: {
                 el: '.swiper-pagination',
                 type: 'fraction',
+            }
+            
+        });
+
+        const newSwiper = new Swiper('.list', {
+            loop: true,
+            centeredSlides:true, 
+            navigation:{
+                nextEl: '.banner-next',
+                prevEl: '.banner-prev',
             },
+            slidesPerView: 5,
+            observer: true,
+            observeParents: true
+
             
         });
 
