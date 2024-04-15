@@ -17,4 +17,7 @@ public interface UserMapper {
 
 	// 회원 탈퇴
 	void deleteUser(int userId);
+
+	// 중복 확인
+	boolean isDuplicate(String email);
 }

@@ -34,6 +34,14 @@
             user
         WHERE
             userId = #{userId}
-
     </delete>
+
+    <select id="isDuplicate" resultType="boolean">
+        SELECT
+            COUNT(*)
+        FROM
+            user
+        WHERE
+            email = #{email}
+    </select>
 </mapper>
