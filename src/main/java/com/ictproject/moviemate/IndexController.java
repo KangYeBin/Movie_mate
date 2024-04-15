@@ -16,7 +16,11 @@ public class IndexController {
     private final MovieApiService movieService;
     @GetMapping("/getMovieData")
     public String index() {
+<<<<<<< HEAD
         String start = "20231213";
+=======
+        String start = "20220305";
+>>>>>>> 1037d9b (구글 로그인 코드 추가)
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         try {
             LocalDate startDate = LocalDate.parse(start, formatter);

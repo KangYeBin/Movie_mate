@@ -54,6 +54,11 @@ public class MovieApiService {
                 }
                 String movieNm = boxOffice.get("movieNm").toString();
                 String openDt = boxOffice.get("openDt").toString().replace("-","");
+
+                if(openDt.trim().isEmpty()){
+                    System.out.println("개봉날짜 없음");
+                    continue;
+                }
                 String audiAcc = boxOffice.get("audiAcc").toString();
                 Map<String,String> data = getData(movieCd,key);
                 String prodDt = data.get("prodDt");
