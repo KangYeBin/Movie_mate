@@ -44,6 +44,12 @@ public class IndexController {
     @GetMapping("/swiper")
     public String swiper(Model model) {
         model.addAttribute("recentData", movieService.getRecentData());
+        model.addAttribute("korea", movieService.getNationData("대한민국"));
         return "swiperexample";
+    }
+    @GetMapping("/movie/main")
+    public String main(Model model) {
+
+        return "main";
     }
 }

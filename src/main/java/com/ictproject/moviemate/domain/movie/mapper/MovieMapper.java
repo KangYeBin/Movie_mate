@@ -13,4 +13,5 @@ public interface MovieMapper {
     boolean isExist(String movieCd);
 
     List<Movie> getRecentData();
+    List<Movie> getNationData(String nation);
 }

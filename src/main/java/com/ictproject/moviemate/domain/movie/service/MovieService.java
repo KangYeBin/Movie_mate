@@ -17,4 +17,8 @@ public class MovieService {
     public List<MovieResponseDTO> getRecentData() {
         return movieMapper.getRecentData().stream().map(MovieResponseDTO::new).collect(Collectors.toList());
     }
+
+    public List<MovieResponseDTO> getNationData(String nation) {
+        return movieMapper.getNationData(nation).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+    }
 }
