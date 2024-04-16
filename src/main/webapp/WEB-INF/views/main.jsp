@@ -31,7 +31,7 @@
         </ul>
 
         <!-- 슬라이더 좌우 버튼 -->
-        <div id="btn">
+        <div class="btn">
             <button class="swiper-button-prev" role="button">
                 <!-- <span class="lnr lnr-chevron-left"></span> -->
             </button>
@@ -70,7 +70,7 @@
         </ul>
 
         <!-- 슬라이더 좌우 버튼 -->
-        <div id="btn">
+        <div class="btn">
             <button class="list-prev swiper-button-prev" role="button"></button>
 
             <button class="list-next swiper-button-next" role="button"></button>
@@ -105,7 +105,7 @@
         </ul>
 
         <!-- 슬라이더 좌우 버튼 -->
-        <div id="btn">
+        <div class="btn">
             <button class="list-prev swiper-button-prev" role="button"></button>
 
             <button class="list-next swiper-button-next" role="button"></button>
