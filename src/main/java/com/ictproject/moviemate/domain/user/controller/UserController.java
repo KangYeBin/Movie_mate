@@ -1,9 +1,9 @@
 package com.ictproject.moviemate.domain.user.controller;
 
 import com.ictproject.moviemate.domain.user.service.UserService;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import jakarta.servlet.http.HttpServletRequest;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -15,12 +15,68 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
+
+import java.util.HashMap;
+import java.util.Map;
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
 public class UserController {
 
-	private final UserService userService;
+    private final UserService userService;
+
+    @GetMapping("/movie/sign-in")
+    public String signIn() {
+        return "logintest";
+    }
+
+
+
+    //// 카카오 로그인 ////
+
+    @Value("${sns.kakao.app-key}")
+    private String kakaoAppKey;
+
+    @Value("${sns.kakao.redirect-uri}")
+    private String kakaoRedirectUri;
+
+
+    @GetMapping("/kakao/login")
+    public String kakaoLogin () {
+
+        String uri = "https://kauth.kakao.com/oauth/authorize";
+        uri += "?client_id=" + kakaoAppKey;
+        uri += "&redirect_uri=" + kakaoRedirectUri;
+        uri += "&response_type=code";
+
+        return "redirect:" + uri;
+    }
+
+    //// 카카오 인가코드 받기 ////
+
+    @GetMapping("/auth/kakao")
+    public String kakaoInga(String code) {
+        log.info("카카오 인가코드: {}", code);
+
+
+        // 서비스에 넘기기
+        Map<String, String> params = new HashMap<>();
+        params.put("appKey", kakaoAppKey);
+        params.put("redirect", kakaoRedirectUri);
+        params.put("code", code);
+
+        userService.kakaoLogin(params);
+
+
+        // 로그인 후 홈화면으로 보내기
+        return "redirect:/";
+
+    }
+
+
+
+    //// 네이버 로그인 ////
 
 	@Value("${naver.client}")
 	private String naver_client;
@@ -31,10 +87,6 @@ public class UserController {
     @Value("${naver.redirect-uri}")
     private String redirect_uri;
 
-	@GetMapping("/movie/sign-in")
-	public String signIn() {
-		return "logintest";
-	}
 
 	@GetMapping("/naver/login")
 	public RedirectView naverLogin() {
@@ -70,5 +122,6 @@ public class UserController {
 
 		return "redirect:/";
     }
+
 
 }

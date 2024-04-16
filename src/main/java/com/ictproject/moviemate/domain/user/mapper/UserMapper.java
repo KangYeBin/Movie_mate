@@ -20,4 +20,6 @@ public interface UserMapper {
 
 	// 중복 확인
 	boolean isDuplicate(String email);
+
+
 }
