@@ -29,7 +29,7 @@ public class MovieApiService {
     private final KeywordService keywordService;
     public void getKoficData(String date) {
         String requestUri = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
-        //자신 키로 바꾸기
+        //자신 키로 바꾸기  8803352a1e880950e1e1d4a12c9c3186
         String key = "1be896b2d0185ed05b72d42954db4ea5";
         URI uri = UriComponentsBuilder
                 .fromUriString(requestUri)
@@ -136,7 +136,7 @@ public class MovieApiService {
 
     private Map<String,String> getKMDBData(String movieNm, String openDt, String prodDt,String dir) {
         String requestUri = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2";
-        //자신의 키로 바꾸기
+        //자신의 키로 바꾸기 69C45GJ8M39Y91VGMEBI
         String key = "S2Z5007W5L76LWH10HHJ";
         URI uri = UriComponentsBuilder
                 .fromUriString(requestUri)

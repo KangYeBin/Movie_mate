@@ -43,8 +43,6 @@
         centeredSlides: true,
         slidesPerView: 5,
         loop: true,
-        autoHeight: true,
-        autoWidth:true,
         spaceBetween:10,
 
         navigation: {
