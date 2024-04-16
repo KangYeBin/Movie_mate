@@ -1,6 +1,7 @@
 package com.ictproject.moviemate.domain.movie.mapper;
 
 import com.ictproject.moviemate.domain.movie.Movie;
+import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -10,6 +11,10 @@ public interface MovieMapper {
 
     void insertMovie(Movie movie);
     boolean isExist(String movieCd);
+
+
+    List<Movie> getRecentData();
+    List<Movie> getNationData(String nation);
 
     // 영화 코드로 영화 검색
     Movie findMovie(String movieCd);
