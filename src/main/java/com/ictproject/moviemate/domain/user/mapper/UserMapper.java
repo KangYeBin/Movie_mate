@@ -7,10 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
 
-    boolean isExist(User user);
-
-    void join(User user);
-
 
 	// 회원 가입
 	void insertUser(User user);

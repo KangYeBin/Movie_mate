@@ -5,7 +5,9 @@ import com.ictproject.moviemate.domain.user.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -13,9 +15,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@Slf4j
 @RequiredArgsConstructor
 public class GoogleLoginController {
+
     private final UserService userService;
     @Value("${google.client.id}")
     private String googleClientId;

@@ -149,8 +149,8 @@ public class UserService {
 			JSONObject jsonObject = (JSONObject) parser.parse(result);
 			String id_token = jsonObject.get("id_token").toString();
 			User user = getGoogleUserInfo(id_token);
-			if (!userMapper.isExist(user)) {
-				userMapper.join(user);
+			if (!userMapper.isDuplicate(user.getEmail())) {
+				userMapper.insertUser(user);
 			}
 
 		} catch (ParseException e) {

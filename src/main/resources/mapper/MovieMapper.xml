@@ -12,4 +12,8 @@
         <select id="isExist" resultType="boolean">
             select count(*) from movie where movie_cd = '${movieCd}'
         </select>
+
+        <select id="getRecentData" resultType="movie">
+            select * from movie order by open_date desc limit 0,20
+        </select>
 </mapper>

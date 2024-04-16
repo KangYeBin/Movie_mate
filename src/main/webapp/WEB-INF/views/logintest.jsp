@@ -31,8 +31,6 @@
         <img src="../assets/img/googletest.png"height="50" width="50" onclick="location.href='/google/login'" >
     </button>
 
-
-
 </div>
 
 
