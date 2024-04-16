@@ -43,10 +43,17 @@ public class UserService {
         log.info("이메일: {}", email);
         //dto.getProperties().getNickname();
 
-        // 회원중복 검사 (이메일)
+        // 회원 중복 검사 (이메일)
+		if(!checkDuplicateValue(dto.getAccount().getEmail())){
+			join(SignUpUserRequestDTO.builder()
+					.email(dto.getAccount().getEmail())
+					.nickname(dto.getProperties().getNickname())
+					.profileImage(dto.getProperties().getProfileImage())
+					.build()
+					,User.LoginPath.KAKAO
+			);
 
-
-
+		}
 
     }
 

@@ -59,6 +59,7 @@ public class UserController {
     public String kakaoInga(String code) {
         log.info("카카오 인가코드: {}", code);
 
+
         // 서비스에 넘기기
         Map<String, String> params = new HashMap<>();
         params.put("appKey", kakaoAppKey);
@@ -67,7 +68,9 @@ public class UserController {
 
         userService.kakaoLogin(params);
 
-        return "";
+
+        // 로그인 후 홈화면으로 보내기
+        return "redirect:/";
 
     }
 
