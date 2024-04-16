@@ -45,7 +45,7 @@ public class UserService {
         // 받은 회원정보로 회원가입
         String email = dto.getAccount().getEmail();
         log.info("이메일: {}", email);
-        //dto.getProperties().getNickname();
+
 
         // 회원 중복 검사 (이메일)
 		if(!checkDuplicateValue(dto.getAccount().getEmail())){
