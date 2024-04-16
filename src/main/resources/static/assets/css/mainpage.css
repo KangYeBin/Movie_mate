@@ -38,30 +38,30 @@ ul.banner-title li {
 
 
 /* 버튼 스타일 */
-#btn button{
+.btn button{
     border: 0;
     background-color: transparent;
 }
-#btn button span:hover {
+.btn button span:hover {
     cursor: pointer;
     opacity: 1;
 }
 
-#main #btn .swiper-button-prev,
-#main #btn .swiper-button-next {
+#main .btn .swiper-button-prev,
+#main .btn .swiper-button-next {
     top: 50%;
     bottom: auto;
     color: white;
     opacity: 0.5;
 }
-#main #btn .swiper-button-prev{
+#main .btn .swiper-button-prev{
     left: 20%;
 }
-#main #btn .swiper-button-next{
+#main .btn .swiper-button-next{
     right: 20%;
 }
-#main #btn .swiper-button-prev:hover,
-#main #btn .swiper-button-next:hover {
+#main .btn .swiper-button-prev:hover,
+#main .btn .swiper-button-next:hover {
     opacity: 1;
 }
 
@@ -96,14 +96,14 @@ span.genre-text{
 }
 
 /* 장르 영화 버튼 스타일 */
-#main #btn .list-next,
-#main #btn .list-prev {
+#main .btn .list-next,
+#main .btn .list-prev {
     top: 60%;
 }
-#main #btn .list-next{
+#main .btn .list-next{
     right: 0;
 }
-#main #btn .list-prev{
+#main .btn .list-prev{
     left: 0;
 }
 
