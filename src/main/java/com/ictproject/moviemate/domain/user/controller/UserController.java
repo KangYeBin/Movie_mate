@@ -1,5 +1,6 @@
 package com.ictproject.moviemate.domain.user.controller;
 
+import jakarta.servlet.http.HttpSession;
 import com.ictproject.moviemate.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
-
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
