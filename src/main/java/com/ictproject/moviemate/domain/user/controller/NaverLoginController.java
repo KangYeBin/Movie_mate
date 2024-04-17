@@ -1,16 +1,12 @@
 package com.ictproject.moviemate.domain.user.controller;
 
-import com.ictproject.moviemate.domain.user.service.UserService;
+import com.ictproject.moviemate.domain.user.service.NaverUserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 import java.math.BigInteger;
@@ -21,7 +17,7 @@ import java.security.SecureRandom;
 @RequiredArgsConstructor
 public class NaverLoginController {
 
-    private final UserService userService;
+    private final NaverUserService naverUserService;
 
     @GetMapping("/movie/sign-in")
     public String signIn() {
@@ -72,7 +68,7 @@ public class NaverLoginController {
         log.info("code : {}", code);
         log.info("state: {}", state);
 
-        userService.naverLogin(code, state, session);
+        naverUserService.naverLogin(code, state, session);
 
 		return "redirect:/movie/main";
     }
@@ -80,7 +76,7 @@ public class NaverLoginController {
 	@GetMapping("/naver/logout")
 	public String naverLogout(HttpSession session) {
 
-		userService.naverLogout(session);
+        naverUserService.naverLogout(session);
 
 		return "redirect:/movie/sign-in";
 	}
@@ -89,7 +85,7 @@ public class NaverLoginController {
 	@GetMapping("/naver/delete")
 	public String deleteUser(HttpSession session) {
 
-		userService.deleteNaverUser(session);
+        naverUserService.deleteNaverUser(session);
 
 		return "redirect:/movie/sign-in";
 	}

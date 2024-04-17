@@ -1,13 +1,10 @@
 package com.ictproject.moviemate.domain.user.controller;
 
 
-import com.ictproject.moviemate.domain.user.service.UserService;
+import com.ictproject.moviemate.domain.user.service.GoogleUserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -18,7 +15,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class GoogleLoginController {
 
-    private final UserService userService;
+    private final GoogleUserService googleUserService;
     @Value("${google.client.id}")
     private String googleClientId;
     @Value("${google.client.pw}")
@@ -49,14 +46,14 @@ public class GoogleLoginController {
         params.put("client_id", googleClientId);
         params.put("client_secret", googleClientPw);
         params.put("redirect_uri", redirectUrl);
-        userService.GoogleLogin(params, session);
+        googleUserService.GoogleLogin(params, session);
         return "main";
     }
 
     @GetMapping("/google/logout")
-    public String naverLogout(HttpSession session) {
+    public String googleLogout(HttpSession session) {
 
-        userService.googleLogout(session);
+        googleUserService.googleLogout(session);
 
         return "redirect:/movie/sign-in";
     }
@@ -65,7 +62,7 @@ public class GoogleLoginController {
     @GetMapping("/google/delete")
     public String deleteUser(HttpSession session) {
 
-        userService.deleteGoogleUser(session);
+        googleUserService.deleteGoogleUser(session);
 
         return "redirect:/movie/sign-in";
     }
