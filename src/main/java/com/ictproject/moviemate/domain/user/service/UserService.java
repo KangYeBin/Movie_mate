@@ -139,9 +139,10 @@ public class UserService {
 	private String naver_secret;
 
 
-	public void naverLogin(String code, String state) {
+	public void naverLogin(String code, String state, HttpSession session) {
 
 		String naverAccessToken = getNaverAccessToken(code, state);
+		session.setAttribute("access_token", naverAccessToken);
 		log.info("access_token : {}", naverAccessToken);
 
 		// 토큰을 통해 사용자 정보 가져오기
@@ -160,7 +161,8 @@ public class UserService {
 					, User.LoginPath.NAVER);
 
 		}
-
+		
+		maintainLoginState(session, dto.getResponse().getEmail());
 	}
 
 	public boolean checkDuplicateValue(String email) {
@@ -283,6 +285,18 @@ public class UserService {
 
 	}
 
+
+	// 세션으로 로그인 유지
+	public void maintainLoginState(HttpSession session, String email) {
+
+		User foundUser = userMapper.findUser(email);
+
+		// 세션에 로그인한 회원 정보를 저장
+		session.setAttribute("login", foundUser);
+		// 세션 수명 설정
+		session.setMaxInactiveInterval(60 * 60); // 1시간
+
+	}
 
 }
 
