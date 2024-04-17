@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
     <%@ include file="include/header-static.jsp"%>
-
+    <style>
+        .swiper-wrapper{
+            transition-timing-function: linear;
+        }
+    </style>
 </head>
 <body>
 <%@ include file="include/header.jsp"%>
@@ -16,7 +20,7 @@
     <div class="swiper-wrapper">
         <c:forEach var="recent" items="${recentData}">
         <div class="swiper-slide " data-movie-cd="${recent.movieCd}">
-                <img src="${recent.stillUrl}" alt="영화포스터">
+                <img src="${recent.imageUrl}" alt="영화포스터">
                 <p>${recent.movieName}</p>
         </div>
         </c:forEach>
@@ -63,17 +67,22 @@
 </body>
 <script>
     var recentSwiper = new Swiper('.recentMovieSwiper', {
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 5,
+        slidesPerView: 10,
         loop: true,
         spaceBetween:10,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction:false,
+
+        },
+        speed: 1000,
 
         navigation: {
             nextEl: '.recentMovieSwiper .swiper-button-next',
             prevEl: '.recentMovieSwiper .swiper-button-prev',
         },
     });
+
 
     var koreaSwiper = new Swiper('.koreaMovieSwiper', {
 
