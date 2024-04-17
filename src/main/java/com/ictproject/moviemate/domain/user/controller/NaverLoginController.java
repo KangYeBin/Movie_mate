@@ -1,5 +1,6 @@
 package com.ictproject.moviemate.domain.user.controller;
 
+import com.ictproject.moviemate.domain.movie.service.MovieService;
 import com.ictproject.moviemate.domain.user.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -22,10 +23,12 @@ import java.security.SecureRandom;
 public class NaverLoginController {
 
     private final UserService userService;
+    private final MovieService movieService;
 
-    @GetMapping("/movie/sign-in")
-    public String signIn() {
-        return "logintest";
+    @GetMapping("/")
+    public String signIn(Model model) {
+        model.addAttribute("recent", movieService.getRecentData());
+        return "login";
     }
 
 
@@ -74,7 +77,7 @@ public class NaverLoginController {
 
         userService.naverLogin(code, state, session);
 
-		return "redirect:/movie/main";
+		return "redirect:/main";
     }
 
 	@GetMapping("/naver/logout")

@@ -62,7 +62,7 @@
     </select>
 
     <select id="getRecentData" resultType="movie">
-            select * from movie order by open_date desc limit 0,20
+            select * from movie order by open_date desc limit 0,30
     </select>
 
     <select id="getNationData" resultType="movie">

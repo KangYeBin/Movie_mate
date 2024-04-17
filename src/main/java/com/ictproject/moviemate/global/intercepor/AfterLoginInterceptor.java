@@ -16,7 +16,7 @@ public class AfterLoginInterceptor implements HandlerInterceptor {
 
 		// 로그인한 후에는 로그인 페이지 접속 불가
 		if (session.getAttribute("login") != null) {
-			response.sendRedirect("/movie/main");
+			response.sendRedirect("/main");
 			return false;
 		}
 
