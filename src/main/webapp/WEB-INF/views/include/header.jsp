@@ -6,9 +6,9 @@
     <header>
         <div class="header-section">
             <div class="header-container">
-                <div class="logo"><img src="/src/main/resources/static/assets/img/moviemateLogotest.png" alt="moviemate로고"></div>
+                <div class="logo"><img src="/assets/img/moviemateLogotest.png" alt="moviemate로고"></div>
                 <div class="header-items">
-                    <p><a href="#">HOME</a></p>
+                    <p><a href="movie/main">HOME</a></p>
                     <p><a href="#" class="category-btn">CATEGORY</a></p>
                     <p><a href="#">MYPAGE</a></p>
                     <p><a href="#">LOGOUT</a></p>
@@ -32,44 +32,44 @@
     <nav class="gnb-category">
         <div class="category-list-container">
             <ul>
-                <li><a href="">장르</a></li>
-                <li><a href="">장르2</a></li>
-                <li><a href="">장르3</a></li>
-                <li><a href="">장르4</a></li>
-                <li><a href="">장르5</a></li>
-                <li><a href="">장르6</a></li>
-                <li><a href="">장르7</a></li>
-                <li><a href="">장르8</a></li>
+                <li><a href="">SF</a></li>
+                <li><a href="">가족</a></li>
+                <li><a href="">공포</a></li>
+                <li><a href="">느와르</a></li>
+                <li><a href="">동성애</a></li>
+                <li><a href="">드라마</a></li>
+                <li><a href="">멜로/로맨스</a></li>
+                <li><a href="">멜로드라마</a></li>
             </ul>
             <ul>
-                <li><a href="">장르1</a></li>
-                <li><a href="">장르2</a></li>
-                <li><a href="">장르3</a></li>
-                <li><a href="">장르4</a></li>
-                <li><a href="">장르5</a></li>
-                <li><a href="">장르6</a></li>
-                <li><a href="">장르7</a></li>
-                <li><a href="">장르8</a></li>
+                <li><a href="">무협</a></li>
+                <li><a href="">문화</a></li>
+                <li><a href="">뮤지컬</a></li>
+                <li><a href="">뮤직</a></li>
+                <li><a href="">미스터리</a></li>
+                <li><a href="">범죄</a></li>
+                <li><a href="">사회</a></li>
+                <li><a href="">사회물(경향)</a></li>
             </ul>
             <ul>
-                <li><a href="">장르1</a></li>
-                <li><a href="">장르2</a></li>
-                <li><a href="">장르3</a></li>
-                <li><a href="">장르4</a></li>
-                <li><a href="">장르5</a></li>
-                <li><a href="">장르6</a></li>
-                <li><a href="">장르7</a></li>
-                <li><a href="">장르8</a></li>
+                <li><a href="">스릴러</a></li>
+                <li><a href="">스포츠</a></li>
+                <li><a href="">시대극/사극</a></li>
+                <li><a href="">아동</a></li>
+                <li><a href="">액션</a></li>
+                <li><a href="">어드벤처</a></li>
+                <li><a href="">옴니버스</a></li>
+                <li><a href="">인권</a></li>
             </ul>
             <ul>
-                <li><a href="">장르1</a></li>
-                <li><a href="">장르2</a></li>
-                <li><a href="">장르3</a></li>
-                <li><a href="">장르4</a></li>
-                <li><a href="">장르5</a></li>
-                <li><a href="">장르6</a></li>
-                <li><a href="">장르7</a></li>
-                <li><a href="">장르8</a></li>
+                <li><a href="">인물</a></li>
+                <li><a href="">재난</a></li>
+                <li><a href="">전기</a></li>
+                <li><a href="">전쟁</a></li>
+                <li><a href="">종교</a></li>
+                <li><a href="">청춘영화</a></li>
+                <li><a href="">코메디</a></li>
+                <li><a href="">판타지</a></li>
             </ul>
         </div>
     </nav>

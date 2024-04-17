@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  user-select: none;
+}
+
+body {
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+button {
+  border: none;
+  padding: 0.9em 2em;it
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.3em;
+  background: black;
+}
+
+nav .left {
+  display: flex;
+  margin-left: 2em;
+}
+
+nav .left .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  width: 5rem;
+}
+
+nav .left .logo a {
+  width: 100%;
+}
+
+nav .left .logo a img {
+  max-width: 100%;
+}
+
+nav .left .menu-list {
+  display: flex;
+  font-weight: bold;
+  font-size: large;
+  margin-left: 20px;
+}
+
+nav .left .menu-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0.2em 1em 0.5em 1em;
+}
+
+nav .left .menu-list li a {
+  font-size: 0.8rem;
+}
+
+nav .right {
+  display: flex;
+  margin-right: 2em;
+}
+
+nav .right .icon {
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+nav .right .search {
+  border: 1px solid white;
+  background-color: black;
+}
+
+nav .right .search .search-bar {
+  display: flex;
+}
+
+nav .right .search .search-bar i {
+  margin-right: 0.5em;
+}
+
+nav .right .search .search-bar input {
+  background-color: transparent;
+  border: none;
+  color: yellow;
+  outline: none;
+}
+
+nav .right .log-out {
+  margin-left: 20px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+main {
+  position: relative;
+}
+
+main .container {
+  padding: 10%;
+  width: 100%;
+  height: 100%;
+}
+
+main .description {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  max-width: 500px;
+}
+
+main .description h3 {
+  margin: 0.5em 0;
+  font-weight: lighter;
+}
+
+main .description h1 {
+  margin: 0.5em 0;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+main .description p {
+  margin: 0.8em 0 2em 0;
+}
+
+section .content-list {
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 10px;
+}
+
+section .content-list h1 {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.content-list h1 {
+  margin-left: 50px;
+}
+
+/* wrapper에 이미지 크기 설정 */
+.swiper-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+/* slider에 이미지 크기 설정 */
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-container {
+  width: 90%;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  position: relative;
+}
+
+.swiper-slide .slide-inner {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 20px;
+}
+
+.swiper-slide .slide-inner:hover img {
+  transform: scale(1.3);
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: rgba(238, 15, 15, 0.5);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.review-list {
+  padding: 50px;
+}
+
+section .review-list {
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 50px;
+}
+
+.hr1 {
+  border: 0;
+  height: 2px;
+  background: #d3d3d3;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-top: 1px solid #d3d3d3;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: gray;
+  border-top: 3px solid #727272;
+}
+
+th,
+td {
+  border-bottom: 1px solid #d3d3d3;
+  border-top: 1px solid #d3d3d3;
+  padding: 20px;
+}
+
+.title {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.menu-list {
+  margin-left: auto;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page a {
+  color: white;
+  margin: 0 5px;
+}
+
+.title:hover a {
+  cursor: pointer;
+  color: #ffcc00;
+  font-size: 1.1em;
+}
+
+/* 반응형 */
+/* 창 줄이면 검색창이 돋보기로 변함 */
+@media screen and (max-width: 1437px) {
+  main .description {
+    bottom: 10%;
+  }
+}
+
+@media screen and (max-width: 982px) {
+  nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.3em;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0));
+  }
+
+  nav .left {
+    display: flex;
+    margin-left: 2em;
+  }
+
+  nav .left .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    padding: 0em;
+    width: 5rem;
+  }
+
+  nav .left .logo a {
+    width: 100%;
+  }
+
+  nav .left .logo a img {
+    max-width: 100%;
+  }
+
+  nav .left .mobile-menu {
+    z-index: 999;
+    display: block;
+    align-self: center;
+    margin-left: 10px;
+  }
+
+  nav .left .mobile-menu:hover+.menu-list {
+    display: flex;
+  }
+
+  nav .left .menu-list {
+    display: none;
+    top: 50px;
+    z-index: 999;
+    position: absolute;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.67);
+    padding: 1em 4em;
+  }
+
+  nav .left .menu-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0.2em 1em 0.5em 1em;
+    margin: 0.3em 0;
+  }
+
+  nav .left .menu-list li a {
+    font-size: 0.8rem;
+  }
+
+  nav .left .menu-list:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    top: 0;
+    left: 0;
+  }
+
+  nav .right .search {
+    border: none;
+    background-color: transparent;
+  }
+
+  nav .right .search .search-bar {
+    display: flex;
+  }
+
+  nav .right .search .search-bar i {
+    margin-right: 0.5em;
+  }
+
+  nav .right .search .search-bar input {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    outline: none;
+  }
+}
+
+/* 창을 줄이면 내 정보글이 사라짐 */
+@media screen and (max-width: 768px) {
+  main .description h1 {
+    display: none;
+  }
+
+  main .description h3 {
+    display: none;
+  }
+
+  main .description p {
+    display: none;
+  }
+
+}
