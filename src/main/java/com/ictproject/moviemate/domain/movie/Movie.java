@@ -41,6 +41,7 @@ public class Movie {
 	private String audiAcc;			// 관객수
 	private String vodUrl;			// 티저 영상 링크
 	private String runtime;			// 상영시간
+	private String stillUrl;
 	private int wishCnt;			// 찜 수
 
 }
