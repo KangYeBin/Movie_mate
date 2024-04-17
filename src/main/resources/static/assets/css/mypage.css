@@ -153,6 +153,18 @@ section .content-list h1 {
   margin-left: 50px;
 }
 
+/* wrapper에 이미지 크기 설정 */
+.swiper-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+/* slider에 이미지 크기 설정 */
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
 .swiper-container {
   width: 90%;
   margin: 30px auto;
