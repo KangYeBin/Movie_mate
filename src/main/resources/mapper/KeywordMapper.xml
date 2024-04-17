@@ -7,4 +7,12 @@
         insert into keyword (movie_cd,keyword_name) values(#{movieCd},#{keywordName})
     </insert>
 
+    <select id="findKeywords" resultType="keyword">
+        SELECT
+            keyword_name
+        FROM
+            keyword
+        WHERE
+            movie_cd = #{movieCd}
+    </select>
 </mapper>

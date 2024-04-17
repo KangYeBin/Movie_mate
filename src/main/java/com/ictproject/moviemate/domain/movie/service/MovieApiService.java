@@ -54,6 +54,11 @@ public class MovieApiService {
                 }
                 String movieNm = boxOffice.get("movieNm").toString();
                 String openDt = boxOffice.get("openDt").toString().replace("-","");
+
+                if(openDt.trim().isEmpty()){
+                    System.out.println("개봉날짜 없음");
+                    continue;
+                }
                 String audiAcc = boxOffice.get("audiAcc").toString();
                 Map<String,String> data = getData(movieCd,key);
                 String prodDt = data.get("prodDt");
@@ -75,6 +80,7 @@ public class MovieApiService {
                         .runtime(list.get("runtime"))
                         .rating(list.get("rating"))
                         .vodUrl(list.get("vodUrl"))
+                        .stillUrl(list.get("stillUrl"))
                         .build();
                 movieMapper.insertMovie(movie);
                 String genre = list.get("genre");
@@ -166,6 +172,7 @@ public class MovieApiService {
             String imageUri = resultList.get("posters").toString();
             String runtime = resultList.get("runtime").toString();
             String genre = resultList.get("genre").toString();
+            String stillUri = cutUrl(resultList.get("stlls").toString());
             String director = getDirector(resultList).replaceAll("[^가-힣]","");
             String actors = getActors(resultList);
             String plot = getPlot(resultList);
@@ -180,6 +187,7 @@ public class MovieApiService {
             kmdbData.put("actors", actors);
             kmdbData.put("plot", plot);
             kmdbData.put("vodUrl", vodUri);
+            kmdbData.put("stillUrl", stillUri);
 
         } catch (ParseException e) {
             throw new RuntimeException(e);
@@ -223,5 +231,14 @@ public class MovieApiService {
         JSONArray directorList = (JSONArray) directors.get("director");
         JSONObject one = (JSONObject) directorList.get(0);
         return one.get("directorNm").toString();
+    }
+    private String cutUrl(String url){
+        String result = "";
+        if(url.contains("|")){
+            result=url.substring(0,url.indexOf("|"));
+        }else{
+            result=url;
+        }
+        return result;
     }
 }
