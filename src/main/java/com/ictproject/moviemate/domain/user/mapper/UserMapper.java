@@ -15,7 +15,7 @@ public interface UserMapper {
 	void modifyUser(User user);
 
 	// 회원 정보 단일 조회
-	User findUser(int userId);
+	User findUser(String email);
 
 	// 회원 탈퇴
 	void deleteUser(int userId);
