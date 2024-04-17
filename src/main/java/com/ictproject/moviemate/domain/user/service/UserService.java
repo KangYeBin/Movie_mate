@@ -34,13 +34,14 @@ public class UserService {
 
 
     //// 카카오 로그인 처리////
-    public void kakaoLogin(Map<String, String> params) {
+    public void kakaoLogin(Map<String, String> params ,HttpSession session) {
 
-        String accessToken = getKakaoAccessToken(params);
-        log.info("access_token: {}", accessToken);
+        String kakoAccessToken = getKakaoAccessToken(params);
+        log.info("access_token: {}", kakoAccessToken);
+		session.setAttribute("access_token", kakoAccessToken);
 
         // 엑세스 토큰으로 사용자 정보 가져오기
-        KakaoUserResponseDTO dto = getKakaoUserInfo(accessToken);
+        KakaoUserResponseDTO dto = getKakaoUserInfo(kakoAccessToken);
 
         // 받은 회원정보로 회원가입
         String email = dto.getAccount().getEmail();
@@ -58,6 +59,9 @@ public class UserService {
 			);
 
 		}
+
+		// 세션에 회원 이메일 저장, 로그인 유지 시간 부여
+		maintainLoginState(session, dto.getAccount().getEmail());
 
     }
 
