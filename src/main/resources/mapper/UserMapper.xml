@@ -1,8 +1,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="com.ictproject.moviemate.domain.user.mapper.UserMapper">
+
 
     <insert id="insertUser">
         INSERT INTO user
@@ -37,11 +37,6 @@
     </delete>
 
     <select id="isDuplicate" resultType="boolean">
-        SELECT
-            COUNT(*)
-        FROM
-            user
-        WHERE
-            email = #{email}
+        select count(*) from user where email = #{email} and login_path = #{loginPath}
     </select>
 </mapper>

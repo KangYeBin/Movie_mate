@@ -1,29 +1,36 @@
 package com.ictproject.moviemate;
 
 
+import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
 import com.ictproject.moviemate.domain.movie.service.MovieApiService;
+import com.ictproject.moviemate.domain.movie.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class IndexController {
-    private final MovieApiService movieService;
+    private final MovieApiService movieApiService;
+    private final MovieService movieService;
     @GetMapping("/getMovieData")
     public String index() {
-        String start = "20231213";
+        
+        String start = "20220305";
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         try {
             LocalDate startDate = LocalDate.parse(start, formatter);
             for (int i = 0; i <= 100; i++) {
                 String date = startDate.minusDays(i).format(formatter);
                 System.out.println(date);
-                movieService.getKoficData(date);
+                movieApiService.getKoficData(date);
                 if(i==100){
                     System.out.println("끝 : = " + date);
                 }
@@ -33,5 +40,16 @@ public class IndexController {
         }
 
         return "index";
+    }
+    @GetMapping("/swiper")
+    public String swiper(Model model) {
+        model.addAttribute("recentData", movieService.getRecentData());
+        model.addAttribute("korea", movieService.getNationData("대한민국"));
+        return "swiperexample";
+    }
+    @GetMapping("/movie/main")
+    public String main(Model model) {
+
+        return "main";
     }
 }

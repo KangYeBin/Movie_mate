@@ -1,10 +1,12 @@
 package com.ictproject.moviemate.domain.user.mapper;
 
+
 import com.ictproject.moviemate.domain.user.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
+
 
 	// 회원 가입
 	void insertUser(User user);
@@ -20,6 +22,5 @@ public interface UserMapper {
 
 	// 중복 확인
 	boolean isDuplicate(String email);
-
 
 }
