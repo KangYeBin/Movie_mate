@@ -2,6 +2,7 @@ package com.ictproject.moviemate.domain.user.controller;
 
 
 import com.ictproject.moviemate.domain.user.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -43,7 +44,7 @@ public class KakaoLoginController {
     //// 카카오 인가코드 받기 ////
 
     @GetMapping("/auth/kakao")
-    public String kakaoInga(String code) {
+    public String kakaoInga(String code, HttpSession session) {
         log.info("카카오 인가코드: {}", code);
 
 
@@ -53,7 +54,7 @@ public class KakaoLoginController {
         params.put("redirect", kakaoRedirectUri);
         params.put("code", code);
 
-        userService.kakaoLogin(params);
+        userService.kakaoLogin(params, session);
 
 
         // 로그인 후 홈화면으로 보내기
