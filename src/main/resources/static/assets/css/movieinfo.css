@@ -200,15 +200,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
----------------------------------------------------------- .movie .image .content-wrap h1 {
+ .movie .image .content-wrap h1 {
   width: 100%;
 }
 
@@ -319,7 +311,7 @@ body {
   justify-content: space-around;
   align-content: center;
   margin: 0 auto;
-
+  height: 3rem;
 }
 
 /* 별점 표시 */
