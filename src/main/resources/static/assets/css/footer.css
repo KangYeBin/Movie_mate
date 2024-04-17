@@ -1,0 +1,19 @@
+.footer-container {
+            
+    height: 100px;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+.footer-text-container {
+    
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.footer-container p {
+    text-align: center;
+    color: grey;
+    font-size: 10px;
+}
