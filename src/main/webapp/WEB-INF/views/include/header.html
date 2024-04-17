@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/main/resources/static/assets/css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <style>
+        /* 헤더 스타일 */
+        header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        }
+        .header-section {
+            height: 100px;
+            box-sizing: border-box;
+            background-color: rgb(9, 2, 2);
+        }
+        .logo img {
+            width: 150px;
+            height: 100px;
+            border-radius: 5px;
+        }
+        .header-container {
+            display: flex;
+            width: 70%;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .header-items {
+            display: flex;
+            margin: 0 10px;
+        }
+        .header-items p {
+            margin: 0 20px;
+        }
+        .header-items p a{
+            color: aliceblue;
+            font-size: 24px;
+        }
+        .search-section {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
+        .header-hidden {
+            width: 100%;
+            height: 100px;
+        }
+        .user {
+            color: aliceblue;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        /* 검색창 스타일 */
+        #search input {
+            background-color: transparent;
+            border: 1px solid gray;
+            border-radius: 2px;
+            font-size: 15px;
+            width: 250px;
+            height: 28px;
+            color: white;
+            
+        }
+
+        /* 버튼 스타일 */
+        #search button {
+            border: 0;
+            background-color: transparent;
+            color: aliceblue;
+            cursor: pointer;
+        }
+        
+        /* 삭제하자 */
+        .scroll {
+            height: 1000px;
+        }
+
+        /* 카테고리 목록 스타일 */
+        .category-list-container{
+            display: flex;
+            background-color: rgb(9, 2, 2);
+            border: 1px solid black;
+            /* position: fixed; */
+            position: fixed;
+            z-index: 999;
+            top: -100%;
+            left: 15%;
+            width: 33%;
+            transition: 1s;
+        }
+        .category-list-container ul {
+            width: 25%;
+            text-align: center;
+        }
+        .category-list-container ul li {
+            margin: 30px 0;
+            
+        }
+        .category-list-container ul li a{
+            color: aliceblue;
+        }
+        .category-list-container.show {
+            transition: 1s;
+            top: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="header-section">
+            <div class="header-container">
+                <div class="logo"><img src="/src/main/resources/static/assets/img/moviemateLogotest.png" alt="moviemate로고"></div>
+                <div class="header-items">
+                    <p><a href="#">HOME</a></p>
+                    <p><a href="#" class="category-btn">CATEGORY</a></p>
+                    <p><a href="#">MYPAGE</a></p>
+                    <p><a href="#">LOGOUT</a></p>
+                </div>
+                <p class="user">{###}님 안녕하세요</p>
+                <div class="search-section">
+                    <form id="search" action="#" method="GET">
+                        <input onkeyup="enterkey()" type="text" name="" id="" placeholder="영화 제목을 검색하세요">
+                        <button type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="header-hidden"></div>
+    <div class="scroll"></div>
+
+    <nav class="gnb-category">
+        <div class="category-list-container">
+            <ul>
+                <li><a href="">장르</a></li>
+                <li><a href="">장르2</a></li>
+                <li><a href="">장르3</a></li>
+                <li><a href="">장르4</a></li>
+                <li><a href="">장르5</a></li>
+                <li><a href="">장르6</a></li>
+                <li><a href="">장르7</a></li>
+                <li><a href="">장르8</a></li>
+            </ul>
+            <ul>
+                <li><a href="">장르1</a></li>
+                <li><a href="">장르2</a></li>
+                <li><a href="">장르3</a></li>
+                <li><a href="">장르4</a></li>
+                <li><a href="">장르5</a></li>
+                <li><a href="">장르6</a></li>
+                <li><a href="">장르7</a></li>
+                <li><a href="">장르8</a></li>
+            </ul>
+            <ul>
+                <li><a href="">장르1</a></li>
+                <li><a href="">장르2</a></li>
+                <li><a href="">장르3</a></li>
+                <li><a href="">장르4</a></li>
+                <li><a href="">장르5</a></li>
+                <li><a href="">장르6</a></li>
+                <li><a href="">장르7</a></li>
+                <li><a href="">장르8</a></li>
+            </ul>
+            <ul>
+                <li><a href="">장르1</a></li>
+                <li><a href="">장르2</a></li>
+                <li><a href="">장르3</a></li>
+                <li><a href="">장르4</a></li>
+                <li><a href="">장르5</a></li>
+                <li><a href="">장르6</a></li>
+                <li><a href="">장르7</a></li>
+                <li><a href="">장르8</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    
+    <!-- 스크립트 -->
+    <!-- 엔터키로 검색 활성화 -->
+    <script>
+        function enterkey() {
+            if (window.event.keyCode == 13) {
+                document.getElementById("search").submit();
+            }
+        }
+
+        // 카테고리 버튼 요소 취득
+        const categoryBtn = document.querySelector('.category-btn');
+        const gnb = document.querySelector('.category-list-container');
+        
+        // 클릭 이벤트 생성
+        categoryBtn.addEventListener('click', (e) => {
+            e.preventDefault;
+            gnb.classList.toggle('show');
+        })
+    </script>
+
+</body>
+</html>
