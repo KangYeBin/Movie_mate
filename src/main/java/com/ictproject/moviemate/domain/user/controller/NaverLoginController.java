@@ -1,6 +1,7 @@
 package com.ictproject.moviemate.domain.user.controller;
 
 import com.ictproject.moviemate.domain.user.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import jakarta.servlet.http.HttpServletRequest;
@@ -64,12 +65,12 @@ public class NaverLoginController {
 
 
     @GetMapping("/auth/naver/callback")
-    public String snsNaver(@RequestParam("code") String code, @RequestParam("state") String state, HttpServletRequest request, Model model){
+    public String snsNaver(@RequestParam("code") String code, @RequestParam("state") String state, HttpSession session){
 
         log.info("code : {}", code);
         log.info("state: {}", state);
 
-        userService.naverLogin(code, state);
+        userService.naverLogin(code, state, session);
 
 		return "redirect:/";
     }
