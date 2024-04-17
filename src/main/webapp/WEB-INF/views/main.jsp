@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert Your Title</title>
+    <%@ include file="include/header-static.jsp"%>
+    <link rel="stylesheet" href="/assets/css/mainpage.css">
 </head>
 <body>
 <%@ include file="include/header.jsp"%>
@@ -115,4 +117,5 @@
 
 <%@ include file="include/footer.jsp"%>
 </body>
+<script src="/assets/js/mainpage.js"></script>
 </html>

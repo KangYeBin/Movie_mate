@@ -5,29 +5,90 @@
   font-style: normal;
 }
 
-body {
-  padding: 65px 240px;
-  margin: 0;
-  background: linear-gradient(180deg, #090202 0%, #211B1B 18%, #8C8C8C 100%);
+body::-webkit-scrollbar {
+  width: 15px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: rgb(24, 24, 24); /* 스크롤바의 색상 */
+  
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+}
+
+
+
+
+
+.backSky {
+  width: 0vw;
+  height: 0vh;
+  position: relative;
+  background: linear-gradient(to right, #111, #0e0f19);
+  overflow: hidden;
+}
+
+.sky {
   width: 100vw;
+  height: 100vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveStar 240s linear infinite;
+}
+
+/* 별 */
+.sky .star {
+  fill: #fff;
+  stroke: none;
+  stroke-width: 0;
+}
+
+/* 별 이동효과 */
+@keyframes moveStar {
+  from {
+    transform: translate(-50%, -50%) rotate(0)
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+}
+
+
+
+body {
+  padding: 65px, 0;
+
+  margin: 0 auto;
+  background: linear-gradient(180deg, #090202 0%, #211B1B 38%, #4d4d4d 100%);
+  width: 100%;
   min-height: 100vh;
 
   display: flex;
   flex-direction: column;
   gap: 45px;
+  min-width: 900px;
 }
 
 .movie {
   display: flex;
   flex-direction: column;
   gap: 54px;
+  width: 55%;
+  margin: 0 auto;
 }
 
 .movie .image {
   width: 100%;
   padding-bottom: 50%;
   position: relative;
-  background: url(/src/main/resources/static/assets/img/1.png) center no-repeat;
+  background: url(../img/1.png) center no-repeat;
   background-size: cover;
   border-radius: 24px;
 }
@@ -48,40 +109,92 @@ body {
   display: block;
   text-align: left;
   position: absolute;
-  left:0;
+  left: 0;
   bottom: 0;
   margin: 5%;
 }
 
 
-
-.movie .image .content-wrap .zzim-wrap .star {
-  position: relative;
-  width: 10vb;
-  height: 10vb;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.movie .image .content-wrap .zzim-wrap .star img {
-  width: 100%;
-  height: 100%;
-  fill: white;
-  stroke-width: 0.1;
-  stroke: white;
-}
-.movie .image .content-wrap .zzim-wrap .star img:hover {
-  fill : #fffc3c;
-  fill-opacity: 1;
-  background-color: black;
-}
-
 .movie .image .content-wrap .zzim-wrap p {
   position: absolute;
   font-size: 30px;
-  transform: translate(100%, -190%); /* 중심을 맞춤 */
+  transform: translate(90%, 0%);
+  opacity: 0.7;
+}
+
+.movie .image .content-wrap .zzim-wrap p {
+  opacity: 0;
+}
+
+[type="checkbox"]:checked {
+  opacity: 0;
+}
+
+
+
+/* 찜하기 박스 만들기 */
+.zzim-wrap label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  border: max(0.5em, 0.5em) solid gray;
+  border-radius: 6em;
+  width: 8em;
+  height: 3em;
+}
+
+[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: gray;
+  transition: left 250ms linear;
+}
+
+[type="checkbox"]:checked {
+  background-color: yellow;
+  border-color: yellow;
+  opacity: 0.8;
+}
+
+[type="checkbox"]:checked::before {
+  background-color: white;
+  left: 5em;
+}
+
+[type="checkbox"]:disabled {
+  border-color: lightgray;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+[type="checkbox"]:disabled:before {
+  background-color: lightgray;
+}
+
+[type="checkbox"]:disabled+span {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* 테두리 */
+[type="checkbox"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) solid tomato;
+}
+
+[type="checkbox"]:enabled:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) white;
+
 }
 
 
@@ -95,11 +208,7 @@ body {
 
 
 
-----------------------------------------------------------
-.movie .image .content-wrap h1 {
-  color: #FDFDFD;
-
-  font-size: 52px;
+---------------------------------------------------------- .movie .image .content-wrap h1 {
   width: 100%;
 }
 
@@ -107,10 +216,14 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-
+  background: rgba(0, 0, 0, 0.40);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  height: auto;
 }
 
 .movie .info-wrap .poster {
+  margin-left: 2%;
   width: 230px;
   height: 317px;
 }
@@ -119,36 +232,48 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 1%;
+}
+
+.movie .info-wrap .doc h1 {
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 2%;
+  margin-top: 1%;
 }
 
 .movie .info-wrap .doc .content {
   color: #FFF;
   font-size: 20px;
+  margin-top: 3px;
+  margin-bottom: 10px;
 }
 
 .movie .info-wrap .doc .info {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 1px;
+  margin-top: 2%;
 }
 
 .movie .info-wrap .doc .info>div {
   display: flex;
-  gap: 20px;
+  gap: 3%;
+
 }
 
 .movie .info-wrap .doc .info>div h1 {
   color: #FFF;
-
-  font-size: 35px;
-  font-weight: 400;
+  margin-top: 0;
+  font-size: 1em;
+  font-weight: 300;
 }
 
 .movie .info-wrap .doc .info>div p {
   color: #FFF;
 
-  font-size: 35px;
-  font-weight: 400;
+  font-size: 1em;
+  font-weight: 300;
 }
 
 .review-wrap {
@@ -156,6 +281,8 @@ body {
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  width: 55%;
+  margin: 0 auto;
 }
 
 .review-wrap .review-box {
@@ -164,38 +291,72 @@ body {
   width: 100%;
   border-radius: 24px;
   backdrop-filter: blur(10px);
-  padding: 23px 24px;
+  padding: 0.1em 0;
   height: 528px;
 
   overflow: auto;
+
 }
 
 .review-wrap .review-box .review {
-  border-radius: 10px;
-  background: #555;
-  padding: 7px 51px 7px 27px;
+  position: relative;
+  padding: 1em;
   display: flex;
-  gap: 60px;
+  gap: 1em;
   align-items: center;
+  flex-direction: column;
+
 }
 
-.review-wrap .review-box .review .score {
+.review-wrap .review-box .review .reple {
+
+  background: #555;
+  border-radius: 10px;
+  width: 100%;
   display: flex;
-  flex-shrink: 0;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-around;
+  align-content: center;
+  margin: 0 auto;
 
 }
 
-.review-wrap .review-box .review .score>img {
-  flex-shrink: 0;
-  width: 30px;
-  height: 30px;
+/* 별점 표시 */
+.star {
+  position: relative;
+  line-height: 2rem;
+  height: 2rem;
+  color: #ddd;
 }
+
+.star input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.star span {
+  width: 0;
+  position: absolute;
+  left: 0;
+  color: yellow;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
 
 .review-wrap .review-box .review .nickname {
   color: #FFF;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 700;
   flex-shrink: 0;
+  line-height: 2rem;
+  height: 2rem;
 }
 
 .review-wrap .review-box .review .content {
@@ -203,7 +364,7 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-text-stroke-width: 1;
   -webkit-text-stroke-color: #000;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 700;
 
   text-overflow: ellipsis;
@@ -216,17 +377,17 @@ body {
   overflow: hidden;
 
 
-  line-height: 23px;
-  height: 23px;
+  line-height: 2rem;
+  height: 2rem;
 
-  flex-grow: 1;
+  flex-shrink: 1;
 
 }
 
 .review-wrap .review-box .review .time {
   color: #FFF;
-
-  font-size: 18px;
+  line-height: 2rem;
+  height: 2rem;
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -238,9 +399,10 @@ body {
   gap: 15px;
 }
 
-.review-wrap .paging img{
+.review-wrap .paging img {
   cursor: pointer;
 }
+
 .review-wrap .paging .first {
   width: 36px;
   background: url('/src/main/resources/static/assets/img/4.png') no-repeat;
@@ -263,7 +425,7 @@ body {
 
 }
 
-.review-wrap .paging .page-list p{
+.review-wrap .paging .page-list p {
   color: #FFF;
 
   font-size: 18px;
@@ -272,11 +434,11 @@ body {
   cursor: pointer;
 }
 
-.review-wrap .paging .page-list p::after{
+.review-wrap .paging .page-list p::after {
   content: ' | ';
 }
 
-.review-wrap .paging .page-list p:last-child::after{
+.review-wrap .paging .page-list p:last-child::after {
   content: '';
 }
 

@@ -7,4 +7,13 @@
         insert into actor (movie_cd,actor_name) values (#{movieCd},#{actorName})
     </insert>
 
+    <select id="findActors" resultType="actor">
+        SELECT
+            actor_name
+        FROM
+            actor
+        WHERE
+            movie_cd = #{movieCd}
+    </select>
+
 </mapper>
