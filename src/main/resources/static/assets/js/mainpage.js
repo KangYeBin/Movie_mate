@@ -23,5 +23,76 @@ const listSwiper = new Swiper('.swiper-container-list', {
         nextEl: '.list-next',
         prevEl: '.list-prev',
     }
-    
+});
+const listSwiper2 = new Swiper('.swiper-container-list2', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
+});
+const listSwiper3 = new Swiper('.swiper-container-list3', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
+});
+const listSwiper4 = new Swiper('.swiper-container-list4', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
+});
+const listSwiper5 = new Swiper('.swiper-container-list5', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
+});
+const listSwiper6 = new Swiper('.swiper-container-list6', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
+});
+const listSwiper7 = new Swiper('.swiper-container-list7', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
+});
+const listSwiper8 = new Swiper('.swiper-container-list8', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
+});
+const listSwiper9 = new Swiper('.swiper-container-list9', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
+});
+const listSwiper10 = new Swiper('.swiper-container-list10', {
+    loop: true,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.list-next',
+        prevEl: '.list-prev',
+    }
 });
