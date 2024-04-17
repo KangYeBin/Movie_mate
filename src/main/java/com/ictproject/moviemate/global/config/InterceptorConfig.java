@@ -19,13 +19,16 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 		registry
 				.addInterceptor(afterLoginInterceptor)
-				.addPathPatterns("/movie/sign-in");
+				.addPathPatterns("/");
 
 		registry
 				.addInterceptor(beforeLoginInterceptor)
-				.addPathPatterns("/movie/*")
-				.excludePathPatterns("/movie/sign-in");
+				.addPathPatterns("/*")
+				.excludePathPatterns("/");
 
 
 	}
 }
+// localhost:8181/ -> 로그인페이지
+// localhost:8181/main ->
+

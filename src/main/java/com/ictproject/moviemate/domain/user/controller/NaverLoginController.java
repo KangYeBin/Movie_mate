@@ -1,11 +1,13 @@
 package com.ictproject.moviemate.domain.user.controller;
 
+import com.ictproject.moviemate.domain.movie.service.MovieService;
 import com.ictproject.moviemate.domain.user.service.NaverUserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
@@ -18,10 +20,12 @@ import java.security.SecureRandom;
 public class NaverLoginController {
 
     private final NaverUserService naverUserService;
+    private final MovieService movieService;
 
-    @GetMapping("/movie/sign-in")
-    public String signIn() {
-        return "logintest";
+    @GetMapping("/")
+    public String signIn(Model model) {
+        model.addAttribute("recent", movieService.getRecentData());
+        return "login";
     }
 
 
@@ -70,7 +74,7 @@ public class NaverLoginController {
 
         naverUserService.naverLogin(code, state, session);
 
-		return "redirect:/movie/main";
+		return "redirect:/main";
     }
 
 	@GetMapping("/naver/logout")

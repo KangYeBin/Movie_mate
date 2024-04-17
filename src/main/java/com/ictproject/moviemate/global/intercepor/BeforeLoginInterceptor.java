@@ -16,7 +16,7 @@ public class BeforeLoginInterceptor implements HandlerInterceptor {
 
 		// 로그인을 안 했다면 무조건 로그인 페이지로
 		if (session.getAttribute("login") == null) {
-			response.sendRedirect("/movie/sign-in");
+			response.sendRedirect("/");
 			return false;
 		}
 

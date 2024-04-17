@@ -47,9 +47,5 @@ public class IndexController {
         model.addAttribute("korea", movieService.getNationData("대한민국"));
         return "swiperexample";
     }
-    @GetMapping("/movie/main")
-    public String main(Model model) {
 
-        return "main";
-    }
 }

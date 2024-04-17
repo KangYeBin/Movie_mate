@@ -17,7 +17,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class KakaoLoginController {
 
-    private final KakaoUserService userService;
+    private final KakaoUserService kakaoUserService;
 
 
 
@@ -56,7 +56,7 @@ public class KakaoLoginController {
         params.put("redirect", kakaoRedirectUri);
         params.put("code", code);
 
-        userService.kakaoLogin(params, session);
+        kakaoUserService.kakaoLogin(params, session);
 
 
         // 로그인 후 홈화면으로 보내기
