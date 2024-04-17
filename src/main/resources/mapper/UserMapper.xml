@@ -37,6 +37,6 @@
     </delete>
 
     <select id="isDuplicate" resultType="boolean">
-        select count(*) from user where email = #{email} and login_path = #{loginPath}
+        select count(*) from user where email = #{email}
     </select>
 </mapper>
