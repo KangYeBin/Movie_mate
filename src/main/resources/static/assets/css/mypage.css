@@ -12,11 +12,12 @@ body {
 
 a {
   text-decoration: none;
+
 }
 
 button {
   border: none;
-  padding: 0.9em 2em;
+  padding: 0.9em 2em;it
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
