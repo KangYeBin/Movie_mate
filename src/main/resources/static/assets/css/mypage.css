@@ -12,11 +12,12 @@ body {
 
 a {
   text-decoration: none;
+
 }
 
 button {
   border: none;
-  padding: 0.9em 2em;
+  padding: 0.9em 2em;it
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
@@ -151,6 +152,18 @@ section .content-list h1 {
 
 .content-list h1 {
   margin-left: 50px;
+}
+
+/* wrapper에 이미지 크기 설정 */
+.swiper-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+/* slider에 이미지 크기 설정 */
+.swiper-slide img {
+  width: 100%;
+  height: auto;
 }
 
 .swiper-container {

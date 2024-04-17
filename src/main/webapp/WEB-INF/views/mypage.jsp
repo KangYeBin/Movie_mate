@@ -129,18 +129,19 @@
 
 <%@ include file="include/footer.jsp"%>
 
+
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<script>
-    new Swiper('.swiper-container', {
-        speed: 800, // 슬라이드 속도
-        slidesPerView: 1, // 한 번에 보여질 슬라이드 수
-        spaceBetween: 10, // 이미지 간격
-        loop: false, // 슬라이드 루프 설정 비활성화
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+    <script difer="difer">
+        new Swiper('.swiper-container', {
+            speed: 800, // 슬라이드 속도
+            slidesPerView: 1, // 한 번에 보여질 슬라이드 수
+            spaceBetween: 10, // 이미지 간격
+            loop: false, // 슬라이드 루프 설정 비활성화
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
 </script>
 </body>
 </html>
