@@ -27,11 +27,11 @@ public class IndexController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         try {
             LocalDate startDate = LocalDate.parse(start, formatter);
-            for (int i = 0; i <= 365; i++) {
+            for (int i = 0; i <= 1000; i++) {
                 String date = startDate.minusDays(i).format(formatter);
                 System.out.println(date);
                 movieApiService.getKoficData(date);
-                if(i==365){
+                if(i==1000){
                     System.out.println("끝 : = " + date);
                 }
             }
