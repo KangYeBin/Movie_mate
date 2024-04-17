@@ -50,9 +50,25 @@ public class GoogleLoginController {
         params.put("client_secret", googleClientPw);
         params.put("redirect_uri", redirectUrl);
         userService.GoogleLogin(params, session);
-        return "";
+        return "main";
     }
 
+    @GetMapping("/google/logout")
+    public String naverLogout(HttpSession session) {
+
+        userService.googleLogout(session);
+
+        return "redirect:/movie/sign-in";
+    }
+
+
+    @GetMapping("/google/delete")
+    public String deleteUser(HttpSession session) {
+
+        userService.deleteGoogleUser(session);
+
+        return "redirect:/movie/sign-in";
+    }
 
 
 }
