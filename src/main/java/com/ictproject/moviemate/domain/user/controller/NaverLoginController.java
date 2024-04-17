@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 import java.math.BigInteger;
@@ -75,8 +77,25 @@ public class NaverLoginController {
 
         userService.naverLogin(code, state, session);
 
-		return "redirect:/";
+		return "redirect:/movie/main";
     }
+
+	@GetMapping("/naver/logout")
+	public String naverLogout(HttpSession session) {
+
+		userService.naverLogout(session);
+
+		return "redirect:/movie/sign-in";
+	}
+
+
+	@GetMapping("/naver/delete")
+	public String deleteUser(HttpSession session) {
+
+		userService.deleteNaverUser(session);
+
+		return "redirect:/movie/sign-in";
+	}
 
 
 }

@@ -33,7 +33,7 @@
         DELETE FROM
             user
         WHERE
-            userId = #{userId}
+            user_id = #{userId}
     </delete>
 
     <select id="isDuplicate" resultType="boolean">
