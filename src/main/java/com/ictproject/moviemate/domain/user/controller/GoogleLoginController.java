@@ -50,7 +50,7 @@ public class GoogleLoginController {
         params.put("client_secret", googleClientPw);
         params.put("redirect_uri", redirectUrl);
         userService.GoogleLogin(params, session);
-        return "";
+        return "redirect:/main";
     }
 
 

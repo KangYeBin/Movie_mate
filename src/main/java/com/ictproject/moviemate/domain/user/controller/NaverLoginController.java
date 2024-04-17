@@ -25,7 +25,7 @@ public class NaverLoginController {
     private final UserService userService;
     private final MovieService movieService;
 
-    @GetMapping("/movie/sign-in")
+    @GetMapping("/")
     public String signIn(Model model) {
         model.addAttribute("recent", movieService.getRecentData());
         return "login";
@@ -77,7 +77,7 @@ public class NaverLoginController {
 
         userService.naverLogin(code, state, session);
 
-		return "redirect:/movie/main";
+		return "redirect:/main";
     }
 
 	@GetMapping("/naver/logout")

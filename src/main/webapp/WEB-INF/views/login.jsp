@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/assets/css/login.css">
 </head>
 <body>
-<%@ include file="include/header.jsp"%>
 
     <div class="log-container">
         <div class="bg-video">
@@ -18,7 +17,7 @@
         </div>
 
         <div class="log-head">
-            <h1>Logo</h1>
+            <img src="/assets/img/logo.png" alt="">
         </div>
 
         <div class="rolling-box">
@@ -59,10 +58,10 @@
 
             </div>
         </div>
-
+        <%@ include file="include/footer.jsp"%>
     </div>
 
-<%@ include file="include/footer.jsp"%>
+
 </body>
 
 <script>

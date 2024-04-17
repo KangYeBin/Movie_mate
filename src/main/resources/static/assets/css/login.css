@@ -2,6 +2,9 @@
     box-sizing: border-box;
     color: white;
 }
+body{
+    background-color: black;
+}
 .swiper-wrapper{
     transition-timing-function: linear;
 }
@@ -54,7 +57,7 @@
 }
 
 .rolling-box{
-    padding-top: 50px;
+    padding-top: 30px;
     text-align: center;
 }
 .movie-img{

@@ -58,7 +58,7 @@ public class KakaoLoginController {
 
 
         // 로그인 후 홈화면으로 보내기
-        return "redirect:/";
+        return "redirect:/main";
 
     }
 
