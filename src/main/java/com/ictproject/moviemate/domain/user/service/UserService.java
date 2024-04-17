@@ -2,6 +2,7 @@ package com.ictproject.moviemate.domain.user.service;
 
 
 import com.ictproject.moviemate.domain.user.dto.KakaoUserResponseDTO;
+import com.ictproject.moviemate.domain.user.dto.NaverDeleteResponseDTO;
 import com.ictproject.moviemate.domain.user.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import com.ictproject.moviemate.domain.user.User;
@@ -9,6 +10,7 @@ import com.ictproject.moviemate.domain.user.dto.NaverUserResponseDTO;
 import com.ictproject.moviemate.domain.user.dto.SignUpUserRequestDTO;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Delete;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -169,11 +171,6 @@ public class UserService {
 		maintainLoginState(session, dto.getResponse().getEmail());
 	}
 
-	public boolean checkDuplicateValue(String email) {
-		return userMapper.isDuplicate(email);
-	}
-
-
 	// 접근 토큰 발급 요청
 	private String getNaverAccessToken(String code, String state) {
 
@@ -233,6 +230,59 @@ public class UserService {
 
 		return responseJSON;
 	}
+
+
+	// 네이버 로그아웃
+	public void naverLogout(HttpSession session) {
+		session.removeAttribute("login");
+		session.invalidate();
+	}
+	
+	
+	// 네이버 회원 탈퇴
+	public void deleteNaverUser(HttpSession session) {
+
+		log.info("access_token : {}", session.getAttribute("access_token"));
+		NaverDeleteResponseDTO dto = deleteNaverUser((String) session.getAttribute("access_token"));
+
+		if (dto.getResult().equals("success")) {
+			User loginUser = (User) session.getAttribute("login");
+			naverLogout(session);
+			userMapper.deleteUser(loginUser.getUserId());
+		}
+	}
+
+
+	public NaverDeleteResponseDTO deleteNaverUser(String naverAccessToken) {
+		String requestUri = "https://nid.naver.com/oauth2.0/token?grant_type=delete&";
+		requestUri += "client_id=" + naver_client;
+		requestUri += "&client_secret=" + naver_secret;
+		requestUri += "&access_token=" + naverAccessToken;
+		requestUri += "&service_provider=NAVER";
+
+		HttpHeaders httpHeaders = new HttpHeaders();
+		httpHeaders.add("Authorization", "Bearer " + naverAccessToken);
+		httpHeaders.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+
+		RestTemplate template = new RestTemplate();
+
+		ResponseEntity<NaverDeleteResponseDTO> responseEntity = template.exchange(
+				requestUri,
+				HttpMethod.POST,
+				new HttpEntity<>(httpHeaders),
+				NaverDeleteResponseDTO.class
+		);
+
+		NaverDeleteResponseDTO responseJSON = responseEntity.getBody();
+		log.info("응답 데이터 결과 : {}", responseJSON);
+
+		return responseJSON;
+	}
+
+	public boolean checkDuplicateValue(String email) {
+		return userMapper.isDuplicate(email);
+	}
+
 
 	public void join(SignUpUserRequestDTO dto, User.LoginPath loginPath) {
 
