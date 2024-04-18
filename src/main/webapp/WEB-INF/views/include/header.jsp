@@ -8,12 +8,12 @@
             <div class="header-container">
                 <div class="logo"><img src="/assets/img/moviemateLogotest.png" alt="moviemate로고"></div>
                 <div class="header-items">
-                    <p><a href="movie/main">HOME</a></p>
+                    <p><a href="/">HOME</a></p>
                     <p><a href="#" class="category-btn">CATEGORY</a></p>
-                    <p><a href="#">MYPAGE</a></p>
-                    <p><a href="#">LOGOUT</a></p>
+                    <p><a href="/my">MYPAGE</a></p>
+                    <p><a href="/${user.loginPath}/logout">LOGOUT</a></p>
                 </div>
-                <p class="user">{###}님 안녕하세요</p>
+                <p class="user">${user.nickName}님 안녕하세요</p>
                 <div class="search-section">
                     <form id="search" action="#" method="GET">
                         <input onkeyup="enterkey()" type="text" name="" id="" placeholder="영화 제목을 검색하세요">
