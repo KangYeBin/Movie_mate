@@ -37,7 +37,6 @@ public class KakaoLoginController {
         uri += "?client_id=" + kakaoAppKey;
         uri += "&redirect_uri=" + kakaoRedirectUri;
         uri += "&response_type=code";
-        uri += "&prompt=login";
 
         return "redirect:" + uri;
     }
@@ -73,11 +72,18 @@ public class KakaoLoginController {
         session.removeAttribute("login");
         session.invalidate();
 
-        return "redirect:/movie/sign-in";
+        return "redirect:/";
     }
 
 
+    // 카카오 회원탈퇴
+    @GetMapping("/KAKAO/delete")
+    public String deleteKakao(HttpSession session) {
 
+        kakaoUserService.deleteKakaoUser(session);
+
+        return "redirect:/";
+    }
 
 
 
