@@ -98,3 +98,7 @@
             transition: 1s;
             top: 100px;
         }
+        .search-form{
+            display: flex;
+            justify-content: space-between;
+        }

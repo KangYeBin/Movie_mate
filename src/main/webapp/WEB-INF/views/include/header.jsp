@@ -13,9 +13,9 @@
                     <p><a href="#">MYPAGE</a></p>
                     <p><a href="#">LOGOUT</a></p>
                 </div>
-                <p class="user">{###}님 안녕하세요</p>
+                <p class="user">${sessionScope.login.nickName}님</p>
                 <div class="search-section">
-                    <form id="search" action="#" method="GET">
+                    <form id="search" action="#" method="GET" class="search-form">
                         <input onkeyup="enterkey()" type="text" name="" id="" placeholder="영화 제목을 검색하세요">
                         <button type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
