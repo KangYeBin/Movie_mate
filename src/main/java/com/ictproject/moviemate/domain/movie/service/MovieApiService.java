@@ -30,7 +30,7 @@ public class MovieApiService {
     public void getKoficData(String date) {
         String requestUri = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
         //자신 키로 바꾸기  8803352a1e880950e1e1d4a12c9c3186
-        String key = "1be896b2d0185ed05b72d42954db4ea5";
+        String key = "f66bf40754ae57bee8aae3f6650a44f4";
         URI uri = UriComponentsBuilder
                 .fromUriString(requestUri)
                 .queryParam("key", key)
@@ -80,6 +80,7 @@ public class MovieApiService {
                         .runtime(list.get("runtime"))
                         .rating(list.get("rating"))
                         .vodUrl(list.get("vodUrl"))
+                        .stillUrl(list.get("stillUrl"))
                         .build();
                 movieMapper.insertMovie(movie);
                 String genre = list.get("genre");
@@ -171,6 +172,7 @@ public class MovieApiService {
             String imageUri = resultList.get("posters").toString();
             String runtime = resultList.get("runtime").toString();
             String genre = resultList.get("genre").toString();
+            String stillUri = cutUrl(resultList.get("stlls").toString());
             String director = getDirector(resultList).replaceAll("[^가-힣]","");
             String actors = getActors(resultList);
             String plot = getPlot(resultList);
@@ -185,6 +187,7 @@ public class MovieApiService {
             kmdbData.put("actors", actors);
             kmdbData.put("plot", plot);
             kmdbData.put("vodUrl", vodUri);
+            kmdbData.put("stillUrl", stillUri);
 
         } catch (ParseException e) {
             throw new RuntimeException(e);
@@ -228,5 +231,14 @@ public class MovieApiService {
         JSONArray directorList = (JSONArray) directors.get("director");
         JSONObject one = (JSONObject) directorList.get(0);
         return one.get("directorNm").toString();
+    }
+    private String cutUrl(String url){
+        String result = "";
+        if(url.contains("|")){
+            result=url.substring(0,url.indexOf("|"));
+        }else{
+            result=url;
+        }
+        return result;
     }
 }

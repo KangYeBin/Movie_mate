@@ -38,7 +38,7 @@
 
     <!-- 장르별 영화 목록 섹션 -->
     <div class="genre swiper-container-list">
-        <span class="genre-text">장르입니다</span>
+        <span class="genre-text">SF</span>
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
@@ -72,8 +72,8 @@
     </div>
 
     <!-- 장르별 영화 목록 섹션 -->
-    <div class="genre swiper-container-list">
-        <span class="genre-text">장르입니다</span>
+    <div class="genre swiper-container-list2">
+        <span class="genre-text">가족</span>
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
@@ -97,11 +97,123 @@
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
             </li>
         </ul>
-
         <!-- 슬라이더 좌우 버튼 -->
         <div class="btn">
             <button class="list-prev swiper-button-prev" role="button"></button>
 
+            <button class="list-next swiper-button-next" role="button"></button>
+        </div>
+    </div>
+
+    <!-- 장르별 영화 목록 섹션 -->
+    <div class="genre swiper-container-list3">
+        <span class="genre-text">공포</span>
+        <ul class="genre-movielist swiper-wrapper">
+            <li class="movie-img-box swiper-slide">
+                <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+            </li>
+        </ul>
+        <!-- 슬라이더 좌우 버튼 -->
+        <div class="btn">
+            <button class="list-prev swiper-button-prev" role="button"></button>
+            <button class="list-next swiper-button-next" role="button"></button>
+        </div>
+    </div>
+    <!-- 장르별 영화 목록 섹션 -->
+    <div class="genre swiper-container-list4">
+        <span class="genre-text">드라마</span>
+        <ul class="genre-movielist swiper-wrapper">
+            <li class="movie-img-box swiper-slide">
+                <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+            </li>
+        </ul>
+        <!-- 슬라이더 좌우 버튼 -->
+        <div class="btn">
+            <button class="list-prev swiper-button-prev" role="button"></button>
+            <button class="list-next swiper-button-next" role="button"></button>
+        </div>
+    </div>
+    <!-- 장르별 영화 목록 섹션 -->
+    <div class="genre swiper-container-list5">
+        <span class="genre-text">멜로/드라마</span>
+        <ul class="genre-movielist swiper-wrapper">
+            <li class="movie-img-box swiper-slide">
+                <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+            </li>
+        </ul>
+        <!-- 슬라이더 좌우 버튼 -->
+        <div class="btn">
+            <button class="list-prev swiper-button-prev" role="button"></button>
+            <button class="list-next swiper-button-next" role="button"></button>
+        </div>
+    </div>
+    <!-- 장르별 영화 목록 섹션 -->
+    <div class="genre swiper-container-list6">
+        <span class="genre-text">미스터리</span>
+        <ul class="genre-movielist swiper-wrapper">
+            <li class="movie-img-box swiper-slide">
+                <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+            </li>
+        </ul>
+        <!-- 슬라이더 좌우 버튼 -->
+        <div class="btn">
+            <button class="list-prev swiper-button-prev" role="button"></button>
+            <button class="list-next swiper-button-next" role="button"></button>
+        </div>
+    </div>
+    <!-- 장르별 영화 목록 섹션 -->
+    <div class="genre swiper-container-list7">
+        <span class="genre-text">범죄</span>
+        <ul class="genre-movielist swiper-wrapper">
+            <li class="movie-img-box swiper-slide">
+                <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+            </li>
+        </ul>
+        <!-- 슬라이더 좌우 버튼 -->
+        <div class="btn">
+            <button class="list-prev swiper-button-prev" role="button"></button>
+            <button class="list-next swiper-button-next" role="button"></button>
+        </div>
+    </div>
+    <!-- 장르별 영화 목록 섹션 -->
+    <div class="genre swiper-container-list8">
+        <span class="genre-text">스릴러</span>
+        <ul class="genre-movielist swiper-wrapper">
+            <li class="movie-img-box swiper-slide">
+                <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+            </li>
+        </ul>
+        <!-- 슬라이더 좌우 버튼 -->
+        <div class="btn">
+            <button class="list-prev swiper-button-prev" role="button"></button>
+            <button class="list-next swiper-button-next" role="button"></button>
+        </div>
+    </div>
+    <!-- 장르별 영화 목록 섹션 -->
+    <div class="genre swiper-container-list9">
+        <span class="genre-text">액션</span>
+        <ul class="genre-movielist swiper-wrapper">
+            <li class="movie-img-box swiper-slide">
+                <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+            </li>
+        </ul>
+        <!-- 슬라이더 좌우 버튼 -->
+        <div class="btn">
+            <button class="list-prev swiper-button-prev" role="button"></button>
+            <button class="list-next swiper-button-next" role="button"></button>
+        </div>
+    </div>
+    <!-- 장르별 영화 목록 섹션 -->
+    <div class="genre swiper-container-list10">
+        <span class="genre-text">어드벤처</span>
+        <ul class="genre-movielist swiper-wrapper">
+            <li class="movie-img-box swiper-slide">
+                <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+            </li>
+        </ul>
+        <!-- 슬라이더 좌우 버튼 -->
+        <div class="btn">
+            <button class="list-prev swiper-button-prev" role="button"></button>
             <button class="list-next swiper-button-next" role="button"></button>
         </div>
     </div>
@@ -117,5 +229,7 @@
 
 <%@ include file="include/footer.jsp"%>
 </body>
-<script src="/assets/js/mainpage.js"/>
+
+<script src="/assets/js/mainpage.js"></script>
+
 </html>

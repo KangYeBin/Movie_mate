@@ -33,4 +33,5 @@ public class Review {
 	private String text;				// 텍스트
 	private int sympathyCnt;			// 공감 수
 
+	private float grade;				// 별점
 }

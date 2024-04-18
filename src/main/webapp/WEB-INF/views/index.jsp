@@ -10,7 +10,7 @@
 <body>
 <%@ include file="include/header.jsp"%>
 
-<h1>폰트 적용</h1>
+
 
 
 <%@ include file="include/footer.jsp"%>

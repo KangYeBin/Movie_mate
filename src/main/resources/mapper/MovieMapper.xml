@@ -5,8 +5,8 @@
 <mapper namespace="com.ictproject.moviemate.domain.movie.mapper.MovieMapper">
     <insert id="insertMovie">
         insert into movie
-        (movie_cd,movie_name,nation,open_date,rating,director,image_url,plot,audi_acc,vod_url,runtime)
-        values(#{movieCd},#{movieName},#{nation},#{openDate},#{rating},#{director},#{imageUrl},#{plot},#{audiAcc},#{vodUrl},#{runtime})
+        (movie_cd,movie_name,nation,open_date,rating,director,image_url,plot,audi_acc,vod_url,runtime,still_url)
+        values(#{movieCd},#{movieName},#{nation},#{openDate},#{rating},#{director},#{imageUrl},#{plot},#{audiAcc},#{vodUrl},#{runtime},#{stillUrl})
     </insert>
 
     <select id="isExist" resultType="boolean">
@@ -62,7 +62,7 @@
     </select>
 
     <select id="getRecentData" resultType="movie">
-            select * from movie order by open_date desc limit 0,20
+            select * from movie order by open_date desc limit 0,30
     </select>
 
     <select id="getNationData" resultType="movie">
