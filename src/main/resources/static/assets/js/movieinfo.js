@@ -1,5 +1,5 @@
-/* 리뷰별개수 */
-const drawStar = (target) => {
+  /* 리뷰별개수 */
+  const drawStar = (target) => {
     document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
 }
 const $sky = document.querySelector(".sky");
@@ -27,10 +27,10 @@ const makeStars = () => {
 
     const htmlDummy = new Array(_size).fill().map((_, i) => {
         return `<circle class='star'
-        cx=${getRandomX()}
-        cy=${getRandomY()}
-        r=${randomRadius()}
-        className="star" />`
+cx=${getRandomX()}
+cy=${getRandomY()}
+r=${randomRadius()}
+className="star" />`
     }).join('');
 
     $sky.innerHTML = htmlDummy;

@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -15,8 +14,8 @@
 <body>
 
     <div class="scrollBar">
-        
-      </div>
+
+    </div>
 
     <div class="backSky">
         <svg class="sky"></svg>
@@ -62,6 +61,18 @@
                     <div>
                         <h1>국가 :</h1>
                         <p>국가 내용</p>
+                    </div>
+                    <div>
+                        <h1>등급 :</h1>
+                        <p>등급 내용</p>
+                    </div>
+                    <div>
+                        <h1>개봉일 :</h1>
+                        <p>개봉일 내용</p>
+                    </div>
+                    <div>
+                        <h1>러닝타임 :</h1>
+                        <p>러닝타임 내용</p>
                     </div>
                 </div>
             </div>
@@ -109,6 +120,56 @@
                     <p class="time">작성시간</p>
                 </div>
 
+                <div class="reple">
+                    <span class="star">
+                        ★★★★★
+                        <span>★★★★★</span>
+                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                    </span>
+
+                    <p class="nickname">닉네임</p>
+                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
+                    <p class="time">작성시간</p>
+                </div>
+
+                <div class="reple">
+                    <span class="star">
+                        ★★★★★
+                        <span>★★★★★</span>
+                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                    </span>
+
+                    <p class="nickname">닉네임</p>
+                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
+                    <p class="time">작성시간</p>
+                </div>
+
+                <div class="reple">
+                    <span class="star">
+                        ★★★★★
+                        <span>★★★★★</span>
+                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                    </span>
+
+                    <p class="nickname">닉네임</p>
+                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
+                    <p class="time">작성시간</p>
+                </div>
+
+                <div class="reple">
+                    <span class="star">
+                        ★★★★★
+                        <span>★★★★★</span>
+                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                    </span>
+
+                    <p class="nickname">닉네임</p>
+                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
+                    <p class="time">작성시간</p>
+                </div>
+
+               
+
             </div>
         </div>
 
@@ -134,6 +195,49 @@
         </div>
     </div>
 
+    <script>
+        /* 리뷰별개수 */
+        const drawStar = (target) => {
+            document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+        }
+        const $sky = document.querySelector(".sky");
+
+        // 브라우저 창 크기에 따른 별 생성
+        window.onresize = () => {
+            makeStars();
+        }
+
+        const makeStars = () => {
+            // 브라우저 가장 큰 크기
+            const maxSize = Math.max(window.innerWidth, window.innerHeight)
+
+            // 랜덤한 X 위치 값
+            const getRandomX = () => Math.random() * maxSize;
+
+            // 랜덤한 Y 위치 값
+            const getRandomY = () => Math.random() * maxSize;
+
+            // 랜덤한 크기 (circle는 반지름이 크기)
+            const randomRadius = () => Math.random() * 0.7 + 0.6;
+
+            // 임의의 값
+            const _size = Math.floor(maxSize / 2);
+
+            const htmlDummy = new Array(_size).fill().map((_, i) => {
+                return `<circle class='star'
+        cx=${getRandomX()}
+        cy=${getRandomY()}
+        r=${randomRadius()}
+        className="star" />`
+            }).join('');
+
+            $sky.innerHTML = htmlDummy;
+        }
+
+        window.onload = () => {
+            makeStars();
+        }
+    </script>
 
 </body>
 
