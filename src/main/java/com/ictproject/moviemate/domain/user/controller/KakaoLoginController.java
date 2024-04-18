@@ -1,7 +1,7 @@
 package com.ictproject.moviemate.domain.user.controller;
 
 
-import com.ictproject.moviemate.domain.user.service.UserService;
+import com.ictproject.moviemate.domain.user.service.KakaoUserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +17,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class KakaoLoginController {
 
-    private final UserService userService;
+    private final KakaoUserService kakaoUserService;
 
 
 
@@ -37,11 +37,13 @@ public class KakaoLoginController {
         uri += "?client_id=" + kakaoAppKey;
         uri += "&redirect_uri=" + kakaoRedirectUri;
         uri += "&response_type=code";
+        uri += "&prompt=login";
 
         return "redirect:" + uri;
     }
 
-    //// 카카오 인가코드 받기 ////
+
+    // 카카오 인가코드 받기
 
     @GetMapping("/auth/kakao")
     public String kakaoInga(String code, HttpSession session) {
@@ -54,13 +56,28 @@ public class KakaoLoginController {
         params.put("redirect", kakaoRedirectUri);
         params.put("code", code);
 
-        userService.kakaoLogin(params, session);
+        kakaoUserService.kakaoLogin(params, session);
 
 
         // 로그인 후 홈화면으로 보내기
-        return "redirect:/";
+        return "redirect:/main";
 
     }
+
+
+
+    // 카카오 로그아웃
+    @GetMapping("/KAKAO/logout")
+    public String kakaoLogout(HttpSession session) {
+
+        session.removeAttribute("login");
+        session.invalidate();
+
+        return "redirect:/movie/sign-in";
+    }
+
+
+
 
 
 

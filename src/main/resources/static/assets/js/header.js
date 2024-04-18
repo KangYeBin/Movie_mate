@@ -1,16 +1,18 @@
 //  엔터키로 검색 활성화 
-function enterkey() {
-    if (window.keyCode == 13) {
+function enterkey(event) {
+    if (event.keyCode == 13) {
         document.getElementById("search").submit();
     }
 };
 
-// 카테고리 버튼 요소 취득
-const categoryBtn = document.querySelector('.category-btn');
-const gnb = document.querySelector('.category-list-container');
+document.addEventListener('DOMContentLoaded', function() {
+    // 카테고리 요소 취득
+    const categoryBtn = document.querySelector('.category-btn');
+    const gnb = document.querySelector('.category-list-container');
 
-// 클릭 이벤트 생성
-categoryBtn.addEventListener('click', (e) => {
-    e.preventDefault;
-    gnb.classList.toggle('show');
+    // 카테고리 이벤트
+    categoryBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        gnb.classList.toggle('show');
+    });
 });

@@ -22,7 +22,7 @@ public class IndexController {
     @GetMapping("/getMovieData")
     public String index() {
         
-        String start = "20230417";
+        String start = "20240416";
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         try {
@@ -47,9 +47,5 @@ public class IndexController {
         model.addAttribute("korea", movieService.getNationData("대한민국"));
         return "swiperexample";
     }
-    @GetMapping("/movie/main")
-    public String main(Model model) {
 
-        return "main";
-    }
 }
