@@ -1,3 +1,76 @@
+<<<<<<< HEAD
+[2024-04-16 07:41:24:31826] INFO  14532 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 07:41:24:31842] INFO  14532 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[2024-04-16 08:13:38:57962] INFO  21984 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 08:13:38:57964] INFO  21984 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-16 09:05:12:3938] INFO  23644 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 09:05:12:3939] INFO  23644 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 10:44:27:13713] INFO  21460 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 10:44:27:13714] INFO  21460 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 11:18:12:7182] INFO  22240 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 11:18:12:7183] INFO  22240 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 11:43:11:1506207] INFO  22240 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 11:43:11:1506208] INFO  22240 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 11:53:16:2110535] INFO  22240 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 11:53:16:2110536] INFO  22240 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 11:54:24:5701] INFO  2748 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 11:54:24:5702] INFO  2748 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 11:57:16:5521] INFO  25832 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 11:57:16:5522] INFO  25832 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 12:00:10:3480] INFO  5524 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 12:00:10:3480] INFO  5524 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[2024-04-16 12:06:55:9297] INFO  26548 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 12:06:55:9312] INFO  26548 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+[2024-04-16 12:13:50:12475] INFO  24784 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 12:13:50:12477] INFO  24784 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-16 12:16:05:6277] INFO  21292 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 12:16:05:6278] INFO  21292 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 12:49:40:76032] INFO  8200 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 12:49:40:76033] INFO  8200 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 12:53:57:14845] INFO  26724 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 12:53:57:14847] INFO  26724 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 12:57:10:207775] WARN  26724 --- [nio-8181-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'code' for method parameter type String is not present]
+[2024-04-16 13:13:04:6793] INFO  26540 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 13:13:04:6794] INFO  26540 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 16:02:28:13277] INFO  1292 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 16:02:28:13278] INFO  1292 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 16:03:09:3305] INFO  22060 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 16:03:09:3307] INFO  22060 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-16 18:33:21:630234] INFO  19840 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:33:21:630234] INFO  19840 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[2024-04-16 18:33:36:3018] INFO  6276 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:33:36:3020] INFO  6276 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-16 18:37:32:9325] INFO  24336 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:37:32:9326] INFO  24336 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 18:40:40:3718] INFO  19016 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:40:40:3719] INFO  19016 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[2024-04-16 18:41:08:3195] INFO  25804 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:41:08:3196] INFO  25804 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 18:42:42:3094] INFO  20460 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:42:42:3094] INFO  20460 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[2024-04-16 18:43:17:3930] INFO  25556 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:43:17:3932] INFO  25556 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-16 18:43:31:3245] INFO  25096 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:43:31:3247] INFO  25096 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-16 18:46:35:3168] INFO  8372 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 18:46:35:3169] INFO  8372 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 19:18:10:6733] INFO  25808 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 19:18:10:6734] INFO  25808 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 19:21:32:3303] INFO  18352 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 19:21:32:3305] INFO  18352 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-16 20:03:28:3123] INFO  7424 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 20:03:28:3124] INFO  7424 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 20:15:05:3355] INFO  16944 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 20:15:05:3356] INFO  16944 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 20:32:00:3140] INFO  19716 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 20:32:00:3142] INFO  19716 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 20:47:38:66317] INFO  25796 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 20:47:38:66320] INFO  25796 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-16 20:55:20:7941] INFO  13004 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 20:55:20:7942] INFO  13004 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-16 20:57:00:7433] INFO  13712 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-16 20:57:00:7434] INFO  13712 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+=======
 [2024-04-16 10:39:44:17086] INFO  14756 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 [2024-04-16 10:39:44:17090] INFO  14756 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 [2024-04-16 10:41:24:4270] INFO  27632 --- [nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
@@ -126,3 +199,4 @@
 [2024-04-16 16:38:54:3159] INFO  27948 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 [2024-04-16 18:21:57:9713] INFO  27284 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 [2024-04-16 18:21:57:9715] INFO  27284 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+>>>>>>> develop
