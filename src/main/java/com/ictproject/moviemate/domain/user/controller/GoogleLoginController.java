@@ -47,10 +47,10 @@ public class GoogleLoginController {
         params.put("client_secret", googleClientPw);
         params.put("redirect_uri", redirectUrl);
         googleUserService.GoogleLogin(params, session);
-        return "main";
+        return "redirect:/main";
     }
 
-    @GetMapping("/google/logout")
+    @GetMapping("/GOOGLE/logout")
     public String googleLogout(HttpSession session) {
 
         googleUserService.googleLogout(session);
@@ -59,7 +59,7 @@ public class GoogleLoginController {
     }
 
 
-    @GetMapping("/google/delete")
+    @GetMapping("/GOOGLE/delete")
     public String deleteUser(HttpSession session) {
 
         googleUserService.deleteGoogleUser(session);

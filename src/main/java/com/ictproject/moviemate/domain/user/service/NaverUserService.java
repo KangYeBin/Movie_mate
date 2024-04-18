@@ -127,8 +127,8 @@ public class NaverUserService {
 
     // 네이버 로그아웃
     public void naverLogout(HttpSession session) {
-        log.info("access_token : {}", session.getAttribute("access_token"));
-        NaverDeleteResponseDTO dto = deleteNaverUser((String) session.getAttribute("access_token"));
+//        log.info("access_token : {}", session.getAttribute("access_token"));
+//        NaverDeleteResponseDTO dto = deleteNaverUser((String) session.getAttribute("access_token"));
 
         session.removeAttribute("login");
         session.invalidate();
