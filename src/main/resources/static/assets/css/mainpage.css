@@ -87,14 +87,21 @@ span.genre-text{
 .movie-img-box{
     width: 20%;
     height: 300px;
-    margin: 0 0.1%;
+    /*margin: 0 5px;*/
 }
 
 .movie-img-box img {
     width: 95%;
-    height: 100%;
+    height: 90%;
     border-radius: 7px;
+    margin-left: 5px;
     
+}
+.movie-img-box p {
+    text-align: center;
+    color: #FDFDFD;
+    margin-top: 10px;
+    box-sizing: border-box;
 }
 .movie-img-box a img:hover {
     transform:scale(1.05);
