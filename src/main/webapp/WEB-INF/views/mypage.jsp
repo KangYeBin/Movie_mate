@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <title>Movie Mate</title>
     <%@ include file="include/header-static.jsp"%>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/assets/css/mypage.css">
 </head>
 <body>
 <%@ include file="include/header.jsp"%>
@@ -17,8 +16,8 @@
 <main>
     <div class="container">
         <div class="description">
-            <h3>abc1234@gmail.com</h3>
-            <h1>무비메이트</h1>
+            <h3>${sessionScope.login.email}</h3>
+            <h1>${sessionScope.login.nickName}</h1>
             <p>님의 마이페이지</p>
         </div>
     </div>
@@ -129,9 +128,7 @@
 
 <%@ include file="include/footer.jsp"%>
 
-
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script difer="difer">
+    <script>
         new Swiper('.swiper-container', {
             speed: 800, // 슬라이드 속도
             slidesPerView: 1, // 한 번에 보여질 슬라이드 수
