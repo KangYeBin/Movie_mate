@@ -42,32 +42,39 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
 
         <!-- 슬라이더 좌우 버튼 -->
         <div class="btn">
-            <button class="list-prev swiper-button-prev" role="button"></button>
+            <button class="list-prev swiper-button-prev"></button>
 
-            <button class="list-next swiper-button-next" role="button"></button>
+            <button class="list-next swiper-button-next"></button>
         </div>
     </div>
 
@@ -111,6 +118,7 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
         <!-- 슬라이더 좌우 버튼 -->
@@ -125,6 +133,7 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
         <!-- 슬라이더 좌우 버튼 -->
@@ -139,6 +148,7 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
         <!-- 슬라이더 좌우 버튼 -->
@@ -153,6 +163,7 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
         <!-- 슬라이더 좌우 버튼 -->
@@ -167,6 +178,7 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
         <!-- 슬라이더 좌우 버튼 -->
@@ -181,6 +193,7 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
         <!-- 슬라이더 좌우 버튼 -->
@@ -195,6 +208,7 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
         <!-- 슬라이더 좌우 버튼 -->
@@ -209,6 +223,7 @@
         <ul class="genre-movielist swiper-wrapper">
             <li class="movie-img-box swiper-slide">
                 <a href=""><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832" alt="장르별 영화 포스터"></a>
+                <p>영화제목</p>
             </li>
         </ul>
         <!-- 슬라이더 좌우 버튼 -->

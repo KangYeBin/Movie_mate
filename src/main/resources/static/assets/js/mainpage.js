@@ -17,15 +17,16 @@ const mySwiper = new Swiper('.swiper-container', {
 
 // 장르별 영화 목록 슬라이드 스크립트
 const listSwiper = new Swiper('.swiper-container-list', {
-    loop: true,
+    // loop: true,
     slidesPerView: 5,
+    spaceBetween: 5,
     navigation: {
         nextEl: '.list-next',
         prevEl: '.list-prev',
     }
 });
 const listSwiper2 = new Swiper('.swiper-container-list2', {
-    loop: true,
+    spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
         nextEl: '.list-next',
@@ -33,7 +34,7 @@ const listSwiper2 = new Swiper('.swiper-container-list2', {
     }
 });
 const listSwiper3 = new Swiper('.swiper-container-list3', {
-    loop: true,
+    spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
         nextEl: '.list-next',
@@ -49,7 +50,7 @@ const listSwiper4 = new Swiper('.swiper-container-list4', {
     }
 });
 const listSwiper5 = new Swiper('.swiper-container-list5', {
-    loop: true,
+    spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
         nextEl: '.list-next',
@@ -57,7 +58,7 @@ const listSwiper5 = new Swiper('.swiper-container-list5', {
     }
 });
 const listSwiper6 = new Swiper('.swiper-container-list6', {
-    loop: true,
+    spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
         nextEl: '.list-next',
@@ -65,7 +66,7 @@ const listSwiper6 = new Swiper('.swiper-container-list6', {
     }
 });
 const listSwiper7 = new Swiper('.swiper-container-list7', {
-    loop: true,
+    spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
         nextEl: '.list-next',
@@ -73,7 +74,7 @@ const listSwiper7 = new Swiper('.swiper-container-list7', {
     }
 });
 const listSwiper8 = new Swiper('.swiper-container-list8', {
-    loop: true,
+    spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
         nextEl: '.list-next',
@@ -81,7 +82,7 @@ const listSwiper8 = new Swiper('.swiper-container-list8', {
     }
 });
 const listSwiper9 = new Swiper('.swiper-container-list9', {
-    loop: true,
+    spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
         nextEl: '.list-next',
@@ -89,7 +90,7 @@ const listSwiper9 = new Swiper('.swiper-container-list9', {
     }
 });
 const listSwiper10 = new Swiper('.swiper-container-list10', {
-    loop: true,
+    spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
         nextEl: '.list-next',
