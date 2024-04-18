@@ -67,7 +67,7 @@ public class KakaoLoginController {
 
 
     // 카카오 로그아웃
-    @GetMapping("/kakao/logout")
+    @GetMapping("/KAKAO/logout")
     public String kakaoLogout(HttpSession session) {
 
         session.removeAttribute("login");

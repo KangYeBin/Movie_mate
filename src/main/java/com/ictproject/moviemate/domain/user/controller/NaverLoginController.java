@@ -77,7 +77,7 @@ public class NaverLoginController {
 		return "redirect:/main";
     }
 
-	@GetMapping("/naver/logout")
+	@GetMapping("/NAVER/logout")
 	public String naverLogout(HttpSession session) {
 
         naverUserService.naverLogout(session);
@@ -86,7 +86,7 @@ public class NaverLoginController {
 	}
 
 
-	@GetMapping("/naver/delete")
+	@GetMapping("/NAVER/delete")
 	public String deleteUser(HttpSession session) {
 
         naverUserService.deleteNaverUser(session);

@@ -6,9 +6,9 @@
 
     <insert id="insertReview">
         INSERT INTO review
-            (user_id, movie_cd, text, sympathy, review_date)
+            (user_id, movie_cd, text, sympathy, review_date, grade)
         VALUES
-            (#{userId}, #{movieCd}, #{text}, #{sympathy}, #{reviewDate})
+            (#{userId}, #{movieCd}, #{text}, #{sympathy}, #{reviewDate}, #{grade})
     </insert>
 
     <update id="modifyReview">
@@ -17,6 +17,7 @@
         SET
             text = #{text},
             review_date = CURRENT_TIMESTAMP
+            grade = #{grade}
         WHERE
             review_id = #{reviewId}
     </update>
