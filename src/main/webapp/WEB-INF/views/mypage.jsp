@@ -1,33 +1,35 @@
-<!doctype html>
-<html lang="kr">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
     <title>Movie Mate</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <%@ include file="include/header-static.jsp"%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="index.css">
-
-
+    <link rel="stylesheet" href="/assets/css/mypage.css">
 </head>
-
 <body>
+<%@ include file="include/header.jsp"%>
 
-    <!-- 중앙 내 정보 -->
+<!-- 중앙 내 정보 -->
     <main>
         <div class="container">
+           <div class="profile-contents">
+            <div class="profile-box">
+            <img src="${sessionScope.login.profile}" alt="프사" >
+            </div>
             <div class="description">
                 <h3>${sessionScope.login.email}</h3>
                 <h1>${sessionScope.login.nickName}</h1>
                 <p>님의 마이페이지</p>
             </div>
+           </div>
         </div>
     </main>
+
+
 
     <div>
         <div class="content-list">
@@ -88,100 +90,64 @@
 
     <div class="review-list">
         <h1>내가 쓴 후기</h1>
-
-        <hr class="hr1" noshade>
-        <br>
-        <table>
-            <tr>
-                <th>영화명</th>
-                <th>내가 쓴 후기</th>
-                <th>내가 준 별점</th>
-                <th>일시</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td class="center">영화 제목</td>
-                <td class="title"><a href="detail_page.html">코멘트</a></td>
-                <td class="center">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </td>
-                <td class="center">2024-04-16</td>
-                <td class="center"><button class="delete-btn" onclick="deleteReview(this)">삭제</button></td>
-            </tr>
-            <tr>
-                <td class="center">영화 제목</td>
-                <td class="title"><a href="detail_page.html">코멘트</a></td>
-                <td class="center">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </td>
-                <td class="center">2024-04-16</td>
-                <td class="center"><button class="delete-btn" onclick="deleteReview(this)">삭제</button></td>
-
-            </tr>
-            <tr>
-                <td class="center">영화 제목</td>
-                <td class="title"><a href="detail_page.html">코멘트</a></td>
-                <td class="center">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </td>
-                <td class="center">2024-04-16</td>
-                <td class="center"><button class="delete-btn" onclick="deleteReview(this)">삭제</button></td>
-
-            </tr>
-        </table>
-        <br>
-
-        <div class="page">
-            <a href="https://www.naver.com/">◀ 이전</a>
-            <a href="https://www.naver.com/">1</a>
-            <a href="https://www.naver.com/">2</a>
-            <a href="https://www.naver.com/">3</a>
-            <a href="https://www.naver.com/">다음 ▶</a>
-        </div>
+         <div class="swiper review-swiper-custom">
+              <div class="swiper-wrapper">
+              <% for(int i=0;i<10;i++)  { %>
+                    <div class="swiper-slide review-swiper">
+                           <div class="review-container">
+                                  <div class="review-profile">
+                                        <div class="review-profile-img">
+                                            <img src="/assets/img/3.png">
+                                            <p style="margin-left:5px; color:black;">이름</p>
+                                        </div>
+                                        <div class="review-profile-grade">
+                                            <img src="/assets/img/3.png">
+                                            <p style="margin-left:5px; color:black;">5.0</p>
+                                        </div>
+                                  </div>
+                                  <hr/>
+                                  <div class="review-text">
+                                        <p style="color:black !important;">리뷰 글</p>
+                                  </div>
+                                  <hr/>
+                                  <div class="review-sym">
+                                        <div>
+                                            <p style="color:black !important;"> 따봉 </p>
+                                        </div>
+                                  </div>
+                           </div>
+                     </div>
+                   <% } %>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+         </div>
     </div>
 
+<%@ include file="include/footer.jsp"%>
 
-        <script>
-            new Swiper('.swiper-container', {
-                speed: 800,
-                slidesPerView: 1,
-                spaceBetween: 10,
-                loop: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1200: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                }
-            }
-
+    <script>
+        new Swiper('.swiper-container', {
+            speed: 800, // 슬라이드 속도
+            slidesPerView: 1, // 한 번에 보여질 슬라이드 수
+            spaceBetween: 10, // 이미지 간격
+            loop: false, // 슬라이드 루프 설정 비활성화
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
-    </script>
-</body>
 
+        new Swiper('.review-swiper-custom', {
+                    speed: 800, // 슬라이드 속도
+                    slidesPerView: 1, // 한 번에 보여질 슬라이드 수
+                    spaceBetween: 10, // 이미지 간격
+                    loop: false, // 슬라이드 루프 설정 비활성화
+                    navigation: {
+                        nextEl: '.review-swiper-custom .swiper-button-next',
+                        prevEl: '.review-swiper-custom .swiper-button-prev',
+                    },
+                });
+</script>
+</body>
 </html>
