@@ -1,8 +1,11 @@
 package com.ictproject.moviemate.domain.movie.service;
 
+import com.ictproject.moviemate.domain.movie.Actor;
 import com.ictproject.moviemate.domain.movie.mapper.ActorMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -15,5 +18,9 @@ public class ActorService {
                 actorMapper.insertActor(actor[i],movieCd);
             }
         }
+    }
+
+    public List<Actor> getActorData(String movieCd) {
+        return actorMapper.findActors(movieCd);
     }
 }
