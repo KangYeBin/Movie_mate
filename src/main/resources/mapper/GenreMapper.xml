@@ -16,4 +16,5 @@
             movie_cd = #{movieCd}
     </select>
 
+
 </mapper>

@@ -53,7 +53,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="sf" items="${sf}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${sf.movieCd}">
-                        <a href="/detail/{sf.movieCd}"><img src="${sf.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${sf.movieCd}"><img src="${sf.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${sf.movieName}</p>
                     </div>
                 </c:forEach>

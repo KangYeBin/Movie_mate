@@ -6,7 +6,7 @@
     <header>
         <div class="header-section">
             <div class="header-container">
-                <div class="logo"><img src="/assets/img/moviemateLogotest.png" alt="moviemate로고"></div>
+                <div class="logo"><img src="/assets/img/logo.png" alt="moviemate로고"></div>
                 <div class="header-items">
                     <p><a href="/">HOME</a></p>
                     <p><a href="#" class="category-btn">CATEGORY</a></p>
@@ -15,7 +15,7 @@
                 </div>
                 <p class="user">${sessionScope.login.nickName}님 안녕하세요</p>
                 <div class="search-section">
-                    <form id="search" action="#" method="GET">
+                    <form id="search" action="#" method="GET" class="search-form">
                         <input onkeyup="enterkey()" type="text" name="" id="" placeholder="영화 제목을 검색하세요">
                         <button type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
