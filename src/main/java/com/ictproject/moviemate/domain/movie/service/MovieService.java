@@ -21,4 +21,12 @@ public class MovieService {
     public List<MovieResponseDTO> getNationData(String nation) {
         return movieMapper.getNationData(nation).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
     }
+
+    public List<MovieResponseDTO> getGenreData(String genre) {
+        return movieMapper.findMoviesByGenre(genre).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+    }
+
+    public Movie getMovieData(String movieCd) {
+        return movieMapper.findMovie(movieCd);
+    }
 }
