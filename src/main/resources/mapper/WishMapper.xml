@@ -20,4 +20,16 @@
             movie_cd = #{movieCd}
     </delete>
 
+    <select id="findWish" resultType="movie">
+        SELECT
+            m.*
+        FROM
+            wish_list w
+        JOIN
+            movie m
+        ON
+            w.movie_cd = m.movie_cd
+        WHERE
+            w.user_id = #{userId};
+    </select>
 </mapper>

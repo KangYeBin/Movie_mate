@@ -9,7 +9,7 @@
 
     <select id="findKeywords" resultType="keyword">
         SELECT
-            keyword_name
+            movie_cd, keyword_name
         FROM
             keyword
         WHERE
