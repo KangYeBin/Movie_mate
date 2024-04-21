@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/main/resources/static/assets/css/reset.css">
+    <link rel="stylesheet" href="/src/main/resources/static/assets/css/review.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="reviewbox">
+        <div class="box">
+            <span class="star">
+                ★★★★★
+                <span>★★★★★</span>
+                <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+            </span>
+        </div>
+        <div class="parent">
+            <div class="profile">
+                <div id="pro">프로필</div>
+                <div class="text">
+                    <input type="text" id="text" value="후기 내용" ></input>
+                </div>
+                <div class="register">
+                    <input type="button" id="register" value="등록"></input>
+                </div>
+                <div class="cancel">
+                    <input type="button" id="cancel" value="취소"></input>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* 리뷰별개수 */
+        const drawStar = (target) => {
+            document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+        }
+    </script>
+</body>
+
+</html>

@@ -2,6 +2,7 @@
   const drawStar = (target) => {
     document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
 }
+
 const $sky = document.querySelector(".sky");
 
 // 브라우저 창 크기에 따른 별 생성
@@ -39,3 +40,6 @@ className="star" />`
 window.onload = () => {
     makeStars();
 }
+btn.onclick=function() {
+    child = window.open("review.html","child", "width=400,height=300,top=400px,left=500px")
+};
