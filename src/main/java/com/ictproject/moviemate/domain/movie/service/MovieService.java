@@ -6,6 +6,7 @@ import com.ictproject.moviemate.domain.movie.dto.MovieDetailResponseDTO;
 import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
 import com.ictproject.moviemate.domain.movie.mapper.MovieMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -14,6 +15,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class MovieService {
     private final MovieMapper movieMapper;
@@ -72,5 +74,18 @@ public class MovieService {
         map.put("fantasy", "판타지");
 
         return map.get(genre);
+    }
+
+    public List<MovieResponseDTO> getMovieDataByActor(String actorName) {
+        return movieMapper.findMoviesByActor(actorName).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+    }
+
+    public List<MovieResponseDTO> getMovieDataByDirector(String directorName) {
+        return movieMapper.findMoviesByDirector(directorName).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+    }
+
+    public List<MovieResponseDTO> getMovieDataByMovieName(String movieName) {
+        log.info("movieName : {}", movieName);
+        return movieMapper.findMoviesByMovieName(movieName).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
     }
 }

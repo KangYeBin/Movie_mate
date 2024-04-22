@@ -16,17 +16,18 @@
 
     <section id="search">
 
-        <h2 class="searchResult">(으)로 검색한 결과입니다.</h2>
-            
-        <!-- 검색 목록 섹션: 감독 -->
+        <h2 class="searchResult">${keyword}(으)로 검색한 결과입니다.</h2>
+
+
+        <!-- 검색별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <div class="genre-movielist swiper-wrapper">
-                
-                    <div class="movie-img-box swiper-slide" data-movie-cd="">
-                        <a href=""><img src="/assets/img/2.png" alt="검색 영화 포스터"></a>
-                        <p>영화이름</p>
+                <c:forEach var="movie" items="${movie}">
+                    <div class="movie-img-box swiper-slide" data-movie-cd="${movie.movieCd}">
+                        <a href="/detail/${movie.movieCd}"><img src="${movie.imageUrl}" alt="영화 포스터"></a>
+                        <p>${movie.movieName}</p>
                     </div>
-
+                </c:forEach>
             </div>
 
             <!-- 슬라이더 좌우 버튼 -->
@@ -38,10 +39,6 @@
         </div>
 
 
-
-
-        
-
     </section>
 
     <!-- 화면 상단 이동 버튼 -->
@@ -49,9 +46,20 @@
         <div class="up-btn">▲</div>
     </a>
 
-    
+
     <%@ include file="include/footer.jsp"%>
-    <script src="/assets/js/mainpage.js"></script>
+
+    <script>
+        const listSwiper = new Swiper('.swiper-container-list', {
+            // loop: true,
+            slidesPerView: 5,
+            spaceBetween: 5,
+            navigation: {
+                nextEl: '.list-next',
+                prevEl: '.list-prev',
+            }
+        });
+    </script>
 </body>
 
 
