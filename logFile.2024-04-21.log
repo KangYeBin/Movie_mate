@@ -1,0 +1,6 @@
+[2024-04-21 15:37:43:10202] INFO  7836 --- [nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-21 15:37:43:10206] INFO  7836 --- [nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-21 15:40:11:18235] INFO  5484 --- [nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-21 15:40:11:18237] INFO  5484 --- [nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-21 16:39:15:16013] INFO  16948 --- [nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-21 16:39:15:16019] INFO  16948 --- [nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

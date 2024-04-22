@@ -63,7 +63,7 @@ body::-webkit-scrollbar-track {
 
 
 body {
-  padding: 65px, 0;
+  padding: 10px, 0;
   margin: 0 auto;
   background: linear-gradient(180deg, #090202 0%, #211B1B 38%, #4d4d4d 100%);
   width: 100%;
@@ -71,7 +71,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 20px;
   min-width: 900px;
 }
 
@@ -83,15 +83,6 @@ body {
   margin: 0 auto;
 }
 
-.movie .image {
-  width: 100%;
-  padding-bottom: 50%;
-  position: relative;
-  background-size: cover !important;
-  border-radius: 24px;
-
-
-}
 
 .movie .image .content-wrap {
   position: absolute;
@@ -102,99 +93,6 @@ body {
   justify-content: space-between;
   align-items: end;
   padding: 7px 7px 24px 24px;
-}
-
-
-.movie .image .content-wrap h1 {
-  display: block;
-  text-align: left;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  margin: 5%;
-}
-
-
-.movie .image .content-wrap .zzim-wrap p {
-  position: absolute;
-  font-size: 30px;
-  transform: translate(90%, 0%);
-  opacity: 0.7;
-}
-
-.movie .image .content-wrap .zzim-wrap p {
-  opacity: 0;
-}
-
-[type="checkbox"]:checked {
-  opacity: 0;
-}
-
-
-
-/* 찜하기 박스 만들기 */
-.zzim-wrap label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-[type="checkbox"] {
-  appearance: none;
-  position: relative;
-  border: max(0.5em, 0.5em) solid gray;
-  border-radius: 6em;
-  width: 8em;
-  height: 3em;
-}
-
-[type="checkbox"]::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-  transform: scale(0.8);
-  background-color: gray;
-  transition: left 250ms linear;
-}
-
-[type="checkbox"]:checked {
-  background-color: yellow;
-  border-color: yellow;
-  opacity: 0.8;
-}
-
-[type="checkbox"]:checked::before {
-  background-color: white;
-  left: 5em;
-}
-
-[type="checkbox"]:disabled {
-  border-color: lightgray;
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-[type="checkbox"]:disabled:before {
-  background-color: lightgray;
-}
-
-[type="checkbox"]:disabled+span {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-/* 테두리 */
-[type="checkbox"]:focus-visible {
-  outline-offset: max(2px, 0.1em);
-  outline: max(2px, 0.1em) solid tomato;
-}
-
-[type="checkbox"]:enabled:hover {
-  box-shadow: 0 0 0 max(4px, 0.2em) white;
-
 }
 
 
@@ -400,7 +298,18 @@ body {
   font-weight: 700;
   flex-shrink: 0;
 }
-
+.review-wrap .review-box .review #btn {
+  position: absolute;
+  right: 0;
+  margin-right: 5%;
+  width: 9rem;
+  height: 3rem;
+  border-radius: 40%;
+  background-color: black;
+  color: white;
+  font-weight: 800;
+  
+}
 
 .review-wrap .paging {
   display: flex;
@@ -458,6 +367,7 @@ body {
 .review-wrap .paging .next {
   transform: scaleX(-100%);
 }
+
 
 /**리뷰**/
 
@@ -533,3 +443,33 @@ body {
   position: relative !important;
   margin-top: 20px;
 }
+
+/* 찜 만들기*/
+#like{
+  position: absolute;
+  width: 50px;
+  fill: #ddd;
+  margin-right: 5px;
+  right: 10px;
+  top: 10px;
+}
+
+#like.active{
+  fill: red;
+}
+#btn {
+  position: fixed;
+  top: 280%;
+}
+
+#thumb{
+  width: 30px;
+  fill: #ddd;
+}
+
+#thumb.active{
+  fill: red;
+}
+
+/*버튼만들기*/
+
