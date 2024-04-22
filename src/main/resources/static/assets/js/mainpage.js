@@ -2,13 +2,21 @@
 // 메인 배너 슬라이드 스크립트
 const mySwiper = new Swiper('.swiper-container', {
     loop:true, //무한반복
-    autoplay: {
-    delay: 10000 // 10초마다 슬라이드
-    },
-    speed: 500,
-    slidesPerView: 1.85, // 여백화면 미리보기
+    // autoplay: {
+    // delay: 10000 // 10초마다 슬라이드
+    // },
+    // speed: 500,
+    slidesPerView: 3, // 여백화면 미리보기
     centeredSlides: true, // 슬라이드 이미지 가운데 정렬
-    spaceBetween : 20,
+    // spaceBetween : 20,
+    effect:'coverflow', // 이펙트 효과
+    coverflowEffect: {
+        slideShadows:false // 그림자 효과 제거
+    },
+    // cardsEffect: { //카드 상세 설정
+    //     slideShadows:false, // 그림자 설정 off
+    //     perSlideRotate:5 // 보여지는 카드 수
+    // },
     navigation: { // 좌우 버튼 설정
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

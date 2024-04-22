@@ -4,7 +4,7 @@
         position: fixed;
         width: 100%;
         top: 0;
-        z-index: 1000;
+        z-index: 9999;
         }
         .header-section {
             height: 100px;
@@ -87,13 +87,13 @@
             display: flex;
             background-color: rgb(9, 2, 2);
             border: 1px solid black;
-            /* position: fixed; */
             position: fixed;
-            z-index: 999;
+            z-index: 99;
             top: -100%;
-            left: 15%;
+            opacity: 0;
+            /*left: 15%;*/
             width: 33%;
-            transition: 1s;
+            /*transition: 1s;*/
         }
         .category-list-container ul {
             width: 25%;
@@ -106,9 +106,13 @@
         .category-list-container ul li a{
             color: aliceblue;
         }
+        .category-wrapper {
+            position: relative;
+        }
         .category-list-container.show {
-            transition: 1s;
+            /*transition: 1s;*/
             top: 100px;
+            opacity: 1;
         }
         .search-form{
             display: flex;
