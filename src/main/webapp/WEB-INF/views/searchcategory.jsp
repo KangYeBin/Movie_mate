@@ -21,18 +21,18 @@
          <div class="genre swiper-container-list">
             <span class="genre-text">[${category}]</span>
             <div class="genre-movielist swiper-wrapper">
-                  <c:forEach var="movie" items="${movie}">
-                     <div class="movie-img-box swiper-slide" data-movie-cd="${movie.movieCd}">
-                        <a href="/detail/${movie.movieCd}"><img src="${movie.imageUrl}" alt="장르별 영화 포스터"></a>
-                        <p>${movie.movieName}</p>
-                     </div>
-                  </c:forEach>
+               <c:forEach var="movie" items="${movie}">
+                  <div class="movie-img-box swiper-slide" data-movie-cd="${movie.movieCd}">
+                     <a href="/detail/${movie.movieCd}"><img src="${movie.imageUrl}" alt="장르별 영화 포스터"></a>
+                     <p>${movie.movieName}</p>
+                  </div>
+               </c:forEach>
             </div>
 
             <!-- 슬라이더 좌우 버튼 -->
             <div class="btn">
-                  <button class="list-prev swiper-button-prev" role="button"></button>
-                  <button class="list-next swiper-button-next" role="button"></button>
+               <button class="list-prev swiper-button-prev" role="button"></button>
+               <button class="list-next swiper-button-next" role="button"></button>
             </div>
          </div>
 
@@ -43,21 +43,18 @@
 
    <script>
       const listSwiper = new Swiper('.swiper-container-list', {
-    // loop: true,
-    slidesPerView: 5,
-   spaceBetween: 5,
-   grid:{
-      fill: 'row',
-      rows: 2,
-   },
-   navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
-      }
-   });
-
-
-
+         // loop: true,
+         slidesPerView: 5,
+         spaceBetween: 5,
+         grid: {
+            fill: 'row',
+            rows: 2,
+         },
+         navigation: {
+            nextEl: '.list-next',
+            prevEl: '.list-prev',
+         }
+      });
    </script>
 
 
