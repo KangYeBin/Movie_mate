@@ -5,6 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <%@ include file="include/header-static.jsp"%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/movieinfo.css">
@@ -22,17 +23,7 @@
     </div>
 
     <div class="movie">
-        <div class="image" style="background: url(${movie.stillUrl}) center no-repeat; ">
-            <div class="content-wrap">
-                <div class="zzim-wrap">
-                    <label>
-                        <input role="switch" type="checkbox" />
-                        <p>찜</p>
-                    </label>
-                </div>
-            </div>
 
-        </div>
 
         <div class="info-wrap">
             <img class="poster" src="${movie.imageUrl}">
@@ -85,127 +76,85 @@
         </div>
     </div>
 
+
+
     <div class="review-wrap">
         <div class="review-box">
             <div class="review">
                 <!-- 리뷰별개수 창입니다 -->
                 <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
+                    <div class="reple-box">
+                        <div class="reple-star">
+                            <span class="star">
+                            ★★★★★
+                             <span>★★★★★</span>
+                            <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                             </span>
 
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
+                            <button class="reple-bt"> 코멘트 남기기 </button>
+                        </div>
+                        <div class="reple-item">
+                        <select>
+                            <option>공감순</option>
+                            <option>최신순</option>
+                        </select>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
-
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
-                </div>
-
-
-                <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
-
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
-                </div>
-
-                <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
-
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
-                </div>
-
-                <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
-
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
-                </div>
-
-                <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
-
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
-                </div>
-
-                <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
-
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
+                <div class="swiper review-swiper-custom">
+                    <div class="swiper-wrapper">
+                        <% for(int i=0;i<10;i++)  { %>
+                        <div class="swiper-slide review-swiper">
+                            <div class="review-container">
+                                <div class="review-profile">
+                                    <div class="review-profile-img">
+                                        <img src="" alt="프사">
+                                        <p style="margin-left:5px; color:black;">이름</p>
+                                    </div>
+                                    <div class="review-profile-grade">
+                                        <img src="/assets/img/3.png">
+                                        <p style="margin-left:5px; color:black;">5.0</p>
+                                    </div>
+                                </div>
+                                <hr class="review-hr" />
+                                <div class="review-text">
+                                    <p style="color:black !important;">리뷰 글</p>
+                                </div>
+                                <hr  />
+                                <div class="review-sym">
+                                    <div>
+                                        <p style="color:black !important;"> 따봉 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="swiper-pagination pagination_bullet"></div>
+                    <div class="swiper-pagination pagination_progress"></div>
                 </div>
 
                
 
             </div>
         </div>
-
-        <div class="paging">
-            <img class="first" src="/assets/img/4.png">
-            <div class="line"></div>
-            <img class="pre" src="/assets/img/5.png">
-            <div class="page-list">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
-                <p>7</p>
-                <p>8</p>
-                <p>9</p>
-                <p>10</p>
-            </div>
-            <img class="next" src="/assets/img/5.png">
-            <div class="line"></div>
-            <img class="last" src="/assets/img/4.png">
-        </div>
     </div>
+        <%@ include file="include/footer.jsp"%>
 
     <script>
         /* 리뷰별개수 */
         const drawStar = (target) => {
-            document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+            document.querySelector(`.star span`).style.width = `\${target.value * 10}%`;
+            let button = document.querySelector('.reple-bt');
+            if(target.value>0){
+                button.style.visibility = "visible";
+            }else{
+                button.style.visibility="hidden";
+            }
+            console.log(target.value);
         }
+
 
         const $sky = document.querySelector(".sky");
 
@@ -245,7 +194,24 @@
             makeStars();
         }
     </script>
+    <script>
+        var reviewSwiper =new Swiper('.review-swiper-custom', {
+            speed: 800, // 슬라이드 속도
+            slidesPerView: 4, // 한 번에 보여질 슬라이드 수
+            slidesPerGroup: 4,
+            spaceBetween: 10, // 이미지 간격
+            loop: false, // 슬라이드 루프 설정 비활성화
+            pagination: {
+                el: ".pagination_bullet",
+                clickable: true,
+                type: 'bullets',
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            },
+        })
 
+    </script>
 </body>
 
 </html>

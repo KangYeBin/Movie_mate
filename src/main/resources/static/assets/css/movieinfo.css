@@ -64,7 +64,6 @@ body::-webkit-scrollbar-track {
 
 body {
   padding: 65px, 0;
-
   margin: 0 auto;
   background: linear-gradient(180deg, #090202 0%, #211B1B 38%, #4d4d4d 100%);
   width: 100%;
@@ -80,7 +79,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 54px;
-  width: 55%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -274,7 +273,7 @@ body {
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  width: 55%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -285,9 +284,9 @@ body {
   border-radius: 24px;
   backdrop-filter: blur(10px);
   padding: 0.1em 0;
-  height: 528px;
+  height: 100%;
 
-  overflow: auto;
+
 
 }
 
@@ -303,7 +302,7 @@ body {
 
 .review-wrap .review-box .review .reple {
 
-  background: #555;
+
   border-radius: 10px;
   width: 100%;
   display: flex;
@@ -318,8 +317,7 @@ body {
 /* 별점 표시 */
 .star {
   position: relative;
-  line-height: 2rem;
-  height: 2rem;
+  font-size: 2rem;
   color: #ddd;
 }
 
@@ -339,6 +337,24 @@ body {
   color: yellow;
   overflow: hidden;
   pointer-events: none;
+}
+.reple-box{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+.reple-star{
+  display: flex;
+  justify-content: center;
+
+}
+.reple-bt{
+  border-radius: 5px;
+  border: white;
+  visibility: hidden;
+  margin-left: 10px;
 }
 
 
@@ -441,4 +457,79 @@ body {
 
 .review-wrap .paging .next {
   transform: scaleX(-100%);
+}
+
+/**리뷰**/
+
+
+.review-container{
+  border-radius: 5%;
+  height:300px;
+  background-color: #F2F2F2;
+}
+.review-profile{
+  padding: 5px;
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:space-between;
+}
+.review-profile-img{
+
+  display:flex;
+  align-items:center;
+}
+.review-profile-img img{
+  width:30px;
+  height:30px;
+}
+
+.review-profile-grade{
+  display:flex;
+  align-items:center;
+}
+.review-profile-grade img{
+  width:30px;
+  height:30px;
+}
+.review-text {
+  padding:5px;
+  height:70%;
+  width:100%;
+}
+.review-sym{
+  padding:5px;
+  width:100%;
+}
+.swiper-wrapper{
+  width: 100%;
+  height: 100%;
+
+}
+.swiper{
+  width: 100%;
+  height: 100%;
+
+}
+.review-hr{
+  margin: 0;
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: white;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
+.swiper-pagination{
+  position: relative !important;
+  margin-top: 20px;
 }
