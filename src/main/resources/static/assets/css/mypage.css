@@ -108,6 +108,7 @@ section .content-list h1 {
 .swiper-button-next {
   position: absolute;
   top: 50%;
+
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -136,14 +137,13 @@ section .review-list {
 
 /* 리뷰 */
 .review-swiper{
-    width:300px !important;
-    height:300px !important;
+
 }
 
 .review-container{
     border-radius:5%;
     width:100%;
-    height:100%;
+    height:300px;
     background-color: #F2F2F2;
 
 }
@@ -244,7 +244,9 @@ section .review-list {
     margin-top: 20px;
 }
 
-
+.swiper-wrapper{
+    width: 80% !important;
+}
 
 
 /* 반응형 */
