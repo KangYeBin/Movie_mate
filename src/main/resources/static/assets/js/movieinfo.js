@@ -39,18 +39,7 @@
         window.onload = () => {
             makeStars();
         }
-        //팝업 열기
-
-        var open
-
-        function openreview() {
-            open = window.open("review.html", "open", "width=440px,height=450px,top=350,left=750")
-        };
-        // 나중에 확인하여 추가       scrollbars=no,resizable=no
-
-
-
-
+    
 
         // 찜 만들기
         var like = document.getElementById("like")
@@ -66,11 +55,12 @@
             thumb.classList.toggle('active')
         });
         
+        
 // 모달 열기 버튼
 var openModalBtn = document.getElementById("openModal");
 
 // 모달
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("reviewModal");
 
 // 모달 닫기 버튼
 var closeModalBtn = document.getElementsByClassName("close")[0];

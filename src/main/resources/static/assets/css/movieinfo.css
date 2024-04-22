@@ -372,34 +372,38 @@ body {
 /*버튼만들기*/
 
 
-
-/* 모달 스타일 */
+/* 모달창 */
 .modal {
   display: none;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
-  width: 500px;
-  height: 500px;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: black;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 500px;
+  width: 40%;
+  height: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* 모달 닫기 버튼 스타일 */
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 50px;
   font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  cursor: pointer;
 }
 
 .close:hover,
@@ -408,15 +412,108 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
- #openModal {
-  position: absolute;
-  right: 0;
-  margin-right: 5%;
-  width: 9rem;
-  height: 3rem;
-  border-radius: 40%;
-  background-color: black;
+
+/*붙여온곳*/
+
+.modalbox {
+  width: 420px;
+  height: 400px;
+  position: relative;
+}
+
+.modalbox .box {
+  width: 420px;
+  height: 80px;
+  text-align: center;
+  margin-bottom: 10px;
+
+}
+
+.modalbox #user {
+  width: 30px;
+  height: 30px;
+  fill: white;
+color: white;
+  float: left;
+}
+
+.modalbox #pro {
   color: white;
-  font-weight: 800;
-  
+  fill: white;
+  width: 30%;
+  height: 50px;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+.modalbox .profile{
+  width: 420px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* 별점 표시 */
+.star {
+  position: relative;
+  line-height: 5rem;
+  height: 5rem;
+  color: #ddd;
+  font-size: 50px;
+  float: right;
+
+}
+
+.star input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.star span {
+  width: 0;
+  position: absolute;
+  left: 0;
+  color: yellow;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+[type="text"] {
+
+  border: 1px solid gray;
+  box-sizing: content-box;
+  margin-left: 10px;
+  width: 400px;
+  height: 16em;
+  font-size: 16px;
+}
+
+[type="button"] {
+  width: 45%;
+  height: 4em;
+  margin-bottom: 2%;
+  margin-left: 20px;
+}
+
+.register {
+  width: 400px;
+  height: 90px;
+  display: flex;
+    justify-content: space-around;
+  align-items: center;
+}
+
+#openModal {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: green;
+  bottom: 0;
 }
