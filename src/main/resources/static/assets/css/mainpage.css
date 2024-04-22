@@ -20,18 +20,21 @@ h1.recommend-movie{
 
 
 /* 상단 메인 빅 배너 슬라이더 스타일 */
+ #main-banner-slider {
+     width: 65%;
+     margin: 0 auto;
+     overflow-x: hidden;
+     padding-top: 10px;
+ }
 ul.banner-title {
-    /* display: flex; */
-    /* overflow: hidden; */
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 ul.banner-title li {
-    /* margin: 0 20px; */
-    text-align: center;   
+    text-align: center;
 }
 .swiper-slide img {
-    width: 100%;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 5px;
 }
 #main-banner-slider {
@@ -51,16 +54,16 @@ ul.banner-title li {
 
 #main .btn .swiper-button-prev,
 #main .btn .swiper-button-next {
-    top: 50%;
+    top: 40%;
     bottom: auto;
     color: white;
     opacity: 0.5;
 }
 #main .btn .swiper-button-prev{
-    left: 20%;
+    left: 0;
 }
 #main .btn .swiper-button-next{
-    right: 20%;
+    right: 0;
 }
 #main .btn .swiper-button-prev:hover,
 #main .btn .swiper-button-next:hover {
@@ -76,6 +79,16 @@ span.genre-text{
     font-weight: 700;
     font-size: 30px;
 }
+a.more-button {
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    opacity: 0.6;
+}
+ a.more-button:hover {
+     opacity: 1;
+ }
 
 .genre{
     overflow: hidden;
@@ -85,14 +98,15 @@ span.genre-text{
 }
 
 .movie-img-box{
-    width: 20%;
-    height: 300px;
+    width: 200px;
+    height: 330px;
+    text-align: center;
     /*margin: 0 5px;*/
 }
 
 .movie-img-box img {
-    width: 95%;
-    height: 90%;
+    width: 200px;
+    height: 300px;
     border-radius: 7px;
     margin-left: 5px;
     
@@ -133,3 +147,40 @@ span.genre-text{
     font-size: 25px;
     color: #fff;
 }
+
+/* 배경효과 */
+.backSky {
+    width: 0vw;
+    height: 0vh;
+    position: relative;
+    background: linear-gradient(to right, #111, #0e0f19);
+    overflow: hidden;
+  }
+  
+  .sky {
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveStar 240s linear infinite;
+  }
+  
+  /* 별 */
+  .sky .star {
+    fill: #fff;
+    stroke: none;
+    stroke-width: 0;
+  }
+  
+  /* 별 이동효과 */
+  @keyframes moveStar {
+    from {
+      transform: translate(-50%, -50%) rotate(0)
+    }
+  
+    to {
+      transform: translate(-50%, -50%) rotate(360deg)
+    }
+  }
