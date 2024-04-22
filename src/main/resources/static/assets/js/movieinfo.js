@@ -65,19 +65,29 @@
         thumb.addEventListener('click', function () {
             thumb.classList.toggle('active')
         });
+        
+// 모달 열기 버튼
+var openModalBtn = document.getElementById("openModal");
 
-        $(window).load(function () {
-                     // 팝업 창 크기를 HTML 크기에 맞추어 자동으로 크기를 조정하는 함수.
-                    var strWidth;		var strHeight;
-                    //innerWidth / innerHeight / outerWidth / outerHeight 지원 브라우저
-                    if ( window.innerWidth && window.innerHeight && window.outerWidth && window.outerHeight )
-                    {strWidth = $('#btn').outerWidth() + (window.outerWidth - window.innerWidth);
-                    strHeight = $('#btn').outerHeight() + (window.outerHeight - window.innerHeight);}
-                    else {var strDocumentWidth = $(document).outerWidth();
-                        var strDocumentHeight = $(document).outerHeight();
-                        window.resizeTo ( strDocumentWidth, strDocumentHeight );
-                        var strMenuWidth = strDocumentWidth - $(window).width();
-                        var strMenuHeight = strDocumentHeight - $(window).height();
-                        strWidth = $('#btn').outerWidth() + strMenuWidth;
-                        strHeight = $('#btn').outerHeight() + strMenuHeight;}	//resize
-                        window.resizeTo( strWidth, strHeight );	});
+// 모달
+var modal = document.getElementById("myModal");
+
+// 모달 닫기 버튼
+var closeModalBtn = document.getElementsByClassName("close")[0];
+
+// 모달 열기 버튼에 클릭 이벤트 리스너 추가
+openModalBtn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// 모달 닫기 버튼에 클릭 이벤트 리스너 추가
+closeModalBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// 모달 바깥을 클릭하면 모달이 닫히도록 함
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
