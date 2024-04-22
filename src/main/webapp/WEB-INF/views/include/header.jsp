@@ -6,7 +6,7 @@
     <header>
         <div class="header-section">
             <div class="header-container">
-                <div class="logo"><img src="/assets/img/moviemateLogotest.png" alt="moviemate로고"></div>
+                <div class="logo"><img src="/assets/img/logo.png" alt="moviemate로고"></div>
                 <div class="header-items">
                     <p><a href="/">HOME</a></p>
                     <p><a href="#" class="category-btn">CATEGORY</a></p>

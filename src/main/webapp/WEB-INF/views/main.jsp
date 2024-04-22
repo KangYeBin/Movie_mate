@@ -53,7 +53,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="sf" items="${sf}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${sf.movieCd}">
-                        <a href="/detail/{sf.movieCd}"><img src="${sf.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${sf.movieCd}"><img src="${sf.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${sf.movieName}</p>
                     </div>
                 </c:forEach>
@@ -74,7 +74,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="family" items="${family}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${family.movieCd}">
-                        <a href=""><img src="${family.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${family.movieCd}"><img src="${family.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${family.movieName}</p>
                     </div>
                 </c:forEach>
@@ -95,7 +95,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="horror" items="${horror}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${horror.movieCd}">
-                        <a href=""><img src="${horror.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${horror.movieCd}"><img src="${horror.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${horror.movieName}</p>
                     </div>
                 </c:forEach>
@@ -116,7 +116,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="drama" items="${drama}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${drama.movieCd}">
-                        <a href=""><img src="${drama.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${drama.movieCd}"><img src="${drama.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${drama.movieName}</p>
                     </div>
                 </c:forEach>
@@ -133,12 +133,12 @@
 
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
-            <span class="genre-text">멜로/드라마</span>
+            <span class="genre-text">멜로/로맨스</span>
             <div class="genre-movielist swiper-wrapper">
-                <c:forEach var="melodrama" items="${melodrama}">
-                    <div class="movie-img-box swiper-slide" data-movie-cd="${melodrama.movieCd}">
-                        <a href=""><img src="${melodrama.imageUrl}" alt="장르별 영화 포스터"></a>
-                        <p>${melodrama.movieName}</p>
+                <c:forEach var="meloromance" items="${meloromance}">
+                    <div class="movie-img-box swiper-slide" data-movie-cd="${meloromance.movieCd}">
+                        <a href="/detail/${meloromance.movieCd}"><img src="${meloromance.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <p>${meloromance.movieName}</p>
                     </div>
                 </c:forEach>
             </div>
@@ -158,7 +158,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="mystery" items="${mystery}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${mystery.movieCd}">
-                        <a href=""><img src="${mystery.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${mystery.movieCd}"><img src="${mystery.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${mystery.movieName}</p>
                     </div>
                 </c:forEach>
@@ -179,7 +179,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="crime" items="${crime}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${crime.movieCd}">
-                        <a href=""><img src="${crime.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${crime.movieCd}"><img src="${crime.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${crime.movieName}</p>
                     </div>
                 </c:forEach>
@@ -200,7 +200,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="thriller" items="${thriller}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${thriller.movieCd}">
-                        <a href=""><img src="${thriller.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${thriller.movieCd}"><img src="${thriller.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${thriller.movieName}</p>
                     </div>
                 </c:forEach>
@@ -221,7 +221,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="action" items="${action}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${action.movieCd}">
-                        <a href=""><img src="${action.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${action.movieCd}"><img src="${action.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${action.movieName}</p>
                     </div>
                 </c:forEach>
@@ -242,7 +242,7 @@
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="adventure" items="${adventure}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${adventure.movieCd}">
-                        <a href=""><img src="${adventure.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <a href="/detail/${adventure.movieCd}"><img src="${adventure.imageUrl}" alt="장르별 영화 포스터"></a>
                         <p>${adventure.movieName}</p>
                     </div>
                 </c:forEach>
@@ -252,28 +252,6 @@
             <div class="btn">
                 <button class="list-prev swiper-button-prev" role="button"></button>
 
-                <button class="list-next swiper-button-next" role="button"></button>
-            </div>
-        </div>
-
-
-
-
-
-        <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list10">
-            <span class="genre-text">어드벤처</span>
-            <ul class="genre-movielist swiper-wrapper">
-                <li class="movie-img-box swiper-slide">
-                    <a href=""><img
-                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTFfMjcx%2FMDAxNzEwMTU0OTU2MjM0.fFlRXHacAjCwWbEIUZZYmk_DI77F9QcluLm_NUsz_lUg.OZytDNBUsGRmWWXtRhy-HT7KIJn5Z7q69J7xNhs0Ngog.JPEG%2FScreenshot%25A3%25DF20240311%25A3%25DF200003%25A3%25DFNaver_Blog.jpg&type=sc960_832"
-                            alt="장르별 영화 포스터"></a>
-                    <p>영화제목</p>
-                </li>
-            </ul>
-            <!-- 슬라이더 좌우 버튼 -->
-            <div class="btn">
-                <button class="list-prev swiper-button-prev" role="button"></button>
                 <button class="list-next swiper-button-next" role="button"></button>
             </div>
         </div>

@@ -2,6 +2,7 @@ package com.ictproject.moviemate.domain.movie.service;
 
 
 import com.ictproject.moviemate.domain.movie.Movie;
+import com.ictproject.moviemate.domain.movie.dto.MovieDetailResponseDTO;
 import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
 import com.ictproject.moviemate.domain.movie.mapper.MovieMapper;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +27,7 @@ public class MovieService {
         return movieMapper.findMoviesByGenre(genre).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
     }
 
-    public Movie getMovieData(String movieCd) {
-        return movieMapper.findMovie(movieCd);
+    public MovieDetailResponseDTO getMovieData(String movieCd) {
+        return new MovieDetailResponseDTO(movieMapper.findMovie(movieCd));
     }
 }

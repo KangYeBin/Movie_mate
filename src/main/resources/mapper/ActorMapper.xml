@@ -9,7 +9,7 @@
 
     <select id="findActors" resultType="actor">
         SELECT
-            actor_name
+            movie_cd, actor_name
         FROM
             actor
         WHERE

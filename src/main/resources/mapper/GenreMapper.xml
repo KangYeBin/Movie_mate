@@ -9,11 +9,12 @@
 
     <select id="findGenres" resultType="genre">
         SELECT
-            genre_name
+            movie_cd, genre_name
         FROM
             genre
         WHERE
             movie_cd = #{movieCd}
     </select>
+
 
 </mapper>

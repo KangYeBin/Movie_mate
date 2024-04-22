@@ -11,9 +11,7 @@
 
     <div class="log-container">
         <div class="bg-video">
-            <video class="bg-video-content" autoplay muted loop>
-                <source src="/assets/img/login.mp4" type="video/mp4" />
-            </video>
+            <img src="/assets/img/login.png">
         </div>
 
         <div class="log-head">
@@ -23,7 +21,7 @@
         <div class="rolling-box">
             <div class="rolling-box-title">
                 <h1>최신 박스오피스</h1>
-                <h2>콘텐츠</h2>
+
             </div>
 
             <div class="swiper loginSwiper">
@@ -41,7 +39,7 @@
         <div class="log-box">
             <div class ="log-box-contents">
                 <div class="title">
-                    <h1>콘텐츠 확인하기</h1>
+                    <h1>서비스 계정 로그인</h1>
                 </div>
                 <div class="log-path log-path-kakao" onclick="location.href='/kakao/login'">
                     <img src="../assets/img/kakaotest.png" height="50" width="50"  >

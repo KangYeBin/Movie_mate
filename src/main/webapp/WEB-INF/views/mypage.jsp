@@ -13,118 +13,116 @@
 <body>
 <%@ include file="include/header.jsp"%>
 
-<main>
-    <div class="container">
-        <div class="description">
-            <h3>${sessionScope.login.email}</h3>
-            <h1>${sessionScope.login.nickName}</h1>
-            <p>님의 마이페이지</p>
+<!-- 중앙 내 정보 -->
+    <main>
+        <div class="container">
+           <div class="profile-contents">
+            <div class="profile-box">
+            <img src="${sessionScope.login.profile}" alt="프사" >
+            </div>
+            <div class="description">
+                <h3>${sessionScope.login.email}</h3>
+                <h1>${sessionScope.login.nickName}</h1>
+                <p>님의 마이페이지</p>
+            </div>
+           </div>
         </div>
-    </div>
-</main>
+    </main>
 
-<div>
-    <div class="content-list">
-        <h1>내가 찜한 영화</h1>
 
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
 
-                <div class="swiper-slide">
-                    <a href="detail_page.html">
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 1">
-                        </div>
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 2">
-                        </div>
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 3">
-                        </div>
+    <div>
+        <div class="content-list">
+            <h1>내가 찜한 영화</h1>
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <a href="detail_page.html">
+                            <div class="slide-inner">
+                                <img src="https://via.placeholder.com/240x360" alt="Poster 1">
+                            </div>
+                            <div class="slide-inner">
+                                <img src="https://via.placeholder.com/240x360" alt="Poster 2">
+                            </div>
+                            <div class="slide-inner">
+                                <img src="https://via.placeholder.com/240x360" alt="Poster 3">
+                            </div>
+                            <div class="slide-inner">
+                                <img src="https://via.placeholder.com/240x360" alt="Poster 4">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
                         <div class="slide-inner">
                             <img src="https://via.placeholder.com/240x360" alt="Poster 4">
                         </div>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-inner">
-                        <img src="https://via.placeholder.com/240x360" alt="Poster 4">
+                        <div class="slide-inner">
+                            <img src="https://via.placeholder.com/240x360" alt="Poster 5">
+                        </div>
+                        <div class="slide-inner">
+                            <img src="https://via.placeholder.com/240x360" alt="Poster 6">
+                        </div>
                     </div>
-                    <div class="slide-inner">
-                        <img src="https://via.placeholder.com/240x360" alt="Poster 5">
+                    <div class="swiper-slide">
+                        <div class="slide-inner">
+                            <img src="https://via.placeholder.com/240x360" alt="Poster 7">
+                        </div>
+                        <div class="slide-inner">
+                            <img src="https://via.placeholder.com/240x360" alt="Poster 8">
+                        </div>
+                        <div class="slide-inner">
+                            <img src="https://via.placeholder.com/240x360" alt="Poster 9">
+                        </div>
                     </div>
-                    <div class="slide-inner">
-                        <img src="https://via.placeholder.com/240x360" alt="Poster 6">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-inner">
-                        <img src="https://via.placeholder.com/240x360" alt="Poster 7">
-                    </div>
-                    <div class="slide-inner">
-                        <img src="https://via.placeholder.com/240x360" alt="Poster 8">
-                    </div>
-                    <div class="slide-inner">
-                        <img src="https://via.placeholder.com/240x360" alt="Poster 9">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-inner">
-                        <img src="https://via.placeholder.com/240x360" alt="Poster 10">
+                    <div class="swiper-slide">
+                        <div class="slide-inner">
+                            <img src="https://via.placeholder.com/240x360" alt="Poster 10">
+                        </div>
                     </div>
                 </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </div>
     </div>
-</div>
 
-<div class="review-list">
-    <h1>내가 쓴 후기</h1>
-
-    <hr class="hr1" noshade>
-    <br>
-    <table>
-        <tr>
-            <th>영화명</th>
-            <th>후기</th>
-            <th>유저정보</th>
-            <th>일시</th>
-            <th>조회수</th>
-        </tr>
-        <tr>
-            <td class="center">영화1</td>
-            <td class="title"><a href="detail_page.html">코멘트1</a></td>
-            <td class="center">홍XX</td>
-            <td class="center">2024-04-16</td>
-            <td class="center">0</td>
-        </tr>
-        <tr>
-            <td class="center">영화2</td>
-            <td class="title"><a href="detail_page.html">코멘트2</a></td>
-            <td class="center">김XX</td>
-            <td class="center">2024-04-16</td>
-            <td class="center">0</td>
-        </tr>
-        <tr>
-            <td class="center">영화3</td>
-            <td class="title"><a href="detail_page.html">코멘트3</a></td>
-            <td class="center">라XX</td>
-            <td class="center">2024-04-16</td>
-            <td class="center">0</td>
-        </tr>
-    </table>
-    <br>
-
-    <div class="page">
-        <a href="https://www.naver.com/">◀ 이전</a>
-        <a href="https://www.naver.com/">1</a>
-        <a href="https://www.naver.com/">2</a>
-        <a href="https://www.naver.com/">3</a>
-        <a href="https://www.naver.com/">다음 ▶</a>
+    <div class="review-list">
+        <h1>내가 쓴 후기</h1>
+         <div class="swiper review-swiper-custom">
+              <div class="swiper-wrapper">
+              <% for(int i=0;i<10;i++)  { %>
+                    <div class="swiper-slide review-swiper">
+                           <div class="review-container">
+                                  <div class="review-profile">
+                                        <div class="review-profile-img">
+                                            <img src="/assets/img/3.png">
+                                            <p style="margin-left:5px; color:black;">이름</p>
+                                        </div>
+                                        <div class="review-profile-grade">
+                                            <img src="/assets/img/3.png">
+                                            <p style="margin-left:5px; color:black;">5.0</p>
+                                        </div>
+                                  </div>
+                                  <hr/>
+                                  <div class="review-text">
+                                        <p style="color:black !important;">리뷰 글</p>
+                                  </div>
+                                  <hr/>
+                                  <div class="review-sym">
+                                        <div>
+                                            <p style="color:black !important;"> 따봉 </p>
+                                        </div>
+                                  </div>
+                           </div>
+                     </div>
+                   <% } %>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+         </div>
     </div>
-</div>
 
 <%@ include file="include/footer.jsp"%>
 
@@ -139,6 +137,17 @@
                 prevEl: '.swiper-button-prev',
             },
         });
+
+        new Swiper('.review-swiper-custom', {
+                    speed: 800, // 슬라이드 속도
+                    slidesPerView: 1, // 한 번에 보여질 슬라이드 수
+                    spaceBetween: 10, // 이미지 간격
+                    loop: false, // 슬라이드 루프 설정 비활성화
+                    navigation: {
+                        nextEl: '.review-swiper-custom .swiper-button-next',
+                        prevEl: '.review-swiper-custom .swiper-button-prev',
+                    },
+                });
 </script>
 </body>
 </html>

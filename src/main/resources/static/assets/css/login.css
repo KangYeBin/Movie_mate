@@ -12,12 +12,13 @@ body{
 .log-container{
     width: 100%;
     height: 100%;
+    position: relative;
 
 }
 .log-head{
     display : flex;
     justify-content: space-evenly;
-    padding: 10px 0;
+    padding: 20px 0;
 
 }
 .log-head h1{
@@ -40,6 +41,9 @@ body{
     height: 250px;
     animation: fadein 2s ease-in forwards;
 }
+.title h1{
+    font-size:20px
+}
 .bg-video {
     position: absolute;
     top: 0;
@@ -48,7 +52,11 @@ body{
     height: 100%;
     z-index: -1;
     opacity: 0.9;
-
+}
+.bg-video img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 .bg-video-content{
     height: 100%;
@@ -72,6 +80,7 @@ body{
 .rolling-box-title{
     margin: 20px 0 20px;
     animation: fadein 2s ease-in forwards;
+    font-size:20px
 }
 .rolling-box-title h2{
     margin-top: 5px;

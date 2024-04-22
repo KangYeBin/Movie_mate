@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -5,9 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/main/resources/static/assets/css/reset.css">
-    <link rel="stylesheet" href="/src/main/resources/static/assets/css/movieinfo.css">
-    <script src="../../../resources/static/assets/js/movieinfo.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/movieinfo.css">
     <title>Document</title>
 </head>
 
@@ -22,7 +22,7 @@
     </div>
 
     <div class="movie">
-        <div class="image">
+        <div class="image" style="background: url(${movie.stillUrl}) center no-repeat; ">
             <div class="content-wrap">
                 <div class="zzim-wrap">
                     <label>
@@ -35,44 +35,50 @@
         </div>
 
         <div class="info-wrap">
-            <img class="poster" src="/build/resources/main/static/assets/img/2.png">
+            <img class="poster" src="${movie.imageUrl}">
             <div class="doc">
-                <h1>모가디슈</h1>
-                <p class="content">내전으로 고립된 낯선 도시, 모가디슈. 지금부터 우리의 목표는 오로지 생존이다! 대한민국이 UN가입을 위해 동분서주하던 시기. 1991년 소말리아의 수도
-                    모가디슈에서는 일촉즉발의 내전이 일어난다. 통신마저 끊긴 그 곳에 고립된 대한민국 대사관의 직원과 가족들은 총알과 포탄이 빗발치는 가운데, 살아남기 위해 하루하루를 버텨낸다.
-                    그러던 어느 날 밤, 북한 대사관의 일행들이 도움을 요청하며 문을 두드리는데... 목표는 하나, 모가디슈에서 탈출해야 한다!</p>
+                <h1>${movie.movieName}</h1>
+                <p class="content">${movie.plot}</p>
                 <div class="info">
                     <div>
-                        <h1>개요 :</h1>
-                        <p>개요 내용</p>
+                        <h1>누적 관객수 :</h1>
+                        <p>${movie.audiAcc}명</p>
                     </div>
                     <div>
-                        <h1>장르 :</h1>
-                        <p>장르 내용</p>
+                        <h1>장르 : </h1>
+                        <p>
+                        <c:forEach var="genre" items="${genres}">
+                            ${genre.genreName} &nbsp;
+                        </c:forEach>
+                        </p>
                     </div>
                     <div>
                         <h1>출연 :</h1>
-                        <p>출연진 내용</p>
+                        <p>
+                            <c:forEach var="actor" items="${actors}">
+                                ${actor.actorName} &nbsp;
+                            </c:forEach>
+                        </p>
                     </div>
                     <div>
                         <h1>감독 :</h1>
-                        <p>감독 내용</p>
+                        <p>${movie.director}</p>
                     </div>
                     <div>
                         <h1>국가 :</h1>
-                        <p>국가 내용</p>
+                        <p>${movie.nation}</p>
                     </div>
                     <div>
                         <h1>등급 :</h1>
-                        <p>등급 내용</p>
+                        <p>${movie.rating}</p>
                     </div>
                     <div>
                         <h1>개봉일 :</h1>
-                        <p>개봉일 내용</p>
+                        <p>${movie.openDate}</p>
                     </div>
                     <div>
                         <h1>러닝타임 :</h1>
-                        <p>러닝타임 내용</p>
+                        <p>${movie.runtime}분</p>
                     </div>
                 </div>
             </div>
@@ -174,9 +180,9 @@
         </div>
 
         <div class="paging">
-            <img class="first" src="/build/resources/main/static/assets/img/4.png">
+            <img class="first" src="/assets/img/4.png">
             <div class="line"></div>
-            <img class="pre" src="/build/resources/main/static/assets/img/5.png">
+            <img class="pre" src="/assets/img/5.png">
             <div class="page-list">
                 <p>1</p>
                 <p>2</p>
@@ -189,9 +195,9 @@
                 <p>9</p>
                 <p>10</p>
             </div>
-            <img class="next" src="/build/resources/main/static/assets/img/5.png">
+            <img class="next" src="/assets/img/5.png">
             <div class="line"></div>
-            <img class="last" src="/build/resources/main/static/assets/img/4.png">
+            <img class="last" src="/assets/img/4.png">
         </div>
     </div>
 
@@ -200,6 +206,7 @@
         const drawStar = (target) => {
             document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
         }
+
         const $sky = document.querySelector(".sky");
 
         // 브라우저 창 크기에 따른 별 생성
@@ -225,9 +232,9 @@
 
             const htmlDummy = new Array(_size).fill().map((_, i) => {
                 return `<circle class='star'
-        cx=${getRandomX()}
-        cy=${getRandomY()}
-        r=${randomRadius()}
+        cx=\${getRandomX()}
+        cy=\${getRandomY()}
+        r=\${randomRadius()}
         className="star" />`
             }).join('');
 
