@@ -93,15 +93,15 @@
          <div class="swiper review-swiper-custom">
               <div class="swiper-wrapper">
               <% for(int i=0;i<10;i++)  { %>
-                    <div class="swiper-slide review-swiper">
+                    <div class="swiper-slide review-swiper review-box" data-index="<%= i %>">
                            <div class="review-container">
                                   <div class="review-profile">
                                         <div class="review-profile-img">
-                                            <img src="/assets/img/3.png">
-                                            <p style="margin-left:5px; color:black;">이름</p>
+
+                                            <p style="margin-left:5px; color:black;">영화명</p>
                                         </div>
                                         <div class="review-profile-grade">
-                                            <img src="/assets/img/3.png">
+                                            <p>★<p>
                                             <p style="margin-left:5px; color:black;">5.0</p>
                                         </div>
                                   </div>
@@ -124,9 +124,24 @@
          </div>
     </div>
 
+    <!-- 리뷰 모달 -->
+        <div id="reviewModal" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeReviewModal()">&times;</span>
+              <h2>리뷰 내용</h2>
+              <div id="reviewContent"></div>
+              <!-- 삭제 버튼 -->
+              <button id="deleteReviewBtn">삭제</button>
+              <!-- 수정 버튼 -->
+              <button id="editReviewBtn">수정</button>
+          </div>
+      </div>
+
+
 <%@ include file="include/footer.jsp"%>
 
     <script>
+
         new Swiper('.swiper-container', {
             speed: 800, // 슬라이드 속도
             slidesPerView: 1, // 한 번에 보여질 슬라이드 수
@@ -148,6 +163,43 @@
                         prevEl: '.review-swiper-custom .swiper-button-prev',
                     },
                 });
+
+            const swiperSlides = document.querySelectorAll('.swiper-slide');
+            swiperSlides.forEach(function(slide) {
+                slide.addEventListener('click', function(event) {
+                    // 클릭된 슬라이드에 대한 처리를 여기에 추가하세요.
+                    console.log('클릭된 슬라이드:', event.currentTarget);
+                });
+            });
+
+            function deleteReview() {
+                alert("리뷰를 삭제합니다.");
+            }
+
+            function openReviewModal(index) {
+                    // 리뷰 내용
+                    var reviewContent = "리뷰 내용 " + index;
+                    document.getElementById("reviewContent").innerHTML = reviewContent;
+
+                    var modal = document.getElementById("reviewModal");
+                    modal.style.display = "block";
+                }
+
+                // 닫기
+                function closeReviewModal() {
+                    var modal = document.getElementById("reviewModal");
+                    modal.style.display = "none";
+                }
+
+                // 이벤트 리스너 추가
+                var reviewBoxes = document.querySelectorAll('.review-box');
+                reviewBoxes.forEach(function(box) {
+                    box.addEventListener('click', function() {
+                        var index = this.getAttribute('data-index');
+                        openReviewModal(index);
+                    });
+                });
+
 </script>
 </body>
 </html>
