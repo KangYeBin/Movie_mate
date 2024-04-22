@@ -95,14 +95,15 @@ a.more-button {
 }
 
 .movie-img-box{
-    width: 20%;
-    height: 300px;
+    width: 200px;
+    height: 330px;
+    text-align: center;
     /*margin: 0 5px;*/
 }
 
 .movie-img-box img {
-    width: 95%;
-    height: 90%;
+    width: 200px;
+    height: 300px;
     border-radius: 7px;
     margin-left: 5px;
     
