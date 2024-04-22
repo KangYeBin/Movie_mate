@@ -11,12 +11,21 @@
                     <p><a href="/">HOME</a></p>
                     <p><a href="#" class="category-btn">CATEGORY</a></p>
                     <p><a href="/my">MYPAGE</a></p>
-                    <p><a href="/${sessionScope.login.loginPath}/logout">LOGOUT</a></p>
+                    <p class="user">${sessionScope.login.nickName}님 안녕하세요</p>
+                    <p class="logout"><a href="/${sessionScope.login.loginPath}/logout">LOGOUT</a></p>
                 </div>
-                <p class="user">${sessionScope.login.nickName}님 안녕하세요</p>
+                <div class="selectBox">
+                    <button class="label">검색어 종류 ▽</button>
+                    <ul class="searchList">
+                         <li class="optionItem">감독</li>
+                         <li class="optionItem">배우</li>
+                         <li class="optionItem">영화제목</li>
+                    </ul>
+                </div>
+                
                 <div class="search-section">
-                    <form id="search" action="#" method="GET" class="search-form">
-                        <input onkeyup="enterkey()" type="text" name="" id="" placeholder="영화 제목을 검색하세요">
+                    <form id="search" action="/search" method="GET" class="search-form">
+                        <input onkeyup="enterkey()" type="text" name="" id="" placeholder="내용을 검색하세요">
                         <button type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
@@ -74,3 +83,26 @@
         </div>
     </nav>
 </header>
+<body>
+    <script>
+    const label = document.querySelector('.label');
+const options = document.querySelectorAll('.optionItem');
+
+const handleSelect = function(item) {
+  label.innerHTML = item.textContent;
+  label.parentNode.classList.remove('active');
+}
+options.forEach(function(option){
+  option.addEventListener('click', function(){handleSelect(option)})
+})
+
+label.addEventListener('click', function(){
+  if(label.parentNode.classList.contains('active')) {
+    label.parentNode.classList.remove('active');
+  } else {
+    label.parentNode.classList.add('active');
+  }
+});
+
+</script>
+</body>
