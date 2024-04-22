@@ -111,9 +111,12 @@
                                   </div>
                                   <hr/>
                                   <div class="review-sym">
-                                        <div>
-                                            <p style="color:black !important;"> 따봉 </p>
-                                        </div>
+                                      <div style="display: inline-block;">
+                                          <img src="/assets/img/good.png" alt="따봉">
+                                      </div>
+                                      <div style="display: inline-block;">
+                                          <p style="color:black !important;">123</p>
+                                      </div>
                                   </div>
                            </div>
                      </div>
@@ -130,10 +133,6 @@
               <span class="close" onclick="closeReviewModal()">&times;</span>
               <h2>리뷰 내용</h2>
               <div id="reviewContent"></div>
-              <!-- 삭제 버튼 -->
-              <button id="deleteReviewBtn">삭제</button>
-              <!-- 수정 버튼 -->
-              <button id="editReviewBtn">수정</button>
           </div>
       </div>
 

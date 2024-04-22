@@ -75,17 +75,6 @@ section .content-list h1 {
   margin-top: 30px;
 }
 
-/* wrapper에 이미지 크기 설정 */
-.swiper-wrapper img {
-  width: 100%;
-  height: auto;
-}
-
-/* slider에 이미지 크기 설정 */
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-}
 
 .swiper-container {
   width: 90%;
@@ -178,17 +167,22 @@ section .review-list {
     align-items:center;
 }
 .review-profile-grade img{
-    width:30px;
-    height:30px;
+    width:20px;
+    height:20px;
 }
+
+.review-profile p {
+    color: #FFD700;
+    font-size: 24px;
+}
+
 .review-text {
-padding:10px;
     height:70%;
     width:100%;
 }
 .review-sym{
-    padding:10px;
     width:100%;
+    margin-left: 10px;
 }
 
 /* 모달창 */
@@ -208,7 +202,8 @@ padding:10px;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 30%;
+    height: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -216,7 +211,7 @@ padding:10px;
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -226,19 +221,6 @@ padding:10px;
     text-decoration: none;
     cursor: pointer;
 }
-
-
-/* 삭제 버튼 */
-#deleteReviewBtn {
-    background-color: #FF5722;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
 
 /* 후기 내용 */
 .review-text {
@@ -250,35 +232,6 @@ padding:10px;
     border-radius: 4px;
     margin-top: 10px;
 }
-
-/* 수정 버튼 */
-#editReviewBtn {
-    background-color: #2196F3;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-right: 10px;
-}
-
-
-#deleteReviewBtn:hover {
-    background-color: #e64a19;
-    transform: scale(1.1);
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-
-#editReviewBtn:hover {
-    background-color: #0d8ae8;
-    transform: scale(1.1);
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-
-
 
 
 
