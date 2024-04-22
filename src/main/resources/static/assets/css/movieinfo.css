@@ -63,7 +63,7 @@ body::-webkit-scrollbar-track {
 
 
 body {
-  padding: 65px, 0;
+  padding: 10px, 0;
 
   margin: 0 auto;
   background: linear-gradient(180deg, #090202 0%, #211B1B 38%, #4d4d4d 100%);
@@ -72,27 +72,18 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 20px;
   min-width: 900px;
 }
 
 .movie {
   display: flex;
   flex-direction: column;
-  gap: 54px;
-  width: 55%;
+
+  width: 90%;
   margin: 0 auto;
 }
 
-.movie .image {
-  width: 100%;
-  padding-bottom: 50%;
-  position: relative;
-  background-size: cover !important;
-  border-radius: 24px;
-background-image: url(/build/resources/main/static/assets/img/1.png);
-
-}
 
 .movie .image .content-wrap {
   position: absolute;
@@ -104,10 +95,6 @@ background-image: url(/build/resources/main/static/assets/img/1.png);
   align-items: end;
   padding: 7px 7px 24px 24px;
 }
-
-
-
-
 
 
 
@@ -185,7 +172,7 @@ background-image: url(/build/resources/main/static/assets/img/1.png);
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  width: 55%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -367,9 +354,12 @@ background-image: url(/build/resources/main/static/assets/img/1.png);
 
 /* 찜 만들기*/
 #like{
+  position: absolute;
   width: 50px;
   fill: #ddd;
   margin-right: 5px;
+  right: 10px;
+  top: 10px;
 }
 
 #like.active{
@@ -388,3 +378,5 @@ background-image: url(/build/resources/main/static/assets/img/1.png);
 #thumb.active{
   fill: red;
 }
+
+/*버튼만들기*/
