@@ -53,7 +53,8 @@
          navigation: {
             nextEl: '.list-next',
             prevEl: '.list-prev',
-         }
+         },
+         mousewheel: true,
       });
    </script>
 
