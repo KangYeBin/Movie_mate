@@ -24,14 +24,12 @@ h1.recommend-movie{
      width: 65%;
      margin: 0 auto;
      overflow-x: hidden;
+     padding-top: 10px;
  }
 ul.banner-title {
-    /* display: flex; */
-    /* overflow: hidden; */
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 ul.banner-title li {
-    /* margin: 0 20px; */
     text-align: center;
 }
 .swiper-slide img {
