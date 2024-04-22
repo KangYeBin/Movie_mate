@@ -23,16 +23,16 @@ public class MovieController {
     @GetMapping("/main")
     public String main(Model model) {
 
-        model.addAttribute("sf", movieService.getGenreData("SF"));
-        model.addAttribute("family", movieService.getGenreData("가족"));
-        model.addAttribute("horror", movieService.getGenreData("공포"));
-        model.addAttribute("drama", movieService.getGenreData("드라마"));
-        model.addAttribute("melodrama", movieService.getGenreData("멜로/로맨스"));
-        model.addAttribute("mystery", movieService.getGenreData("미스터리"));
-        model.addAttribute("crime", movieService.getGenreData("범죄"));
-        model.addAttribute("thriller", movieService.getGenreData("스릴러"));
-        model.addAttribute("action", movieService.getGenreData("액션"));
-        model.addAttribute("adventure", movieService.getGenreData("어드벤처"));
+        model.addAttribute("sf", movieService.getGenreData("sf"));
+        model.addAttribute("family", movieService.getGenreData("family"));
+        model.addAttribute("horror", movieService.getGenreData("horror"));
+        model.addAttribute("drama", movieService.getGenreData("drama"));
+        model.addAttribute("meloromance", movieService.getGenreData("meloromance"));
+        model.addAttribute("mystery", movieService.getGenreData("mystery"));
+        model.addAttribute("crime", movieService.getGenreData("crime"));
+        model.addAttribute("thriller", movieService.getGenreData("thriller"));
+        model.addAttribute("action", movieService.getGenreData("action"));
+        model.addAttribute("adventure", movieService.getGenreData("adventure"));
         return "main";
     }
 
@@ -46,6 +46,17 @@ public class MovieController {
         model.addAttribute("genres", genreService.getGenreData(movieCd));
 
         return "movieinfo";
+    }
 
+    @GetMapping("/category/{genre}")
+    public String category(@PathVariable("genre") String genreName, Model model) {
+
+
+        model.addAttribute("category",movieService.getGenreName(genreName));
+        model.addAttribute("movie", movieService.getGenreData(genreName));
+
+        log.info("category : {}", genreName);
+
+        return "searchcategory";
     }
 }
