@@ -76,6 +76,16 @@ span.genre-text{
     font-weight: 700;
     font-size: 30px;
 }
+a.more-button {
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    opacity: 0.6;
+}
+ a.more-button:hover {
+     opacity: 1;
+ }
 
 .genre{
     overflow: hidden;
@@ -133,3 +143,40 @@ span.genre-text{
     font-size: 25px;
     color: #fff;
 }
+
+/* 배경효과 */
+.backSky {
+    width: 0vw;
+    height: 0vh;
+    position: relative;
+    background: linear-gradient(to right, #111, #0e0f19);
+    overflow: hidden;
+  }
+  
+  .sky {
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveStar 240s linear infinite;
+  }
+  
+  /* 별 */
+  .sky .star {
+    fill: #fff;
+    stroke: none;
+    stroke-width: 0;
+  }
+  
+  /* 별 이동효과 */
+  @keyframes moveStar {
+    from {
+      transform: translate(-50%, -50%) rotate(0)
+    }
+  
+    to {
+      transform: translate(-50%, -50%) rotate(360deg)
+    }
+  }
