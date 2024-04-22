@@ -92,6 +92,7 @@
         <h1>내가 쓴 후기</h1>
          <div class="swiper review-swiper-custom">
               <div class="swiper-wrapper">
+
               <% for(int i=0;i<10;i++)  { %>
                     <div class="swiper-slide review-swiper review-box" data-index="<%= i %>">
                            <div class="review-container">
@@ -107,7 +108,7 @@
                                   </div>
                                   <hr/>
                                   <div class="review-text">
-                                        <p style="color:black !important;">리뷰 글</p>
+                                        <p style="color:black !important;">리뷰 글입니다. 재밌고 슬프고 신나는 영화이고 어쩌구 저쩌구 어쩌구 저쩌구 ~~어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~<%=i%></p>
                                   </div>
                                   <hr/>
                                   <div class="review-sym">
@@ -115,7 +116,7 @@
                                           <img src="/assets/img/good.png" alt="따봉">
                                       </div>
                                       <div style="display: inline-block;">
-                                          <p style="color:black !important;">123</p>
+                                          <p style="color:black !important; font-size: 30px;">123</p>
                                       </div>
                                   </div>
                            </div>
@@ -132,9 +133,11 @@
           <div class="modal-content">
               <span class="close" onclick="closeReviewModal()">&times;</span>
               <h2>리뷰 내용</h2>
-              <div id="reviewContent"></div>
+              <hr/>
+              <div id="reviewContent" class="review-content"></div>
           </div>
       </div>
+
 
 
 <%@ include file="include/footer.jsp"%>
@@ -166,23 +169,10 @@
             const swiperSlides = document.querySelectorAll('.swiper-slide');
             swiperSlides.forEach(function(slide) {
                 slide.addEventListener('click', function(event) {
-                    // 클릭된 슬라이드에 대한 처리를 여기에 추가하세요.
+
                     console.log('클릭된 슬라이드:', event.currentTarget);
                 });
             });
-
-            function deleteReview() {
-                alert("리뷰를 삭제합니다.");
-            }
-
-            function openReviewModal(index) {
-                    // 리뷰 내용
-                    var reviewContent = "리뷰 내용 " + index;
-                    document.getElementById("reviewContent").innerHTML = reviewContent;
-
-                    var modal = document.getElementById("reviewModal");
-                    modal.style.display = "block";
-                }
 
                 // 닫기
                 function closeReviewModal() {
@@ -198,6 +188,21 @@
                         openReviewModal(index);
                     });
                 });
+
+                // 모달 열때 내용 보여주기
+                function openReviewModal(index) {
+                    var reviewContent = document.querySelector('.swiper-slide[data-index="' + index + '"] .review-text').textContent;
+                    document.getElementById("reviewContent").innerHTML = reviewContent;
+                    var modal = document.getElementById("reviewModal");
+                    modal.style.display = "block";
+                }
+
+
+
+
+
+
+
 
 </script>
 </body>
