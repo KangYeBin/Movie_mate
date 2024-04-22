@@ -102,5 +102,6 @@ label.addEventListener('click', function(){
     label.parentNode.classList.add('active');
   }
 });
+
 </script>
 </body>

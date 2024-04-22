@@ -26,7 +26,7 @@
                         <a href=""><img src="/assets/img/2.png" alt="검색 영화 포스터"></a>
                         <p>영화이름</p>
                     </div>
-                
+
             </div>
 
             <!-- 슬라이더 좌우 버튼 -->

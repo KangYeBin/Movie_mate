@@ -25,13 +25,11 @@ h2.searchResult{
 }
 
 /* 검색 영화 목록 스타일 */
-
-
 .genre{
   overflow: hidden;
   width: 65%;
   margin: 50px auto;
-  position: relative;
+  position: relative;   
 }
 
 .movie-img-box{
