@@ -20,6 +20,11 @@ h1.recommend-movie{
 
 
 /* 상단 메인 빅 배너 슬라이더 스타일 */
+ #main-banner-slider {
+     width: 65%;
+     margin: 0 auto;
+     overflow-x: hidden;
+ }
 ul.banner-title {
     /* display: flex; */
     /* overflow: hidden; */
@@ -27,11 +32,11 @@ ul.banner-title {
 }
 ul.banner-title li {
     /* margin: 0 20px; */
-    text-align: center;   
+    text-align: center;
 }
 .swiper-slide img {
-    width: 100%;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 5px;
 }
 #main-banner-slider {
@@ -51,16 +56,16 @@ ul.banner-title li {
 
 #main .btn .swiper-button-prev,
 #main .btn .swiper-button-next {
-    top: 50%;
+    top: 40%;
     bottom: auto;
     color: white;
     opacity: 0.5;
 }
 #main .btn .swiper-button-prev{
-    left: 20%;
+    left: 0;
 }
 #main .btn .swiper-button-next{
-    right: 20%;
+    right: 0;
 }
 #main .btn .swiper-button-prev:hover,
 #main .btn .swiper-button-next:hover {
