@@ -69,4 +69,22 @@
                 select * from movie where nation = #{nation} limit 0,20
     </select>
 
+    <select id="findMoviesByDirector" resultType="movie">
+        SELECT
+            *
+        FROM
+            movie
+        WHERE
+            director = #{directorName}
+    </select>
+
+    <select id="findMoviesByMovieName" resultType="movie">
+        SELECT
+            *
+        FROM
+            movie
+        WHERE
+            movie_name LIKE CONCAT('%', #{movieName}, '%')
+    </select>
+
 </mapper>
