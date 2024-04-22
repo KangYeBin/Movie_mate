@@ -20,7 +20,7 @@
     <div class="swiper-wrapper">
         <c:forEach var="recent" items="${recentData}">
         <div class="swiper-slide " data-movie-cd="${recent.movieCd}">
-                <img src="${recent.imageUrl}" alt="영화포스터">
+                <img src="${recent.stillUrl}" alt="영화포스터">
                 <p>${recent.movieName}</p>
         </div>
         </c:forEach>

@@ -305,6 +305,7 @@
 
     <%@ include file="include/footer.jsp"%>
 </body>
+
 <script src="/assets/js/mainpage.js"></script>
 
 </html>

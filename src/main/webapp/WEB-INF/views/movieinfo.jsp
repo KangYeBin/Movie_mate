@@ -5,157 +5,225 @@
 
 <head>
     <meta charset="UTF-8">
+    <%@ include file="include/header-static.jsp"%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/main/resources/static/assets/css/reset.css">
-    <link rel="stylesheet" href="/src/main/resources/static/assets/css/movieinfo.css">
-    <script src="../../../../resources/static/assets/js/movieinfo.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/movieinfo.css">
     <title>Document</title>
 </head>
 
 <body>
 
-    <div class="scrollBar"></div>
+<div class="scrollBar">
 
-    <div class="backSky">
-        <svg class="sky"></svg>
-    </div>
+</div>
 
-    <div class="movie">
-        <div class="image">
-            <div class="content-wrap">
-                <div class="zzim-wrap">
+<div class="backSky">
+    <svg class="sky"></svg>
+</div>
 
-                </div>
-            </div>
+<div class="movie">
 
-        </div>
 
-        <div class="info-wrap">
-            <img class="poster" src="/build/resources/main/static/assets/img/2.png">
+    <div class="info-wrap">
+        <img class="poster" src="${movie.imageUrl}">
+        <div class="doc">
+            <h1>${movie.movieName}</h1>
+
             <svg id="like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                 <path
-                    d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                        d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
             </svg>
-            <div class="doc">
-                <h1>모가디슈</h1>
-                <p class="content">내전으로 고립된 낯선 도시, 모가디슈. 지금부터 우리의 목표는 오로지 생존이다! 대한민국이 UN가입을 위해 동분서주하던 시기. 1991년 소말리아의 수도
-                    모가디슈에서는 일촉즉발의 내전이 일어난다. 통신마저 끊긴 그 곳에 고립된 대한민국 대사관의 직원과 가족들은 총알과 포탄이 빗발치는 가운데, 살아남기 위해 하루하루를 버텨낸다.
-                    그러던 어느 날 밤, 북한 대사관의 일행들이 도움을 요청하며 문을 두드리는데... 목표는 하나, 모가디슈에서 탈출해야 한다!</p>
-                <div class="info">
-                    <div>
-                        <h1>개요 :</h1>
-                        <p>개요 내용</p>
-                    </div>
-                    <div>
-                        <h1>장르 :</h1>
-                        <p>장르 내용</p>
-                    </div>
-                    <div>
-                        <h1>출연 :</h1>
-                        <p>출연진 내용</p>
-                    </div>
-                    <div>
-                        <h1>감독 :</h1>
-                        <p>감독 내용</p>
-                    </div>
-                    <div>
-                        <h1>국가 :</h1>
-                        <p>국가 내용</p>
-                    </div>
-                    <div>
-                        <h1>등급 :</h1>
-                        <p>등급 내용</p>
-                    </div>
-                    <div>
-                        <h1>개봉일 :</h1>
-                        <p>개봉일 내용</p>
-                    </div>
-                    <div>
-                        <h1>러닝타임 :</h1>
-                        <p>러닝타임 내용</p>
-                    </div>
+            <p class="content">${movie.plot}</p>
+            <div class="info">
+                <div>
+                    <h1>누적 관객수 :</h1>
+                    <p>${movie.audiAcc}명</p>
+                </div>
+                <div>
+                    <h1>장르 : </h1>
+                    <p>
+                        <c:forEach var="genre" items="${genres}">
+                            ${genre.genreName} &nbsp;
+                        </c:forEach>
+                    </p>
+                </div>
+                <div>
+                    <h1>출연 :</h1>
+                    <p>
+                        <c:forEach var="actor" items="${actors}">
+                            ${actor.actorName} &nbsp;
+                        </c:forEach>
+                    </p>
+                </div>
+                <div>
+                    <h1>감독 :</h1>
+                    <p>${movie.director}</p>
+                </div>
+                <div>
+                    <h1>국가 :</h1>
+                    <p>${movie.nation}</p>
+                </div>
+                <div>
+                    <h1>등급 :</h1>
+                    <p>${movie.rating}</p>
+                </div>
+                <div>
+                    <h1>개봉일 :</h1>
+                    <p>${movie.openDate}</p>
+                </div>
+                <div>
+                    <h1>러닝타임 :</h1>
+                    <p>${movie.runtime}분</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="review-wrap">
-        <div class="review-box">
-            <div class="review">
-                <!-- 리뷰별개수 창입니다 -->
-                <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
 
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
-                    <svg id="thumb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                            d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
-                    </svg>
+
+<div class="review-wrap">
+    <div class="review-box">
+        <div class="review">
+            <!-- 리뷰별개수 창입니다 -->
+            <div class="reple">
+                <div class="reple-box">
+                    <div class="reple-star">
+                            <span class="star">
+                            ★★★★★
+                             <span>★★★★★</span>
+                            <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                             </span>
+
+                        <button class="reple-bt"> 코멘트 남기기 </button>
+                    </div>
+                    <div class="reple-item">
+                        <select>
+                            <option>공감순</option>
+                            <option>최신순</option>
+                        </select>
+                    </div>
                 </div>
-
-                <div class="reple">
-                    <span class="star">
-                        ★★★★★
-                        <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                    </span>
-
-                    <p class="nickname">닉네임</p>
-                    <p class="content">후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.후기들이 들어갈 부분입니다.</p>
-                    <p class="time">작성시간</p>
-                    <svg id="thumb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                            d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 
-                            0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 
-                            47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 
-                            48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 
-                            13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 
-                            0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
-                    </svg>
-                </div>
-                <div class="button-list">
-                    <input type="button" onclick="openreview()" id="btn" value="후기 작성">
-                </div>
-                <!-- dribbble -->
-                <a class="dribbble" href="https://dribbble.com/shots/7441241-Button-Hover-Effects" target="_blank"><img
-                        src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
-                        alt=""></a>
-
             </div>
-        </div>
 
-        <div class="paging">
-            <img class="first" src="/build/resources/main/static/assets/img/4.png">
-            <div class="line"></div>
-            <img class="pre" src="/build/resources/main/static/assets/img/5.png">
-            <div class="page-list">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
-                <p>7</p>
-                <p>8</p>
-                <p>9</p>
-                <p>10</p>
+            <div class="swiper review-swiper-custom">
+                <div class="swiper-wrapper">
+                    <% for(int i=0;i<10;i++)  { %>
+                    <div class="swiper-slide review-swiper">
+                        <div class="review-container">
+                            <div class="review-profile">
+                                <div class="review-profile-img">
+                                    <img src="" alt="프사">
+                                    <p style="margin-left:5px; color:black;">이름</p>
+                                </div>
+                                <div class="review-profile-grade">
+                                    <img src="/assets/img/3.png">
+                                    <p style="margin-left:5px; color:black;">5.0</p>
+                                </div>
+                            </div>
+                            <hr class="review-hr" />
+                            <div class="review-text">
+                                <p style="color:black !important;">리뷰 글</p>
+                            </div>
+                            <hr  />
+                            <div class="review-sym">
+                                <div>
+                                    <p style="color:black !important;"> 따봉 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+                <div class="swiper-pagination pagination_bullet"></div>
+                <div class="swiper-pagination pagination_progress"></div>
             </div>
-            <img class="next" src="/build/resources/main/static/assets/img/5.png">
-            <div class="line"></div>
-            <img class="last" src="/build/resources/main/static/assets/img/4.png">
+
+
+
         </div>
     </div>
+</div>
+<%@ include file="include/footer.jsp"%>
+
+<script>
+    /* 리뷰별개수 */
+    const drawStar = (target) => {
+        document.querySelector(`.star span`).style.width = `\${target.value * 10}%`;
+        let button = document.querySelector('.reple-bt');
+        if(target.value>0){
+            button.style.visibility = "visible";
+        }else{
+            button.style.visibility="hidden";
+        }
+        console.log(target.value);
+    }
 
 
+    const $sky = document.querySelector(".sky");
+
+    // 브라우저 창 크기에 따른 별 생성
+    window.onresize = () => {
+        makeStars();
+    }
+
+    const makeStars = () => {
+        // 브라우저 가장 큰 크기
+        const maxSize = Math.max(window.innerWidth, window.innerHeight)
+
+        // 랜덤한 X 위치 값
+        const getRandomX = () => Math.random() * maxSize;
+
+        // 랜덤한 Y 위치 값
+        const getRandomY = () => Math.random() * maxSize;
+
+        // 랜덤한 크기 (circle는 반지름이 크기)
+        const randomRadius = () => Math.random() * 0.7 + 0.6;
+
+        // 임의의 값
+        const _size = Math.floor(maxSize / 2);
+
+        const htmlDummy = new Array(_size).fill().map((_, i) => {
+            return `<circle class='star'
+        cx=\${getRandomX()}
+        cy=\${getRandomY()}
+        r=\${randomRadius()}
+        className="star" />`
+        }).join('');
+
+        $sky.innerHTML = htmlDummy;
+    }
+
+    window.onload = () => {
+        makeStars();
+    }
+</script>
+<script>
+    var reviewSwiper =new Swiper('.review-swiper-custom', {
+        speed: 800, // 슬라이드 속도
+        slidesPerView: 4, // 한 번에 보여질 슬라이드 수
+        slidesPerGroup: 4,
+        spaceBetween: 10, // 이미지 간격
+        loop: false, // 슬라이드 루프 설정 비활성화
+        pagination: {
+            el: ".pagination_bullet",
+            clickable: true,
+            type: 'bullets',
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index + 1) + "</span>";
+            },
+        },
+    })
+
+    var like = document.getElementById("like")
+
+    like.addEventListener('click', function () {
+        like.classList.toggle('active')
+    });
+
+</script>
 </body>
 
 </html>

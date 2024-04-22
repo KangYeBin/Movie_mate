@@ -15,11 +15,13 @@ public class MovieResponseDTO {
     private String movieCd;
     private String MovieName;
     private String imageUrl;
+    private String stillUrl;
 
     public MovieResponseDTO(Movie movie) {
         this.movieCd = movie.getMovieCd();
         this.MovieName = movie.getMovieName();
         this.imageUrl = cutUrl(movie.getImageUrl());
+        this.stillUrl = movie.getStillUrl();
     }
     private String cutUrl(String url){
         String result = "";

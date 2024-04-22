@@ -27,5 +27,4 @@ public interface MovieMapper {
 
     // 키워드로 영화 검색
     List<Movie> findMoviesByKeyword(String keywordName);
-
 }
