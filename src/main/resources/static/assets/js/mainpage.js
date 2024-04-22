@@ -5,10 +5,14 @@ const mySwiper = new Swiper('.swiper-container', {
     autoplay: {
     delay: 10000 // 10초마다 슬라이드
     },
-    speed: 500,
-    slidesPerView: 1.85, // 여백화면 미리보기
+    // speed: 500,
+    slidesPerView: 3, // 여백화면 미리보기
     centeredSlides: true, // 슬라이드 이미지 가운데 정렬
-    spaceBetween : 20,
+    // spaceBetween : 20,
+    effect:'coverflow', // 이펙트 효과
+    coverflowEffect: {
+        slideShadows:false // 그림자 효과 제거
+    },
     navigation: { // 좌우 버튼 설정
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -97,4 +101,43 @@ const listSwiper10 = new Swiper('.swiper-container-list10', {
         prevEl: '.list-prev',
     }
 });
+
+// 배경 효과
+const $sky = document.querySelector(".sky");
+
+        // 브라우저 창 크기에 따른 별 생성
+        window.onresize = () => {
+            makeStars();
+        }
+
+        const makeStars = () => {
+            // 브라우저 가장 큰 크기
+            const maxSize = Math.max(window.innerWidth, window.innerHeight)
+
+            // 랜덤한 X 위치 값
+            const getRandomX = () => Math.random() * maxSize;
+
+            // 랜덤한 Y 위치 값
+            const getRandomY = () => Math.random() * maxSize;
+
+            // 랜덤한 크기 (circle는 반지름이 크기)
+            const randomRadius = () => Math.random() * 0.7 + 0.6;
+
+            // 임의의 값
+            const _size = Math.floor(maxSize / 2);
+
+            const htmlDummy = new Array(_size).fill().map((_, i) => {
+                return `<circle class='star'
+                cx=${getRandomX()}
+                cy=${getRandomY()}
+                r=${randomRadius()}
+                className="star" />`
+            }).join('');
+
+            $sky.innerHTML = htmlDummy;
+        }
+
+        window.onload = () => {
+            makeStars();
+        }
 

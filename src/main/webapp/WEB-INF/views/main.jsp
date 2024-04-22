@@ -14,24 +14,52 @@
 <body>
     <%@ include file="include/header.jsp"%>
 
+    <!-- 배경효과 -->
+    <div class="backSky">
+        <svg class="sky"></svg>
+    </div>
+
     <section id="main">
 
-        <h1 class="recommend-movie">Movie Mate 추천</h1>
+        <h1 class="recommend-movie"></h1>
         <!-- 상단 메인 빅 배너 슬라이더 섹션 -->
         <div id="main-banner-slider" class="swiper-container">
             <ul class="banner-title swiper-wrapper">
-                <li class="swiper-slide"><img
-                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
-                        alt="영화 큰 배너"></li>
-                <li class="swiper-slide"><img
-                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
-                        alt="영화 큰 배너"></li>
-                <li class="swiper-slide"><img
-                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
-                        alt="영화 큰 배너"></li>
-                <li class="swiper-slide"><img
-                        src="https://img.khan.co.kr/news/2023/11/25/news-p.v1.20231125.87430166a2c4429084de090dee453d9a_P1.webp"
-                        alt="영화 큰 배너"></li>
+                <li class="swiper-slide">
+                    <a href="">
+                        <img
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
+                            alt="영화 큰 배너">
+                     </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="">
+                        <img
+                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
+                                alt="영화 큰 배너">
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="">
+                        <img
+                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
+                                alt="영화 큰 배너">
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="">
+                        <img
+                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
+                                alt="영화 큰 배너">
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="">
+                        <img
+                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
+                                alt="영화 큰 배너">
+                    </a>
+                </li>
             </ul>
 
             <!-- 슬라이더 좌우 버튼 -->
@@ -50,6 +78,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">SF</span>
+            <a class="more-button" href="/category/sf">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="sf" items="${sf}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${sf.movieCd}">
@@ -71,6 +100,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">가족</span>
+            <a class="more-button" href="/category/family">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="family" items="${family}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${family.movieCd}">
@@ -92,6 +122,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">공포</span>
+            <a class="more-button" href="/category/horror">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="horror" items="${horror}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${horror.movieCd}">
@@ -113,6 +144,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">드라마</span>
+            <a class="more-button" href="/category/drama">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="drama" items="${drama}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${drama.movieCd}">
@@ -134,6 +166,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">멜로/로맨스</span>
+            <a class="more-button" href="/category/meloromance">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="meloromance" items="${meloromance}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${meloromance.movieCd}">
@@ -155,6 +188,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">미스터리</span>
+            <a class="more-button" href="/category/mystery">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="mystery" items="${mystery}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${mystery.movieCd}">
@@ -176,6 +210,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">범죄</span>
+            <a class="more-button" href="/category/crime">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="crime" items="${crime}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${crime.movieCd}">
@@ -197,6 +232,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">스릴러</span>
+            <a class="more-button" href="/category/thriller">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="thriller" items="${thriller}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${thriller.movieCd}">
@@ -218,6 +254,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">액션</span>
+            <a class="more-button" href="/category/action">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="action" items="${action}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${action.movieCd}">
@@ -239,6 +276,7 @@
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">어드벤처</span>
+            <a class="more-button" href="/category/adventure">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="adventure" items="${adventure}">
                     <div class="movie-img-box swiper-slide" data-movie-cd="${adventure.movieCd}">
