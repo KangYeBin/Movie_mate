@@ -71,8 +71,8 @@ section .content-list h1 {
 }
 
 .content-list h1 {
-  margin-left: 50px;
-  margin-top: 30px;
+  margin-left: 80px;
+  margin-top: 70px;
 }
 
 
@@ -109,6 +109,7 @@ section .content-list h1 {
   position: absolute;
   top: 50%;
 
+
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -121,11 +122,11 @@ section .content-list h1 {
 
 
 .review-list {
-  padding: 50px;
+  padding: 80px;
 }
 
 .review-list h1 {
-   margin-bottom: 20px;
+   margin-bottom: 40px;
 }
 
 section .review-list {
@@ -136,13 +137,10 @@ section .review-list {
 
 
 /* 리뷰 */
-.review-swiper{
-
-}
-
 .review-container{
     border-radius:5%;
-    width:100%;
+    border: 5px solid grey;
+    width:80%;
     height:300px;
     background-color: #F2F2F2;
 
@@ -155,7 +153,6 @@ section .review-list {
     justify-content:space-between;
 }
 .review-profile-img{
-
     display:flex;
     align-items:center;
 }
@@ -175,16 +172,16 @@ section .review-list {
 
 .review-profile p {
     color: #FFD700;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .review-text {
+    padding:20px;
     height:70%;
     width:100%;
-    font-size:30px;
+    font-size:25px;
     overflow: hidden;
     text-overflow: ellipsis;
-
 
 }
 .review-sym{
@@ -193,8 +190,11 @@ section .review-list {
 }
 
 .review-sym img {
-    margin-top: 5px;
+    margin-top: 2px;
+    margin-right: 5px;
 }
+
+
 /* 모달창 */
 .modal {
     display: none;
@@ -211,10 +211,11 @@ section .review-list {
     background-color: black;
     margin: 15% auto;
     padding: 20px;
-    border: 5px solid #888;
+    border: 10px solid powderblue;
     width: 30%;
     height: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
 }
 
 
