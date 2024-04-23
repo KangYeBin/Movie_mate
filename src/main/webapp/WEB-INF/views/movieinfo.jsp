@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="resize" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -34,7 +35,10 @@
             <svg id="like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                 <path
-                        d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                  d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4
+                  300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5
+                  300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2
+                  0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
             </svg>
             <p class="content">${movie.plot}</p>
             <div class="info">
@@ -84,7 +88,6 @@
 </div>
 
 
-
 <div class="review-wrap">
     <div class="review-box">
         <div class="review">
@@ -98,7 +101,7 @@
                             <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
                              </span>
 
-                        <button class="reple-bt" onclick="openModal()"> 코멘트 남기기 </button>
+                        <button class="reple-bt" onclick="openModal()"> 후기 작성</button>
                     </div>
                     <div class="reple-item">
                         <select>
@@ -111,7 +114,7 @@
 
             <div class="swiper review-swiper-custom">
                 <div class="swiper-wrapper">
-                    <% for(int i=0;i<10;i++)  { %>
+                    <% for (int i = 0; i < 10; i++) { %>
                     <div class="swiper-slide review-swiper">
                         <div class="review-container">
                             <div class="review-profile">
@@ -124,11 +127,11 @@
                                     <p style="margin-left:5px; color:black;">5.0</p>
                                 </div>
                             </div>
-                            <hr class="review-hr" />
+                            <hr class="review-hr"/>
                             <div class="review-text">
                                 <p style="color:black !important;">리뷰 글</p>
                             </div>
-                            <hr  />
+                            <hr/>
                             <div class="review-sym">
                                 <div>
                                     <p style="color:black !important;"> 따봉 </p>
@@ -143,17 +146,16 @@
             </div>
 
 
-
         </div>
     </div>
 </div>
 
-/** 모달**/
+<!-- 모달 창입니다 -->
+
 <div id="reviewModal" class="modal">
     <div class="modal-content">
         <div class="modalbox">
             <div class="box">
-                <div id="pro"><svg id="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> 프로필</div>
                 <span class="star">
                         ★★★★★
                         <span>★★★★★</span>
@@ -164,12 +166,13 @@
             </div>
 
             <form class="profile">
-                <textarea class="text" type="text" id="text"  placeholder="성민아 돼지"></textarea>
+                <textarea class="text" name="Reviewcontent" id="text" placeholder="리뷰를 작성하세요"
+                         required;></textarea>
 
                 <div id="reviewContent"></div>
 
                 <div class="register">
-                    <input type="button" id="register" value="등록"></input>
+                    <input type="button" class="btn first" id="register" value="등록"></input>
                 </div>
             </form>
         </div>
@@ -178,23 +181,22 @@
 </div>
 
 
-
-<%@ include file="include/footer.jsp"%>
+<%@ include file="include/footer.jsp" %>
 
 <script>
     /* 리뷰별개수 */
     const drawStar = (target) => {
         document.querySelector(`.star span`).style.width = `\${target.value * 10}%`;
         let button = document.querySelector('.reple-bt');
-        if(target.value>0){
+        if (target.value > 0) {
             button.style.visibility = "visible";
-        }else{
-            button.style.visibility="hidden";
+        } else {
+            button.style.visibility = "hidden";
         }
         console.log(target.value);
     }
 
-
+/* 배경에 별 만들어서 돌리기 */
     const $sky = document.querySelector(".sky");
 
     // 브라우저 창 크기에 따른 별 생성
@@ -234,7 +236,7 @@
     }
 </script>
 <script>
-    var reviewSwiper =new Swiper('.review-swiper-custom', {
+    var reviewSwiper = new Swiper('.review-swiper-custom', {
         speed: 800, // 슬라이드 속도
         slidesPerView: 4, // 한 번에 보여질 슬라이드 수
         slidesPerGroup: 4,
@@ -268,15 +270,17 @@
     var closeModalBtn = document.getElementsByClassName("close")[0];
 
     // 모달 바깥을 클릭하면 모달이 닫히도록 함
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
+
     // 모달 열기 버튼에 클릭 이벤트 리스너 추가
     function openModal() {
         modal.style.display = "block";
     }
+
     // 모달 닫기 버튼에 클릭 이벤트 리스너 추가
     function closeReviewModal() {
         modal.style.display = "none";
