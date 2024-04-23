@@ -81,6 +81,7 @@ body {
   gap: 54px;
   width: 90%;
   margin: 0 auto;
+  padding-top: 100px;
 }
 
 
@@ -404,7 +405,7 @@ body {
 }
 .review-text {
   padding:5px;
-  height:70%;
+  height:72%;
   width:100%;
 }
 .review-sym{
@@ -462,14 +463,22 @@ body {
   top: 280%;
 }
 
-#thumb{
+.thumb{
   width: 30px;
-  fill: #ddd;
+  fill: #868282;
 }
 
-#thumb.active{
-  fill: red;
+.thumb.active{
+  fill: black;
 }
 
 /*버튼만들기*/
 
+.review-thumb{
+  display: flex;
+  align-items: center;
+}
+.thumb-cnt{
+  padding-left: 5px;
+  padding-top: 2px;
+}
