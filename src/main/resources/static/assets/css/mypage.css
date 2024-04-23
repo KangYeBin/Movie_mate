@@ -125,10 +125,6 @@ section .content-list h1 {
   padding: 80px;
 }
 
-.review-list h1 {
-   margin-bottom: 40px;
-}
-
 section .review-list {
   margin-bottom: 3rem;
   position: relative;
@@ -139,10 +135,12 @@ section .review-list {
 /* 리뷰 */
 .review-container{
     border-radius:5%;
-    border: 5px solid indianred;
-    width:80%;
+    border: 5px solid grey;
+    width:95%;
     height:300px;
     background-color: #F2F2F2;
+    cursor: pointer;
+
 
 }
 .review-profile{
@@ -171,8 +169,8 @@ section .review-list {
 }
 
 .review-profile p {
-    color: #FFD700;
-    font-size: 30px;
+    color: gold;
+    font-size: 20px;
 }
 
 .review-text {
@@ -193,6 +191,27 @@ section .review-list {
 .review-sym img {
     margin-top: 2px;
     margin-right: 5px;
+}
+.sym-box{
+    display:flex;
+    align-items:center;
+
+}
+.thumb{
+    width:20px;
+    height:20px;
+    margin-top:10px;
+
+}
+.thumb-cnt{
+    margin-left:5px;
+    margin-top:15px;
+    color:black;
+    font-size: 20px;
+}
+
+.review-swiper-custom .swiper-wrapper {
+    padding: 70px; /* 패딩 값 설정 */
 }
 
 
@@ -248,7 +267,38 @@ section .review-list {
 
 .swiper-wrapper{
     width: 80% !important;
+    mim-width: 1500px;
 }
+
+/* 모달 창 삭제 및 수정 */
+
+.modal-content {
+    position: relative;
+}
+
+.button-group {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.edit-button, .delete-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #f44336;
+    margin-right: 10px;
+}
+
+
+
 
 
 /* 반응형 */
