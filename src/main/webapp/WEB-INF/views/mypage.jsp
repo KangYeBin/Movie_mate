@@ -99,7 +99,7 @@
                                   <div class="review-profile">
                                         <div class="review-profile-img">
 
-                                            <p style="margin-left:5px; color:brown;">영화명</p>
+                                            <p style="margin-left:5px; color:darkblue;">영화명</p>
                                         </div>
                                         <div class="review-profile-grade">
                                             <p>★<p>

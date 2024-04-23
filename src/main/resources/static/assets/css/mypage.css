@@ -139,7 +139,7 @@ section .review-list {
 /* 리뷰 */
 .review-container{
     border-radius:5%;
-    border: 5px solid grey;
+    border: 5px solid indianred;
     width:80%;
     height:300px;
     background-color: #F2F2F2;
