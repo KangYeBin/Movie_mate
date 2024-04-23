@@ -166,7 +166,7 @@
                 <textarea class="text" type="text" id="text"  placeholder="성민아 돼지"></textarea>
                 <div id="reviewContent"></div>
                 <div class="register">
-                    <input type="button" id="register" value="등록"></input>
+                    <input type="submit" id="register" value="등록">
                 </div>
             </form>
         </div>
@@ -288,6 +288,27 @@
     function closeReviewModal() {
         modal.style.display = "none";
     }
+</script>
+<script>
+    document.getElementById("review-form").addEventListener("submit",e=>{
+        e.preventDefault();
+        const req = {
+            text: document.getElementById("text").value,
+            userId: '${sessionScope.login.userId}',
+            movieCd: '${movie.movieCd}',
+            grade: document.querySelector('input[type="range"]').value/2,
+            profile: '${sessionScope.login.profile}',
+        }
+
+        fetch("/review/create",{
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(req)
+        })
+
+    })
 </script>
 </body>
 
