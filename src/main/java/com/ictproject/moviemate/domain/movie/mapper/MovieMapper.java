@@ -27,4 +27,10 @@ public interface MovieMapper {
 
     // 키워드로 영화 검색
     List<Movie> findMoviesByKeyword(String keywordName);
+
+    // 감독 이름으로 영화 검색
+    List<Movie> findMoviesByDirector(String directorName);
+
+    // 영화 이름으로 영화 검색 (부분도 가능하게)
+    List<Movie> findMoviesByMovieName(String movieName);
 }

@@ -129,6 +129,7 @@
         border: 1px solid gray;
         background-size: 15px;
         cursor: pointer;
+        margin-left: 90px;
         }
 
         .selectBox:after {
@@ -187,4 +188,5 @@
         .selectBox .optionItem:last-child {
         border-bottom: 0 none;
         }
+        
 
