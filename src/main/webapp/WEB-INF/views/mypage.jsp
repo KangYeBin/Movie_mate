@@ -108,7 +108,7 @@
                                   </div>
                                   <hr/>
                                   <div class="review-text">
-                                        <p style="color: darkgrey !important;">리뷰 글입니다. 재밌고 슬프고 신나는 영화이고 어쩌구 저쩌구 어쩌구 저쩌구 ~~어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~<%=i%></p>
+                                        <p style="color: #aaa !important;">리뷰 글입니다. 재밌고 슬프고 신나는 영화이고 어쩌구 저쩌구 어쩌구 저쩌구 ~~어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~<%=i%></p>
                                   </div>
                                   <hr/>
                                   <div class="review-sym">

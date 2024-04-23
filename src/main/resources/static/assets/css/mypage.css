@@ -183,6 +183,7 @@ section .review-list {
     overflow: hidden;
     text-overflow: ellipsis;
 
+
 }
 .review-sym{
     width:100%;
