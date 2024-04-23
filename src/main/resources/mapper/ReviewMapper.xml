@@ -38,28 +38,30 @@
             review_id = #{reviewId}
     </select>
 
-    <select id="findReviewsByMovie" resultType="review">
+    <select id="findReviewsByMovie" resultType="reviewDTO">
         SELECT
-            *
+            r.*, u.email, u.profile
         FROM
-            review
+            review r
+        JOIN
+            user u
+        ON
+            r.user_id = u.user_id
         WHERE
-            movie_cd = #{mc}
-        ORDER BY
-            review_id
-        LIMIT #{p.pageStart}, #{p.amount}
+            r.movie_cd = #{movieCd};
     </select>
 
-    <select id="findReviewsByUser" resultType="review">
+    <select id="findReviewsByUser" resultType="reviewDTO">
         SELECT
-            *
+            r.*, u.email, u.profile
         FROM
-            review
+            review r
+        JOIN
+            user u
+        ON
+            r.user_id = u.user_id
         WHERE
-            user_id = #{ui}
-        ORDER BY
-            review_id
-        LIMIT #{p.pageStart}, #{p.amount}
+            u.user_id = #{userId};
     </select>
 
     <select id="countByMovie">
