@@ -21,9 +21,6 @@ body::-webkit-scrollbar-track {
 }
 
 
-
-
-
 .backSky {
   width: 0vw;
   height: 0vh;
@@ -63,7 +60,7 @@ body::-webkit-scrollbar-track {
 
 
 body {
-  padding: 10px, 0;
+  padding: 10px;
   margin: 0 auto;
   background: linear-gradient(180deg, #090202 0%, #211B1B 38%, #4d4d4d 100%);
   width: 100%;
@@ -75,34 +72,8 @@ body {
   min-width: 900px;
 }
 
-.movie {
-  display: flex;
-  flex-direction: column;
-  gap: 54px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-
-.movie .image .content-wrap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: end;
-  padding: 7px 7px 24px 24px;
-}
-
-
-
-
- .movie .image .content-wrap h1 {
-  width: 100%;
-}
-
 .movie .info-wrap {
+  width: 90%;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -110,6 +81,7 @@ body {
   border-radius: 24px;
   backdrop-filter: blur(10px);
   height: auto;
+  margin: 0 auto;
 }
 
 .movie .info-wrap .poster {
@@ -149,7 +121,6 @@ body {
 .movie .info-wrap .doc .info>div {
   display: flex;
   gap: 3%;
-
 }
 
 .movie .info-wrap .doc .info>div h1 {
@@ -184,8 +155,6 @@ body {
   padding: 0.1em 0;
   height: 100%;
 
-
-
 }
 
 .review-wrap .review-box .review {
@@ -195,12 +164,9 @@ body {
   gap: 1em;
   align-items: center;
   flex-direction: column;
-
 }
 
 .review-wrap .review-box .review .reple {
-
-
   border-radius: 10px;
   width: 100%;
   display: flex;
@@ -236,6 +202,7 @@ body {
   overflow: hidden;
   pointer-events: none;
 }
+
 .reple-box{
   width: 90%;
   display: flex;
@@ -243,19 +210,18 @@ body {
   align-items: center;
   margin: 0 10px;
 }
+
 .reple-star{
   display: flex;
   justify-content: center;
-
 }
+
 .reple-bt{
   border-radius: 5px;
   border: white;
-  visibility: hidden;
   margin-left: 10px;
+  color: white;
 }
-
-
 
 .review-wrap .review-box .review .nickname {
   color: #FFF;
@@ -283,7 +249,6 @@ body {
   white-space: normal;
   overflow: hidden;
 
-
   line-height: 2rem;
   height: 2rem;
 
@@ -297,18 +262,6 @@ body {
   height: 2rem;
   font-weight: 700;
   flex-shrink: 0;
-}
-.review-wrap .review-box .review #btn {
-  position: absolute;
-  right: 0;
-  margin-right: 5%;
-  width: 9rem;
-  height: 3rem;
-  border-radius: 40%;
-  background-color: black;
-  color: white;
-  font-weight: 800;
-  
 }
 
 .review-wrap .paging {
@@ -370,8 +323,6 @@ body {
 
 
 /**리뷰**/
-
-
 .review-container{
   border-radius: 5%;
   height:300px;
@@ -457,19 +408,127 @@ body {
 #like.active{
   fill: red;
 }
-#btn {
+
+/* 모달창 */
+.modal {
+  display: none;
   position: fixed;
-  top: 280%;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /
 }
 
-#thumb{
+.modal-content {
+  background-color: black;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  height: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* 모달 닫기 버튼 스타일 */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*붙여온곳*/
+
+.modalbox {
+  width: 100%;
+  height: 60%;
+  position: relative;
+}
+
+.modalbox .box {
+  width: 100%;
+  height: 25%;
+  text-align: center;
+  margin-bottom: 10px;
+
+}
+
+.modalbox #user {
   width: 30px;
-  fill: #ddd;
+  height: 30px;
+  fill: white;
+  color: white;
+  float: left;
 }
 
-#thumb.active{
-  fill: red;
+.modalbox #pro {
+  color: white;
+  fill: white;
+  width: 30%;
+  height: 50px;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+.modalbox .profile{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* 별점 표시 */
+.star {
+  position: relative;
+  line-height: 5rem;
+  height: 5rem;
+  color: #ddd;
+  font-size: 50px;
 }
 
-/*버튼만들기*/
+.star input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.star span {
+  width: 0;
+  position: absolute;
+  left: 0;
+  color: yellow;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+[type="text"] {
+  border: 1px solid gray;
+  box-sizing: content-box;
+  width: 90%;
+  height: 400px;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+#register {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
 

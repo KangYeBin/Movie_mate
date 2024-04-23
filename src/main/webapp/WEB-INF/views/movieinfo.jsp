@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/movieinfo.css">
+    <script src="/assets/js/movieinfo.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -97,7 +98,7 @@
                             <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
                              </span>
 
-                        <button class="reple-bt"> 코멘트 남기기 </button>
+                        <button class="reple-bt" onclick="openModal()"> 코멘트 남기기 </button>
                     </div>
                     <div class="reple-item">
                         <select>
@@ -146,6 +147,38 @@
         </div>
     </div>
 </div>
+
+/** 모달**/
+<div id="reviewModal" class="modal">
+    <div class="modal-content">
+        <div class="modalbox">
+            <div class="box">
+                <div id="pro"><svg id="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> 프로필</div>
+                <span class="star">
+                        ★★★★★
+                        <span>★★★★★</span>
+                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                </span>
+                <span class="close" onclick="closeReviewModal()">&times;</span>
+
+            </div>
+
+            <form class="profile">
+                <textarea class="text" type="text" id="text"  placeholder="성민아 돼지"></textarea>
+
+                <div id="reviewContent"></div>
+
+                <div class="register">
+                    <input type="button" id="register" value="등록"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
 <%@ include file="include/footer.jsp"%>
 
 <script>
@@ -223,6 +256,31 @@
         like.classList.toggle('active')
     });
 
+</script>
+<script>
+    // 모달 열기 버튼
+    var openModalBtn = document.getElementById("reple-bt");
+
+    // 모달
+    var modal = document.getElementById("reviewModal");
+
+    // 모달 닫기 버튼
+    var closeModalBtn = document.getElementsByClassName("close")[0];
+
+    // 모달 바깥을 클릭하면 모달이 닫히도록 함
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    // 모달 열기 버튼에 클릭 이벤트 리스너 추가
+    function openModal() {
+        modal.style.display = "block";
+    }
+    // 모달 닫기 버튼에 클릭 이벤트 리스너 추가
+    function closeReviewModal() {
+        modal.style.display = "none";
+    }
 </script>
 </body>
 
