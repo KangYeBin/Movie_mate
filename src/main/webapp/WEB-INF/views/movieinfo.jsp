@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<%@ include file="include/header.jsp"%>
 <div class="scrollBar">
 
 </div>
@@ -24,8 +24,6 @@
 </div>
 
 <div class="movie">
-
-
     <div class="info-wrap">
         <img class="poster" src="${movie.imageUrl}">
         <div class="doc">
@@ -97,8 +95,9 @@
                              <span>★★★★★</span>
                             <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
                              </span>
-
-                        <button class="reple-bt" onclick="openModal()"> 코멘트 남기기 </button>
+                            <div class="reple-star-bt">
+                            <button class="reple-bt" onclick="openModal()"> 코멘트 남기기 </button>
+                            </div>
                     </div>
                     <div class="reple-item">
                         <select>
@@ -128,10 +127,11 @@
                             <div class="review-text">
                                 <p style="color:black !important;">리뷰 글</p>
                             </div>
-                            <hr  />
+                            <hr class="review-hr" />
                             <div class="review-sym">
-                                <div>
-                                    <p style="color:black !important;"> 따봉 </p>
+                                <div class="review-thumb">
+                                    <svg class="thumb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"/></svg>
+                                    <p class="thumb-cnt">100</p>
                                 </div>
                             </div>
                         </div>
@@ -154,22 +154,19 @@
         <div class="modalbox">
             <div class="box">
                 <div id="pro"><svg id="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> 프로필</div>
-                <span class="star">
+                <span class="star-modal">
                         ★★★★★
                         <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
                 </span>
                 <span class="close" onclick="closeReviewModal()">&times;</span>
 
             </div>
 
-            <form class="profile">
+            <form id="review-form" class="profile">
                 <textarea class="text" type="text" id="text"  placeholder="성민아 돼지"></textarea>
-
                 <div id="reviewContent"></div>
-
                 <div class="register">
-                    <input type="button" id="register" value="등록"></input>
+                    <input type="submit" id="register" value="등록">
                 </div>
             </form>
         </div>
@@ -185,6 +182,7 @@
     /* 리뷰별개수 */
     const drawStar = (target) => {
         document.querySelector(`.star span`).style.width = `\${target.value * 10}%`;
+        document.querySelector(`.star-modal span`).style.width = `\${target.value * 10}%`;
         let button = document.querySelector('.reple-bt');
         if(target.value>0){
             button.style.visibility = "visible";
@@ -250,12 +248,21 @@
         },
     })
 
-    var like = document.getElementById("like")
+
+
+    var like = document.getElementById("like");
 
     like.addEventListener('click', function () {
         like.classList.toggle('active')
     });
 
+    var thumb = document.querySelectorAll('.thumb');
+
+    thumb.forEach(e=>{
+        e.addEventListener('click', function () {
+            e.classList.toggle('active')
+        });
+    })
 </script>
 <script>
     // 모달 열기 버튼
@@ -281,6 +288,27 @@
     function closeReviewModal() {
         modal.style.display = "none";
     }
+</script>
+<script>
+    document.getElementById("review-form").addEventListener("submit",e=>{
+        e.preventDefault();
+        const req = {
+            text: document.getElementById("text").value,
+            userId: '${sessionScope.login.userId}',
+            movieCd: '${movie.movieCd}',
+            grade: document.querySelector('input[type="range"]').value/2,
+            profile: '${sessionScope.login.profile}',
+        }
+
+        fetch("/review/create",{
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(req)
+        })
+
+    })
 </script>
 </body>
 
