@@ -27,7 +27,7 @@ public class MovieController {
 
     @GetMapping("/main")
     public String main(Model model) {
-
+        model.addAttribute("recommend", movieService.recommendMovie());
         model.addAttribute("sf", movieService.getGenreData("sf"));
         model.addAttribute("family", movieService.getGenreData("family"));
         model.addAttribute("horror", movieService.getGenreData("horror"));

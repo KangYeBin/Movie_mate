@@ -2,15 +2,18 @@
 const mySwiper = new Swiper('.swiper-container', {
     loop: true, //무한반복
     autoplay: {
-        delay: 10000 // 10초마다 슬라이드
+        delay: 3000 // 10초마다 슬라이드
     },
-    // speed: 500,
-    slidesPerView: 3, // 여백화면 미리보기
+    loopAdditionalSlides: 1,
+    slidesPerView: 4, // 여백화면 미리보기
     centeredSlides: true, // 슬라이드 이미지 가운데 정렬
-    // spaceBetween : 20,
     effect: 'coverflow', // 이펙트 효과
     coverflowEffect: {
-        slideShadows: false // 그림자 효과 제거
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 3,
+        slideShadows: true
     },
     navigation: { // 좌우 버튼 설정
         nextEl: '.swiper-button-next',

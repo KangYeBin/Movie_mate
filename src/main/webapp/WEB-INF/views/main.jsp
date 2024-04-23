@@ -6,14 +6,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Insert Your Title</title>
     <%@ include file="include/header-static.jsp"%>
+    <title>Insert Your Title</title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/mainpage.css">
 </head>
 
 <body>
-    <%@ include file="include/header.jsp"%>
-
+<%@ include file="include/header.jsp"%>
     <!-- 배경효과 -->
     <div class="backSky">
         <svg class="sky"></svg>
@@ -25,48 +25,13 @@
         <!-- 상단 메인 빅 배너 슬라이더 섹션 -->
         <div id="main-banner-slider" class="swiper-container">
             <ul class="banner-title swiper-wrapper">
-                <li class="swiper-slide">
-                    <a href="">
-                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
-                            alt="영화 큰 배너">
-                    </a>
-                </li>
-                <li class="swiper-slide">
-                    <a href="">
-                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
-                            alt="영화 큰 배너">
-                    </a>
-                </li>
-                <li class="swiper-slide">
-                    <a href="">
-                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
-                            alt="영화 큰 배너">
-                    </a>
-                </li>
-                <li class="swiper-slide">
-                    <a href="">
-                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
-                            alt="영화 큰 배너">
-                    </a>
-                </li>
-                <li class="swiper-slide">
-                    <a href="">
-                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjJfMTM0%2FMDAxNjk3OTUyODQyOTg0.j5oL3ebwT7BSCiKuCrWaIg8RDAG2kxrT-cilUUIQYKAg.Mf00ElvkVHad_2iY0nB0TfN4kuGDAnV4twBhAICYB3kg.JPEG.g_minn%2Fdc6459eb82ab366c06132ed57ab1bda7.jpg&type=sc960_832"
-                            alt="영화 큰 배너">
-                    </a>
-                </li>
+                <c:forEach var="re" items="${recommend}">
+                    <div class="banner-contents swiper-slide" data-movie-cd="${re.movieCd}">
+                        <a href="/detail/${re.movieCd}"><img src="${re.imageUrl}" alt="장르별 영화 포스터"></a>
+                    </div>
+                </c:forEach>
             </ul>
 
-            <!-- 슬라이더 좌우 버튼 -->
-            <div class="btn">
-                <button class="swiper-button-prev" role="button">
-                    <!-- <span class="lnr lnr-chevron-left"></span> -->
-                </button>
-
-                <button class="swiper-button-next" role="button">
-                    <!-- <span class="lnr lnr-chevron-right"></span> -->
-                </button>
-            </div>
         </div>
 
 
