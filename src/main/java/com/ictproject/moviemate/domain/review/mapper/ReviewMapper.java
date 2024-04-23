@@ -1,5 +1,6 @@
 package com.ictproject.moviemate.domain.review.mapper;
 
+import com.ictproject.moviemate.domain.review.dto.ReviewResponseDTO;
 import com.ictproject.moviemate.global.common.Page;
 import com.ictproject.moviemate.domain.review.Review;
 import org.apache.ibatis.annotations.Mapper;
@@ -23,10 +24,10 @@ public interface ReviewMapper {
 	Review findReview(int reviewId);
 
 	// 해당 영화의 모든 후기 조회
-	List<Review> findReviewsByMovie(@Param("mc") String movieCd, @Param("p") Page page);
+	List<ReviewResponseDTO> findReviewsByMovie(String movieCd);
 
 	// 해당 사용자의 모든 후기 조회
-	List<Review> findReviewsByUser(@Param("ui") int userId, @Param("p") Page page);
+	List<ReviewResponseDTO> findReviewsByUser(int userId);
 
 	// 해당 영화의 후기 총 개수 조회
 	int countByMovie(String movieCd);
