@@ -8,13 +8,13 @@ body {
 
 }
 
-.reviewbox {
+.modalbox {
   width: 420px;
   height: 400px;
   position: relative;
 }
 
-.reviewbox .box {
+.modalbox .box {
   width: 420px;
   height: 80px;
   text-align: center;
@@ -22,7 +22,7 @@ body {
 
 }
 
-.reviewbox #user {
+.modalbox #user {
   width: 30px;
   height: 30px;
   fill: white;
@@ -30,7 +30,7 @@ body {
   float: left;
 }
 
-.reviewbox #pro {
+.modalbox #pro {
   color: white;
   width: 130px;
   height: 50px;
@@ -41,7 +41,7 @@ body {
   margin-top: 30px;
   margin-left: 20px;
 }
-.reviewbox .profile{
+.modalbox .profile{
   width: 420px;
   height: 50px;
   display: flex;

@@ -99,7 +99,7 @@
                                   <div class="review-profile">
                                         <div class="review-profile-img">
 
-                                            <p style="margin-left:5px; color:black;">영화명</p>
+                                            <p style="margin-left:5px; color:darkblue;">영화명</p>
                                         </div>
                                         <div class="review-profile-grade">
                                             <p>★<p>
@@ -108,15 +108,15 @@
                                   </div>
                                   <hr/>
                                   <div class="review-text">
-                                        <p style="color:black !important;">리뷰 글입니다. 재밌고 슬프고 신나는 영화이고 어쩌구 저쩌구 어쩌구 저쩌구 ~~어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~<%=i%></p>
+                                        <p style="color: #aaa !important;">리뷰 글입니다. 재밌고 슬프고 신나는 영화이고 어쩌구 저쩌구 어쩌구 저쩌구 ~~어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~ 어쩌구 저쩌구~<%=i%></p>
                                   </div>
                                   <hr/>
                                   <div class="review-sym">
                                       <div style="display: inline-block;">
-                                          <img src="/assets/img/good.png" alt="따봉">
+                                          <img src="/assets/img/gooood.png" alt="따봉">
                                       </div>
                                       <div style="display: inline-block;">
-                                          <p style="color:black !important; font-size: 30px;">123</p>
+                                          <p style="color:black !important; font-size: 32px; m">123</p>
                                       </div>
                                   </div>
                            </div>
@@ -132,7 +132,7 @@
         <div id="reviewModal" class="modal">
           <div class="modal-content">
               <span class="close" onclick="closeReviewModal()">&times;</span>
-              <h2>리뷰 내용</h2>
+              <h2 style="margin-bottom:10px;">리뷰 상세보기</h2>
               <hr/>
               <div id="reviewContent" class="review-content"></div>
           </div>
@@ -157,7 +157,7 @@
 
         new Swiper('.review-swiper-custom', {
                     speed: 800, // 슬라이드 속도
-                    slidesPerView: 1, // 한 번에 보여질 슬라이드 수
+                    slidesPerView: 5, // 한 번에 보여질 슬라이드 수
                     spaceBetween: 10, // 이미지 간격
                     loop: false, // 슬라이드 루프 설정 비활성화
                     navigation: {
@@ -196,6 +196,9 @@
                     var modal = document.getElementById("reviewModal");
                     modal.style.display = "block";
                 }
+
+
+
 
 
 
