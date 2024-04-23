@@ -47,5 +47,9 @@ public class IndexController {
         model.addAttribute("korea", movieService.getNationData("대한민국"));
         return "swiperexample";
     }
-
+    // 에러 테스트
+    @GetMapping("/error404")
+    public String error404() {
+        return "error/error404";
+    }
 }
