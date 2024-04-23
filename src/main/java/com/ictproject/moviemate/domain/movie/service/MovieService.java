@@ -88,4 +88,16 @@ public class MovieService {
         log.info("movieName : {}", movieName);
         return movieMapper.findMoviesByMovieName(movieName).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
     }
+
+    public List<Movie> recommendMovie(){
+        return movieMapper.findAll().stream()
+                .sorted((x1, x2) -> {
+                    int audiAcc1 = Integer.parseInt(x1.getAudiAcc());
+                    int audiAcc2 = Integer.parseInt(x2.getAudiAcc());
+                    return Integer.compare(audiAcc2 / 100000, audiAcc1 / 100000);
+                })
+                .limit(20)
+                .collect(Collectors.toList());
+
+    }
 }
