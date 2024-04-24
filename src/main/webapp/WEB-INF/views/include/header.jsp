@@ -62,22 +62,25 @@
                     <p class="user">${sessionScope.login.nickName}님 안녕하세요</p>
                     <p class="logout"><a href="/${sessionScope.login.loginPath}/logout">LOGOUT</a></p>
                 </div>
-                <div class="selectBox">
-                    <button id="select-category" class="label">검색어 종류 ▽</button>
-                    <ul class="searchList">
-                        <li class="optionItem" value="director">감독</li>
-                        <li class="optionItem" value="actor">배우</li>
-                        <li class="optionItem" value="movieName">영화제목</li>
-                    </ul>
-                </div>
-                <div class="search-section">
-                    <form id="search" action="/search" method="GET" class="search-form">
-                        <input type="hidden" name="type" id="input-category">
-                        <input type="text" name="keyword" value="${s.keyword}" placeholder="내용을 검색하세요">
-                        <button type="submit">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
+
+                <div class="search-box">
+                    <div class="selectBox">
+                        <button id="select-category" class="label">검색어 종류 ▽</button>
+                        <ul class="searchList">
+                            <li class="optionItem" value="director">감독</li>
+                            <li class="optionItem" value="actor">배우</li>
+                            <li class="optionItem" value="movieName">영화제목</li>
+                        </ul>
+                    </div>
+                    <div class="search-section">
+                        <form id="search" action="/search" method="GET" class="search-form">
+                            <input type="hidden" name="type" id="input-category">
+                            <input type="text" name="keyword" value="${s.keyword}" placeholder="내용을 검색하세요">
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,8 +6,11 @@ import com.ictproject.moviemate.domain.movie.service.GenreService;
 import com.ictproject.moviemate.domain.movie.service.MovieService;
 import com.ictproject.moviemate.domain.review.service.ReviewService;
 import com.ictproject.moviemate.domain.user.User;
+import com.ictproject.moviemate.domain.wish.Wish;
+import com.ictproject.moviemate.domain.wish.service.WishService;
 import com.ictproject.moviemate.global.common.Search;
 import jakarta.servlet.http.HttpSession;
+import jakarta.websocket.Session;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -26,10 +29,11 @@ public class MovieController {
     private final ActorService actorService;
     private final GenreService genreService;
     private final ReviewService reviewService;
+    private final WishService wishService;
 
     @GetMapping("/main")
     public String main(Model model) {
-
+        model.addAttribute("recommend", movieService.recommendMovie());
         model.addAttribute("sf", movieService.getGenreData("sf"));
         model.addAttribute("family", movieService.getGenreData("family"));
         model.addAttribute("horror", movieService.getGenreData("horror"));
@@ -45,10 +49,14 @@ public class MovieController {
 
 
     @GetMapping("/detail/{movieCd}")
-    public String detail(@PathVariable("movieCd")String movieCd, Model model) {
-
+    public String detail(@PathVariable("movieCd")String movieCd, Model model,HttpSession session) {
         log.info("movie : {}", movieService.getMovieData(movieCd));
         log.info("review : {}", reviewService.getReview(movieCd));
+        User userinfo= (User)session.getAttribute("login");
+        model.addAttribute("isWish", wishService.checkWish(Wish.builder()
+                        .userId(Integer.toString(userinfo.getUserId()))
+                        .movieCd(movieCd)
+                        .build()));
         model.addAttribute("movie", movieService.getMovieData(movieCd));
         model.addAttribute("actors", actorService.getActorData(movieCd));
         model.addAttribute("genres", genreService.getGenreData(movieCd));

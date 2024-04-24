@@ -4,12 +4,14 @@
         position: fixed;
         width: 100%;
         top: 0;
+        min-width: 1100px;
         z-index: 9999;
         }
         .header-section {
             height: 100px;
             box-sizing: border-box;
             background-color: rgb(9, 2, 2);
+
         }
         .logo img {
             width: 250px;
@@ -18,7 +20,8 @@
         }
         .header-container {
             display: flex;
-            width: 70%;
+            width: 90%;
+            justify-content: center;
             align-items: center;
             margin: 0 auto;
         }
@@ -27,7 +30,7 @@
             margin: 0 10px;
         }
         .header-items p {
-            margin: 0 20px;
+            margin: 0 10px;
         }
         .header-items p a{
             color: aliceblue;
@@ -68,8 +71,9 @@
             border-radius: 2px;
             font-size: 15px;
             width: 250px;
-            height: 28px;
+            height: 30px;
             color: white;
+            box-sizing: border-box !important;
             
         }
 
@@ -123,13 +127,13 @@
         /* 검색어 종류 선택 */
         .selectBox {
         position: relative;
-        width: 110px;
+        width: 90px;
         height: 30px;
         border-radius: 2px;
         border: 1px solid gray;
         background-size: 15px;
         cursor: pointer;
-        margin-left: 90px;
+
         }
 
         .selectBox:after {
@@ -149,7 +153,8 @@
         height: inherit;
         border: 0 none;
         outline: 0 none;
-        padding-left: 15px;
+        padding: 0;
+        padding-bottom: 5px;
         background: transparent;
         cursor: pointer;
         color: gray;
@@ -187,6 +192,19 @@
 
         .selectBox .optionItem:last-child {
         border-bottom: 0 none;
+        }
+
+        .search-box{
+            display: flex;
+
+        }
+
+        @media screen and (max-width: 1100px) {
+            .search-box{
+                display: none;
+            }
+
+
         }
         
 

@@ -89,14 +89,15 @@ public class MovieService {
         return movieMapper.findMoviesByMovieName(movieName).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
     }
 
-    public List<Movie> recommendMovie(){
+    public List<MovieResponseDTO> recommendMovie(){
         return movieMapper.findAll().stream()
                 .sorted((x1, x2) -> {
-                    int audiAcc1 = Integer.parseInt(x1.getAudiAcc());
-                    int audiAcc2 = Integer.parseInt(x2.getAudiAcc());
-                    return Integer.compare(audiAcc2 / 100000, audiAcc1 / 100000);
+                    int audiAcc1 = Integer.parseInt(x1.getAudiAcc())/100000 + x1.getWishCnt() * 2;
+                    int audiAcc2 = Integer.parseInt(x2.getAudiAcc())/100000 + x2.getWishCnt() * 2;
+                    return Integer.compare(audiAcc2, audiAcc1);
                 })
-                .limit(20)
+                .limit(10)
+                .map(MovieResponseDTO::new)
                 .collect(Collectors.toList());
 
     }
