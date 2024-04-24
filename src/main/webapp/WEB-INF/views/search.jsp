@@ -59,6 +59,19 @@
                 prevEl: '.list-prev',
             }
         });
+
+        window.onload = function () {
+            var footer = document.querySelector("footer");
+            var bodyHeight = document.body.clientHeight;
+            var windowHeight = window.innerHeight;
+
+            if (bodyHeight < windowHeight) {
+                footer.style.position = "fixed";
+                footer.style.left = "0";
+                footer.style.bottom = "0";
+                footer.style.width = "100%";
+            }
+        };
     </script>
 </body>
 
