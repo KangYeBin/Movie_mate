@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>Movie Mate</title>
@@ -10,22 +11,23 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/mypage.css">
 </head>
-<body>
-<%@ include file="include/header.jsp"%>
 
-<!-- 중앙 내 정보 -->
+<body>
+    <%@ include file="include/header.jsp"%>
+
+    <!-- 중앙 내 정보 -->
     <main>
         <div class="container">
-           <div class="profile-contents">
-            <div class="profile-box">
-            <img src="${sessionScope.login.profile}" alt="프사" >
+            <div class="profile-contents">
+                <div class="profile-box">
+                    <img src="${sessionScope.login.profile}" alt="프사">
+                </div>
+                <div class="description">
+                    <h3>${sessionScope.login.email}</h3>
+                    <h1>${sessionScope.login.nickName}</h1>
+                    <p>님의 마이페이지</p>
+                </div>
             </div>
-            <div class="description">
-                <h3>${sessionScope.login.email}</h3>
-                <h1>${sessionScope.login.nickName}</h1>
-                <p>님의 마이페이지</p>
-            </div>
-           </div>
         </div>
     </main>
 
@@ -38,10 +40,10 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <c:forEach var="movie" items="${movie}">
-                       <div class="swiper-slide" data-movie-cd="${movie.movieCd}">
+                        <div class="swiper-slide" data-movie-cd="${movie.movieCd}">
                             <a href="/detail/${movie.movieCd}"><img src="${movie.imageUrl}" alt="영화 포스터"></a>
 
-                       </div>
+                        </div>
                     </c:forEach>
                 </div>
                 <div class="swiper-button-prev"></div>
@@ -52,25 +54,24 @@
 
     <div class="review-list">
         <h1>내가 쓴 후기</h1>
-         <div class="swiper review-swiper-custom">
-              <div class="swiper-wrapper">
+        <div class="swiper review-swiper-custom">
+            <div class="swiper-wrapper">
 
                 <c:forEach var="review" items="${review}">
-                    <div class="swiper-slide review-swiper review-box">
+                    <div class="swiper-slide review-swiper review-box" data-index="${review.reviewId}" data-grade="${review.grade}">
                         <div class="review-container">
-                            <a href="/detail/${review.movieCd}">
                                 <div class="review-profile">
                                     <div class="review-profile-img">
-                                        <p style="margin-left:5px; color:black;">${review.movieName}</p>
+                                        <p style="margin-left:5px; color:black;" onclick="location.href='/detail/${review.movieCd}'">${review.movieName}</p>
                                     </div>
                                     <div class="review-profile-grade">
                                         <p>★<p>
-                                                <p style="margin-left:5px; color:black;">${review.grade}</p>
+                                                <p style="margin-left:5px; color:black;" >${review.grade}</p>
                                     </div>
                                 </div>
                                 <hr />
                                 <div class="review-text">
-                                    <p style="color:#aaa !important;">${review.text}</p>
+                                    <p style="color:#aaa !important;" class="review-contents">${review.text}</p>
                                 </div>
                                 <hr />
                                 <div class="review-sym">
@@ -95,28 +96,31 @@
     </div>
 
     <!-- 리뷰 모달 -->
-    <div id="reviewModal" class="modal">
+    <div id="reviewModal" class="modal" data-reviewNum="" data-grade="">
         <div class="modal-content">
             <span class="close" onclick="closeReviewModal()">&times;</span>
             <h2 style="margin-bottom:10px;">리뷰 상세보기</h2>
             <hr />
+            <span class="star">
+                                            ★★★★★
+                                            <span>★★★★★</span>
+                                            <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                                        </span>
+            <div id="reviewContent" class="review-content"></div>
 
-              <div id="reviewContent" class="review-content"></div>
+            <div class="button-group">
 
-         <div class="button-group">
-
-                 <button class="delete-button" onclick="deleteReview(event)">삭제</button>
-                 <button class="edit-button" onclick="editReview()">수정</button>
-             </div>
-         </div>
-      </div>
+                <button class="delete-button" onclick="deleteReview(event)">삭제</button>
+                <button class="edit-button" onclick="editReview()">수정</button>
+            </div>
+        </div>
+    </div>
 
 
 
     <%@ include file="include/footer.jsp"%>
 
     <script>
-
         new Swiper('.swiper-container', {
             speed: 800, // 슬라이드 속도
             slidesPerView: 5, // 한 번에 보여질 슬라이드 수
@@ -128,7 +132,7 @@
             },
         });
 
-        new Swiper('.review-swiper-custom', {
+      new Swiper('.review-swiper-custom', {
             speed: 800, // 슬라이드 속도
             slidesPerView: 5, // 한 번에 보여질 슬라이드 수
             spaceBetween: 10, // 이미지 간격
@@ -140,13 +144,7 @@
         });
 
 
-        const swiperSlides = document.querySelectorAll('.swiper-slide');
-        swiperSlides.forEach(function (slide) {
-            slide.addEventListener('click', function (event) {
 
-                console.log('클릭된 슬라이드:', event.currentTarget);
-            });
-        });
 
         // 닫기
         function closeReviewModal() {
@@ -161,38 +159,55 @@
             var reviewText = box.querySelector('.review-text');
             reviewText.addEventListener('click', function (event) {
                 var index = box.getAttribute('data-index');
-                openReviewModal(index);
+                var grade = box.getAttribute('data-grade');
+                openReviewModal(index,grade);
                 event.stopPropagation(); // 부모 요소의 클릭 이벤트 막기
             });
         });
 
 
         // 모달 열때 내용 보여주기
-        function openReviewModal(index) {
+        function openReviewModal(index,grade) {
             var reviewContent = document.querySelector('.swiper-slide[data-index="' + index + '"] .review-text')
                 .textContent;
             document.getElementById("reviewContent").innerHTML = reviewContent;
             var modal = document.getElementById("reviewModal");
+            modal.dataset.reviewnum = index;
+            modal.dataset.grade = grade;
             modal.style.display = "block";
         }
 
         // 삭제 버튼 클릭 이벤트 핸들러
         function deleteReview(event) {
+            var reviewId = document.getElementById("reviewModal").dataset.reviewnum;
             var result = confirm("정말로 삭제하시겠습니까?");
             // 확인 버튼을 눌렀을 때
             if (result) {
-                console.log("삭제되었습니다."); //
+                fetch("/api/v1/review/del/" + reviewId,{
+                    method: 'delete',
+                    headers: {
+                                 'Content-Type': 'application/json'
+                              },
+                }).then(window.location.reload())
             } else {
                 console.log("삭제가 취소되었습니다.");
             }
         }
+        var value;
+        const drawStar = (target) => {
+                                        document.querySelector(`.star span`).style.width = `\${target.value * 10}%`;
+                                        value=target.value;
+                                    }
 
 
         // 수정 버튼 클릭 시 폼창 만들기
         function editReview() {
             var reviewText = document.querySelector('.review-content');
             var reviewTextContent = reviewText.textContent.trim();
-
+            var reviewId = document.getElementById("reviewModal").dataset.reviewnum;
+            var grade = document.getElementById("reviewModal").dataset.grade;
+            document.querySelector('.star').style.visibility='visible';
+            document.querySelector('.star span').style.width = `\${grade*2*10}%`;
 
             var form = document.createElement('form');
             form.setAttribute('id', 'editForm');
@@ -208,11 +223,35 @@
             saveButton.setAttribute('type', 'button');
             saveButton.classList.add('save-button'); //
             saveButton.addEventListener('click', function () {
-                var editedText = textarea.value;
-                // 수정된 내용
-                reviewText.textContent = editedText;
-                // 모달 닫기
-                closeReviewModal();
+                const modify = {
+                    text : textarea.value,
+                    grade : value/2,
+                }
+                if(confirm("저장 하시겠습니까?")){
+                     fetch("/api/v1/review/mod/" + reviewId,{
+                                        method: 'put',
+                                        headers: {
+                                                     'Content-Type': 'application/json'
+                                                  },
+                                        body : JSON.stringify(modify)
+                                    })
+                                    .then(res => {
+                                        if (res.ok) {
+                                            
+                                        } else {
+                                            throw new Error('수정 요청에 실패했습니다.');
+                                        }
+                                    })
+                                    .then(data => {
+                                        console.log('수정 완료:', data);
+                                        window.location.reload(); // 성공 시 페이지 다시 로드
+                                    })
+                                    .catch(error => {
+                                        console.error('오류 발생:', error);
+                                    });
+                }else{
+                    closeReviewModal();
+                }
             });
 
             // 모달 창 내용 교체
@@ -239,6 +278,8 @@
             editButton.classList.remove('hidden');
             deleteButton.classList.remove('hidden');
         }
+
+
     </script>
 </body>
 

@@ -1,8 +1,10 @@
 package com.ictproject.moviemate.domain.review.mapper;
 
-import com.ictproject.moviemate.domain.review.dto.ReviewDetailResponseDTO;
 import com.ictproject.moviemate.domain.review.Review;
+import com.ictproject.moviemate.domain.review.dto.ReviewDetailResponseDTO;
+import com.ictproject.moviemate.domain.review.dto.ReviewModifyRequestDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,7 +15,7 @@ public interface ReviewMapper {
 	void insertReview(Review review);
 
 	// 후기 수정
-	void modifyReview(Review review);
+	void modifyReview(ReviewModifyRequestDTO reviewModifyRequestDTO);
 
 	// 후기 삭제
 	void deleteReview(int reviewId);
