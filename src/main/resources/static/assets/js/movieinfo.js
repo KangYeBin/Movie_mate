@@ -2,6 +2,14 @@
         const drawStar = (target) => {
             document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
         }
+
+        const drawStar = (target) => {
+            // 별점 비율에 따라 width 값을 계산하고 적용
+            const starPercentage = target.value * 10; // 10을 곱하는 이유는 별점이 최대 10점이므로
+            document.querySelector('.star span').style.width = `${starPercentage}%`;
+        }
+
+
         const $sky = document.querySelector(".sky");
 
         // 브라우저 창 크기에 따른 별 생성

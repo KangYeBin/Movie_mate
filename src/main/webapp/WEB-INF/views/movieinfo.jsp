@@ -17,11 +17,6 @@
 <body>
 
 <div class="scrollBar">
-
-</div>
-
-<div class="backSky">
-    <svg class="sky"></svg>
 </div>
 
 <div class="movie">
