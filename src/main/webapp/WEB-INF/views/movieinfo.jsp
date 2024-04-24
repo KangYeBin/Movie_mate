@@ -14,29 +14,31 @@
 </head>
 
 <body>
-
-<div class="scrollBar">
-</div>
-    <%@ include file="include/header.jsp"%>
-    <div class="scrollBar"></div>
+<%@ include file="include/header.jsp"%>
+<div class="scrollBar"></div>
 
 
 <div class="movie">
-
-
     <div class="info-wrap">
         <img class="poster" src="${movie.imageUrl}">
         <div class="doc">
             <h1>${movie.movieName}</h1>
 
-            <svg id="like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                <path
-                  d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4
-                  300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5
-                  300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2
-                  0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
-            </svg>
+            <c:if test="${isWish}">
+                <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="active">
+                    <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                            d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                </svg>
+            </c:if>
+            <c:if test="${!isWish}">
+                <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                            d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                </svg>
+            </c:if>
+
             <p class="content">${movie.plot}</p>
             <div class="info">
                 <div>
@@ -83,85 +85,24 @@
         </div>
     </div>
 </div>
-                <c:if test="${isWish}">
-                <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="active">
-                    <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                    <path
-                        d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                </svg>
-                </c:if>
-                <c:if test="${!isWish}">
-                    <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                                d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                    </svg>
-                </c:if>
-
-                <p class="content">${movie.plot}</p>
-                <div class="info">
-                    <div>
-                        <h1>누적 관객수 :</h1>
-                        <p>${movie.audiAcc}명</p>
-                    </div>
-                    <div>
-                        <h1>장르 : </h1>
-                        <p>
-                            <c:forEach var="genre" items="${genres}">
-                                ${genre.genreName} &nbsp;
-                            </c:forEach>
-                        </p>
-                    </div>
-                    <div>
-                        <h1>출연 :</h1>
-                        <p>
-                            <c:forEach var="actor" items="${actors}">
-                                ${actor.actorName} &nbsp;
-                            </c:forEach>
-                        </p>
-                    </div>
-                    <div>
-                        <h1>감독 :</h1>
-                        <p>${movie.director}</p>
-                    </div>
-                    <div>
-                        <h1>국가 :</h1>
-                        <p>${movie.nation}</p>
-                    </div>
-                    <div>
-                        <h1>등급 :</h1>
-                        <p>${movie.rating}</p>
-                    </div>
-                    <div>
-                        <h1>개봉일 :</h1>
-                        <p>${movie.openDate}</p>
-                    </div>
-                    <div>
-                        <h1>러닝타임 :</h1>
-                        <p>${movie.runtime}분</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
-    <div class="review-wrap">
-        <div class="review-box">
-            <div class="review">
-                <!-- 리뷰별개수 창입니다 -->
-                <div class="reple">
-                    <div class="reple-box">
-                        <div class="reple-star">
-
+<div class="review-wrap">
+    <div class="review-box">
+        <div class="review">
+            <!-- 리뷰별개수 창입니다 -->
+            <div class="reple">
+                <div class="reple-box">
+                    <div class="reple-star">
                             <span class="star">
-                            ★★★★★
-                             <span>★★★★★</span>
-                            <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                             </span>
-
-                        <button class="reple-bt" onclick="openModal()"> 후기 작성 </button>
+                                ★★★★★
+                                <span>★★★★★</span>
+                                <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                            </span>
+                        <div class="reple-star-bt">
+                            <button class="reple-bt" onclick="openModal()"> 후기작성 </button>
+                        </div>
                     </div>
                     <div class="reple-item">
                         <select>
@@ -173,88 +114,63 @@
             </div>
 
             <div class="swiper review-swiper-custom">
-                <div class="swiper-wrapper">
-                    <% for(int i=0;i<10;i++)  { %>
-                    <div class="swiper-slide review-swiper">
-                        <div class="review-container">
-                            <div class="review-profile">
-                                <div class="review-profile-img">
-                                    <img src="" alt="프사">
-                                    <p style="margin-left:5px; color:black;">이름</p>
-                                </div>
-                                <div class="review-profile-grade">
-                                    <img src="/assets/img/3.png">
-                                    <p style="margin-left:5px; color:black;">5.0</p>
-                                </div>
-                            </div>
-                            <hr class="review-hr" />
-                            <div class="review-text">
-                                <p style="color:black !important;">리뷰 글</p>
-                            </div>
-                            <hr  />
-                            <div class="review-sym">
-                                <div>
-                                    <p style="color:black !important;"> 따봉 </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <% } %>
+                <div class="swiper-wrapper" id="reviewData">
+
+                    <!--
+                        renderReviews에서 태그 추가
+                    -->
+
                 </div>
                 <div class="swiper-pagination pagination_bullet"></div>
                 <div class="swiper-pagination pagination_progress"></div>
             </div>
-
-
-
         </div>
     </div>
 </div>
 
-<!-- 모달 창입니다 -->
+<!-- 모달 -->
 <div id="reviewModal" class="modal">
     <div class="modal-content">
         <div class="modalbox">
             <div class="box">
-                <div id="pro"><svg id="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> 프로필</div>
+                <!-- <div id="pro"><svg id="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> 프로필</div> -->
                 <span class="star-modal">
                         ★★★★★
                         <span>★★★★★</span>
-                        <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                </span>
+                    </span>
                 <span class="close" onclick="closeReviewModal()">&times;</span>
 
             </div>
 
-                <form id="review-form" class="profile">
-                   <textarea class="text" name="Reviewcontent" id="text" placeholder="리뷰를 작성하세요"
-                             required;></textarea> <div id="reviewContent"></div>
-                    <div class="register">
-                        <input type="submit" id="register" value="등록">
-                    </div>
-                </form>
-            </div>
+            <form id="review-form" class="profile">
+                <textarea class="text" type="text" id="text" placeholder="리뷰를 작성해주세요"></textarea>
+                <div id="reviewContent"></div>
+                <div class="register">
+                    <input type="submit" id="register" class="first btn" value="등록">
+                </div>
+            </form>
         </div>
+    </div>
 
 </div>
 
 
 
-    <%@ include file="include/footer.jsp"%>
+<%@ include file="include/footer.jsp"%>
 
-    <script>
-        /* 리뷰별개수 */
-        const drawStar = (target) => {
-            document.querySelector(`.star span`).style.width = `\${target.value * 10}%`;
-            document.querySelector(`.star-modal span`).style.width = `\${target.value * 10}%`;
-            let button = document.querySelector('.reple-bt');
-            if (target.value > 0) {
-                button.style.visibility = "visible";
-            } else {
-                button.style.visibility = "hidden";
-            }
-            console.log(target.value);
+<script>
+    /* 리뷰별개수 */
+    const drawStar = (target) => {
+        document.querySelector(`.star span`).style.width = `\${target.value * 10}%`;
+        document.querySelector(`.star-modal span`).style.width = `\${target.value * 10}%`;
+        let button = document.querySelector('.reple-bt');
+        if (target.value > 0) {
+            button.style.visibility = "visible";
+        } else {
+            button.style.visibility = "hidden";
         }
+        console.log(target.value);
+    }
 
 
     const $sky = document.querySelector(".sky");
@@ -296,7 +212,7 @@
     }
 </script>
 <script>
-    var reviewSwiper =new Swiper('.review-swiper-custom', {
+    var reviewSwiper = new Swiper('.review-swiper-custom', {
         speed: 800, // 슬라이드 속도
         slidesPerView: 4, // 한 번에 보여질 슬라이드 수
         slidesPerGroup: 4,
@@ -312,12 +228,35 @@
         },
     })
 
-    var like = document.getElementById("like")
 
+    //찜 추가,삭제
+    var like = document.getElementById("like");
     like.addEventListener('click', function () {
-        like.classList.toggle('active')
+        like.classList.toggle('active');
+        if(like.classList.contains("active")){
+            fetch("/wish/${sessionScope.login.userId}/${movie.movieCd}", {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        }else{
+            fetch("/wish/${sessionScope.login.userId}/${movie.movieCd}", {
+                method: 'delete',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        }
     });
 
+    // 후기 좋아요 추가,삭제
+    var thumb = document.querySelectorAll('.thumb');
+    thumb.forEach(e => {
+        e.addEventListener('click', function () {
+            e.classList.toggle('active')
+        });
+    })
 </script>
 <script>
     // 모달 열기 버튼
@@ -329,53 +268,53 @@
     // 모달 닫기 버튼
     var closeModalBtn = document.getElementsByClassName("close")[0];
 
-        // 모달 바깥을 클릭하면 모달이 닫히도록 함
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-        // 모달 열기 버튼에 클릭 이벤트 리스너 추가
-        function openModal() {
-            modal.style.display = "block";
-        }
-        // 모달 닫기 버튼에 클릭 이벤트 리스너 추가
-        function closeReviewModal() {
+    // 모달 바깥을 클릭하면 모달이 닫히도록 함
+    window.onclick = function (event) {
+        if (event.target == modal) {
             modal.style.display = "none";
         }
-    </script>
-    <script>
-        const movieCd = '${movie.movieCd}';
-        const URL = '/api/v1/review';
+    }
+    // 모달 열기 버튼에 클릭 이벤트 리스너 추가
+    function openModal() {
+        modal.style.display = "block";
+    }
+    // 모달 닫기 버튼에 클릭 이벤트 리스너 추가
+    function closeReviewModal() {
+        modal.style.display = "none";
+    }
+</script>
+<script>
+    const movieCd = '${movie.movieCd}';
+    const URL = '/api/v1/review';
 
-        function renderReviews(reviews) {
-            console.log(reviews);
+    function renderReviews(reviews) {
+        console.log(reviews);
 
-            const {
-                movieCd,
-                dto
-            } = reviews;
-            console.log(dto);
+        const {
+            movieCd,
+            dto
+        } = reviews;
+        console.log(dto);
 
-            let tag = '';
-            if (dto != null && dto.length > 0) {
+        let tag = '';
+        if (dto != null && dto.length > 0) {
 
-                for (let review of dto) {
-                    const {
-                        reviewId,
-                        userId,
-                        movieCd,
-                        reviewDate,
-                        text,
-                        sympathyCnt,
-                        grade,
-                        movieName,
-                        email,
-                        profile
-                    } = review;
-                    console.log(review);
+            for (let review of dto) {
+                const {
+                    reviewId,
+                    userId,
+                    movieCd,
+                    reviewDate,
+                    text,
+                    sympathyCnt,
+                    grade,
+                    movieName,
+                    email,
+                    profile
+                } = review;
+                console.log(review);
 
-                    tag += `
+                tag += `
 
                             <div class="swiper-slide review-swiper">
                                 <div class="review-container">
@@ -410,67 +349,67 @@
                     `;
 
 
-                }
-            } else {
-                tag += `<div style="color:white;" class="swiper-slide review-swiper">작성된 후기가 없습니다</div>`;
             }
-
-            document.getElementById('reviewData').innerHTML = tag;
-
+        } else {
+            tag += `<div style="color:white;" class="swiper-slide review-swiper">작성된 후기가 없습니다</div>`;
         }
 
-        //후기 별찍기
-        document.getElementById("review-form").addEventListener("submit", e => {
-            e.preventDefault();
-            const req = {
-                text: document.getElementById("text").value,
-                userId: '${sessionScope.login.userId}',
-                movieCd: '${movie.movieCd}',
-                grade: document.querySelector('input[type="range"]').value / 2,
-                profile: '${sessionScope.login.profile}',
-                movieName: '${movie.movieName}'
-            }
+        document.getElementById('reviewData').innerHTML = tag;
 
-            fetch("/api/v1/review/create", {
-                    method: 'post',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(req)
-                })
-                .then(res => {
-                    console.log(res.status);
-                    if (res.status == 200) {
-                        alert("후기가 등록되었습니다");
-                        return res.text();
-                    }
-                })
-                .then(data => {
-                    console.log('응답 성공 : ', data);
-                    fetchGetReviews();
-                })
+    }
 
-            closeReviewModal();
+    //후기 별찍기
+    document.getElementById("review-form").addEventListener("submit", e => {
+        e.preventDefault();
+        const req = {
+            text: document.getElementById("text").value,
+            userId: '${sessionScope.login.userId}',
+            movieCd: '${movie.movieCd}',
+            grade: document.querySelector('input[type="range"]').value / 2,
+            profile: '${sessionScope.login.profile}',
+            movieName: '${movie.movieName}'
+        }
+
+        fetch("/api/v1/review/create", {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(req)
         })
+            .then(res => {
+                console.log(res.status);
+                if (res.status == 200) {
+                    alert("후기가 등록되었습니다");
+                    return res.text();
+                }
+            })
+            .then(data => {
+                console.log('응답 성공 : ', data);
+                fetchGetReviews();
+            })
 
-        function fetchGetReviews() {
-            fetch(`\${URL}/detail/\${movieCd}/reviews`)
-                .then(res => res.json())
-                .then(reviews => {
-                    console.log('reviews : ' + reviews);
-                    renderReviews(reviews);
-                    reviewSwiper.update();
-                })
-        }
+        closeReviewModal();
+    })
 
-        (() => {
-            fetchGetReviews();
-        })();
+    function fetchGetReviews() {
+        fetch(`\${URL}/detail/\${movieCd}/reviews`)
+            .then(res => res.json())
+            .then(reviews => {
+                console.log('reviews : ' + reviews);
+                renderReviews(reviews);
+                reviewSwiper.update();
+            })
+    }
+
+    (() => {
+        fetchGetReviews();
+    })();
 
 
 
 
-    </script>
+</script>
 </body>
 
 </html>
