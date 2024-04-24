@@ -23,6 +23,7 @@ h1.recommend-movie{
 
 /* 상단 메인 빅 배너 슬라이더 스타일 */
  #main-banner-slider {
+
      width: 1200px;
      margin: 0 auto;
      overflow-x: hidden;
@@ -80,6 +81,7 @@ ul.banner-title li {
 span.genre-text{
     display: block;
     width: 60%;
+    /*min-width: 1100px;*/
     margin: 10px 0;
     color: #fff;
     font-weight: 700;
@@ -99,6 +101,7 @@ a.more-button {
 .genre{
     overflow: hidden;
     width: 65%;
+    min-width: 1100px;
     margin: 50px auto;
     position: relative;
 }

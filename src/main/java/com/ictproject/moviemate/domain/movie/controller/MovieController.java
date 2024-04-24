@@ -4,6 +4,7 @@ import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
 import com.ictproject.moviemate.domain.movie.service.ActorService;
 import com.ictproject.moviemate.domain.movie.service.GenreService;
 import com.ictproject.moviemate.domain.movie.service.MovieService;
+import com.ictproject.moviemate.domain.review.service.ReviewService;
 import com.ictproject.moviemate.domain.user.User;
 import com.ictproject.moviemate.global.common.Search;
 import jakarta.servlet.http.HttpSession;
@@ -24,6 +25,7 @@ public class MovieController {
     private final MovieService movieService;
     private final ActorService actorService;
     private final GenreService genreService;
+    private final ReviewService reviewService;
 
     @GetMapping("/main")
     public String main(Model model) {
@@ -46,9 +48,11 @@ public class MovieController {
     public String detail(@PathVariable("movieCd")String movieCd, Model model) {
 
         log.info("movie : {}", movieService.getMovieData(movieCd));
+        log.info("review : {}", reviewService.getReview(movieCd));
         model.addAttribute("movie", movieService.getMovieData(movieCd));
         model.addAttribute("actors", actorService.getActorData(movieCd));
         model.addAttribute("genres", genreService.getGenreData(movieCd));
+        model.addAttribute("review", reviewService.getReview(movieCd));
 
         return "movieinfo";
     }
