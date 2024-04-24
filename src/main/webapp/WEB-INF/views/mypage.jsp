@@ -37,50 +37,12 @@
 
             <div class="swiper-container">
                 <div class="swiper-wrapper">
+                    <c:forEach var="movie" items="${movie}">
+                       <div class="swiper-slide" data-movie-cd="${movie.movieCd}">
+                            <a href="/detail/${movie.movieCd}"><img src="${movie.imageUrl}" alt="영화 포스터"></a>
 
-                    <div class="swiper-slide">
-                        <a href="detail_page.html">
-                            <div class="slide-inner">
-                                <img src="https://via.placeholder.com/240x360" alt="Poster 1">
-                            </div>
-                            <div class="slide-inner">
-                                <img src="https://via.placeholder.com/240x360" alt="Poster 2">
-                            </div>
-                            <div class="slide-inner">
-                                <img src="https://via.placeholder.com/240x360" alt="Poster 3">
-                            </div>
-                            <div class="slide-inner">
-                                <img src="https://via.placeholder.com/240x360" alt="Poster 4">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 4">
-                        </div>
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 5">
-                        </div>
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 6">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 7">
-                        </div>
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 8">
-                        </div>
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 9">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <img src="https://via.placeholder.com/240x360" alt="Poster 10">
-                        </div>
-                    </div>
+                       </div>
+                    </c:forEach>
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -152,7 +114,7 @@
 
         new Swiper('.swiper-container', {
             speed: 800, // 슬라이드 속도
-            slidesPerView: 1, // 한 번에 보여질 슬라이드 수
+            slidesPerView: 5, // 한 번에 보여질 슬라이드 수
             spaceBetween: 10, // 이미지 간격
             loop: false, // 슬라이드 루프 설정 비활성화
             navigation: {
