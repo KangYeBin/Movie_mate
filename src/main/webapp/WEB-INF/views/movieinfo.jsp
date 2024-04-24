@@ -103,7 +103,7 @@
                             <span class="star">
                                 ★★★★★
                                 <span>★★★★★</span>
-                                <input type="range"  oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                                <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
                             </span>
                             <div class="reple-star-bt">
                                 <button class="reple-bt" onclick="openModal()"> 코멘트 남기기 </button>
@@ -119,38 +119,12 @@
                 </div>
 
                 <div class="swiper review-swiper-custom">
-                    <div class="swiper-wrapper">
-                        <c:forEach var="review" items="${review}">
-                            <div class="swiper-slide review-swiper">
-                                <div class="review-container">
-                                    <div class="review-profile">
-                                        <div class="review-profile-img">
-                                            <img src="${review.profile}" alt="프사">
-                                            <p style="margin-left:5px; color:black;">${review.email}</p>
-                                        </div>
-                                        <div class="review-profile-grade">
-                                            <img src="/assets/img/3.png">
-                                            <p style="margin-left:5px; color:black;">${review.grade}</p>
-                                        </div>
-                                    </div>
-                                    <hr class="review-hr" />
-                                    <div class="review-text">
-                                        <p style="color:black !important;">${review.text}</p>
-                                    </div>
-                                    <hr class="review-hr" />
-                                    <div class="review-sym">
-                                        <div class="review-thumb">
-                                            <svg class="thumb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                                <path
-                                                    d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
-                                            </svg>
-                                            <p class="thumb-cnt">${review.sympathyCnt}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </c:forEach>
+                    <div class="swiper-wrapper" id="reviewData">
+
+                        <!--
+                            renderReviews에서 태그 추가
+                        -->
+
                     </div>
                     <div class="swiper-pagination pagination_bullet"></div>
                     <div class="swiper-pagination pagination_progress"></div>
@@ -167,7 +141,7 @@
         <div class="modal-content">
             <div class="modalbox">
                 <div class="box">
-                    <div id="pro"><svg id="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> 프로필</div>
+                    <!-- <div id="pro"><svg id="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> 프로필</div> -->
                     <span class="star-modal">
                         ★★★★★
                         <span>★★★★★</span>
@@ -318,6 +292,80 @@
         }
     </script>
     <script>
+        const movieCd = '${movie.movieCd}';
+        const URL = '/api/v1/review';
+
+        function renderReviews(reviews) {
+            console.log(reviews);
+
+            const {
+                movieCd,
+                dto
+            } = reviews;
+            console.log(dto);
+
+            let tag = '';
+            if (dto != null && dto.length > 0) {
+
+                for (let review of dto) {
+                    const {
+                        reviewId,
+                        userId,
+                        movieCd,
+                        reviewDate,
+                        text,
+                        sympathyCnt,
+                        grade,
+                        movieName,
+                        email,
+                        profile
+                    } = review;
+                    console.log(review);
+
+                    tag += `
+
+                            <div class="swiper-slide review-swiper">
+                                <div class="review-container">
+                                    <div class="review-profile">
+                                        <div class="review-profile-img">
+                                            <img src="\${profile}" alt="프사">
+                                            <p style="margin-left:5px; color:black;">\${email}</p>
+                                        </div>
+                                        <div class="review-profile-grade">
+                                            <img src="/assets/img/3.png">
+                                            <p style="margin-left:5px; color:black;">\${grade}</p>
+                                        </div>
+                                    </div>
+                                    <hr class="review-hr" />
+                                    <div class="review-text">
+                                        <p style="color:black !important;">\${text}</p>
+                                    </div>
+                                    <hr class="review-hr" />
+                                    <div class="review-sym">
+                                        <div class="review-thumb">
+                                            <svg class="thumb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                                <path
+                                                    d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
+                                            </svg>
+                                            <p class="thumb-cnt">\${sympathyCnt}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    `;
+
+
+                }
+            } else {
+                tag += `<div style="color:white;" class="swiper-slide review-swiper">작성된 후기가 없습니다</div>`;
+            }
+
+            document.getElementById('reviewData').innerHTML = tag;
+
+        }
+
         //후기 별찍기
         document.getElementById("review-form").addEventListener("submit", e => {
             e.preventDefault();
@@ -327,17 +375,45 @@
                 movieCd: '${movie.movieCd}',
                 grade: document.querySelector('input[type="range"]').value / 2,
                 profile: '${sessionScope.login.profile}',
+                movieName: '${movie.movieName}'
             }
 
-            fetch("/review/create", {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(req)
-            })
+            fetch("/api/v1/review/create", {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(req)
+                })
+                .then(res => {
+                    console.log(res.status);
+                    if (res.status == 200) {
+                        alert("후기가 등록되었습니다");
+                        return res.text();
+                    }
+                })
+                .then(data => {
+                    console.log('응답 성공 : ', data);
+                    fetchGetReviews();
+                })
 
+            closeReviewModal();
         })
+
+        function fetchGetReviews() {
+            fetch(`\${URL}/detail/\${movieCd}/reviews`)
+                .then(res => res.json())
+                .then(reviews => {
+                    console.log('reviews : ' + reviews);
+                    renderReviews(reviews);
+                })
+        }
+
+        (() => {
+            fetchGetReviews();
+        })();
+
+
 
 
     </script>
