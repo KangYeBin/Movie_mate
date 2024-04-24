@@ -1,6 +1,7 @@
 package com.ictproject.moviemate.domain.wish.service;
 
 import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
+import com.ictproject.moviemate.domain.wish.Wish;
 import com.ictproject.moviemate.domain.wish.mapper.WishMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,5 +18,14 @@ public class WishService {
 	public List<MovieResponseDTO> findWish(int userId) {
 		return wishMapper.findWish(userId).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
 	}
+	public void insertWish(Wish wish){
+		wishMapper.insertWish(wish);
+	}
+	public void deleteWish(Wish wish){
+        wishMapper.deleteWish(wish);
+    }
 
+    public boolean checkWish(Wish wish) {
+		return wishMapper.checkWish(wish);
+    }
 }

@@ -125,10 +125,6 @@ section .content-list h1 {
   padding: 80px;
 }
 
-.review-list h1 {
-   margin-bottom: 40px;
-}
-
 section .review-list {
   margin-bottom: 3rem;
   position: relative;
@@ -139,10 +135,12 @@ section .review-list {
 /* 리뷰 */
 .review-container{
     border-radius:5%;
-    border: 5px solid indianred;
-    width:80%;
+    border: 5px solid grey;
+    width:95%;
     height:300px;
     background-color: #F2F2F2;
+    cursor: pointer;
+
 
 }
 .review-profile{
@@ -171,8 +169,8 @@ section .review-list {
 }
 
 .review-profile p {
-    color: #FFD700;
-    font-size: 30px;
+    color: gold;
+    font-size: 20px;
 }
 
 .review-text {
@@ -193,6 +191,27 @@ section .review-list {
 .review-sym img {
     margin-top: 2px;
     margin-right: 5px;
+}
+.sym-box{
+    display:flex;
+    align-items:center;
+
+}
+.thumb{
+    width:20px;
+    height:20px;
+    margin-top:10px;
+
+}
+.thumb-cnt{
+    margin-left:5px;
+    margin-top:15px;
+    color:black;
+    font-size: 20px;
+}
+
+.review-swiper-custom .swiper-wrapper {
+    padding: 70px; /* 패딩 값 설정 */
 }
 
 
@@ -248,7 +267,96 @@ section .review-list {
 
 .swiper-wrapper{
     width: 80% !important;
+    mim-width: 1500px;
 }
+
+/* 모달 창 삭제 및 수정 */
+
+.modal-content {
+    position: relative;
+}
+
+.button-group {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.edit-button, .delete-button {
+    background-color: deepskyblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+
+.delete-button {
+    background-color: red;
+    margin-right: 10px;
+}
+
+/* 모달 창 내부의 폼 태그 스타일 */
+#editForm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#editForm textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    margin-bottom: 70px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    border: solid 2px;
+
+     background-color: grey;
+        color: #fff;
+        padding: 20px;
+}
+
+#editForm button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 저장 버튼 */
+
+.save-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #0056b3; /* 마우스 호버 시 배경색 변경 */
+}
+
 
 
 /* 반응형 */

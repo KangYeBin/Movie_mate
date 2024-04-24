@@ -5,7 +5,7 @@
 <mapper namespace="com.ictproject.moviemate.domain.wish.mapper.WishMapper">
 
     <insert id="insertWish">
-        INSERT INTO wish
+        INSERT INTO wish_list
             (user_id, movie_cd)
         VALUES
             (#{userId}, #{movieCd})
@@ -13,7 +13,7 @@
 
     <delete id="deleteWish">
         DELETE FROM
-            wish
+            wish_list
         WHERE
             user_id = #{userId}
         AND
@@ -31,5 +31,9 @@
             w.movie_cd = m.movie_cd
         WHERE
             w.user_id = #{userId};
+    </select>
+
+    <select id="checkWish" resultType="boolean">
+        select count(*) from wish_list where user_id = #{userId} and movie_cd = #{movieCd}
     </select>
 </mapper>

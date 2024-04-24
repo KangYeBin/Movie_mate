@@ -5,6 +5,8 @@ import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
 import com.ictproject.moviemate.domain.movie.service.MovieApiService;
 import com.ictproject.moviemate.domain.movie.service.MovieService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +18,12 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
+//@EnableScheduling
 public class IndexController {
     private final MovieApiService movieApiService;
     private final MovieService movieService;
+
+    //@Scheduled(cron = "* * 12 * * ?")
     @GetMapping("/getMovieData")
     public String index() {
         
@@ -47,5 +52,9 @@ public class IndexController {
         model.addAttribute("korea", movieService.getNationData("대한민국"));
         return "swiperexample";
     }
-
+    // 에러 테스트
+    @GetMapping("/error404")
+    public String error404() {
+        return "error/error404";
+    }
 }

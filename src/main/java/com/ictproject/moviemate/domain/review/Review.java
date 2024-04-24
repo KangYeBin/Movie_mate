@@ -32,6 +32,7 @@ public class Review {
 	private LocalDateTime reviewDate;	// 등록일
 	private String text;				// 텍스트
 	private int sympathyCnt;			// 공감 수
-
 	private float grade;				// 별점
+	private String movieName;
+
 }

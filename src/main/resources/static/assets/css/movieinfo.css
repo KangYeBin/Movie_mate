@@ -1,8 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Do Hyeon", sans-serif;
-  font-weight: 10;
-  font-style: normal;
+
 }
 
 body::-webkit-scrollbar {
@@ -19,6 +17,44 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
 }
+
+
+.backSky {
+  width: 0vw;
+  height: 0vh;
+  position: relative;
+  background: linear-gradient(to right, #111, #0e0f19);
+  overflow: hidden;
+}
+
+.sky {
+  width: 100vw;
+  height: 100vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveStar 240s linear infinite;
+}
+
+/* 별 */
+.sky .star {
+  fill: #fff;
+  stroke: none;
+  stroke-width: 0;
+}
+
+/* 별 이동효과 */
+@keyframes moveStar {
+  from {
+    transform: translate(-50%, -50%) rotate(0)
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+}
+
 
 
 body {
@@ -188,6 +224,11 @@ body {
   height: 100%;
   visibility: hidden;
   color: white;
+  visibility: hidden;
+}
+.reple-star-bt{
+  display: flex;
+  align-items: center;
 }
 
 .review-wrap .review-box .review .nickname {
@@ -310,6 +351,7 @@ body {
 .review-profile-img img{
   width:30px;
   height:30px;
+  border-radius: 50%;
 }
 
 .review-profile-grade{
@@ -319,14 +361,15 @@ body {
 .review-profile-grade img{
   width:30px;
   height:30px;
+  color: gold;
 }
 .review-text {
   padding:5px;
-  height:70%;
+  height:72%;
   width:100%;
 }
 .review-sym{
-  padding:5px;
+  padding:5px 10px 0 10px;
   width:100%;
 }
 
@@ -379,7 +422,6 @@ body {
 }
 
 /* 모달창 */
-
 .modal {
   display: none;
   position: fixed;
@@ -391,15 +433,26 @@ body {
   background-color: rgba(0, 0, 0, 0.4); /
 }
 
+
+.thumb{
+  width: 30px;
+  fill: #868282;
+}
+
+.thumb.active{
+  fill: black;
+}
+
+
+/*버튼만들기*/
 .modal-content {
   background-color: black;
   margin: 15% auto;
   padding: 20px;
-  border: 10px solid powderblue;
+  border: 1px solid #888;
   width: 30%;
-  height: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 40px;
+  height: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* 모달 닫기 버튼 스타일 */
@@ -408,8 +461,6 @@ body {
   float: right;
   font-size: 60px;
   font-weight: bold;
-  margin-left: 20px;
-  margin-bottom: 20px;
   position: absolute;
   right: 0;
 }
@@ -437,7 +488,7 @@ body {
   height: 25%;
   text-align: center;
   margin-bottom: 10px;
-  flex-grow: 1;
+
 }
 
 .modalbox #user {
@@ -471,7 +522,6 @@ body {
   height: 5rem;
   color: #ddd;
   font-size: 50px;
-  flex-grow: 2;
 }
 
 .star input {
@@ -554,4 +604,31 @@ select option {
   color: #fff;
   padding: 3px 0;
   font-size: 17px;
+}
+.review-thumb{
+  display: flex;
+  align-items: center;
+}
+.thumb-cnt{
+  padding-left: 5px;
+  padding-top: 2px;
+}
+/*모달*/
+.star-modal {
+  position: relative;
+  line-height: 5rem;
+  height: 5rem;
+  color: #ddd;
+  font-size: 50px;
+}
+
+
+
+.star-modal span {
+  width: 0;
+  position: absolute;
+  left: 0;
+  color: yellow;
+  overflow: hidden;
+  pointer-events: none;
 }

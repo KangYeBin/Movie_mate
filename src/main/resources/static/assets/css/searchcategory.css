@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+}
 
  /* 메인페이지 스타일 */
  html {
@@ -56,22 +58,20 @@ span.genre-text{
 
 .genre{
     overflow: hidden;
-    width: 65%;
+    width: 1100px;
     margin: 50px auto;
     position: relative;
 }
 
 .movie-img-box{
-    width: 20%;
-    height: 300px;
-    /*margin: 0 5px;*/
+
 }
 
 .movie-img-box img {
-    width: 95%;
-    height: 90%;
+    width: 200px;
+    height: 300px;
     border-radius: 7px;
-    margin-left: 5px;
+
     
 }
 .movie-img-box p {
@@ -94,6 +94,10 @@ span.genre-text{
 }
 #main .btn .list-prev{
     left: 0;
+}
+
+.genre-movieNm{
+    width: 200px;
 }
 
 
