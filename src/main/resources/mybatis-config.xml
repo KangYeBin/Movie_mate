@@ -21,7 +21,7 @@
         <typeAlias type="com.ictproject.moviemate.domain.movie.Actor" alias="actor" />
         <typeAlias type="com.ictproject.moviemate.domain.movie.Genre" alias="genre" />
         <typeAlias type="com.ictproject.moviemate.domain.movie.Keyword" alias="keyword" />
-        <typeAlias type="com.ictproject.moviemate.domain.review.dto.ReviewResponseDTO" alias="reviewDTO" />
+        <typeAlias type="com.ictproject.moviemate.domain.review.dto.ReviewDetailResponseDTO" alias="reviewDTO" />
 
     </typeAliases>
 
