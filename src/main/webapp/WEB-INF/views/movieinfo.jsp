@@ -406,6 +406,7 @@
                 .then(reviews => {
                     console.log('reviews : ' + reviews);
                     renderReviews(reviews);
+                    reviewSwiper.update();
                 })
         }
 
