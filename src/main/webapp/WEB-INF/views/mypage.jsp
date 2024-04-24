@@ -138,8 +138,7 @@
 
          <div class="button-group">
 
-                 <button class="delete-button" onclick="deleteReview()">삭제</button>
-
+                 <button class="delete-button" onclick="deleteReview(event)">삭제</button>
                  <button class="edit-button" onclick="editReview()">수정</button>
              </div>
          </div>
@@ -209,19 +208,70 @@
                     modal.style.display = "block";
                 }
 
-                // 삭제 버튼 클릭 시 리뷰 삭제
-                function deleteReview() {
-                    // 여기에 리뷰를 삭제하는 코드를 작성합니다.
-                    // 예시: 리뷰를 삭제하는 AJAX 요청 등을 수행합니다.
-                    console.log('리뷰를 삭제합니다.');
-                }
+                    // 삭제 버튼 클릭 이벤트 핸들러
+                    function deleteReview(event) {
+                        var result = confirm("정말로 삭제하시겠습니까?");
+                        // 확인 버튼을 눌렀을 때
+                        if (result) {
+                            console.log("삭제되었습니다."); //
+                        } else {
+                            console.log("삭제가 취소되었습니다.");
+                        }
+                    }
 
-                // 수정 버튼 클릭 시 리뷰 수정
-                function editReview() {
-                    // 여기에 리뷰를 수정하는 코드를 작성합니다.
-                    // 예시: 리뷰를 수정하는 모달을 열거나, 수정 폼을 보여줍니다.
-                    console.log('리뷰를 수정합니다.');
-                }
+
+                    // 수정 버튼 클릭 시 폼창 맹글기
+                    function editReview() {
+                        var reviewText = document.querySelector('.review-content');
+                        var reviewTextContent = reviewText.textContent.trim();
+
+
+                        var form = document.createElement('form');
+                        form.setAttribute('id', 'editForm');
+
+                        // 텍스트 입력 창
+                        var textarea = document.createElement('textarea');
+                        textarea.setAttribute('id', 'editTextArea');
+                        textarea.textContent = reviewTextContent;
+
+                        // 저장 버튼 생성
+                        var saveButton = document.createElement('button');
+                        saveButton.textContent = '저장';
+                        saveButton.setAttribute('type', 'button');
+                        saveButton.classList.add('save-button'); //
+                        saveButton.addEventListener('click', function() {
+                            var editedText = textarea.value;
+                            // 수정된 내용
+                            reviewText.textContent = editedText;
+                            // 모달 닫기
+                            closeReviewModal();
+                        });
+
+                        // 모달 창 내용 교체
+                        reviewText.innerHTML = '';
+                        reviewText.appendChild(form);
+                        form.appendChild(textarea);
+                        form.appendChild(saveButton);
+
+                        // 수정 버튼 및 삭제 버튼 숨기기
+                            var editButton = document.querySelector('.edit-button');
+                            var deleteButton = document.querySelector('.delete-button');
+                            editButton.classList.add('hidden');
+                                deleteButton.classList.add('hidden');
+                    }
+
+                    // 닫기
+                    function closeReviewModal() {
+                        var modal = document.getElementById("reviewModal");
+                        modal.style.display = "none";
+
+                        // 삭제 및 수정 버튼 보이기
+                        var editButton = document.querySelector('.edit-button');
+                        var deleteButton = document.querySelector('.delete-button');
+                         editButton.classList.remove('hidden');
+                            deleteButton.classList.remove('hidden');
+                    }
+
 
 
 
