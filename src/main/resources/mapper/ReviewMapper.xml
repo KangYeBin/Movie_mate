@@ -6,9 +6,9 @@
 
     <insert id="insertReview">
         INSERT INTO review
-            (user_id, movie_cd, text, sympathy, review_date, grade)
+            (user_id, movie_cd, text, grade, movie_name)
         VALUES
-            (#{userId}, #{movieCd}, #{text}, #{sympathy}, #{reviewDate}, #{grade})
+            (#{userId}, #{movieCd}, #{text}, #{grade}, #{movieName})
     </insert>
 
     <update id="modifyReview">

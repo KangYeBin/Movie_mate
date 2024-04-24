@@ -16,5 +16,5 @@ public class ReviewRequestDTO {
     private String text;
     private float grade;
     private String profile;
-
+    private String movieName;
 }
