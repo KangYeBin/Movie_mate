@@ -2,8 +2,9 @@ package com.ictproject.moviemate.domain.review.controller;
 
 
 import com.ictproject.moviemate.domain.review.Review;
-import com.ictproject.moviemate.domain.review.dto.ReviewRequestDTO;
 import com.ictproject.moviemate.domain.review.dto.ReviewDetailResponseDTO;
+import com.ictproject.moviemate.domain.review.dto.ReviewModifyRequestDTO;
+import com.ictproject.moviemate.domain.review.dto.ReviewRequestDTO;
 import com.ictproject.moviemate.domain.review.dto.ReviewResponseDTO;
 import com.ictproject.moviemate.domain.review.service.ReviewService;
 import jakarta.servlet.http.HttpSession;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.transform.Source;
 import java.util.List;
 
 @RestController
@@ -55,5 +57,17 @@ public class ReviewController {
 		ReviewResponseDTO dto = new ReviewResponseDTO(movieCd, reviews);
 
 		return ResponseEntity.ok().body(dto);
+	}
+
+	@DeleteMapping("/del/{reviewId}")
+	public void delReview(@PathVariable int reviewId){
+		System.out.println(reviewId);
+		reviewService.deleteReview(reviewId);
+	}
+	@PutMapping("/mod/{reviewId}")
+	public ResponseEntity<?> modifyReview(@PathVariable int reviewId, @RequestBody ReviewModifyRequestDTO reviewModifyRequestDTO){
+		reviewModifyRequestDTO.setReviewId(reviewId);
+		reviewService.modifyReview(reviewModifyRequestDTO);
+		return ResponseEntity.ok().body("ok");
 	}
 }
