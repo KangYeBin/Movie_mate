@@ -18,4 +18,5 @@ public interface WishMapper {
 	// 찜한 영화 목록 가져오기
 	List<Movie> findWish(int userId);
 
+    boolean checkWish(Wish wish);
 }

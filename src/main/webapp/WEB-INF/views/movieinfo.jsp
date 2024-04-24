@@ -29,11 +29,21 @@
             <div class="doc">
                 <h1>${movie.movieName}</h1>
 
-                <svg id="like" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <c:if test="${isWish}">
+                <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="active">
                     <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
                 </svg>
+                </c:if>
+                <c:if test="${!isWish}">
+                    <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                                d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                    </svg>
+                </c:if>
+
                 <p class="content">${movie.plot}</p>
                 <div class="info">
                     <div>
@@ -93,7 +103,7 @@
                             <span class="star">
                                 ★★★★★
                                 <span>★★★★★</span>
-                                <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                                <input type="range"  oninput="drawStar(this)" value="1" step="1" min="0" max="10">
                             </span>
                             <div class="reple-star-bt">
                                 <button class="reple-bt" onclick="openModal()"> 코멘트 남기기 </button>
@@ -152,7 +162,7 @@
         </div>
     </div>
 
-    /** 모달**/
+    <!-- 모달 -->
     <div id="reviewModal" class="modal">
         <div class="modal-content">
             <div class="modalbox">
@@ -257,7 +267,30 @@
         var like = document.getElementById("like");
 
         like.addEventListener('click', function () {
-            like.classList.toggle('active')
+            like.classList.toggle('active');
+            const wish = {
+                userId : '${sessionScope.login.userId}',
+                movieCd : '${movie.movieCd}'
+            };
+            if(like.classList.contains("active")){
+                fetch("/wish", {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(wish)
+                })
+            }else{
+                fetch("/wish", {
+                    method: 'delete',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(wish)
+                })
+            }
+
+
         });
 
         var thumb = document.querySelectorAll('.thumb');
@@ -313,6 +346,8 @@
             })
 
         })
+
+
     </script>
 </body>
 
