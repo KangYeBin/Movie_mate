@@ -24,7 +24,7 @@
                <c:forEach var="movie" items="${movie}">
                   <div class="movie-img-box swiper-slide" data-movie-cd="${movie.movieCd}">
                      <a href="/detail/${movie.movieCd}"><img src="${movie.imageUrl}" alt="장르별 영화 포스터"></a>
-                     <p>${movie.movieName}</p>
+                     <p class="genre-movieNm">${movie.movieName}</p>
                   </div>
                </c:forEach>
             </div>

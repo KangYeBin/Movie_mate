@@ -10,6 +10,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -27,6 +28,8 @@ public class MovieApiService {
     private final ActorService actorService;
     private final GenreService genreService;
     private final KeywordService keywordService;
+
+
     public void getKoficData(String date) {
         String requestUri = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
         //자신 키로 바꾸기  8803352a1e880950e1e1d4a12c9c3186

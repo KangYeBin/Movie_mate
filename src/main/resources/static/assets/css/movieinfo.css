@@ -1,8 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Do Hyeon", sans-serif;
-  font-weight: 10;
-  font-style: normal;
+
 }
 
 body::-webkit-scrollbar {
@@ -369,13 +367,13 @@ body {
   justify-content:space-between;
 }
 .review-profile-img{
-
   display:flex;
   align-items:center;
 }
 .review-profile-img img{
   width:30px;
   height:30px;
+  border-radius: 50%;
 }
 
 .review-profile-grade{
@@ -385,6 +383,7 @@ body {
 .review-profile-grade img{
   width:30px;
   height:30px;
+  color: gold;
 }
 .review-text {
   padding:5px;
