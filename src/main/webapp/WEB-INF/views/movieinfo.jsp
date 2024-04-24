@@ -18,13 +18,8 @@
 <div class="scrollBar">
 </div>
     <%@ include file="include/header.jsp"%>
-    <div class="scrollBar">
+    <div class="scrollBar"></div>
 
-    </div>
-
-    <div class="backSky">
-        <svg class="sky"></svg>
-    </div>
 
 <div class="movie">
 
@@ -166,7 +161,7 @@
                             <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
                              </span>
 
-                        <button class="reple-bt" onclick="openModal()"> 코멘트 남기기 </button>
+                        <button class="reple-bt" onclick="openModal()"> 후기 작성 </button>
                     </div>
                     <div class="reple-item">
                         <select>
@@ -216,7 +211,7 @@
     </div>
 </div>
 
-/** 모달**/
+<!-- 모달 창입니다 -->
 <div id="reviewModal" class="modal">
     <div class="modal-content">
         <div class="modalbox">
@@ -232,8 +227,8 @@
             </div>
 
                 <form id="review-form" class="profile">
-                    <textarea class="text" type="text" id="text" placeholder="성민아 돼지"></textarea>
-                    <div id="reviewContent"></div>
+                   <textarea class="text" name="Reviewcontent" id="text" placeholder="리뷰를 작성하세요"
+                             required;></textarea> <div id="reviewContent"></div>
                     <div class="register">
                         <input type="submit" id="register" value="등록">
                     </div>
