@@ -96,7 +96,7 @@ public class MovieService {
                     int audiAcc2 = Integer.parseInt(x2.getAudiAcc())/100000 + x2.getWishCnt() * 2;
                     return Integer.compare(audiAcc2, audiAcc1);
                 })
-                .limit(20)
+                .limit(10)
                 .map(MovieResponseDTO::new)
                 .collect(Collectors.toList());
 

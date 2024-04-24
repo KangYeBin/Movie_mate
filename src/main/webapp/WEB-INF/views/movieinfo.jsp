@@ -263,38 +263,29 @@
         })
 
 
-
+        //찜 추가,삭제
         var like = document.getElementById("like");
-
         like.addEventListener('click', function () {
             like.classList.toggle('active');
-            const wish = {
-                userId : '${sessionScope.login.userId}',
-                movieCd : '${movie.movieCd}'
-            };
             if(like.classList.contains("active")){
-                fetch("/wish", {
+                fetch("/wish/${sessionScope.login.userId}/${movie.movieCd}", {
                     method: 'post',
                     headers: {
                         'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(wish)
+                    }
                 })
             }else{
-                fetch("/wish", {
+                fetch("/wish/${sessionScope.login.userId}/${movie.movieCd}", {
                     method: 'delete',
                     headers: {
                         'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(wish)
+                    }
                 })
             }
-
-
         });
 
+        // 후기 좋아요 추가,삭제
         var thumb = document.querySelectorAll('.thumb');
-
         thumb.forEach(e => {
             e.addEventListener('click', function () {
                 e.classList.toggle('active')
@@ -327,6 +318,7 @@
         }
     </script>
     <script>
+        //후기 별찍기
         document.getElementById("review-form").addEventListener("submit", e => {
             e.preventDefault();
             const req = {

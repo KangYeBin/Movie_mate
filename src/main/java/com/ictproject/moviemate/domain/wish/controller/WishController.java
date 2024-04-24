@@ -13,14 +13,20 @@ import org.springframework.web.bind.annotation.*;
 public class WishController {
 
     private final WishService wishService;
-    @PostMapping
-    public void wish(@RequestBody Wish wish) {
-        wishService.insertWish(wish);
+    @PostMapping("/{userId}/{movieCd}")
+    public void wish(@PathVariable String userId, @PathVariable String movieCd) {
+        wishService.insertWish(Wish.builder()
+                .userId(userId)
+                .movieCd(movieCd)
+                .build());
     }
 
-    @DeleteMapping
-    public void unwish(@RequestBody Wish wish) {
-        wishService.deleteWish(wish);
+    @DeleteMapping("/{userId}/{movieCd}")
+    public void unwish(@PathVariable String userId, @PathVariable String movieCd) {
+        wishService.deleteWish(Wish.builder()
+                .userId(userId)
+                .movieCd(movieCd)
+                .build());
     }
 
 

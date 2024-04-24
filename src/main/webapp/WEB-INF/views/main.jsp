@@ -31,7 +31,7 @@
                     </div>
                 </c:forEach>
             </ul>
-
+            <div class="swiper-pagination"></div>
         </div>
 
 

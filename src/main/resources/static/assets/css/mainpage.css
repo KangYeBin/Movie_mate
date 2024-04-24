@@ -47,6 +47,22 @@ ul.banner-title li {
     box-shadow: 0px 0px 5px 0px #8f8b8b;
     margin: 0 auto;
 }
+/* 추천 영화 페이징 버튼 */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border: 1px solid #c0bfc7;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    width: 40px;
+    transition: width .5s;
+    border-radius: 5px;
+    background: #c0bfc7;
+    border: 1px solid transparent;
+}
+
 
 
 /* 버튼 스타일 */

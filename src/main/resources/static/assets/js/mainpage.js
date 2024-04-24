@@ -15,9 +15,9 @@ const mySwiper = new Swiper('.swiper-container', {
         modifier: 3,
         slideShadows: true
     },
-    navigation: { // 좌우 버튼 설정
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+    pagination:{
+        el: '.swiper-pagination',
+        clickable: true,
     }
 });
 
