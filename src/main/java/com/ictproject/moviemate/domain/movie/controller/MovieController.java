@@ -51,7 +51,6 @@ public class MovieController {
     @GetMapping("/detail/{movieCd}")
     public String detail(@PathVariable("movieCd")String movieCd, Model model,HttpSession session) {
         log.info("movie : {}", movieService.getMovieData(movieCd));
-        log.info("review : {}", reviewService.getReview(movieCd));
         User userinfo= (User)session.getAttribute("login");
         model.addAttribute("isWish", wishService.checkWish(Wish.builder()
                         .userId(Integer.toString(userinfo.getUserId()))
@@ -60,7 +59,6 @@ public class MovieController {
         model.addAttribute("movie", movieService.getMovieData(movieCd));
         model.addAttribute("actors", actorService.getActorData(movieCd));
         model.addAttribute("genres", genreService.getGenreData(movieCd));
-        model.addAttribute("review", reviewService.getReview(movieCd));
 
         return "movieinfo";
     }

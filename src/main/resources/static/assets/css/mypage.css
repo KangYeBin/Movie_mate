@@ -271,7 +271,7 @@ section .review-list {
 
 .swiper-wrapper{
     width: 80% !important;
-    mim-width: 1500px;
+    min-width: 1500px;
 }
 
 /* 모달 창 삭제 및 수정 */
