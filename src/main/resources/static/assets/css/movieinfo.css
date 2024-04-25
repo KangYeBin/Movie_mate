@@ -42,8 +42,8 @@ body {
 
 .movie .info-wrap .poster {
     margin-left: 2%;
-    width: 230px;
-    height: 317px;
+    width: 260px;
+    height: 360px;
 }
 
 .movie .info-wrap .doc {
@@ -282,7 +282,7 @@ body {
 #like {
     position: absolute;
     width: 50px;
-    fill: #ddd;
+    fill: white;
     margin-right: 5px;
     right: 10px;
     top: 10px;
@@ -498,6 +498,15 @@ select option {
     font-size: 50px;
 }
 
+.star-modal input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
 .star-modal span {
     width: 0;
     position: absolute;
@@ -507,11 +516,3 @@ select option {
     pointer-events: none;
 }
 
-.star-modal input {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-}
