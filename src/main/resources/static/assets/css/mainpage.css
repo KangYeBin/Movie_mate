@@ -94,6 +94,12 @@ ul.banner-title li {
 }
 
 /* 장르 영화 목록 스타일 */
+.test-container {
+    position: relative;
+    width: 65%;
+    min-width: 1100px;
+    margin: 0 auto;
+}
 span.genre-text{
     display: block;
     width: 60%;
@@ -115,14 +121,11 @@ a.more-button {
  }
 
 .genre{
+    overflow: hidden;
     width: 65%;
     min-width: 1100px;
     margin: 50px auto;
     position: relative;
-}
-.genre-movielist{
-    width: 100%;
-    overflow: hidden;
 }
 .movie-img-box{
     width: 200px;
@@ -151,12 +154,14 @@ a.more-button {
 #main .btn .list-next,
 #main .btn .list-prev {
     top: 50%;
+    overflow: visible;
+    z-index: 99;
 }
 #main .btn .list-next{
-    right: -30px;
+    right: -5%;
 }
 #main .btn .list-prev{
-    left: -30px;
+    left: -5%;
 }
 
 /* 상단 이동 버튼 스타일 */

@@ -27,80 +27,80 @@ const listSwiper = new Swiper('.sf', {
     slidesPerView: 5,
     spaceBetween: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.sf-next',
+        prevEl: '.sf-prev',
     }
 });
 const listSwiper2 = new Swiper('.family', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.family-next',
+        prevEl: '.family-prev',
     }
 });
 const listSwiper3 = new Swiper('.horror', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.horror-next',
+        prevEl: '.horror-prev',
     }
 });
 const listSwiper4 = new Swiper('.drama', {
     loop: true,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.drama-next',
+        prevEl: '.drama-prev',
     }
 });
 const listSwiper5 = new Swiper('.meloromance', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.meloromance-next',
+        prevEl: '.meloromance-prev',
     }
 });
 const listSwiper6 = new Swiper('.mystery', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.mystery-next',
+        prevEl: '.mystery-prev',
     }
 });
 const listSwiper7 = new Swiper('.crime', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.crime-next',
+        prevEl: '.crime-prev',
     }
 });
 const listSwiper8 = new Swiper('.thriller', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.thriller-next',
+        prevEl: '.thriller-prev',
     }
 });
 const listSwiper9 = new Swiper('.action', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.action-next',
+        prevEl: '.action-prev',
     }
 });
 const listSwiper10 = new Swiper('.adventure', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
-        nextEl: '.list-next',
-        prevEl: '.list-prev',
+        nextEl: '.adventure-next',
+        prevEl: '.adventure-prev',
     }
 });
 
