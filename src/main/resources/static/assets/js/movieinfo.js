@@ -81,7 +81,7 @@ function renderReviews(reviews) {
             tag += `
 
                             <div class="swiper-slide review-swiper">
-                                <div class="review-container">
+                                <div class="review-container" data-bno="${reviewId}">
                                     <div class="review-profile">
                                         <div class="review-profile-img">
                                             <img src="${profile}" alt="프사">
@@ -121,10 +121,6 @@ function renderReviews(reviews) {
     document.getElementById('reviewData').innerHTML = tag;
     reviewSwiper.update();
 
-    document.querySelectorAll(".thumb").forEach(thumb => {
-        thumb.addEventListener('click', function(){
-            thumb.classList.toggle('active');
-        });
-    });
+    
 
 }
