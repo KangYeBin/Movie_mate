@@ -105,9 +105,9 @@
                         </div>
                     </div>
                     <div class="reple-item">
-                        <select>
-                            <option>공감순</option>
-                            <option>최신순</option>
+                        <select id="selectbox" onchange="selectChanged()">
+                            <option value="sympathyCnt">공감순</option>
+                            <option value="reviewDate">최신순</option>
                         </select>
                     </div>
                 </div>
@@ -160,6 +160,7 @@
 <script>
     const movieCd = '${movie.movieCd}';
     const URL = '/api/v1/review';
+    var sort = 'sympathyCnt'
 
     //후기 작성
     document.getElementById("review-form").addEventListener("submit", e => {
@@ -199,7 +200,7 @@
     })
 
     function fetchGetReviews() {
-        fetch(URL+"/detail/"+movieCd+"/reviews")
+        fetch(URL+"/detail/"+movieCd+"/reviews/"+sort)
             .then(res => res.json())
             .then(reviews => {
                 console.log('reviews : ' + reviews);
@@ -239,6 +240,15 @@
             })
         }
     });
+
+    // 정렬
+    function selectChanged() {
+        var selectedItem = document.getElementById('selectbox');
+        var selectValue = selectedItem.options[selectedItem.selectedIndex].value;
+        sort = selectValue;
+
+        fetchGetReviews();
+    }
 
 
 </script>
