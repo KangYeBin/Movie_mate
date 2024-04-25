@@ -120,8 +120,11 @@ function renderReviews(reviews) {
 
     document.getElementById('reviewData').innerHTML = tag;
     reviewSwiper.update();
+
+    document.querySelectorAll(".thumb").forEach(thumb => {
+        thumb.addEventListener('click', function(){
+            thumb.classList.toggle('active');
+        });
+    });
+
 }
-
-
-
-
