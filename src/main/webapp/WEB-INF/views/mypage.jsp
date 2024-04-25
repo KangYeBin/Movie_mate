@@ -188,7 +188,19 @@
                     headers: {
                                  'Content-Type': 'application/json'
                               },
-                }).then(window.location.reload())
+                }).then(res => {
+                        if (res.ok) {
+                            console.log('삭제 성공');
+                        } else {
+                            throw new Error('삭제 요청에 실패했습니다.');
+                        }
+                    })
+                    .then(data => {
+                        window.location.reload();
+                    })
+                    .catch(error => {
+                        console.error('오류 발생:', error);
+                    })
             } else {
                 console.log("삭제가 취소되었습니다.");
             }
@@ -237,14 +249,13 @@
                                     })
                                     .then(res => {
                                         if (res.ok) {
-                                            
+                                            console.log('수정 성공');
                                         } else {
                                             throw new Error('수정 요청에 실패했습니다.');
                                         }
                                     })
                                     .then(data => {
-                                        console.log('수정 완료:', data);
-                                        window.location.reload(); // 성공 시 페이지 다시 로드
+                                        window.location.reload();
                                     })
                                     .catch(error => {
                                         console.error('오류 발생:', error);

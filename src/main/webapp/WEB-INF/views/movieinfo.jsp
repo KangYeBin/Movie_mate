@@ -154,12 +154,64 @@
 
 </div>
 
-
-
 <%@ include file="include/footer.jsp"%>
 
-
-
 </body>
+<script>
+    const movieCd = '${movie.movieCd}';
+    const URL = '/api/v1/review';
+
+    //후기 작성
+    document.getElementById("review-form").addEventListener("submit", e => {
+        e.preventDefault();
+        const req = {
+            text: document.getElementById("text").value,
+            userId: '${sessionScope.login.userId}',
+            movieCd: '${movie.movieCd}',
+            grade: document.querySelector('input[type="range"]').value / 2,
+            profile: '${sessionScope.login.profile}',
+            movieName: '${movie.movieName}'
+        }
+
+        fetch("/api/v1/review/create", {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(req)
+        })
+            .then(res => {
+                if (res.status == 200) {
+                    alert("후기가 등록되었습니다");
+                    document.querySelector('input[type="range"]').value = 1;
+                    document.querySelector(`.star span`).style.width = `0%`;
+                    document.querySelector(`.star-modal span`).style.width = `0%`;
+                    return res.text();
+                }
+            })
+            .then(data => {
+                console.log('응답 성공 : ', data);
+                fetchGetReviews();
+
+            })
+
+        closeReviewModal();
+    })
+
+    function fetchGetReviews() {
+        fetch(URL+"/detail/"+movieCd+"/reviews")
+            .then(res => res.json())
+            .then(reviews => {
+                console.log('reviews : ' + reviews);
+                renderReviews(reviews);
+            })
+    }
+
+    (() => {
+        fetchGetReviews();
+    })();
+
+
+</script>
 
 </html>
