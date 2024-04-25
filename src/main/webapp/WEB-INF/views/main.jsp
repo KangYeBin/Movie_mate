@@ -37,7 +37,7 @@
 
         <!-- 찜 추천 -->
         <c:if test="${recommendByWish != null}">
-        <div class="genre swiper-container-list">
+        <div class="genre wishSwiper">
             <span class="genre-text">추천 픽</span>
             <div class="genre-movielist swiper-wrapper">
                 <c:forEach var="wish" items="${recommendByWish}">
@@ -48,11 +48,11 @@
                 </c:forEach>
             </div>
 
-            <!-- 슬라이더 좌우 버튼 -->
-            <div class="btn">
-                <button class="list-prev swiper-button-prev" role="button"></button>
 
-                <button class="list-next swiper-button-next" role="button"></button>
+            <div class="btn">
+                <button class="wish-prev swiper-button-prev " role="button"></button>
+
+                <button class="wish-next swiper-button-next " role="button"></button>
             </div>
         </div>
         </c:if>

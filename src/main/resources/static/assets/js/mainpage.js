@@ -1,9 +1,5 @@
 // 메인 배너 슬라이드 스크립트
 const mySwiper = new Swiper('.swiper-container', {
-    lazy : {
-        loadPrevNext : true // 이전, 다음 이미지는 미리 로딩
-    },
-
     loop: true, //무한반복
     autoplay: {
         delay: 3000 // 3초마다 슬라이드
@@ -146,3 +142,13 @@ const makeStars = () => {
 window.onload = () => {
     makeStars();
 }
+
+//찜 추천 swiper
+const wishSwiper = new Swiper('.wishSwiper', {
+    spaceBetween: 5,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.wish-next',
+        prevEl: '.wish-prev',
+    }
+});
