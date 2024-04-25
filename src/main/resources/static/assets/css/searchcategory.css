@@ -9,6 +9,7 @@
     font-style: normal;
     overflow-x: hidden;
     background: linear-gradient(to top, rgb(153,153,153), rgb(9,2,2));
+     height: 100vh;
 }
 #main {
     margin-top: 100px;
