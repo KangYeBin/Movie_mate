@@ -2,7 +2,7 @@
 const mySwiper = new Swiper('.swiper-container', {
     loop: true, //무한반복
     autoplay: {
-        delay: 3000 // 10초마다 슬라이드
+        delay: 3000 // 3초마다 슬라이드
     },
     loopAdditionalSlides: 1,
     slidesPerView: 4, // 여백화면 미리보기
@@ -22,7 +22,7 @@ const mySwiper = new Swiper('.swiper-container', {
 });
 
 // 장르별 영화 목록 슬라이드 스크립트
-const listSwiper = new Swiper('.swiper-container-list', {
+const listSwiper = new Swiper('.sf', {
     // loop: true,
     slidesPerView: 5,
     spaceBetween: 5,
@@ -31,7 +31,7 @@ const listSwiper = new Swiper('.swiper-container-list', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper2 = new Swiper('.swiper-container-list2', {
+const listSwiper2 = new Swiper('.family', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
@@ -39,7 +39,7 @@ const listSwiper2 = new Swiper('.swiper-container-list2', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper3 = new Swiper('.swiper-container-list3', {
+const listSwiper3 = new Swiper('.horror', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
@@ -47,7 +47,7 @@ const listSwiper3 = new Swiper('.swiper-container-list3', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper4 = new Swiper('.swiper-container-list4', {
+const listSwiper4 = new Swiper('.drama', {
     loop: true,
     slidesPerView: 5,
     navigation: {
@@ -55,7 +55,7 @@ const listSwiper4 = new Swiper('.swiper-container-list4', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper5 = new Swiper('.swiper-container-list5', {
+const listSwiper5 = new Swiper('.meloromance', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
@@ -63,7 +63,7 @@ const listSwiper5 = new Swiper('.swiper-container-list5', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper6 = new Swiper('.swiper-container-list6', {
+const listSwiper6 = new Swiper('.mystery', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
@@ -71,7 +71,7 @@ const listSwiper6 = new Swiper('.swiper-container-list6', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper7 = new Swiper('.swiper-container-list7', {
+const listSwiper7 = new Swiper('.crime', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
@@ -79,7 +79,7 @@ const listSwiper7 = new Swiper('.swiper-container-list7', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper8 = new Swiper('.swiper-container-list8', {
+const listSwiper8 = new Swiper('.thriller', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
@@ -87,7 +87,7 @@ const listSwiper8 = new Swiper('.swiper-container-list8', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper9 = new Swiper('.swiper-container-list9', {
+const listSwiper9 = new Swiper('.action', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {
@@ -95,7 +95,7 @@ const listSwiper9 = new Swiper('.swiper-container-list9', {
         prevEl: '.list-prev',
     }
 });
-const listSwiper10 = new Swiper('.swiper-container-list10', {
+const listSwiper10 = new Swiper('.adventure', {
     spaceBetween: 5,
     slidesPerView: 5,
     navigation: {

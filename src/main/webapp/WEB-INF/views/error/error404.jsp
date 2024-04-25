@@ -29,6 +29,7 @@
             /* background-color: white; */
             padding: 60px 40px 20px 60px;
         }
+
         .warning img {
             width: 100px;
             height: 100px;
@@ -44,6 +45,9 @@
         .top-text {
             display: flex;
             justify-content: center;
+        }
+        .bottom-text {
+            min-height: 100px;
         }
         .bottom-text h1 {
             text-align: center;
@@ -78,6 +82,16 @@
             position: absolute;
             top: 0;
             z-index: -1;
+        }
+        /* 세로 비율 반응형*/
+        @media screen and (max-height: 767px)  {
+            .error-wrapper{
+                top: 40%;
+            }
+            .bottom-text h1 {
+                font-size: 16px;
+                line-height: 20px;
+            }
         }
     </style>
 

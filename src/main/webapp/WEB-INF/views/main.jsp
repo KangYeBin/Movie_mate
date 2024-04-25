@@ -36,7 +36,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list sf">
             <span class="genre-text">SF</span>
             <a class="more-button" href="/category/sf">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -47,7 +47,6 @@
                     </div>
                 </c:forEach>
             </div>
-
             <!-- 슬라이더 좌우 버튼 -->
             <div class="btn">
                 <button class="list-prev swiper-button-prev" role="button"></button>
@@ -58,7 +57,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list family">
             <span class="genre-text">가족</span>
             <a class="more-button" href="/category/family">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -80,7 +79,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list horror">
             <span class="genre-text">공포</span>
             <a class="more-button" href="/category/horror">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -102,7 +101,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list drama">
             <span class="genre-text">드라마</span>
             <a class="more-button" href="/category/drama">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -124,7 +123,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list meloromance">
             <span class="genre-text">멜로/로맨스</span>
             <a class="more-button" href="/category/meloromance">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -147,7 +146,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list mystery">
             <span class="genre-text">미스터리</span>
             <a class="more-button" href="/category/mystery">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -169,7 +168,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list crime">
             <span class="genre-text">범죄</span>
             <a class="more-button" href="/category/crime">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -191,7 +190,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list thriller">
             <span class="genre-text">스릴러</span>
             <a class="more-button" href="/category/thriller">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -213,7 +212,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list action">
             <span class="genre-text">액션</span>
             <a class="more-button" href="/category/action">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
@@ -235,7 +234,7 @@
 
 
         <!-- 장르별 영화 목록 섹션 -->
-        <div class="genre swiper-container-list">
+        <div class="genre swiper-container-list adventure">
             <span class="genre-text">어드벤처</span>
             <a class="more-button" href="/category/adventure">더보기&gt;</a>
             <div class="genre-movielist swiper-wrapper">
