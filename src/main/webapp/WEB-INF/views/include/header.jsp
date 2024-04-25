@@ -125,7 +125,7 @@
 
             const $category = document.getElementById('select-category');
             if ($category.textContent === '검색어 종류 ▽') {
-                alert('카테고리를 선택해 주세요!');
+                alert('검색어 종류를 선택해 주세요!');
                 return;
             }
 
