@@ -1,5 +1,9 @@
 // 메인 배너 슬라이드 스크립트
 const mySwiper = new Swiper('.swiper-container', {
+    lazy : {
+        loadPrevNext : true // 이전, 다음 이미지는 미리 로딩
+    },
+
     loop: true, //무한반복
     autoplay: {
         delay: 3000 // 10초마다 슬라이드

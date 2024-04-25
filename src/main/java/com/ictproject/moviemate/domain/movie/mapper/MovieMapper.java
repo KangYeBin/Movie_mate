@@ -3,7 +3,9 @@ package com.ictproject.moviemate.domain.movie.mapper;
 import com.ictproject.moviemate.domain.movie.Movie;
 import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.Collection;
 import java.util.List;
 
 @Mapper
@@ -35,4 +37,13 @@ public interface MovieMapper {
     List<Movie> findMoviesByMovieName(String movieName);
 
     List<Movie> findAll();
+
+    List<Movie> findMovieByRecommend();
+
+    List<Movie> findMovieByWishKeyword(@Param("keywordName") String keywordName,@Param("userId") int userId);
+
+    List<Movie> findMovieByWishGenre(@Param("genreName") String genre,@Param("userId") int userId);
+
+
+    List<Movie> findMovieByWishActor(@Param("actorName") String actor,@Param("userId") int userId);
 }

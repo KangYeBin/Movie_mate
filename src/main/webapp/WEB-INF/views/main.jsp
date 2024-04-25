@@ -35,6 +35,28 @@
         </div>
 
 
+        <!-- 찜 추천 -->
+        <c:if test="${recommendByWish != null}">
+        <div class="genre swiper-container-list">
+            <span class="genre-text">추천 픽</span>
+            <div class="genre-movielist swiper-wrapper">
+                <c:forEach var="wish" items="${recommendByWish}">
+                    <div class="movie-img-box swiper-slide" data-movie-cd="${wish.movieCd}">
+                        <a href="/detail/${wish.movieCd}"><img src="${wish.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <p>${wish.movieName}</p>
+                    </div>
+                </c:forEach>
+            </div>
+
+            <!-- 슬라이더 좌우 버튼 -->
+            <div class="btn">
+                <button class="list-prev swiper-button-prev" role="button"></button>
+
+                <button class="list-next swiper-button-next" role="button"></button>
+            </div>
+        </div>
+        </c:if>
+
         <!-- 장르별 영화 목록 섹션 -->
         <div class="genre swiper-container-list">
             <span class="genre-text">SF</span>
@@ -267,6 +289,6 @@
     <%@ include file="include/footer.jsp"%>
 </body>
 
-<script src="/assets/js/mainpage.js"></script>
+<script src="/assets/js/mainpage.js" defer></script>
 
 </html>
