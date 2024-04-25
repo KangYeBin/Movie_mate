@@ -28,12 +28,6 @@ var reviewSwiper = new Swiper('.review-swiper-custom', {
     },
 })
 
-        // 찜 하트
-        var like = document.getElementById("like")
-
-like.addEventListener('click', function () {
-    like.classList.toggle('active')
-});
 
 
 // 모달
