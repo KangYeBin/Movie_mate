@@ -43,7 +43,7 @@ body {
 .movie .info-wrap .poster {
     margin-left: 2%;
     width: 260px;
-    height: 360px;
+    height: 450px;
 }
 
 .movie .info-wrap .doc {
@@ -334,7 +334,9 @@ body {
 }
 
 /*붙여온곳*/
+.box{
 
+}
 .modalbox {
     width: 100%;
     height: 60%;
