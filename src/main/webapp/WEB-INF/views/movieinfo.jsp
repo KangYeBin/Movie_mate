@@ -211,6 +211,35 @@
         fetchGetReviews();
     })();
 
+    //찜
+    var like = document.getElementById("like")
+
+    like.addEventListener('click', function () {
+        like.classList.toggle('active')
+        if (like.classList.contains('active')) {
+            fetch("/wish/${sessionScope.login.userId}/"+movieCd,{
+                method: 'post'
+            }).then(res=>{
+                if(res.ok){
+                    console.log("찜");
+                }else{
+                    console.log(err);
+                }
+            })
+
+        }else{
+            fetch("/wish/${sessionScope.login.userId}/"+movieCd,{
+                method: 'delete'
+            }).then(res=>{
+                if(res.ok){
+                    console.log("찜 취소");
+                }else{
+                    console.log(err);
+                }
+            })
+        }
+    });
+
 
 </script>
 
