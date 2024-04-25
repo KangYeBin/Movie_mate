@@ -213,6 +213,3 @@ function fetchGetReviews() {
 (() => {
     fetchGetReviews();
 })();
-
-
-
