@@ -121,20 +121,16 @@
 
     <%@ include file="include/footer.jsp"%>
 
-// 회원탈퇴
+
+
+
     <script>
-        document.querySelector('.withdraw-button').addEventListener('click', function() {
-            var result = confirm("정말로 회원을 탈퇴하시겠습니까?");
-            if (result) {
-                console.log("사용자가 회원 탈퇴 확인을 선택했습니다.");
-                alert("회원 탈퇴가 완료되었습니다."); // 예시로 경고창을 표시
-
-// 회원탈퇴
 
 
 
 
-// 스위퍼
+
+
         new Swiper('.swiper-container', {
             speed: 800, // 슬라이드 속도
             slidesPerView: 5, // 한 번에 보여질 슬라이드 수
@@ -235,8 +231,7 @@
             var grade = document.getElementById("reviewModal").dataset.grade;
             document.querySelector('.star').style.visibility='visible';
             document.querySelector('.star span').style.width = `\${grade*2*10}%`;
-            document.querySelector('input[type="range"]').value = grade*2;
-            value = grade * 2;
+
             var form = document.createElement('form');
             form.setAttribute('id', 'editForm');
 
@@ -299,7 +294,7 @@
         function closeReviewModal() {
             var modal = document.getElementById("reviewModal");
             modal.style.display = "none";
-            document.querySelector('.star').style.visibility='hidden';
+
             // 삭제 및 수정 버튼 보이기
             var editButton = document.querySelector('.edit-button');
             var deleteButton = document.querySelector('.delete-button');
