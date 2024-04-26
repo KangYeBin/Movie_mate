@@ -16,7 +16,7 @@ var reviewSwiper = new Swiper('.review-swiper-custom', {
     speed: 800, // 슬라이드 속도
     slidesPerView: 4, // 한 번에 보여질 슬라이드 수
     slidesPerGroup: 4,
-    spaceBetween: 10, // 이미지 간격
+    spaceBetween: 25, // 이미지 간격
     loop: false, // 슬라이드 루프 설정 비활성화
     pagination: {
         el: ".pagination_bullet",
@@ -32,14 +32,18 @@ var reviewSwiper = new Swiper('.review-swiper-custom', {
 
 // 모달
 var modal = document.getElementById("reviewModal");
-
+var teasermodal = document.getElementById("teaserModal");
 // 모달 바깥을 클릭하면 모달이 닫히도록 함
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-
+window.onclick = function (event) {
+    if (event.target == teasermodal) {
+        teasermodal.style.display = "none";
+    }
+}
 // 모달 열기 버튼에 클릭 이벤트 리스너 추가
 function openModal() {
     modal.style.display = "block";
@@ -49,7 +53,15 @@ function openModal() {
 function closeReviewModal() {
     modal.style.display = "none";
 }
+// 모달 열기 버튼에 클릭 이벤트 리스너 추가
+function openTeasermodal() {
+    teasermodal.style.display = "block";
+}
 
+// 모달 닫기 버튼에 클릭 이벤트 리스너 추가
+function closeTeaserModal() {
+    teasermodal.style.display = "none";
+}
 
 function renderReviews(reviews) {
     console.log(reviews);
@@ -59,6 +71,13 @@ function renderReviews(reviews) {
         dto
     } = reviews;
     console.log(dto);
+
+    /* 한글 줄 개행 코드*/
+    $( document ).ready(function() {
+        var text = $("#text").val();
+        text = text.replace(/(?:\r\n|\r|\n)/g, '<br>');
+        $("#changetext").html(text);
+    });
 
     let tag = '';
     if (dto != null && dto.length > 0) {
