@@ -37,14 +37,13 @@ body {
     border-radius: 24px;
     backdrop-filter: blur(10px);
     height: auto;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 100px auto 0;
 }
 
 .movie .info-wrap .poster {
     margin-left: 2%;
-    width: 260px;
-    height: 450px;
+    width: 230px;
+    height: 317px;
 }
 
 .movie .info-wrap .doc {
@@ -283,7 +282,7 @@ body {
 #like {
     position: absolute;
     width: 50px;
-    fill: white;
+    fill: #ddd;
     margin-right: 5px;
     right: 10px;
     top: 10px;
@@ -335,9 +334,7 @@ body {
 }
 
 /*붙여온곳*/
-.box{
 
-}
 .modalbox {
     width: 100%;
     height: 60%;
@@ -501,15 +498,6 @@ select option {
     font-size: 50px;
 }
 
-.star-modal input {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-
 .star-modal span {
     width: 0;
     position: absolute;
@@ -519,3 +507,11 @@ select option {
     pointer-events: none;
 }
 
+.star-modal input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}

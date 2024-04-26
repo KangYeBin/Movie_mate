@@ -2,6 +2,7 @@ package com.ictproject.moviemate.domain.review.service;
 
 import com.ictproject.moviemate.domain.review.Review;
 import com.ictproject.moviemate.domain.review.dto.ReviewDetailResponseDTO;
+import com.ictproject.moviemate.domain.review.dto.ReviewModifyRequestDTO;
 import com.ictproject.moviemate.domain.review.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,4 +29,11 @@ public class ReviewService {
 		reviewMapper.insertReview(review);
 	}
 
+	public void deleteReview(int reviewId) {
+		reviewMapper.deleteReview(reviewId);
+	}
+
+	public void modifyReview(ReviewModifyRequestDTO reviewModifyRequestDTO){
+		reviewMapper.modifyReview(reviewModifyRequestDTO);
+	}
 }

@@ -16,7 +16,7 @@
             review
         SET
             text = #{text},
-            review_date = CURRENT_TIMESTAMP
+            review_date = CURRENT_TIMESTAMP,
             grade = #{grade}
         WHERE
             review_id = #{reviewId}

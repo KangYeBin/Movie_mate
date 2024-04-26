@@ -105,9 +105,9 @@
                         </div>
                     </div>
                     <div class="reple-item">
-                        <select>
-                            <option>공감순</option>
-                            <option>최신순</option>
+                        <select id="selectbox" onchange="selectChanged()">
+                            <option value="sympathyCnt">공감순</option>
+                            <option value="reviewDate">최신순</option>
                         </select>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
 
             <form id="review-form" class="profile">
                 <textarea class="text" type="text" id="text" placeholder="리뷰를 작성해주세요"></textarea>
-                <div id="changetext"></div>
+                <div id="reviewContent"></div>
                 <div class="register">
                     <input type="submit" id="register" class="first btn" value="등록">
                 </div>
@@ -154,11 +154,103 @@
 
 </div>
 
-
 <%@ include file="include/footer.jsp"%>
 
-
-
 </body>
+<script>
+    const movieCd = '${movie.movieCd}';
+    const URL = '/api/v1/review';
+    var sort = 'sympathyCnt'
+
+    //후기 작성
+    document.getElementById("review-form").addEventListener("submit", e => {
+        e.preventDefault();
+        const req = {
+            text: document.getElementById("text").value,
+            userId: '${sessionScope.login.userId}',
+            movieCd: '${movie.movieCd}',
+            grade: document.querySelector('input[type="range"]').value / 2,
+            profile: '${sessionScope.login.profile}',
+            movieName: '${movie.movieName}'
+        }
+
+        fetch("/api/v1/review/create", {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(req)
+        })
+            .then(res => {
+                if (res.status == 200) {
+                    alert("후기가 등록되었습니다");
+                    document.querySelector('input[type="range"]').value = 1;
+                    document.querySelector(`.star span`).style.width = `0%`;
+                    document.querySelector(`.star-modal span`).style.width = `0%`;
+                    return res.text();
+                }
+            })
+            .then(data => {
+                console.log('응답 성공 : ', data);
+                fetchGetReviews();
+
+            })
+
+        closeReviewModal();
+    })
+
+    function fetchGetReviews() {
+        fetch(URL+"/detail/"+movieCd+"/reviews/"+sort)
+            .then(res => res.json())
+            .then(reviews => {
+                console.log('reviews : ' + reviews);
+                renderReviews(reviews);
+            })
+    }
+
+    (() => {
+        fetchGetReviews();
+    })();
+
+    //찜
+    var like = document.getElementById("like")
+
+    like.addEventListener('click', function () {
+        like.classList.toggle('active')
+        if (like.classList.contains('active')) {
+            fetch("/wish/${sessionScope.login.userId}/"+movieCd,{
+                method: 'post'
+            }).then(res=>{
+                if(res.ok){
+                    console.log("찜");
+                }else{
+                    console.log(err);
+                }
+            })
+
+        }else{
+            fetch("/wish/${sessionScope.login.userId}/"+movieCd,{
+                method: 'delete'
+            }).then(res=>{
+                if(res.ok){
+                    console.log("찜 취소");
+                }else{
+                    console.log(err);
+                }
+            })
+        }
+    });
+
+    // 정렬
+    function selectChanged() {
+        var selectedItem = document.getElementById('selectbox');
+        var selectValue = selectedItem.options[selectedItem.selectedIndex].value;
+        sort = selectValue;
+
+        fetchGetReviews();
+    }
+
+
+</script>
 
 </html>

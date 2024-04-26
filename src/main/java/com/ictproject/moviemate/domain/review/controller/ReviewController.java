@@ -2,8 +2,9 @@ package com.ictproject.moviemate.domain.review.controller;
 
 
 import com.ictproject.moviemate.domain.review.Review;
-import com.ictproject.moviemate.domain.review.dto.ReviewRequestDTO;
 import com.ictproject.moviemate.domain.review.dto.ReviewDetailResponseDTO;
+import com.ictproject.moviemate.domain.review.dto.ReviewModifyRequestDTO;
+import com.ictproject.moviemate.domain.review.dto.ReviewRequestDTO;
 import com.ictproject.moviemate.domain.review.dto.ReviewResponseDTO;
 import com.ictproject.moviemate.domain.review.service.ReviewService;
 import jakarta.servlet.http.HttpSession;
@@ -45,15 +46,37 @@ public class ReviewController {
 		return ResponseEntity.ok().body("success");
 	}
 
-	@GetMapping("/detail/{movieCd}/reviews")
-	public ResponseEntity<?> list(@PathVariable("movieCd") String movieCd) {
-		log.info("/api/v1/review/" + movieCd + " GET!");
+	@GetMapping("/detail/{movieCd}/reviews/{sort}")
+	public ResponseEntity<?> list(@PathVariable("movieCd") String movieCd, @PathVariable("sort") String sort) {
+		log.info("/api/v1/review/" + movieCd + " " + sort +" GET!");
 
 		List<ReviewDetailResponseDTO> reviews = reviewService.getReview(movieCd);
 		log.info("reviews : {}", reviews);
 
+		switch (sort) {
+			case "sympathyCnt":
+				reviews.sort(new ReviewDetailResponseDTO.ReviewSympathyComparator().reversed());
+				break;
+			case "reviewDate":
+				reviews.sort(new ReviewDetailResponseDTO.ReviewDateComparator().reversed());
+				break;
+		}
+
 		ReviewResponseDTO dto = new ReviewResponseDTO(movieCd, reviews);
 
 		return ResponseEntity.ok().body(dto);
+	}
+
+	@DeleteMapping("/del/{reviewId}")
+	public void delReview(@PathVariable int reviewId) {
+		System.out.println(reviewId);
+		reviewService.deleteReview(reviewId);
+	}
+
+	@PutMapping("/mod/{reviewId}")
+	public ResponseEntity<?> modifyReview(@PathVariable int reviewId, @RequestBody ReviewModifyRequestDTO reviewModifyRequestDTO) {
+		reviewModifyRequestDTO.setReviewId(reviewId);
+		reviewService.modifyReview(reviewModifyRequestDTO);
+		return ResponseEntity.ok().body("ok");
 	}
 }

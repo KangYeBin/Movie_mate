@@ -5,6 +5,7 @@ import com.ictproject.moviemate.domain.user.User;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Comparator;
 
 @Setter
 @Getter
@@ -37,4 +38,24 @@ public class ReviewDetailResponseDTO {
 		this.email = user.getEmail();
 		this.profile = user.getProfile();
 	}
+
+	public static class ReviewSympathyComparator implements Comparator<ReviewDetailResponseDTO> {
+		@Override
+		public int compare(ReviewDetailResponseDTO dto1, ReviewDetailResponseDTO dto2) {
+			if (dto1.sympathyCnt > dto2.sympathyCnt) {
+				return 1;
+			} else if (dto1.sympathyCnt < dto2.sympathyCnt) {
+				return -1;
+			}
+			return 0;
+		}
+	}
+
+	public static class ReviewDateComparator implements Comparator<ReviewDetailResponseDTO> {
+		@Override
+		public int compare(ReviewDetailResponseDTO dto1, ReviewDetailResponseDTO dto2) {
+			return dto1.getReviewDate().compareTo(dto2.getReviewDate());
+		}
+	}
+
 }

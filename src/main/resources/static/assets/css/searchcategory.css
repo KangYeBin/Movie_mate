@@ -9,6 +9,7 @@
     font-style: normal;
     overflow-x: hidden;
     background: linear-gradient(to top, rgb(153,153,153), rgb(9,2,2));
+     height: 100vh;
 }
 #main {
     margin-top: 100px;
@@ -61,6 +62,7 @@ span.genre-text{
     width: 1100px;
     margin: 50px auto;
     position: relative;
+    padding-top: 10px;
 }
 
 .movie-img-box{
@@ -71,6 +73,7 @@ span.genre-text{
     width: 200px;
     height: 300px;
     border-radius: 7px;
+    margin-left: 5px;
 
     
 }
