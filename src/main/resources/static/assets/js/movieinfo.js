@@ -120,8 +120,7 @@ function renderReviews(reviews) {
 
     document.getElementById('reviewData').innerHTML = tag;
     reviewSwiper.update();
+
+    
+
 }
-
-
-
-
