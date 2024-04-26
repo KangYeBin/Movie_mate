@@ -126,5 +126,6 @@ public class MovieService {
             recommendMovie.addAll(collect);
         }
 
+        return recommendMovie.stream().distinct().collect(Collectors.toList());
     }
 }
