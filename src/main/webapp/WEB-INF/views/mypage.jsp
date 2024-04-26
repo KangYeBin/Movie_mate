@@ -26,6 +26,7 @@
                     <h3>${sessionScope.login.email}</h3>
                     <h1>${sessionScope.login.nickName}</h1>
                     <p>님의 마이페이지</p>
+                    <button class="withdraw-button">회원 탈퇴</button>
                 </div>
             </div>
         </div>
@@ -120,7 +121,25 @@
 
     <%@ include file="include/footer.jsp"%>
 
+// 회원탈퇴
     <script>
+        document.querySelector('.withdraw-button').addEventListener('click', function() {
+            var result = confirm("정말로 회원을 탈퇴하시겠습니까?");
+            if (result) {
+                console.log("사용자가 회원 탈퇴 확인을 선택했습니다.");
+                alert("회원 탈퇴가 완료되었습니다."); // 예시로 경고창을 표시
+
+            } else {
+                console.log("사용자가 회원 탈퇴를 취소했습니다.");
+                // 취소를 선택한 경우: 동작x
+                return;
+            }
+        });
+
+
+
+
+
         new Swiper('.swiper-container', {
             speed: 800, // 슬라이드 속도
             slidesPerView: 5, // 한 번에 보여질 슬라이드 수
@@ -176,6 +195,7 @@
             modal.dataset.grade = grade;
             modal.style.display = "block";
         }
+
 
         // 삭제 버튼 클릭 이벤트 핸들러
         function deleteReview(event) {
