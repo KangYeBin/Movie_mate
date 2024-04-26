@@ -85,6 +85,7 @@ body {
     margin-bottom: 10px;
 }
 #reviewData{
+    /* 영어 줄 개행 */
     overflow-wrap: break-word;
 }
 .movie .info-wrap .doc .info {
