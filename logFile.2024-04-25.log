@@ -1,0 +1,27 @@
+[2024-04-25 09:57:32:6428] INFO  16368 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 09:57:32:6431] INFO  16368 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 10:04:00:2418] INFO  9304 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 10:04:00:2419] INFO  9304 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 14:12:48:6488] INFO  4520 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 14:12:48:6489] INFO  4520 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 14:22:16:574155] INFO  4520 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 14:22:16:574157] INFO  4520 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[2024-04-25 14:24:20:4769] INFO  11504 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 14:24:20:4770] INFO  11504 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 14:36:48:8596] INFO  9284 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 14:36:48:8597] INFO  9284 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 14:37:09:30276] WARN  9284 --- [nio-8181-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `int` from String "${sessionScope.login.userId}": not a valid `int` value]
+[2024-04-25 14:37:45:6040] INFO  7464 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 14:37:45:6041] INFO  7464 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 14:42:32:5826] INFO  3532 --- [nio-8181-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 14:42:32:5830] INFO  3532 --- [nio-8181-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 14:42:44:17971] WARN  3532 --- [nio-8181-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `int` from String "${sessionScope.login.userId}": not a valid `int` value]
+[2024-04-25 14:46:26:6638] INFO  12068 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 14:46:26:6639] INFO  12068 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 14:48:05:6585] INFO  16596 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 14:48:05:6586] INFO  16596 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[2024-04-25 15:34:00:8088] INFO  17556 --- [nio-8181-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 15:34:00:8089] INFO  17556 --- [nio-8181-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-04-25 18:31:44:3692] INFO  19120 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-04-25 18:31:44:3693] INFO  19120 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[2024-04-25 18:38:46:426493] WARN  19120 --- [nio-8181-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `int` from String "${sessionScope.login.userId}": not a valid `int` value]

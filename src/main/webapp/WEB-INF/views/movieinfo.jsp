@@ -144,7 +144,7 @@
 
             <form id="review-form" class="profile">
                 <textarea class="text" type="text" id="text" placeholder="리뷰를 작성해주세요"></textarea>
-                <div id="reviewContent"></div>
+                <div id="changetext"></div>
                 <div class="register">
                     <input type="submit" id="register" class="first btn" value="등록">
                 </div>

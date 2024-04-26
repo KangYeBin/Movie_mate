@@ -105,6 +105,12 @@ function renderReviews(reviews) {
     } = reviews;
     console.log(dto);
 
+    let changetext = $( document ).ready(function() {
+        var text = $("#text").val();
+        text = text.replace("\n", "<br>");
+        $("#changetext").html(text);
+    });
+
     let tag = '';
     if (dto != null && dto.length > 0) {
 
@@ -139,7 +145,7 @@ function renderReviews(reviews) {
                                     </div>
                                     <hr class="review-hr" />
                                     <div class="review-text">
-                                        <p style="color:black !important;">\${text}</p>
+                                        <p style="color:black !important;">\${changetext}</p>
                                     </div>
                                     <hr class="review-hr" />
                                     <div class="review-sym">
