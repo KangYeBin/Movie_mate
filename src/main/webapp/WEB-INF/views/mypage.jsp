@@ -72,7 +72,7 @@
                                 </div>
                                 <hr />
                                 <div class="review-text">
-                                    <p class="review-contents">${review.text}</p>
+                                    <p style="color:#aaa !important;" class="review-contents">${review.text}</p>
                                 </div>
                                 <hr />
                                 <div class="review-sym">
@@ -121,8 +121,13 @@
 
     <%@ include file="include/footer.jsp"%>
 
-
- <script>
+// 회원탈퇴
+    <script>
+        document.querySelector('.withdraw-button').addEventListener('click', function() {
+            var result = confirm("정말로 회원을 탈퇴하시겠습니까?");
+            if (result) {
+                console.log("사용자가 회원 탈퇴 확인을 선택했습니다.");
+                alert("회원 탈퇴가 완료되었습니다."); // 예시로 경고창을 표시
 
 // 회원탈퇴
 
@@ -301,7 +306,6 @@
             editButton.classList.remove('hidden');
             deleteButton.classList.remove('hidden');
         }
-
 
 
 

@@ -21,9 +21,10 @@
 <div class="movie">
     <div class="info-wrap">
         <img class="poster" src="${movie.imageUrl}">
+        <button class="teaser" onclick="openTeasermodal()" >영화티저</button>
         <div class="doc">
             <h1>${movie.movieName}</h1>
-
+        <div class="symnum" id="symcnt">${movie.wishCnt}</div>
             <c:if test="${isWish}">
                 <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="active">
                     <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -144,7 +145,7 @@
 
             <form id="review-form" class="profile">
                 <textarea class="text" type="text" id="text" placeholder="리뷰를 작성해주세요"></textarea>
-                <div id="reviewContent"></div>
+                <div id="changetext"></div>
                 <div class="register">
                     <input type="submit" id="register" class="first btn" value="등록">
                 </div>
@@ -154,6 +155,22 @@
 
 </div>
 
+<!-- 티저모달 -->
+<div id="teaserModal" class="modal-teaser">
+    <!-- Modal content -->
+    <div class="modal-content-teaser">
+        <div class="teasermovie">
+            <c:if test="${!empty movie.vodUrl}">
+            <iframe src="${movie.vodUrl}" title="teaser" width="900px" height="100%">
+            </iframe>
+            </c:if>
+            <c:if test="${empty movie.vodUrl}">
+            <video src="/assets/img/teasermovie.mp4" width="900px" height="100%" autoplay>
+            </video>
+            </c:if>
+        </div>
+    </div>
+</div>
 <%@ include file="include/footer.jsp"%>
 
 </body>
@@ -214,7 +231,7 @@
 
     //찜
     var like = document.getElementById("like")
-
+    var likeCnt = ${movie.wishCnt};
     like.addEventListener('click', function () {
         like.classList.toggle('active')
         if (like.classList.contains('active')) {
@@ -223,6 +240,8 @@
             }).then(res=>{
                 if(res.ok){
                     console.log("찜");
+                    likeCnt += 1;
+                    document.getElementById('symcnt').textContent = likeCnt;
                 }else{
                     console.log(err);
                 }
@@ -234,21 +253,14 @@
             }).then(res=>{
                 if(res.ok){
                     console.log("찜 취소");
+                    likeCnt -= 1;
+                    document.getElementById('symcnt').textContent = likeCnt;
                 }else{
                     console.log(err);
                 }
             })
         }
     });
-
-    // 정렬
-    function selectChanged() {
-        var selectedItem = document.getElementById('selectbox');
-        var selectValue = selectedItem.options[selectedItem.selectedIndex].value;
-        sort = selectValue;
-
-        fetchGetReviews();
-    }
 
 
 </script>

@@ -14,4 +14,6 @@ public interface ActorMapper {
     // 영화 코드로 배우 검색
     List<Actor> findActors(String movieCd);
 
+    List<String> findByUserWish(int userId);
+
 }

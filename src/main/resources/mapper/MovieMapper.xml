@@ -91,4 +91,70 @@
             select * from movie
     </select>
 
+    <select id="findMovieByWishKeyword" resultType="movie">
+        SELECT DISTINCT m.*
+        FROM movie m
+        JOIN keyword k ON m.movie_cd = k.movie_cd
+        WHERE k.keyword_name = #{keywordName}
+        AND m.movie_cd NOT IN (
+        SELECT movie_cd
+        FROM wish_list
+        WHERE user_id = #{userId}
+        )
+        ORDER BY m.wish_cnt,CAST(m.audi_acc AS SIGNED) DESC
+        limit 3;
+    </select>
+
+    <select id="findMovieByWishGenre" resultType="movie">
+        SELECT DISTINCT m.*
+        FROM movie m
+        JOIN genre g ON m.movie_cd = g.movie_cd
+        WHERE g.genre_name = #{genreName}
+        AND m.movie_cd NOT IN (
+        SELECT movie_cd
+        FROM wish_list
+        WHERE user_id = #{userId}
+        )
+        ORDER BY m.wish_cnt, CAST(m.audi_acc AS SIGNED) DESC
+        limit 3;
+    </select>
+
+    <select id="findMovieByWishActor" resultType="movie">
+        SELECT DISTINCT m.*
+        FROM movie m
+        JOIN actor a ON m.movie_cd = a.movie_cd
+        WHERE a.actor_name = #{actorName}
+        AND m.movie_cd NOT IN (
+        SELECT movie_cd
+        FROM wish_list
+        WHERE user_id = #{userId}
+        )
+        ORDER BY m.wish_cnt, CAST(m.audi_acc AS SIGNED) DESC
+        limit 3;
+    </select>
+
+    <select id="findMovieByRecommend" resultType="movie">
+    SELECT *
+    FROM movie
+    ORDER BY (CAST(audi_acc As signed)/100000 + movie.wish_cnt*2) DESC
+    limit 10;
+    </select>
+
+    <update id="plusWishCnt">
+        UPDATE
+        movie
+        SET
+        wish_cnt = (wish_cnt + 1)
+        WHERE
+        movie_cd = #{movieCd}
+    </update>
+
+    <update id="minusWishCnt">
+        UPDATE
+        movie
+        SET
+        wish_cnt = (wish_cnt -1)
+        WHERE
+        movie_cd = #{movieCd}
+    </update>
 </mapper>
