@@ -34,7 +34,6 @@
         <mapper resource="mapper/ReviewMapper.xml"/>
         <mapper resource="mapper/WishMapper.xml"/>
         <mapper resource="mapper/UserMapper.xml"/>
-        <mapper resource="mapper/SympathyMapper.xml"/>
     </mappers>
 
 

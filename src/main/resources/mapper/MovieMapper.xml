@@ -139,4 +139,22 @@
     ORDER BY (CAST(audi_acc As signed)/100000 + movie.wish_cnt*2) DESC
     limit 10;
     </select>
+
+    <update id="plusWishCnt">
+        UPDATE
+        movie
+        SET
+        wish_cnt = (wish_cnt + 1)
+        WHERE
+        movie_cd = #{movieCd}
+    </update>
+
+    <update id="minusWishCnt">
+        UPDATE
+        movie
+        SET
+        wish_cnt = (wish_cnt -1)
+        WHERE
+        movie_cd = #{movieCd}
+    </update>
 </mapper>

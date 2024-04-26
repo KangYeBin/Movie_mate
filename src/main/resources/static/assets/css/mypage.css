@@ -40,9 +40,9 @@ main .container {
 }
 
 main .description {
-  position: relative;
-  width: 100%;
-  padding: 0 20px;
+  position: relative; /* 상대적인 위치로 설정 */
+  width: 100%; /* 원하는 너비로 설정 */
+  padding: 0 20px; /* 좌우 여백 추가 */
   margin-left:30px;
 }
 

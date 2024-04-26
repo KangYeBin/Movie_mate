@@ -24,7 +24,7 @@
         <button class="teaser" onclick="openTeasermodal()" >영화티저</button>
         <div class="doc">
             <h1>${movie.movieName}</h1>
-        <div class="symnum">1</div>
+        <div class="symnum" id="symcnt">${movie.wishCnt}</div>
             <c:if test="${isWish}">
                 <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="active">
                     <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -156,12 +156,19 @@
 </div>
 
 <!-- 티저모달 -->
-<div id="teaserModal" class="modal">
+<div id="teaserModal" class="modal-teaser">
     <!-- Modal content -->
-    <div class="modal-content">
-        <span class="closebt" onclick="closeTeaserModal()" >&times;</span>
-        <div class="teasermovie"></div>
-        <span class="closebtn first btn" onclick="closeTeaserModal()" >닫기</span>
+    <div class="modal-content-teaser">
+        <div class="teasermovie">
+            <c:if test="${!empty movie.vodUrl}">
+            <iframe src="${movie.vodUrl}" title="teaser" width="900px" height="100%">
+            </iframe>
+            </c:if>
+            <c:if test="${empty movie.vodUrl}">
+            <video src="/assets/img/teasermovie.mp4" width="900px" height="100%" autoplay>
+            </video>
+            </c:if>
+        </div>
     </div>
 </div>
 <%@ include file="include/footer.jsp"%>
@@ -224,7 +231,7 @@
 
     //찜
     var like = document.getElementById("like")
-
+    var likeCnt = ${movie.wishCnt};
     like.addEventListener('click', function () {
         like.classList.toggle('active')
         if (like.classList.contains('active')) {
@@ -233,6 +240,8 @@
             }).then(res=>{
                 if(res.ok){
                     console.log("찜");
+                    likeCnt += 1;
+                    document.getElementById('symcnt').textContent = likeCnt;
                 }else{
                     console.log(err);
                 }
@@ -244,6 +253,8 @@
             }).then(res=>{
                 if(res.ok){
                     console.log("찜 취소");
+                    likeCnt -= 1;
+                    document.getElementById('symcnt').textContent = likeCnt;
                 }else{
                     console.log(err);
                 }
@@ -259,75 +270,8 @@
 
         fetchGetReviews();
     }
+    document.getElementById('')
 
-    // 좋아요 버튼 클릭 이벤트 핸들러
-    document.getElementById('reviewData').addEventListener('click', e => {
-        console.log('reviewData 이벤트 발생!');
-        console.log('이벤트 타겟: ', e.target);
-        if (!e.target.matches('.review-container .review-sym svg.thumb path')) {
-            return;
-        }
-        console.log('따봉 이벤트 발생!');
-
-        const reviewNo = e.target.closest('div.review-container').dataset.bno;
-        console.log('리뷰글 번호: ', reviewNo);
-
-        const currentLoginId = '${login.userId}';
-        console.log('현재 로그인 사용자 아이디: ', currentLoginId);
-
-        const $thumb = e.target.parentNode;
-        const $thumbCnt = e.target.parentNode.nextElementSibling;
-        console.log('thumb요소: ', $thumb);
-        console.log('thumbCnt: ', $thumbCnt);
-
-        if (e.target.closest('.thumb.active')) {
-            console.log('좋아요를 이미 누름!');
-
-            fetch('/sympathy', {
-                method: 'DELETE',
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    reviewNo,
-                    movieCd,
-                    'userId': currentLoginId
-                })
-            })
-            .then(res => {
-                if (res.status === 200) {
-                    console.log('비동기 요청 성공');
-                    $thumb.classList.remove('active');
-                    $thumbCnt.textContent = (+$thumbCnt.textContent) - 1;
-                }
-            });
-
-        } else {
-            console.log('좋아요를 처음 누름!');
-            fetch('/sympathy', {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    reviewNo,
-                    movieCd,
-                    'userId': currentLoginId
-                })
-            })
-            .then(res => {
-                if (res.status === 200) {
-                    console.log('비동기 요청 성공');
-                    $thumb.classList.add('active');
-                    $thumbCnt.textContent = (+$thumbCnt.textContent) + 1;
-                }
-            });
-        }
-
-
-    })
-
-   
 </script>
 
 </html>

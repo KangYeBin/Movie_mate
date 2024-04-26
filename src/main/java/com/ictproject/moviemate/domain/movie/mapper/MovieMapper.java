@@ -46,4 +46,9 @@ public interface MovieMapper {
 
 
     List<Movie> findMovieByWishActor(@Param("actorName") String actor,@Param("userId") int userId);
+
+
+    void plusWishCnt(String movieCd);
+
+    void minusWishCnt(String movieCd);
 }
