@@ -260,10 +260,7 @@ body {
     width: 100%;
 }
 
-<!--
-스위퍼
-
--->
+<!--스위퍼-->
 .swiper-wrapper {
     width: 100%;
     height: 100%;
@@ -548,7 +545,7 @@ select option {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/*버튼만들기*/
+/* 티저만들기*/
 .closebtn {
     background-color: black;
     margin: 0 auto;
@@ -563,7 +560,7 @@ select option {
     line-height: 1;
 }
 
-/* 모달 닫기 버튼 스타일 */
+/* 티저모달 닫기 버튼 스타일 */
 .closebt {
     color: #aaa;
     float: right;
@@ -605,7 +602,6 @@ select option {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/*버튼만들기*/
 .modal-content-teaser {
     background: transparent;
     margin: 8% auto;
