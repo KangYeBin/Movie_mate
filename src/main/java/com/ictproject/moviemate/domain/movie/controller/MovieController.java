@@ -32,7 +32,8 @@ public class MovieController {
     private final WishService wishService;
 
     @GetMapping("/main")
-    public String main(Model model) {
+    public String main(Model model,HttpSession session) {
+        model.addAttribute("recommendByWish", movieService.recommendMovieByWish(session));
         model.addAttribute("recommend", movieService.recommendMovie());
         model.addAttribute("sf", movieService.getGenreData("sf").subList(0, 20));
         model.addAttribute("family", movieService.getGenreData("family").subList(0, 20));

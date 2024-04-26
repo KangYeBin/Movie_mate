@@ -12,4 +12,6 @@ public interface GenreMapper {
 
     // 영화 코드로 장르 검색
     List<Genre> findGenres(String movieCd);
+
+    List<String> findByUserWish(int userId);
 }

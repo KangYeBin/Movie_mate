@@ -35,6 +35,28 @@
         </div>
 
 
+        <!-- 찜 추천 -->
+        <c:if test="${recommendByWish != null}">
+        <div class="genre wishSwiper">
+            <span class="genre-text">추천 픽</span>
+            <div class="genre-movielist swiper-wrapper">
+                <c:forEach var="wish" items="${recommendByWish}">
+                    <div class="movie-img-box swiper-slide" data-movie-cd="${wish.movieCd}">
+                        <a href="/detail/${wish.movieCd}"><img src="${wish.imageUrl}" alt="장르별 영화 포스터"></a>
+                        <p>${wish.movieName}</p>
+                    </div>
+                </c:forEach>
+            </div>
+
+
+            <div class="btn">
+                <button class="wish-prev swiper-button-prev " role="button"></button>
+
+                <button class="wish-next swiper-button-next " role="button"></button>
+            </div>
+        </div>
+        </c:if>
+
         <!-- 장르별 영화 목록 섹션 -->
         <div class="test-container">
             <div class="genre swiper-container-list sf">
