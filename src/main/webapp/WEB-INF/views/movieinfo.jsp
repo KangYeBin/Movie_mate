@@ -21,9 +21,10 @@
 <div class="movie">
     <div class="info-wrap">
         <img class="poster" src="${movie.imageUrl}">
+        <button class="teaser" onclick="openTeasermodal()" >영화티저</button>
         <div class="doc">
             <h1>${movie.movieName}</h1>
-
+        <div class="symnum">1</div>
             <c:if test="${isWish}">
                 <svg id="like" data-bon="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="active">
                     <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -144,7 +145,7 @@
 
             <form id="review-form" class="profile">
                 <textarea class="text" type="text" id="text" placeholder="리뷰를 작성해주세요"></textarea>
-                <div id="reviewContent"></div>
+                <div id="changetext"></div>
                 <div class="register">
                     <input type="submit" id="register" class="first btn" value="등록">
                 </div>
@@ -154,6 +155,15 @@
 
 </div>
 
+<!-- 티저모달 -->
+<div id="teaserModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="closebt" onclick="closeTeaserModal()" >&times;</span>
+        <div class="teasermovie"></div>
+        <span class="closebtn first btn" onclick="closeTeaserModal()" >닫기</span>
+    </div>
+</div>
 <%@ include file="include/footer.jsp"%>
 
 </body>

@@ -42,10 +42,18 @@ body {
 
 .movie .info-wrap .poster {
     margin-left: 2%;
-    width: 230px;
-    height: 317px;
+    width: 270px;
+    height: 420px;
 }
-
+.teaser {
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    bottom: 15px;
+    margin-left: 2.5%;
+    background: rgba(0, 0, 0, 0.40);
+    color: white;
+}
 .movie .info-wrap .doc {
     display: flex;
     flex-direction: column;
@@ -59,14 +67,26 @@ body {
     margin-bottom: 2%;
     margin-top: 1%;
 }
-
+.movie .info-wrap .doc .symnum {
+    width: 50px;
+    height: 50px;
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    text-align: center;
+    align-content: center;
+    margin-right: 5px;
+}
 .movie .info-wrap .doc .content {
     color: #FFF;
     font-size: 20px;
     margin-top: 3px;
     margin-bottom: 10px;
 }
-
+#reviewData{
+    overflow-wrap: break-word;
+}
 .movie .info-wrap .doc .info {
     display: flex;
     flex-direction: column;
@@ -512,4 +532,58 @@ select option {
     left: 0;
     opacity: 0;
     cursor: pointer;
+}
+
+.teaserModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*버튼만들기*/
+.closebtn {
+    background-color: black;
+    margin: 0 auto;
+    border: 1px solid powderblue;
+    width: 100px;
+    height: 50px;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    align-items: center;
+    margin-top: 25px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* 모달 닫기 버튼 스타일 */
+.closebt {
+    color: #aaa;
+    float: right;
+    font-size: 60px;
+    font-weight: bold;
+    position: relative;
+    right: 0;
+}
+
+.closebt:hover,
+.closebt:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.teasermovie {
+    border: 1px solid gray;
+    box-sizing: content-box;
+    width: 100%;
+    height: 250px;
+    font-size: 20px;
+    margin: 0 auto;
+    resize: none;
+    margin-top: 60px;
 }
