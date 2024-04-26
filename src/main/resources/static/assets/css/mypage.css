@@ -21,7 +21,7 @@ main {
 }
 
 main .container {
-  padding: 5% 10%;
+  padding: 3% 10%;
   width: 100%;
   height: 100%;
   background-color: #2E2E2E;
@@ -96,14 +96,15 @@ section .content-list h1 {
 .content-list h1 {
   margin-left: 80px;
   margin-top: 70px;
+  font-weight: revert;
 }
 
 
 .swiper-container {
-  width: 80%;
+  width: 92%;
   margin: 30px auto;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .swiper-slide {
@@ -111,7 +112,7 @@ section .content-list h1 {
   margin: 10px 0;
 }
 
-.swiper-slide:hover {
+.swiper-slide img:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
@@ -128,11 +129,11 @@ section .content-list h1 {
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
-  top: 50%;
+  top: 55%;
 
 
   transform: translateY(-50%);
-  width: 30px;
+  width: 20px;
   height: 30px;
   border-radius: 50%;
   color: #fff;
@@ -146,6 +147,10 @@ section .content-list h1 {
   padding: 80px;
 }
 
+.review-list h1{
+ font-weight: revert;
+}
+
 section .review-list {
   margin-bottom: 3rem;
   position: relative;
@@ -156,10 +161,11 @@ section .review-list {
 /* 리뷰 */
 .review-container{
     border-radius:5%;
-    width:95%;
-    height:300px;
+    width:230px;
+    height:290px;
     background-color: #F2F2F2;
     cursor: pointer;
+    overflow: hidden;
 
 
 }
@@ -229,7 +235,9 @@ section .review-list {
 }
 
 .review-swiper-custom .swiper-wrapper {
-    margin-top: 30px;
+    padding: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
 
@@ -254,7 +262,7 @@ section .review-list {
     height: 60%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 40px;
-    overflow: auto;
+    overflow-wrap: break-word;
 }
 
 
@@ -285,12 +293,13 @@ section .review-list {
     margin-top: 10px;
     margin-left: 20px;
     overflow: auto;
-    white-space: pre-line;
+
 }
 
 .swiper-wrapper{
     width: 80% !important;
     min-width: 1500px;
+    padding: 50px;
 }
 
 /* 모달 창 삭제 및 수정 */
@@ -405,6 +414,7 @@ section .review-list {
   color: yellow;
   overflow: hidden;
   pointer-events: none;
+  display: inline-flex;
 }
 
 
@@ -426,6 +436,11 @@ section .review-list {
   .withdraw-button {
     display: none;
   }
+}
+
+.review-contents{
+    overflow-wrap: break-word;
+    color:#aaa !important;
 }
 
 @media screen and (max-width: 768px) {
