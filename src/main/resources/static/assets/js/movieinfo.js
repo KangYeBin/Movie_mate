@@ -33,6 +33,7 @@ var reviewSwiper = new Swiper('.review-swiper-custom', {
 // 모달
 var modal = document.getElementById("reviewModal");
 var teasermodal = document.getElementById("teaserModal");
+
 // 모달 바깥을 클릭하면 모달이 닫히도록 함
 window.onclick = function (event) {
     if (event.target == modal) {
