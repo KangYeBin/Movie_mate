@@ -55,7 +55,7 @@ public class GoogleLoginController {
 
         googleUserService.googleLogout(session);
 
-        return "redirect:/movie/sign-in";
+        return "redirect:/";
     }
 
 
@@ -64,7 +64,7 @@ public class GoogleLoginController {
 
         googleUserService.deleteGoogleUser(session);
 
-        return "redirect:/movie/sign-in";
+        return "redirect:/";
     }
 
 
