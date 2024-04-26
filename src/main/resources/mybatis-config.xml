@@ -21,6 +21,7 @@
         <typeAlias type="com.ictproject.moviemate.domain.movie.Actor" alias="actor" />
         <typeAlias type="com.ictproject.moviemate.domain.movie.Genre" alias="genre" />
         <typeAlias type="com.ictproject.moviemate.domain.movie.Keyword" alias="keyword" />
+        <typeAlias type="com.ictproject.moviemate.domain.sympathy.Sympathy" alias="sympathy" />
         <typeAlias type="com.ictproject.moviemate.domain.review.dto.ReviewDetailResponseDTO" alias="reviewDTO" />
 
     </typeAliases>
@@ -34,6 +35,7 @@
         <mapper resource="mapper/ReviewMapper.xml"/>
         <mapper resource="mapper/WishMapper.xml"/>
         <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/SympathyMapper.xml"/>
     </mappers>
 
 

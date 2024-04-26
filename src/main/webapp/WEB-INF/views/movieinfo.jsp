@@ -221,7 +221,36 @@
             .then(res => res.json())
             .then(reviews => {
                 console.log('reviews : ' + reviews);
-                renderReviews(reviews);
+
+                const {
+                    movieCd,
+                    dto
+                } = reviews; 
+
+                for (let review of dto) {
+                const {
+                    reviewId,
+                    userId,
+                    movieCd,
+                    reviewDate,
+                    text,
+                    sympathyCnt,
+                    grade,
+                    movieName,
+                    email,
+                    profile
+                } = review;
+
+                console.log("reviewId", reviewId);
+
+                fetch(URL+"/"+reviewId)
+                    .then(res => res.text())
+                    .then(data => {
+                       console.log(data);
+                })
+
+                // renderReviews(reviews);
+            }
             })
     }
 
@@ -271,6 +300,74 @@
         fetchGetReviews();
     }
     document.getElementById('')
+
+
+        // 좋아요 버튼 클릭 이벤트 핸들러
+        document.getElementById('reviewData').addEventListener('click', e => {
+        console.log('reviewData 이벤트 발생!');
+        console.log('이벤트 타겟: ', e.target);
+        if (!e.target.matches('.review-container .review-sym svg.thumb path')) {
+            return;
+        }
+        console.log('따봉 이벤트 발생!');
+
+        const reviewId = e.target.closest('div.review-container').dataset.bno;
+        console.log('리뷰글 번호: ', reviewId);
+
+        const currentLoginId = '${login.userId}';
+        console.log('현재 로그인 사용자 아이디: ', currentLoginId);
+
+        const $thumb = e.target.parentNode;
+        const $thumbCnt = e.target.parentNode.nextElementSibling;
+        console.log('thumb요소: ', $thumb);
+        console.log('thumbCnt: ', $thumbCnt);
+
+        if (e.target.closest('.thumb.active')) {
+            console.log('좋아요를 이미 누름!');
+
+            fetch('/sympathy', {
+                method: 'DELETE',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    reviewId,
+                    movieCd,
+                    'userId': currentLoginId
+                })
+            })
+            .then(res => {
+                if (res.status === 200) {
+                    console.log('비동기 요청 성공');
+                    $thumb.classList.remove('active');
+                    $thumbCnt.textContent = (+$thumbCnt.textContent) - 1;
+                }
+            });
+
+        } else {
+            console.log('좋아요를 처음 누름!');
+            fetch('/sympathy', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    reviewId,
+                    movieCd,
+                    'userId': currentLoginId
+                })
+            })
+            .then(res => {
+                if (res.status === 200) {
+                    console.log('비동기 요청 성공');
+                    $thumb.classList.add('active');
+                    $thumbCnt.textContent = (+$thumbCnt.textContent) + 1;
+                }
+            });
+        }
+
+
+    })
 
 </script>
 

@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -38,12 +39,15 @@ public class ReviewService {
 	}
 
 	// 후기 공감
-	public void insertSympathy(Review review) {
-		reviewMapper.findSympathy(review.getSympathyCnt());
+	public void insertSympathy(int reviewId) {
+		reviewMapper.insertThumb(reviewId);
 	}
 
 	// 후기 공감 취소
-	public void
+	public void deleteSympathy(int reviewId) {
+		reviewMapper.deleteThumb(reviewId);
+	}
+
 
 
 }
