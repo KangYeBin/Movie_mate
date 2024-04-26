@@ -128,4 +128,13 @@ public class MovieService {
 
         return recommendMovie.stream().distinct().collect(Collectors.toList());
     }
+
+    public void plusWishCnt(String movieCd){
+        movieMapper.plusWishCnt(movieCd);
+    }
+
+    public void minusWishCnt(String movieCd){
+        movieMapper.minusWishCnt(movieCd);
+    }
+
 }
