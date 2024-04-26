@@ -15,4 +15,14 @@
         WHERE
             movie_cd = #{movieCd}
     </select>
+
+    <select id="findByUserWish" resultType="String">
+        SELECT keyword_name
+        FROM keyword k
+        JOIN wish_list w ON k.movie_cd = w.movie_cd
+        WHERE w.user_id = #{userId}
+        GROUP BY keyword_name
+        order by COUNT(*) desc
+        limit 2;
+    </select>
 </mapper>

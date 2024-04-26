@@ -27,7 +27,7 @@ public class IndexController {
     @GetMapping("/getMovieData")
     public String index() {
         
-        String start = "20240416";
+        String start = "20200916";
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         try {

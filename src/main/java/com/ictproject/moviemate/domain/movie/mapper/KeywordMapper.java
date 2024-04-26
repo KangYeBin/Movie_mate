@@ -12,4 +12,6 @@ public interface KeywordMapper {
 
     // 영화 코드로 키워드 검색
     List<Keyword> findKeywords(String movieCd);
+
+    List<String> findByUserWish(int userId);
 }
