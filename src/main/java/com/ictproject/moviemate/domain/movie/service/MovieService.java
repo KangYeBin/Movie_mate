@@ -4,11 +4,18 @@ package com.ictproject.moviemate.domain.movie.service;
 import com.ictproject.moviemate.domain.movie.Movie;
 import com.ictproject.moviemate.domain.movie.dto.MovieDetailResponseDTO;
 import com.ictproject.moviemate.domain.movie.dto.MovieResponseDTO;
+import com.ictproject.moviemate.domain.movie.mapper.ActorMapper;
+import com.ictproject.moviemate.domain.movie.mapper.GenreMapper;
+import com.ictproject.moviemate.domain.movie.mapper.KeywordMapper;
 import com.ictproject.moviemate.domain.movie.mapper.MovieMapper;
+import com.ictproject.moviemate.domain.user.User;
+import com.ictproject.moviemate.domain.wish.service.WishService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +26,10 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MovieService {
     private final MovieMapper movieMapper;
+    private final KeywordMapper keywordMapper;
+    private final GenreMapper genreMapper;
+    private final ActorMapper actorMapper;
+
     public List<MovieResponseDTO> getRecentData() {
         return movieMapper.getRecentData().stream().map(MovieResponseDTO::new).collect(Collectors.toList());
     }
@@ -90,15 +101,31 @@ public class MovieService {
     }
 
     public List<MovieResponseDTO> recommendMovie(){
-        return movieMapper.findAll().stream()
-                .sorted((x1, x2) -> {
-                    int audiAcc1 = Integer.parseInt(x1.getAudiAcc())/100000 + x1.getWishCnt() * 2;
-                    int audiAcc2 = Integer.parseInt(x2.getAudiAcc())/100000 + x2.getWishCnt() * 2;
-                    return Integer.compare(audiAcc2, audiAcc1);
-                })
-                .limit(10)
-                .map(MovieResponseDTO::new)
-                .collect(Collectors.toList());
+        return movieMapper.findMovieByRecommend().stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+    }
+    public List<MovieResponseDTO> recommendMovieByWish(HttpSession session){
+        User userinfo= (User)session.getAttribute("login");
+        int userId = userinfo.getUserId();
+        List<MovieResponseDTO> recommendMovie = new ArrayList<>();
+        //찜한 영화에 포함된 키워드 중 집계 값이 많은 키워드 2개를 가져와 각 키워드마다 같은 키워드를 가지면서 찜 수가 제일 많은 영화 3개만 가져옴
+        List<String> wishKeyword = keywordMapper.findByUserWish(userId);
+        for(String keyword : wishKeyword){
+            List<MovieResponseDTO> collect = movieMapper.findMovieByWishKeyword(keyword, userId).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+            recommendMovie.addAll(collect);
+        }
+        //찜한 영화에 포함된 장르 중 집계 값이 많은 장르 2개를 가져와 각 장르마다 같은 장르를 가지면서 찜 수가 제일 많은 영화 3개만 가져옴
+        List<String> wishGenre = genreMapper.findByUserWish(userId);
+        for(String genre : wishGenre){
+            List<MovieResponseDTO> collect = movieMapper.findMovieByWishGenre(genre, userId).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+            recommendMovie.addAll(collect);
+        }
+        //찜한 영화에 포함된 배우 중 집계 값이 많은 배우 2개를 가져와 각 배우마다 같은 배우를 가지면서 찜 수가 제일 많은 영화 를 3개만 가져옴
+        List<String> wishActor = actorMapper.findByUserWish(userId);
+        for(String actor : wishActor){
+            List<MovieResponseDTO> collect = movieMapper.findMovieByWishActor(actor, userId).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+            recommendMovie.addAll(collect);
+        }
 
+        return recommendMovie.stream().distinct().collect(Collectors.toList());
     }
 }
