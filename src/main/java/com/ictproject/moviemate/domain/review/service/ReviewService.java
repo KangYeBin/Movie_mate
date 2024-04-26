@@ -36,4 +36,14 @@ public class ReviewService {
 	public void modifyReview(ReviewModifyRequestDTO reviewModifyRequestDTO){
 		reviewMapper.modifyReview(reviewModifyRequestDTO);
 	}
+
+	// 후기 공감
+	public void insertSympathy(Review review) {
+		reviewMapper.findSympathy(review.getSympathyCnt());
+	}
+
+	// 후기 공감 취소
+	public void
+
+
 }

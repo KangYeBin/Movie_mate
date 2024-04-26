@@ -35,4 +35,14 @@ public interface ReviewMapper {
 	// 해당 사용자의 후기 총 개수 조회
 	int countByUser(int userId);
 
+	// 후기 좋아요 누르기
+	void insertThumb(Review review);
+
+	// 후기 좋아요 취소
+	void deleteThumb(Review review);
+
+	// 마이페이지에서 후기 좋아요 보이기
+	List<Review> findSympathy(int sympathyCnt);
+
+
 }
