@@ -126,11 +126,66 @@
 
     <script>
 
+        document.querySelector('.withdraw-button').addEventListener('click', function() {
+            var result = confirm("정말로 회원을 탈퇴하시겠습니까?");
+            if (result) {
+                console.log("사용자가 회원 탈퇴 확인을 선택했습니다.");
+
+                fetch('/api/v1/delete', {
+                    method: 'DELETE',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('회원 탈퇴 실패');
+                    }
+                    console.log('회원 탈퇴 성공');
+                    alert('회원 탈퇴가 성공적으로 처리되었습니다.');
+
+                    // 찜한 영화 삭제 요청
+                    const deleteMoviesPromise = fetch('/api/v1/movies/delete', {
+                        method: 'DELETE',
+                        credentials: 'same-origin',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    // 후기 삭제 요청
+                    const deleteReviewsPromise = fetch('/api/v1/reviews/delete', {
+                        method: 'DELETE',
+                        credentials: 'same-origin',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    return Promise.all([deleteMoviesPromise, deleteReviewsPromise]);
+                })
+                .then(() => {
+                    console.log('찜한 영화와 후기 삭제 완료');
+                    // 로그인 페이지로 이동
+                    window.location.href = 'http://localhost:8181/login';
+                })
+                .catch(error => {
+                    console.error('회원 탈퇴 및 삭제 요청 오류:', error);
+                    alert('회원 탈퇴 및 삭제 요청 중 오류가 발생했습니다.');
+                });
+            } else {
+                console.log("사용자가 회원 탈퇴를 취소했습니다.");
+                // 사용자가 취소를 선택한 경우에는 아무 동작도 하지 않음
+                return;
+            }
+        });
 
 
 
 
 
+        // 스위퍼
         new Swiper('.swiper-container', {
             speed: 800, // 슬라이드 속도
             slidesPerView: 5, // 한 번에 보여질 슬라이드 수
@@ -231,6 +286,7 @@
             var grade = document.getElementById("reviewModal").dataset.grade;
             document.querySelector('.star').style.visibility='visible';
             document.querySelector('.star span').style.width = `\${grade*2*10}%`;
+
 
             var form = document.createElement('form');
             form.setAttribute('id', 'editForm');
