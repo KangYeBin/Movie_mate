@@ -40,9 +40,9 @@ main .container {
 }
 
 main .description {
-  position: relative; /* 상대적인 위치로 설정 */
-  width: 100%; /* 원하는 너비로 설정 */
-  padding: 0 20px; /* 좌우 여백 추가 */
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
   margin-left:30px;
 }
 
@@ -103,16 +103,17 @@ section .content-list h1 {
   width: 80%;
   margin: 30px auto;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .swiper-slide {
   position: relative;
+  margin: 10px 0;
 }
 
 .swiper-slide:hover {
-  transform: scale(1.05); /* 호버 시 슬라이드를 약간 크게 확대합니다. */
-  transition: transform 0.3s ease; /* 부드러운 트랜지션 효과를 적용합니다. */
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 
@@ -228,7 +229,7 @@ section .review-list {
 }
 
 .review-swiper-custom .swiper-wrapper {
-    padding: 70px; /* 패딩 값 설정 */
+    margin-top: 30px;
 }
 
 
@@ -284,7 +285,7 @@ section .review-list {
     margin-top: 10px;
     margin-left: 20px;
     overflow: auto;
-    white-space: pre-line; /* 텍스트 줄 바꿈 처리 */
+    white-space: pre-line;
 }
 
 .swiper-wrapper{
@@ -429,7 +430,7 @@ section .review-list {
 
 @media screen and (max-width: 768px) {
     .review-contents {
-        max-height: none; /* 높이 제거 */
-        white-space: normal; /* 텍스트가 박스 크기에 맞게 자동으로 줄 바꿈됨 */
+        max-height: none;
+        white-space: normal;
     }
 }
