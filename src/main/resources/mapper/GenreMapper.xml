@@ -16,5 +16,15 @@
             movie_cd = #{movieCd}
     </select>
 
+    <select id="findByUserWish" resultType="String">
+        SELECT genre_name
+        FROM genre g
+        JOIN wish_list w ON g.movie_cd = w.movie_cd
+        WHERE w.user_id = #{userId}
+        GROUP BY genre_name
+        order by COUNT(*) desc
+        limit 2;
+    </select>
+
 
 </mapper>
