@@ -491,6 +491,7 @@ select option {
 .thumb {
     width: 30px;
     fill: #868282;
+    cursor: pointer;
 }
 
 .thumb.active {

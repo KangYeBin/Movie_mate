@@ -40,9 +40,9 @@ main .container {
 }
 
 main .description {
-  position: relative;
-  width: 100%;
-  padding: 0 20px;
+  position: relative; /* 상대적인 위치로 설정 */
+  width: 100%; /* 원하는 너비로 설정 */
+  padding: 0 20px; /* 좌우 여백 추가 */
   margin-left:30px;
 }
 
@@ -103,12 +103,11 @@ section .content-list h1 {
   width: 80%;
   margin: 30px auto;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .swiper-slide {
   position: relative;
-  margin: 10px 0;
 }
 
 .swiper-slide:hover {
@@ -229,7 +228,7 @@ section .review-list {
 }
 
 .review-swiper-custom .swiper-wrapper {
-    margin-top: 30px;
+    padding: 70px; /* 패딩 값 설정 */
 }
 
 
