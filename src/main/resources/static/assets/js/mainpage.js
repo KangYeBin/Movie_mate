@@ -142,3 +142,13 @@ const makeStars = () => {
 window.onload = () => {
     makeStars();
 }
+
+//찜 추천 swiper
+const wishSwiper = new Swiper('.wishSwiper', {
+    spaceBetween: 5,
+    slidesPerView: 5,
+    navigation: {
+        nextEl: '.wish-next',
+        prevEl: '.wish-prev',
+    }
+});

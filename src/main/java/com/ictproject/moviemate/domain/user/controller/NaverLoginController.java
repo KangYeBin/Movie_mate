@@ -82,7 +82,7 @@ public class NaverLoginController {
 
         naverUserService.naverLogout(session);
 
-		return "redirect:/movie/sign-in";
+		return "redirect:/";
 	}
 
 
@@ -91,7 +91,7 @@ public class NaverLoginController {
 
         naverUserService.deleteNaverUser(session);
 
-		return "redirect:/movie/sign-in";
+		return "redirect:/";
 	}
 
 
