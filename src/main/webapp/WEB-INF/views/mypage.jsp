@@ -285,6 +285,7 @@
                 }
             });
 
+
             // 모달 창 내용 교체
             reviewText.innerHTML = '';
             reviewText.appendChild(form);
