@@ -209,6 +209,7 @@
             })
             .then(data => {
                 console.log('응답 성공 : ', data);
+                document.getElementById('reviewData').innerHTML = '';
                 fetchGetReviews();
 
             })
@@ -245,11 +246,11 @@
 
                 fetch(URL+"/"+reviewId)
                     .then(res => res.text())
-                    .then(data => {
-                       console.log(data);
+                    .then(isSympathy => {
+                       console.log(isSympathy);
+                       renderReviews(review, isSympathy);
                 })
 
-                // renderReviews(reviews);
             }
             })
     }
@@ -296,7 +297,7 @@
         var selectedItem = document.getElementById('selectbox');
         var selectValue = selectedItem.options[selectedItem.selectedIndex].value;
         sort = selectValue;
-
+        document.getElementById('reviewData').innerHTML = '';
         fetchGetReviews();
     }
     document.getElementById('')
@@ -308,7 +309,7 @@
         console.log('이벤트 타겟: ', e.target);
         if (!e.target.matches('.review-container .review-sym svg.thumb path')) {
             return;
-        }
+        }        
         console.log('따봉 이벤트 발생!');
 
         const reviewId = e.target.closest('div.review-container').dataset.bno;
@@ -316,6 +317,13 @@
 
         const currentLoginId = '${login.userId}';
         console.log('현재 로그인 사용자 아이디: ', currentLoginId);
+
+        const userId = e.target.closest('div.review-container').dataset.userid;
+        console.log('리뷰 작성자 아이디: ', userId);
+
+        if (userId == currentLoginId) {
+            return;
+        }
 
         const $thumb = e.target.parentNode;
         const $thumbCnt = e.target.parentNode.nextElementSibling;
