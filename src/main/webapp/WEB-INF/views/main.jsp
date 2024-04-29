@@ -117,10 +117,12 @@
                     </c:forEach>
                 </div>
             </div>
-             <!-- 슬라이더 좌우 버튼 -->
-             <div class="btn">
-                <button class="list-prev swiper-button-prev horror-prev" role="button"></button>
-                <button class="list-next swiper-button-next horror-next" role="button"></button>
+
+            <!-- 슬라이더 좌우 버튼 -->
+            <div class="btn">
+                <button class="list-prev swiper-button-prev" role="button"></button>
+
+                <button class="list-next swiper-button-next" role="button"></button>
             </div>
         </div>
 

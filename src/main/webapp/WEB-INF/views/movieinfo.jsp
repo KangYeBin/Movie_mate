@@ -292,6 +292,7 @@
         }
     });
 
+
     // 정렬
     function selectChanged() {
         var selectedItem = document.getElementById('selectbox');
@@ -301,6 +302,7 @@
         fetchGetReviews();
     }
     document.getElementById('')
+
 
 
         // 좋아요 버튼 클릭 이벤트 핸들러
