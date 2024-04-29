@@ -2,19 +2,6 @@
     box-sizing: border-box;
 }
 
-body::-webkit-scrollbar {
-    width: 15px; /* 스크롤바의 너비 */
-}
-
-body::-webkit-scrollbar-thumb {
-    height: 30%; /* 스크롤바의 길이 */
-    background: rgb(24, 24, 24); /* 스크롤바의 색상 */
-    border-radius: 10px;
-}
-
-body::-webkit-scrollbar-track {
-    background: rgba(33, 122, 244, .1); /*스크롤바 뒷 배경 색상*/
-}
 
 body {
     padding: 10px;
@@ -53,6 +40,9 @@ body {
     margin-left: 2.5%;
     background: rgba(0, 0, 0, 0.40);
     color: white;
+    margin-bottom: 0.3%;
+    font-weight: bold;
+    font-size: 15px;
 }
 .movie .info-wrap .doc {
     display: flex;
@@ -259,7 +249,10 @@ body {
     width: 100%;
 }
 
-<!-- 스위퍼-->
+<!--
+스위퍼
+
+-->
 .swiper-wrapper {
     width: 100%;
     height: 100%;
@@ -627,4 +620,18 @@ select option {
     color: red;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+::-webkit-scrollbar {
+    width: 15px; /* 스크롤바의 너비 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(35, 35, 35); /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #545454;; /*스크롤바 뒷 배경 색상*/
 }

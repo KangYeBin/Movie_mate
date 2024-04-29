@@ -66,12 +66,7 @@ function closeTeaserModal() {
 
 function renderReviews(review, isSympathy) {
 
-    /* 한글 줄 개행 코드*/
-    $( document ).ready(function() {
-        var text = $("#text").val();
-        text = text.replace(/(?:\r\n|\r|\n)/g, '<br>');
-        $("#changetext").html(text);
-    });
+
 
     let tag = document.getElementById('reviewData').innerHTML;
 
