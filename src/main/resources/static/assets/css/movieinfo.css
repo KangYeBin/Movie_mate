@@ -2,18 +2,6 @@
     box-sizing: border-box;
 }
 
-body::-webkit-scrollbar {
-    width: 15px; /* 스크롤바의 너비 */
-}
-
-body::-webkit-scrollbar-thumb {
-    background: rgb(35, 35, 35); /* 스크롤바의 색상 */
-    border-radius: 10px;
-}
-
-body::-webkit-scrollbar-track {
-    background: rgba(188, 188, 188, 0.1); /*스크롤바 뒷 배경 색상*/
-}
 
 body {
     padding: 10px;
@@ -632,4 +620,18 @@ select option {
     color: red;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+::-webkit-scrollbar {
+    width: 15px; /* 스크롤바의 너비 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(35, 35, 35); /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #545454;; /*스크롤바 뒷 배경 색상*/
 }
