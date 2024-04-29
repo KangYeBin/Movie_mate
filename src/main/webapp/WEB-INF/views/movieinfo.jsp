@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/movieinfo.css">
     <script src="/assets/js/movieinfo.js" defer></script>
-    <title>Document</title>
+    <title>Movie Mate | Detail</title>
 </head>
 
 <body>
@@ -292,6 +292,7 @@
         }
     });
 
+
     // 정렬
     function selectChanged() {
         var selectedItem = document.getElementById('selectbox');
@@ -301,6 +302,7 @@
         fetchGetReviews();
     }
     document.getElementById('')
+
 
 
         // 좋아요 버튼 클릭 이벤트 핸들러

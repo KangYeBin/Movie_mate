@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <%@ include file="include/header-static.jsp"%>
-    <title>Insert Your Title</title>
+    <title>Movie Mate | Main</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/mainpage.css">
 </head>
@@ -117,10 +117,12 @@
                     </c:forEach>
                 </div>
             </div>
-             <!-- 슬라이더 좌우 버튼 -->
-             <div class="btn">
-                <button class="list-prev swiper-button-prev horror-prev" role="button"></button>
-                <button class="list-next swiper-button-next horror-next" role="button"></button>
+
+            <!-- 슬라이더 좌우 버튼 -->
+            <div class="btn">
+                <button class="list-prev swiper-button-prev" role="button"></button>
+
+                <button class="list-next swiper-button-next" role="button"></button>
             </div>
         </div>
 
