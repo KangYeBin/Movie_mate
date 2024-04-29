@@ -215,3 +215,16 @@ a.more-button {
       transform: translate(-50%, -50%) rotate(360deg)
     }
   }
+
+::-webkit-scrollbar {
+    width: 15px; /* 스크롤바의 너비 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(35, 35, 35); /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #545454; /*스크롤바 뒷 배경 색상*/
+}

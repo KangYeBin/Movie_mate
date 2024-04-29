@@ -15,7 +15,6 @@
 
 <body>
 <%@ include file="include/header.jsp"%>
-<div class="scrollBar"></div>
 
 
 <div class="movie">
@@ -248,6 +247,7 @@
                     .then(res => res.text())
                     .then(isSympathy => {
                        console.log(isSympathy);
+
                        renderReviews(review, isSympathy);
                 })
 
