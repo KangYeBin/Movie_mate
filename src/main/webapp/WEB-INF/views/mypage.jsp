@@ -285,6 +285,7 @@
                             console.error('오류 발생:', error);
                         });
                 } else {
+
                     closeReviewModal();
                 }
             });
@@ -307,7 +308,7 @@
         function closeReviewModal() {
             var modal = document.getElementById("reviewModal");
             modal.style.display = "none";
-
+            document.querySelector('.star').style.visibility = 'hidden';
             // 삭제 및 수정 버튼 보이기
             var editButton = document.querySelector('.edit-button');
             var deleteButton = document.querySelector('.delete-button');
