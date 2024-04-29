@@ -1,11 +1,13 @@
 package com.ictproject.moviemate.domain.review.dto;
 
 import com.ictproject.moviemate.domain.review.Review;
+import com.ictproject.moviemate.domain.sympathy.dto.SympathyDto;
 import com.ictproject.moviemate.domain.user.User;
 import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Comparator;
+import java.util.List;
 
 @Setter
 @Getter

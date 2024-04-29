@@ -1,5 +1,6 @@
 package com.ictproject.moviemate.domain.review.dto;
 
+import com.ictproject.moviemate.domain.sympathy.dto.SympathyDto;
 import lombok.*;
 
 import java.util.List;

@@ -2,14 +2,18 @@ package com.ictproject.moviemate.domain.sympathy;
 
 import lombok.*;
 
-@Setter @Getter @ToString
+@Setter
+@Getter
+@ToString
 @EqualsAndHashCode
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Sympathy {
 
-    private int reviewId; // 유저 아이디? 게시물 번호?
-    private int sympathyCnt; // 공감 수
+    private int lno;
+    private int userId;
+    private String movieCd;
+    private int reviewId;
 
 }

@@ -7,6 +7,8 @@ import com.ictproject.moviemate.domain.review.dto.ReviewModifyRequestDTO;
 import com.ictproject.moviemate.domain.review.dto.ReviewRequestDTO;
 import com.ictproject.moviemate.domain.review.dto.ReviewResponseDTO;
 import com.ictproject.moviemate.domain.review.service.ReviewService;
+import com.ictproject.moviemate.domain.sympathy.service.SympathyService;
+import com.ictproject.moviemate.domain.user.User;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +24,7 @@ import java.util.List;
 @Slf4j
 public class ReviewController {
 	private final ReviewService reviewService;
+	private final SympathyService sympathyService;
 
 	@PostMapping("/create")
 	public ResponseEntity<?> create(@RequestBody ReviewRequestDTO dto, HttpSession session, BindingResult result) {
@@ -47,8 +50,9 @@ public class ReviewController {
 	}
 
 	@GetMapping("/detail/{movieCd}/reviews/{sort}")
-	public ResponseEntity<?> list(@PathVariable("movieCd") String movieCd, @PathVariable("sort") String sort) {
+	public ResponseEntity<?> list(@PathVariable("movieCd") String movieCd, @PathVariable("sort") String sort, HttpSession session) {
 		log.info("/api/v1/review/" + movieCd + " " + sort +" GET!");
+
 
 		List<ReviewDetailResponseDTO> reviews = reviewService.getReview(movieCd);
 		log.info("reviews : {}", reviews);
@@ -78,5 +82,16 @@ public class ReviewController {
 		reviewModifyRequestDTO.setReviewId(reviewId);
 		reviewService.modifyReview(reviewModifyRequestDTO);
 		return ResponseEntity.ok().body("ok");
+	}
+
+
+	@GetMapping("/{reviewId}")
+	public ResponseEntity<?> getSympathy(@PathVariable int reviewId, HttpSession session) {
+		log.info("/api/v1/review/" + reviewId + " GET!");
+
+		User loginUser = (User) session.getAttribute("login");
+		boolean isSympathy = sympathyService.isSympathy(reviewId, loginUser.getUserId());
+
+		return ResponseEntity.ok().body(isSympathy);
 	}
 }
