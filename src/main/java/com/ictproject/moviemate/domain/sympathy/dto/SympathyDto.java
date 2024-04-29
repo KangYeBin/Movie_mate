@@ -11,7 +11,7 @@ import lombok.*;
 @Builder
 public class SympathyDto {
 
-    private int reviewNo;
+    private int reviewId;
     private String movieCd;
     private int userId;
 

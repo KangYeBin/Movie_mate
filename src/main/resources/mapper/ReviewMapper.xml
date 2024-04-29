@@ -82,4 +82,17 @@
             user_cd = #{userId}
     </select>
 
+    <update id="insertThumb">
+        UPDATE review
+        SET sympathy_cnt = sympathy_cnt +1
+        WHERE review_id = #{reviewId}
+    </update>
+
+    <update id="deleteThumb">
+        UPDATE review
+        SET sympathy_cnt = sympathy_cnt -1
+        WHERE review_id = #{reviewId}
+    </update>
+
+
 </mapper>
