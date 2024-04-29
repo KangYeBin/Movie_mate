@@ -33,7 +33,7 @@ public class MovieApiService {
     public void getKoficData(String date) {
         String requestUri = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
         //자신 키로 바꾸기  8803352a1e880950e1e1d4a12c9c3186
-        String key = "f66bf40754ae57bee8aae3f6650a44f4";
+        String key = "1be896b2d0185ed05b72d42954db4ea5";
         URI uri = UriComponentsBuilder
                 .fromUriString(requestUri)
                 .queryParam("key", key)

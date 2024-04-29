@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Insert Your Title</title>
+    <title>Movie Mate</title>
     <%@ include file="include/header-static.jsp"%>
     <link rel="stylesheet" href="/assets/css/search.css">
 </head>
