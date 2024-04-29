@@ -126,60 +126,21 @@
 
     <script>
 
-        document.querySelector('.withdraw-button').addEventListener('click', function() {
-            var result = confirm("정말로 회원을 탈퇴하시겠습니까?");
-            if (result) {
-                console.log("사용자가 회원 탈퇴 확인을 선택했습니다.");
+       // 회원탈퇴
+               document.querySelector('.withdraw-button').addEventListener('click', function () {
+                   var result = confirm("정말로 회원을 탈퇴하시겠습니까?");
+                   if (result) {
+                       console.log("사용자가 회원 탈퇴 확인을 선택했습니다.");
+                       location.href = '/${sessionScope.login.loginPath}/delete';
 
-                fetch('/api/v1/delete', {
-                    method: 'DELETE',
-                    credentials: 'same-origin',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('회원 탈퇴 실패');
-                    }
-                    console.log('회원 탈퇴 성공');
-                    alert('회원 탈퇴가 성공적으로 처리되었습니다.');
+                       alert("회원 탈퇴가 완료되었습니다."); // 예시로 경고창을 표시
 
-                    // 찜한 영화 삭제 요청
-                    const deleteMoviesPromise = fetch('/api/v1/movies/delete', {
-                        method: 'DELETE',
-                        credentials: 'same-origin',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    });
-
-                    // 후기 삭제 요청
-                    const deleteReviewsPromise = fetch('/api/v1/reviews/delete', {
-                        method: 'DELETE',
-                        credentials: 'same-origin',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    });
-
-                    return Promise.all([deleteMoviesPromise, deleteReviewsPromise]);
-                })
-                .then(() => {
-                    console.log('찜한 영화와 후기 삭제 완료');
-                    // 로그인 페이지로 이동
-                    window.location.href = 'http://localhost:8181/login';
-                })
-                .catch(error => {
-                    console.error('회원 탈퇴 및 삭제 요청 오류:', error);
-                    alert('회원 탈퇴 및 삭제 요청 중 오류가 발생했습니다.');
-                });
-            } else {
-                console.log("사용자가 회원 탈퇴를 취소했습니다.");
-                // 사용자가 취소를 선택한 경우에는 아무 동작도 하지 않음
-                return;
-            }
-        });
+                   } else {
+                       console.log("사용자가 회원 탈퇴를 취소했습니다.");
+                       // 취소를 선택한 경우: 동작x
+                       return;
+                   }
+               });
 
 
 
@@ -286,7 +247,7 @@
             var grade = document.getElementById("reviewModal").dataset.grade;
             document.querySelector('.star').style.visibility='visible';
             document.querySelector('.star span').style.width = `\${grade*2*10}%`;
-
+            value = grade*2;
 
             var form = document.createElement('form');
             form.setAttribute('id', 'editForm');
@@ -306,28 +267,30 @@
                     text : textarea.value,
                     grade : value/2,
                 }
-                if(confirm("저장 하시겠습니까?")){
-                     fetch("/api/v1/review/mod/" + reviewId,{
-                                        method: 'put',
-                                        headers: {
-                                                     'Content-Type': 'application/json'
-                                                  },
-                                        body : JSON.stringify(modify)
-                                    })
-                                    .then(res => {
-                                        if (res.ok) {
-                                            console.log('수정 성공');
-                                        } else {
-                                            throw new Error('수정 요청에 실패했습니다.');
-                                        }
-                                    })
-                                    .then(data => {
-                                        window.location.reload();
-                                    })
-                                    .catch(error => {
-                                        console.error('오류 발생:', error);
-                                    });
-                }else{
+
+                if (confirm("저장 하시겠습니까?")) {
+                    fetch("/api/v1/review/mod/" + reviewId, {
+                            method: 'put',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(modify)
+                        })
+                        .then(res => {
+                            if (res.ok) {
+                                console.log('수정 성공');
+                            } else {
+                                throw new Error('수정 요청에 실패했습니다.');
+                            }
+                        })
+                        .then(data => {
+                            window.location.reload();
+                        })
+                        .catch(error => {
+                            console.error('오류 발생:', error);
+                        });
+                } else {
+
                     closeReviewModal();
                 }
             });
@@ -350,7 +313,7 @@
         function closeReviewModal() {
             var modal = document.getElementById("reviewModal");
             modal.style.display = "none";
-
+            document.querySelector('.star').style.visibility = 'hidden';
             // 삭제 및 수정 버튼 보이기
             var editButton = document.querySelector('.edit-button');
             var deleteButton = document.querySelector('.delete-button');
