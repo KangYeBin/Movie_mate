@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <%@ include file="include/header-static.jsp"%>
-    <title>Insert Your Title</title>
+    <title>Movie Mate | Main</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/mainpage.css">
 </head>
