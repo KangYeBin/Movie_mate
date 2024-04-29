@@ -73,12 +73,7 @@ function renderReviews(reviews) {
     } = reviews;
     console.log(dto);
 
-    /* 한글 줄 개행 코드*/
-    $( document ).ready(function() {
-        var text = $("#text").val();
-        text = text.replace(/(?:\r\n|\r|\n)/g, '<br>');
-        $("#changetext").html(text);
-    });
+
 
     let tag = '';
     if (dto != null && dto.length > 0) {

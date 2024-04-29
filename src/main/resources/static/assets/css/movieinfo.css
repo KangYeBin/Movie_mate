@@ -53,6 +53,9 @@ body {
     margin-left: 2.5%;
     background: rgba(0, 0, 0, 0.40);
     color: white;
+    margin-bottom: 0.3%;
+    font-weight: bold;
+    font-size: 15px;
 }
 .movie .info-wrap .doc {
     display: flex;
