@@ -15,7 +15,6 @@
 
 <body>
 <%@ include file="include/header.jsp"%>
-<div class="scrollBar"></div>
 
 
 <div class="movie">
