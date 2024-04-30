@@ -53,6 +53,18 @@ public class ReviewDetailResponseDTO {
 		}
 	}
 
+	public static class ReviewGradeComparator implements Comparator<ReviewDetailResponseDTO> {
+		@Override
+		public int compare(ReviewDetailResponseDTO dto1, ReviewDetailResponseDTO dto2) {
+			if (dto1.grade > dto2.grade) {
+				return 1;
+			} else if (dto1.grade < dto2.grade) {
+				return -1;
+			}
+			return 0;
+		}
+	}
+
 	public static class ReviewDateComparator implements Comparator<ReviewDetailResponseDTO> {
 		@Override
 		public int compare(ReviewDetailResponseDTO dto1, ReviewDetailResponseDTO dto2) {
