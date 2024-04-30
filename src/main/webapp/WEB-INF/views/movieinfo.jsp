@@ -107,7 +107,7 @@
                     <div class="reple-item">
                         <select id="selectbox" onchange="selectChanged()">
                             <option value="sympathyCnt">공감순</option>
-                            <option value="reviewDate">최신순</option>
+                            <option value="grade">별점순</option>
                         </select>
                     </div>
                 </div>
@@ -232,31 +232,35 @@
                     `<div style="color:white; font-size: 20px;" class="swiper-wrapper">작성한 후기가 없습니다</div>`;
                 }
 
-                for (let review of dto) {
-                const {
-                    reviewId,
-                    userId,
-                    movieCd,
-                    reviewDate,
-                    text,
-                    sympathyCnt,
-                    grade,
-                    movieName,
-                    email,
-                    profile
-                } = review;
+                (async function() {
+                    for (let review of dto) {
+                        const {
+                            reviewId,
+                            userId,
+                            movieCd,
+                            reviewDate,
+                            text,
+                            sympathyCnt,
+                            grade,
+                            movieName,
+                            email,
+                            profile
+                        } = review;
 
-                console.log("reviewId", reviewId);
+                        console.log("reviewId", reviewId);
 
-                fetch(URL+"/"+reviewId)
-                    .then(res => res.text())
-                    .then(isSympathy => {
-                       console.log(isSympathy);
+                        await fetch(URL+"/"+reviewId)
+                            .then(res => res.text())
+                            .then(isSympathy => {
+                            console.log(isSympathy);
 
-                       renderReviews(review, isSympathy);
-                })
+                            renderReviews(review, isSympathy);
+                        })
 
-            }
+                    }
+        
+                })();
+    
             })
     }
 
@@ -310,8 +314,8 @@
 
 
 
-        // 좋아요 버튼 클릭 이벤트 핸들러
-        document.getElementById('reviewData').addEventListener('click', e => {
+    // 좋아요 버튼 클릭 이벤트 핸들러
+    document.getElementById('reviewData').addEventListener('click', e => {
         console.log('reviewData 이벤트 발생!');
         console.log('이벤트 타겟: ', e.target);
         if (!e.target.matches('.review-container .review-sym svg.thumb path')) {
@@ -380,7 +384,6 @@
                 }
             });
         }
-
 
     })
 
