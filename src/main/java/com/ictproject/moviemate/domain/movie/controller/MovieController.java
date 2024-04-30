@@ -28,7 +28,6 @@ public class MovieController {
     private final MovieService movieService;
     private final ActorService actorService;
     private final GenreService genreService;
-    private final ReviewService reviewService;
     private final WishService wishService;
 
     @GetMapping("/main")
@@ -45,6 +44,7 @@ public class MovieController {
         model.addAttribute("thriller", movieService.getGenreData("thriller").subList(0,20));
         model.addAttribute("action", movieService.getGenreData("action").subList(0,20));
         model.addAttribute("adventure", movieService.getGenreData("adventure").subList(0,20));
+
         return "main";
     }
 
