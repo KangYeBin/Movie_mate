@@ -37,4 +37,4 @@
 | ![detail3](https://github.com/Dasom04/Movie_mate/assets/156872543/906fb866-76e8-42b7-8dd3-0e595fbf0664)| ![search2](https://github.com/Dasom04/Movie_mate/assets/156872543/41ddf3b9-6e05-4933-aa6e-57afee8396b2)|
 |카테고리별 영화 검색|단어 검색|
 |![mypage2 (1)](https://github.com/Dasom04/Movie_mate/assets/156872543/c88cfdaa-5e15-4006-bc24-348b903ca3c5)|![mypage](https://github.com/Dasom04/Movie_mate/assets/156872543/7dcd57a3-514c-4d09-9037-fa412943452c)|
-|마이페이지|마이페이지 찜 영호, 작성 후기|
+|마이페이지 프로필|마이페이지 찜 영화, 작성 후기|
