@@ -61,8 +61,8 @@ public class ReviewController {
 			case "sympathyCnt":
 				reviews.sort(new ReviewDetailResponseDTO.ReviewSympathyComparator().reversed());
 				break;
-			case "reviewDate":
-				reviews.sort(new ReviewDetailResponseDTO.ReviewDateComparator().reversed());
+			case "grade":
+				reviews.sort(new ReviewDetailResponseDTO.ReviewGradeComparator().reversed());
 				break;
 		}
 
