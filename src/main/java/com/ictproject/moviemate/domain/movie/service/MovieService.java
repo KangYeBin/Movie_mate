@@ -110,7 +110,11 @@ public class MovieService {
         //찜한 영화에 포함된 키워드 중 집계 값이 많은 키워드 2개를 가져와 각 키워드마다 같은 키워드를 가지면서 찜 수가 제일 많은 영화 3개만 가져옴
         List<String> wishKeyword = keywordMapper.findByUserWish(userId);
         for(String keyword : wishKeyword){
-            List<MovieResponseDTO> collect = movieMapper.findMovieByWishKeyword(keyword, userId).stream().map(MovieResponseDTO::new).collect(Collectors.toList());
+            List<MovieResponseDTO> collect =
+                    movieMapper
+                    .findMovieByWishKeyword(keyword, userId)
+                    .stream().map(MovieResponseDTO::new)
+                    .collect(Collectors.toList());
             recommendMovie.addAll(collect);
         }
         //찜한 영화에 포함된 장르 중 집계 값이 많은 장르 2개를 가져와 각 장르마다 같은 장르를 가지면서 찜 수가 제일 많은 영화 3개만 가져옴

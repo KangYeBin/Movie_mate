@@ -18,17 +18,13 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-//@EnableScheduling
 public class IndexController {
     private final MovieApiService movieApiService;
     private final MovieService movieService;
 
-    //@Scheduled(cron = "* * 12 * * ?")
     @GetMapping("/getMovieData")
     public String index() {
-        
-        String start = "20120330";
-
+        String start = "20110624";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         try {
             LocalDate startDate = LocalDate.parse(start, formatter);

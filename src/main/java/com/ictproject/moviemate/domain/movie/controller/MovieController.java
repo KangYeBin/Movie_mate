@@ -34,16 +34,17 @@ public class MovieController {
     public String main(Model model,HttpSession session) {
         model.addAttribute("recommendByWish", movieService.recommendMovieByWish(session));
         model.addAttribute("recommend", movieService.recommendMovie());
-        model.addAttribute("sf", movieService.getGenreData("sf").subList(0, 10));
-        model.addAttribute("family", movieService.getGenreData("family").subList(0, 10));
-        model.addAttribute("horror", movieService.getGenreData("horror").subList(0, 10));
-        model.addAttribute("drama", movieService.getGenreData("drama").subList(0, 10));
-        model.addAttribute("meloromance", movieService.getGenreData("meloromance").subList(0, 10));
-        model.addAttribute("mystery", movieService.getGenreData("mystery").subList(0, 10));
-        model.addAttribute("crime", movieService.getGenreData("crime").subList(0, 10));
-        model.addAttribute("thriller", movieService.getGenreData("thriller").subList(0, 10));
-        model.addAttribute("action", movieService.getGenreData("action").subList(0, 10));
-        model.addAttribute("adventure", movieService.getGenreData("adventure").subList(0, 10));
+        model.addAttribute("sf", movieService.getGenreData("sf").subList(0,20));
+        model.addAttribute("family", movieService.getGenreData("family").subList(0,20));
+        model.addAttribute("horror", movieService.getGenreData("horror").subList(0,20));
+        model.addAttribute("drama", movieService.getGenreData("drama").subList(0,20));
+        model.addAttribute("meloromance", movieService.getGenreData("meloromance").subList(0,20));
+        model.addAttribute("mystery", movieService.getGenreData("mystery").subList(0,20));
+        model.addAttribute("crime", movieService.getGenreData("crime").subList(0,20));
+        model.addAttribute("thriller", movieService.getGenreData("thriller").subList(0,20));
+        model.addAttribute("action", movieService.getGenreData("action").subList(0,20));
+        model.addAttribute("adventure", movieService.getGenreData("adventure").subList(0,20));
+
         return "main";
     }
 
