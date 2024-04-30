@@ -41,12 +41,6 @@
 
     </section>
 
-    <!-- 화면 상단 이동 버튼 -->
-    <a href="#">
-        <div class="up-btn">▲</div>
-    </a>
-
-
     <%@ include file="include/footer.jsp"%>
 
     <script>
