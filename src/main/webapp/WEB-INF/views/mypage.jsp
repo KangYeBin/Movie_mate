@@ -38,6 +38,10 @@
         <div class="content-list">
             <h1>내가 찜한 영화</h1>
 
+            <c:if test="${empty movie}">
+                <div style="color:white; font-size: 20px; margin-left: 80px; " class="swiper-wrapper">찜한 영화가 없습니다</div>
+            </c:if>
+
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <c:forEach var="movie" items="${movie}">
@@ -55,6 +59,11 @@
 
     <div class="review-list">
         <h1>내가 쓴 후기</h1>
+
+        <c:if test="${empty review}">
+            <div style="color:white; font-size: 20px;" class="swiper-wrapper">작성한 후기가 없습니다</div>
+        </c:if>
+
         <div class="swiper review-swiper-custom">
             <div class="swiper-wrapper">
 

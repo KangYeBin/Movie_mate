@@ -227,6 +227,11 @@
                     dto
                 } = reviews; 
 
+                if (dto.length == 0) {
+                    document.getElementById('reviewData').innerHTML = 
+                    `<div style="color:white; font-size: 20px;" class="swiper-wrapper">작성한 후기가 없습니다</div>`;
+                }
+
                 for (let review of dto) {
                 const {
                     reviewId,
