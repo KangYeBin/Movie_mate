@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+}
+
+ /* 메인페이지 스타일 */
+ html {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+    background: linear-gradient(to top, rgb(153,153,153), rgb(9,2,2));
+     height: 100vh;
+}
+#main {
+    margin-top: 100px;
+}
+
+#main .container {
+    margin-top: 100px;
+}
+
+/* 버튼 스타일 */
+.btn button{
+    border: 0;
+    background-color: transparent;
+}
+.btn button span:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#main .btn .swiper-button-prev,
+#main .btn .swiper-button-next {
+    top: 50%;
+    bottom: auto;
+    color: white;
+    opacity: 0.5;
+}
+#main .btn .swiper-button-prev{
+    left: 20%;
+}
+#main .btn .swiper-button-next{
+    right: 20%;
+}
+#main .btn .swiper-button-prev:hover,
+#main .btn .swiper-button-next:hover {
+    opacity: 1;
+}
+
+/* 장르 영화 목록 스타일 */
+span.genre-text{
+    display: block;
+    width: 60%;
+    margin: 30px 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.genre{
+    overflow: hidden;
+    width: 1100px;
+    margin: 50px auto;
+    position: relative;
+    padding-top: 10px;
+}
+
+.movie-img-box{
+
+}
+
+.movie-img-box img {
+    width: 200px;
+    height: 300px;
+    border-radius: 7px;
+    margin-left: 5px;
+
+    
+}
+.movie-img-box p {
+    text-align: center;
+    color: #FDFDFD;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+.movie-img-box a img:hover {
+    transform:scale(1.05);
+}
+
+/* 장르 영화 버튼 스타일 */
+#main .btn .list-next,
+#main .btn .list-prev {
+    top: 50%;
+}
+#main .btn .list-next{
+    right: 0;
+}
+#main .btn .list-prev{
+    left: 0;
+}
+
+.genre-movieNm{
+    width: 200px;
+}
+
+

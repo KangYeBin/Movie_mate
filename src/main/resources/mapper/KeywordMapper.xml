@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ictproject.moviemate.domain.movie.mapper.KeywordMapper">
+    <insert id="insertKeyword">
+        insert into keyword (movie_cd,keyword_name) values(#{movieCd},#{keywordName})
+    </insert>
+
+    <select id="findKeywords" resultType="keyword">
+        SELECT
+            movie_cd, keyword_name
+        FROM
+            keyword
+        WHERE
+            movie_cd = #{movieCd}
+    </select>
+
+    <select id="findByUserWish" resultType="String">
+        SELECT keyword_name
+        FROM keyword k
+        JOIN wish_list w ON k.movie_cd = w.movie_cd
+        WHERE w.user_id = #{userId}
+        GROUP BY keyword_name
+        order by COUNT(*) desc
+        limit 2;
+    </select>
+</mapper>

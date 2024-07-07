@@ -1,0 +1,42 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ictproject.moviemate.domain.user.mapper.UserMapper">
+
+
+    <insert id="insertUser">
+        INSERT INTO user
+            (profile, email, nick_name, login_path)
+        VALUES
+            (#{profile}, #{email}, #{nickName}, #{loginPath})
+    </insert>
+
+    <update id="modifyUser">
+        UPDATE
+            user
+        SET
+            nick_name = #{nickName}
+        WHERE
+            user_id = #{userId}
+    </update>
+
+    <select id="findUser" resultType="user">
+        SELECT
+            *
+        FROM
+            user
+        WHERE
+            email = #{email}
+    </select>
+
+    <delete id="deleteUser">
+        DELETE FROM
+            user
+        WHERE
+            user_id = #{userId}
+    </delete>
+
+    <select id="isDuplicate" resultType="boolean">
+        select count(*) from user where email = #{email}
+    </select>
+</mapper>

@@ -1,0 +1,39 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ictproject.moviemate.domain.wish.mapper.WishMapper">
+
+    <insert id="insertWish">
+        INSERT INTO wish_list
+            (user_id, movie_cd)
+        VALUES
+            (#{userId}, #{movieCd})
+    </insert>
+
+    <delete id="deleteWish">
+        DELETE FROM
+            wish_list
+        WHERE
+            user_id = #{userId}
+        AND
+            movie_cd = #{movieCd}
+    </delete>
+
+    <select id="findWish" resultType="movie">
+        SELECT
+            m.*
+        FROM
+            wish_list w
+        JOIN
+            movie m
+        ON
+            w.movie_cd = m.movie_cd
+        WHERE
+            w.user_id = #{userId};
+    </select>
+
+    <select id="checkWish" resultType="boolean">
+        select count(*) from wish_list where user_id = #{userId} and movie_cd = #{movieCd}
+    </select>
+</mapper>

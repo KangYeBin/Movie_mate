@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ictproject.moviemate.domain.movie.mapper.GenreMapper">
+    <insert id="insertGenre">
+        insert into genre (movie_cd,genre_name) values(#{movieCd},#{genreName})
+    </insert>
+
+    <select id="findGenres" resultType="genre">
+        SELECT
+            movie_cd, genre_name
+        FROM
+            genre
+        WHERE
+            movie_cd = #{movieCd}
+    </select>
+
+    <select id="findByUserWish" resultType="String">
+        SELECT genre_name
+        FROM genre g
+        JOIN wish_list w ON g.movie_cd = w.movie_cd
+        WHERE w.user_id = #{userId}
+        GROUP BY genre_name
+        order by COUNT(*) desc
+        limit 2;
+    </select>
+
+
+</mapper>

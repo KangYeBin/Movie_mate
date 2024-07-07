@@ -14,17 +14,29 @@
 
     <typeAliases>
         <!-- 엔터티 클래스 별칭 붙이기 -->
+        <typeAlias type="com.ictproject.moviemate.domain.user.User" alias="user" />
+        <typeAlias type="com.ictproject.moviemate.domain.review.Review" alias="review" />
+        <typeAlias type="com.ictproject.moviemate.domain.wish.Wish" alias="wish" />
+        <typeAlias type="com.ictproject.moviemate.domain.movie.Movie" alias="movie" />
+        <typeAlias type="com.ictproject.moviemate.domain.movie.Actor" alias="actor" />
+        <typeAlias type="com.ictproject.moviemate.domain.movie.Genre" alias="genre" />
+        <typeAlias type="com.ictproject.moviemate.domain.movie.Keyword" alias="keyword" />
+        <typeAlias type="com.ictproject.moviemate.domain.sympathy.Sympathy" alias="sympathy" />
+        <typeAlias type="com.ictproject.moviemate.domain.review.dto.ReviewDetailResponseDTO" alias="reviewDTO" />
+
     </typeAliases>
 
     <!-- SQL을 적어놓은 XML 파일의 위치를 설정 -->
     <mappers>
-
+        <mapper resource="mapper/MovieMapper.xml"/>
+        <mapper resource="mapper/KeywordMapper.xml"/>
+        <mapper resource="mapper/ActorMapper.xml"/>
+        <mapper resource="mapper/GenreMapper.xml"/>
+        <mapper resource="mapper/ReviewMapper.xml"/>
+        <mapper resource="mapper/WishMapper.xml"/>
+        <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/SympathyMapper.xml"/>
     </mappers>
-
-
-
-
-
 
 
 </configuration>

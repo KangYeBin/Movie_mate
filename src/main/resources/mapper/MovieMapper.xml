@@ -1,0 +1,160 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ictproject.moviemate.domain.movie.mapper.MovieMapper">
+    <insert id="insertMovie">
+        insert into movie
+        (movie_cd,movie_name,nation,open_date,rating,director,image_url,plot,audi_acc,vod_url,runtime,still_url)
+        values(#{movieCd},#{movieName},#{nation},#{openDate},#{rating},#{director},#{imageUrl},#{plot},#{audiAcc},#{vodUrl},#{runtime},#{stillUrl})
+    </insert>
+
+    <select id="isExist" resultType="boolean">
+        select count(*) from movie where movie_cd = '${movieCd}'
+    </select>
+
+    <select id="findMovie" resultType="movie">
+        SELECT
+            *
+        FROM
+            movie
+        WHERE
+            movie_cd = #{movieCd}
+    </select>
+
+    <select id="findMoviesByActor" resultType="movie">
+        SELECT
+            m.*
+        FROM
+            movie m
+        JOIN
+            actor a
+        ON
+            m.movie_cd = a.movie_cd
+        WHERE
+            a.actor_name = #{actorName}
+    </select>
+
+    <select id="findMoviesByGenre" resultType="movie">
+        SELECT
+            m.*
+        FROM
+            movie m
+        JOIN
+            genre g
+        ON
+            m.movie_cd = g.movie_cd
+        WHERE
+            g.genre_name = #{genreName}
+    </select>
+
+    <select id="findMoviesByKeyword" resultType="movie">
+        SELECT
+            m.*
+        FROM
+            movie m
+        JOIN
+            keyword k
+        ON
+            m.movie_cd = k.movie_cd
+        WHERE
+            k.keyword_name = #{keywordName}
+    </select>
+
+    <select id="getRecentData" resultType="movie">
+            select * from movie order by open_date desc limit 0,30
+    </select>
+
+    <select id="getNationData" resultType="movie">
+                select * from movie where nation = #{nation} limit 0,20
+    </select>
+
+    <select id="findMoviesByDirector" resultType="movie">
+        SELECT
+            *
+        FROM
+            movie
+        WHERE
+            director = #{directorName}
+    </select>
+
+    <select id="findMoviesByMovieName" resultType="movie">
+        SELECT
+            *
+        FROM
+            movie
+        WHERE
+            movie_name LIKE CONCAT('%', #{movieName}, '%')
+    </select>
+
+    <select id="findAll" resultType="movie">
+            select * from movie
+    </select>
+
+    <select id="findMovieByWishKeyword" resultType="movie">
+        SELECT DISTINCT m.*
+        FROM movie m
+        JOIN keyword k ON m.movie_cd = k.movie_cd
+        WHERE k.keyword_name = #{keywordName}
+        AND m.movie_cd NOT IN (
+        SELECT movie_cd
+        FROM wish_list
+        WHERE user_id = #{userId}
+        )
+        ORDER BY m.wish_cnt,CAST(m.audi_acc AS SIGNED) DESC
+        limit 3;
+    </select>
+
+    <select id="findMovieByWishGenre" resultType="movie">
+        SELECT DISTINCT m.*
+        FROM movie m
+        JOIN genre g ON m.movie_cd = g.movie_cd
+        WHERE g.genre_name = #{genreName}
+        AND m.movie_cd NOT IN (
+        SELECT movie_cd
+        FROM wish_list
+        WHERE user_id = #{userId}
+        )
+        ORDER BY m.wish_cnt, CAST(m.audi_acc AS SIGNED) DESC
+        limit 3;
+    </select>
+
+    <select id="findMovieByWishActor" resultType="movie">
+        SELECT DISTINCT m.*
+        FROM movie m
+        JOIN actor a ON m.movie_cd = a.movie_cd
+        WHERE a.actor_name = #{actorName}
+        AND m.movie_cd NOT IN (
+        SELECT movie_cd
+        FROM wish_list
+        WHERE user_id = #{userId}
+        )
+        ORDER BY m.wish_cnt, CAST(m.audi_acc AS SIGNED) DESC
+        limit 3;
+    </select>
+
+    <select id="findMovieByRecommend" resultType="movie">
+    SELECT *
+    FROM movie
+    ORDER BY (CAST(audi_acc As signed)/100000 + movie.wish_cnt*2) DESC
+    limit 10;
+    </select>
+
+    <update id="plusWishCnt">
+        UPDATE
+        movie
+        SET
+        wish_cnt = (wish_cnt + 1)
+        WHERE
+        movie_cd = #{movieCd}
+    </update>
+
+    <update id="minusWishCnt">
+        UPDATE
+        movie
+        SET
+        wish_cnt = (wish_cnt -1)
+        WHERE
+        movie_cd = #{movieCd}
+    </update>
+</mapper>

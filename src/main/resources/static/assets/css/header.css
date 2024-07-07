@@ -1,0 +1,210 @@
+
+        /* 헤더 스타일 */
+        header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        min-width: 1100px;
+        z-index: 9999;
+        }
+        .header-section {
+            height: 100px;
+            box-sizing: border-box;
+            background-color: rgb(9, 2, 2);
+
+        }
+        .logo img {
+            width: 250px;
+            height: 100px;
+            border-radius: 5px;
+        }
+        .header-container {
+            display: flex;
+            width: 90%;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .header-items {
+            display: flex;
+            margin: 0 10px;
+        }
+        .header-items p {
+            margin: 0 10px;
+        }
+        .header-items p a{
+            color: aliceblue;
+            font-size: 24px;
+        }
+        .search-section {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
+        .header-hidden {
+            width: 100%;
+            height: 100px;
+        }
+        .header-items .user {
+            color: aliceblue;
+            font-size: 16px;
+            width: 150px;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 0;
+        }
+        .header-items .logout {
+            margin: 0;
+            padding-top: 2px;
+        }
+        .header-items .logout a {
+            font-size: 12px;
+            border: 1px solid aliceblue;
+            border-radius: 5px;
+            padding: 1px 4px;
+        }
+
+        /* 검색창 스타일 */
+        #search input {
+            background-color: transparent;
+            border: 1px solid gray;
+            border-radius: 2px;
+            font-size: 15px;
+            width: 250px;
+            height: 30px;
+            color: white;
+            box-sizing: border-box !important;
+            
+        }
+
+        /* 버튼 스타일 */
+        #search button {
+            border: 0;
+            background-color: transparent;
+            color: aliceblue;
+            cursor: pointer;
+        }
+        
+
+        /* 카테고리 목록 스타일 */
+        .category-list-container{
+            display: flex;
+            background-color: rgb(9, 2, 2);
+            border: 1px solid black;
+            position: fixed;
+            z-index: 99;
+            top: -100%;
+            opacity: 0;
+            /*left: 15%;*/
+            width: 33%;
+            /*transition: 1s;*/
+        }
+        .category-list-container ul {
+            width: 25%;
+            text-align: center;
+        }
+        .category-list-container ul li {
+            margin: 30px 0;
+            
+        }
+        .category-list-container ul li a{
+            color: aliceblue;
+        }
+        .category-wrapper {
+            position: relative;
+        }
+        .category-list-container.show {
+            /*transition: 1s;*/
+            top: 100px;
+            opacity: 1;
+        }
+        .search-form{
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        /* 검색어 종류 선택 */
+        .selectBox {
+        position: relative;
+        width: 90px;
+        height: 30px;
+        border-radius: 2px;
+        border: 1px solid gray;
+        background-size: 15px;
+        cursor: pointer;
+
+        }
+
+        .selectBox:after {
+        display: block; 
+        width: 1px;
+        height: 100%; 
+        position: absolute; 
+        top: 0; 
+        right: 20px;
+        background: white;
+        }
+
+        .selectBox .label {
+        display: flex;
+        align-items: center;
+        width: inherit;
+        height: inherit;
+        border: 0 none;
+        outline: 0 none;
+        padding: 0;
+        padding-bottom: 5px;
+        background: transparent;
+        cursor: pointer;
+        color: gray;
+        }
+
+        .selectBox .searchList {
+        position: absolute; 
+        top: 28px;
+        left: 0;
+        width: 100%;
+        background: aliceblue;
+        color: gray;
+        list-style-type: none;
+        padding: 0;
+        border-radius: 3px;
+        overflow: hidden;
+        max-height: 0;
+        transition: .3s ease-in;
+        }
+
+        .selectBox.active .searchList {
+        max-height: 500px;
+        }
+
+        .selectBox .optionItem {
+        border-bottom: 1px white;
+        padding: 5px 15px 5px;
+        transition: .1s;
+        color: black;
+        }
+
+        .selectBox .optionItem:hover {
+        background: gray;
+        }
+
+        .selectBox .optionItem:last-child {
+        border-bottom: 0 none;
+        }
+
+        .search-box{
+            display: flex;
+
+        }
+
+        @media screen and (max-width: 1100px) {
+            .search-box{
+                display: none;
+            }
+
+
+        }
+        
+
